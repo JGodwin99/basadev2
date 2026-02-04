@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Basa Development Inititive Website</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Spinner Start -->
+        <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+		
+        <!-- Navbar start -->
+        <div class="container-fluid fixed-top px-0">
+            <div class="container px-0">
+			
+                <div class="topbar" style="padding:20px 90px 2px 90px;">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-md-8">
+                            <div class="topbar-info d-flex flex-wrap" style="font-size: 23px;">
+                                <a href="#" class="text-light me-4"><i class="fas fa-envelope text-white me-2"></i>      info@basadev.org</a>
+                                <a href="#" class="text-light"><i class="fas fa-phone-alt text-white me-2"></i>          +231779 205 152</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+						
+                            <div class="topbar-icon d-flex align-items-center justify-content-end">
+                                <a href="#" class="btn-square text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="btn-square text-white me-2"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="btn-square text-white me-2"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="btn-square text-white me-2"><i class="fab fa-pinterest"></i></a>
+                                <a href="#" class="btn-square text-white me-0"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav class="navbar navbar-light bg-light navbar-expand-xl" style="padding:20px 90px 2px 90px;">
+                    <div class="col-md-3">
+							<div class="header-logo">
+								<a href="index.html" class="logo">
+									<img src="./img/logo14.png" alt="">
+								</a>
+							</div>
+						</div>
+                    <button class="navbar-toggler py-4 px-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars text-primary"></span>
+                    </button>
+                    <div class="collapse navbar-collapse bg-light" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto">
+                            
+                            
+							<div class="nav-item dropdown">
+                                <a href="about.html" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">About Us▼</a>
+                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                                    <li><a href="about.html" class="dropdown-item active">Who We Are</a></li>
+									     <li><a href="program.html" class="dropdown-item active">Our Works</a></li>
+									<li><a href="news.html" class="dropdown-item active">News & Updates</a></li>
+									     <li><a href="contact.html" class="dropdown-item active">Contact Us</a></li>
+                                </div>
+                            </div>
+							
+                            <div class="nav-item dropdown">
+                                <a href="campaigns.html" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Campaings▼</a>
+                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                                    <li><a href="campaigns.html#agribusiness" class="dropdown-item active">AgriBusiness Growth Support</a></li>
+                                    <li><a href="campaigns.html#menstrual-hygiene" class="dropdown-item">Menstrual Hygiene</a></li>
+                                    <li><a href="campaigns.html#waste-management" class="dropdown-item">Community-Based Waste Management</a></li>
+                                    <li><a href="campaigns.html#malaria-prevention" class="dropdown-item">Malaria Prevention & Treatment</a></li>
+                                    <li><a href="campaigns.html#school-feeding" class="dropdown-item">School Feeding Programs</a>
+                                </div>
+                            </div>
+								
+                            <div class="nav-item dropdown">
+							
+                                <a href="project.hmtl" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects▼</a>
+                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                                    <li><a href="project.html#period-poverty" class="dropdown-item">Ending Period Poverty Campaign In Liberia</a></li>
+                                    <li><a href="project.html#Agricultural" class="dropdown-item">Liberia's Agricultural Financing Framework<br>Development</a></li>
+                                    <li><a href="project.html#schoolhealth" class="dropdown-item">School Eco & Health Clubs</a></li>
+                                    <li><a href="project.html#businesssupport" class="dropdown-item">Business Support Service (EU-Funded <br>Cassava Programs Projects)</a></li>
+									<li><a href="project.html#housesurvey" class="dropdown-item">Household Affordability Survey in <br>North-Western & Southeastern Liberia</a></li>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center flex-nowrap pt-xl-0" style="margin-left: 15px;">
+                            <a href="donation.html" class="btn-hover-bg btn btn-primary text-white py-2 px-4 me-3">Donate Now</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <!-- Navbar End -->
+
+        <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style="max-width: 900px;"></h1><br><br>
+                <h3 class="text-white display-3 mb-4">About Us </h3>
+                <p class="fs-5 text-white mb-4">Help today because tomorrow you may be the one who needs more helping!</p>  
+            </div>
+        </div>
+        <!-- Header End -->
+
+        <!-- About Start -->
+		
+		
+						<div class="container-fluid about  py-5">
+		       <h5 class="text-uppercase text-primary" style="text-align:center; font-size:60px;"> <b>WHO WE ARE</b></h5>
+               <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-xl-5">
+                        <div class="h-100">
+                            <img src="img/about-1.jpg" class="img-fluid w-100 h-100" alt="Image">
+                        </div>
+                    </div>
+                    <div class="col-xl-7">
+                        <h1 class="mb-4"><b>WE ARE AN ORGANIZATION NURTURING DEVELOPMENT FROM THE GRASSROOTS LEVEL.</b></h1>
+                        <p class="fs-5 mb-4" style="text-align: justify;">BASA Development Initiatives (BDI) is a woman-founded, youth-led non-profit
+						organization legally registered in Liberia. Our mission is to uplift the less fortunate, focusing on women and youth.
+						Our work spans across vital sectors such as Agribusiness, Education, Health, Conservation, Climate change, Gender Equality,
+						and Youth Development. BASA, which stands for Born African, Stay African, symbolizes our commitment to fostering growth in
+						Liberia and Africa, championed by its people.
+                        </p>
+                        <div class="tab-class bg-secondary p-4">
+                            <ul class="nav d-flex mb-2">
+                                <li class="nav-item mb-3">
+                                    <a class="d-flex py-2 text-center bg-white active" data-bs-toggle="pill" href="#tab-1">
+                                        <span class="text-dark" style="width: 150px;">About</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item mb-3">
+                                    <a class="d-flex py-2 mx-3 text-center bg-white" data-bs-toggle="pill" href="#tab-2">
+                                        <span class="text-dark" style="width: 150px;">Vision</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item mb-3">
+                                    <a class="d-flex py-2 text-center bg-white" data-bs-toggle="pill" href="#tab-3">
+                                        <span class="text-dark" style="width: 150px;">Mission</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="tab-1" class="tab-pane fade show p-0 active">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="d-flex">
+                                                <div class="text-start my-auto">
+                                                    <h5 class="text-uppercase mb-3">OUR CORE PROGRAMS</h5>
+                                                    <p class="mb-4">Welcome to BDI’s Core Programs, the engines of transformative change.
+														We boldly aim at working in six critical areas – Agriculture, Health, Environment, Education,
+														Youth, and Women Empowerment, each unlocking incredible potential in Liberia and, soon, throughout
+														West Africa. Our comprehensive initiatives redefine possibilities, igniting an inclusive and sustainable
+														future.
+                                                    </p>
+                                                    <div class="d-flex align-items-center justify-content-start">
+                                                        <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="donation.html">Support These Initiatives Though Your Donation</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab-2" class="tab-pane fade show p-0">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="d-flex">
+                                                <div class="text-start my-auto">
+                                                    <h5 class="text-uppercase mb-3">Our Vision</h5>
+                                                    <p class="mb-4">BDI envisions resilient and prosperous communities nurtured by sustainable agriculture,
+													reinforced health and education systems, an esteemed environment, and vibrant women and youth leading
+													the way.
+                                                    </p>
+                                                    <div class="d-flex align-items-center justify-content-start">
+                                                        <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="donation.html">Support These Initiatives Though Your Donation</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tab-3" class="tab-pane fade show p-0">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="d-flex">
+                                                <div class="text-start my-auto">
+                                                    <h5 class="text-uppercase mb-3">Our Mission</h5>
+                                                    <p class="mb-4">To foster sustainable growth and enrich lives across underserved communities
+													through targeted agriculture, health, education, environment, and women and youth empowerment
+													initiatives.
+                                                    </p>
+                                                    <div class="d-flex align-items-center justify-content-start">
+                                                        <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="donation.html">Support These Initiatives Though Your Donation</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		
+		
+        <div class="container-fluid causes py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5" style="max-width: 1500px;">
+                    <h5 class="text-uppercase text-primary" style="font-size: 70px;">Meet Our Staff</h5>
+                    <h1 class="mb-4">BDI has a Team of Passionate and Purpose-driven Individuals.</h1>
+                    <h5 class="mb-0">"Our team is a dedicated group of passionate individuals committed to delivering excellence,
+								driving impact, and working together to achieve meaningful results. With diverse skills and shared
+								values, we strive to inspire, innovate, and make a difference in every project we undertake." </h5>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="causes-item">
+                            <div class="causes-img">
+                                <img src="img/causes-1.jpg" class="img-fluid w-100" alt="Image">
+
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                    <span><b>katherina.hopkins@basadev.org</b></span>
+                                </div>
+                            </div>
+                            <div class="causes-content p-4">
+                                <h4 class="mb-3">KATHERINA M. HOPKINS</h4>
+                                <p class="mb-4">Chief Executive officer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="causes-item">
+                            <div class="causes-img">
+                                <img src="img/causes-2.jpg" class="img-fluid w-100" alt="Image">
+                                
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                    <span>nuwoe.naileh@basadev.org</span>
+                                </div>
+                            </div>
+                            <div class="causes-content p-4">
+                                <h4 class="mb-3">Nuwoe J. Naileh</h4>
+                                <p class="mb-4">Head of Partnerships and Fundraising</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="causes-item">
+                            <div class="causes-img">
+                                <img src="img/causes-3.jpg" class="img-fluid w-100" alt="Image">
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                    <span>siotepoh.broh@basadev.org</span>
+                                </div>
+                            </div>
+                            <div class="causes-content p-4">
+                                <h4 class="mb-3">Siotepoh Broh</h4>
+                                <p class="mb-4">Head of Business Development</p><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="causes-item">
+                            <div class="causes-img">
+                                <img src="img/causes-4.jpg" class="img-fluid w-100" alt="Image">
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                    <span>ishmael.turner@basadev.org</span>
+                                </div>
+                            </div>
+                            <div class="causes-content p-4">
+                                <h4 class="mb-3">ISHMAEL TURNER</h4>
+                                <p class="mb-4">Chief Finance Officer</p><br>
+                            </div>
+                        </div>
+                    </div> <br>
+					                    <div class="col-lg-6 col-xl-3">
+                        <div class="causes-item">
+                            <div class="causes-img">
+                                <img src="img/causes-5.jpg" class="img-fluid w-100" alt="Image">
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                    <span>cecelia.jouah@basadev.org</span>
+                                </div>
+                            </div>
+                            <div class="causes-content p-4">
+                                <h4 class="mb-3">Cecelia B. Jouah</h4>
+                                <p class="mb-4">Monitoring Evaluation and Research Officer</p>
+                            </div>
+                        </div>
+                    </div>
+					
+					                    <div class="col-lg-6 col-xl-3">
+                        <div class="causes-item">
+                            <div class="causes-img">
+                                <img src="img/causes-6.jpg" class="img-fluid w-100" alt="Image">
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                    <span>james.jasay@basadev.org</span>
+                                </div>
+                            </div>
+                            <div class="causes-content p-4">
+                                <h4 class="mb-3">James W. Jasay</h4>
+                                <p class="mb-4">Executive Assistant, CEO & COO</p><br>
+                            </div>
+                        </div>
+                    </div>
+					
+					                    <div class="col-lg-6 col-xl-3">
+                        <div class="causes-item">
+                            <div class="causes-img">
+                                <img src="img/causes-7.jpg" class="img-fluid w-100" alt="Image">
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                    <span>famata.brown@basadev.org</span>
+                                </div>
+                            </div>
+                            <div class="causes-content p-4">
+                                <h4 class="mb-3">FAMATA BEYAH BROWN</h4>
+                                <p class="mb-4">Gender and Peacebuilding Officer</p>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="col-lg-6 col-xl-3">
+                        <div class="causes-item">
+                            <div class="causes-img">
+                                <img src="img/causes-8.jpg" class="img-fluid w-100" alt="Image">
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                    <span>clarence.powell@basadev.org</span>
+                                </div>
+                            </div>
+                            <div class="causes-content p-4">
+                                <h4 class="mb-3">CLARENCE POWELL</h4>
+                                <p class="mb-4">Program Officer, Agribusiness & Natural Resources</p>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="col-lg-6 col-xl-3">
+                        <div class="causes-item">
+                            <div class="causes-img">
+                                <img src="img/causes-10.jpg" class="img-fluid w-100" alt="Image">
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                    <span>christopher.lawor@basadev.org</span>
+                                </div>
+                            </div>
+                            <div class="causes-content p-4">
+                                <h4 class="mb-3">CHRISTOPHER LAWOR</h4>
+                                <p class="mb-4">Nutrition and Public Health Officer</p><br>
+                            </div>
+                        </div>
+                    </div>
+
+					
+					<div class="col-lg-6 col-xl-3">
+                        <div class="causes-item">
+                            <div class="causes-img">
+                                <img src="img/causes-12.jpg" class="img-fluid w-100" alt="Image">
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                    <span>pitman.clement@basadev.org</span>
+                                </div>
+                            </div>
+                            <div class="causes-content p-4">
+                                <h4 class="mb-3">Pitman T. Clement</h4>
+                                <p class="mb-4">Public Health and WASH Officer</p><br>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="col-lg-6 col-xl-3">
+                        <div class="causes-item">
+                            <div class="causes-img">
+                                <img src="img/causes-13.jpg" class="img-fluid w-100" alt="Image">
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                    <span>dakale.momolu@basadev.org</span>
+                                </div>
+                            </div>
+                            <div class="causes-content p-4">
+                                <h4 class="mb-3">Dakale Gogo Savin Momolu</h4>
+                                <p class="mb-4">Legal Advisor</p>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="col-lg-6 col-xl-3">
+                        <div class="causes-item">
+                            <div class="causes-img">
+                                <img src="img/causes-04.jpg" class="img-fluid w-100" alt="Image">
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                    <span>fatamata.johnson@basadev.org</span>
+                                </div>
+                            </div>
+                            <div class="causes-content p-4">
+                                <h4 class="mb-3">Famata Johnson</h4>
+                                <p class="mb-4">Finance Assistant</p><br>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="col-lg-6 col-xl-3">
+                        <div class="causes-item">
+                            <div class="causes-img">
+                                <img src="img/causes-04.jpg" class="img-fluid w-100" alt="Image">
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                    <span>dpaul.flomo@basadev.org</span>
+                                </div>
+                            </div>
+                            <div class="causes-content p-4">
+                                <h4 class="mb-3">Paul Flomo</h4>
+                                <p class="mb-4">Director, Education Programmes</p>
+                            </div>
+                        </div>
+                    </div>
+					
+										<div class="col-lg-6 col-xl-3">
+                        <div class="causes-item">
+                            <div class="causes-img">
+                                <img src="img/causes-14.jpg" class="img-fluid w-100" alt="Image">
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                    <span>jenkins.wilson@basadev.org</span>
+                                </div>
+                            </div>
+                            <div class="causes-content p-4">
+                                <h4 class="mb-3">J. GODWIN WILSON</h4>
+                                <p class="mb-4">BRAND VISIBILITY SPECIALIST</p>
+                            </div>
+                        </div>
+                    </div>
+					
+					
+				</div>
+			</div>
+		</div>
+	
+		
+        <div class="container-fluid causes py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5" style="max-width: 1500px;">
+                <h5 class="text-uppercase text-primary" style="font-size: 70px;">Meet Our Board Members</h5>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="causes-item">
+                            <div class="causes-img">
+                                <img src="img/bm1.jpg" class="img-fluid w-100" alt="Image">
+
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                            <div class="causes-content p-4">
+                                <h4 class="mb-3">KATHERINA M. HOPKINS</h4>
+                                <p class="mb-4">Chief Executive officer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="causes-item">
+                            <div class="causes-img">
+                                <img src="img/bm2.jpg" class="img-fluid w-100" alt="Image">
+                                
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                    
+                                </div>
+                            </div>
+                            <div class="causes-content p-4">
+                                <h4 class="mb-3">Erica Brouillette</h4>
+                                <p class="mb-4">Co-Chairperson, Board of Directors</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="causes-item">
+                            <div class="causes-img">
+                                <img src="img/bm3.jpg" class="img-fluid w-100" alt="Image">
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                            <div class="causes-content p-4">
+                                <h4 class="mb-3">Anthony Sieh, Jr.</h4>
+                                <p class="mb-4">Secretary</p><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xl-3">
+                        <div class="causes-item">
+                            <div class="causes-img">
+                                <img src="img/bm4.jpg" class="img-fluid w-100" alt="Image">
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                            <div class="causes-content p-4">
+                                <h4 class="mb-3">Peter Roberts, Sr.</h4>
+                                <p class="mb-4">Board Member</p><br>
+                            </div>
+                        </div>
+                    </div> <br>             
+                        </div>
+                    </div>
+				</div>
+			</div>
+        <!-- About End -->
+
+						<style>
+								   .red-section {
+						  background-color: #c00000; /* deep red */
+						  padding: 60px 80px;        /* space inside the red area */
+						  color: white;
+					  }
+
+					  .red-content {
+						  max-width: 1200px;
+						  margin: auto;
+						  display: flex;
+						  gap: 40px;
+						  align-items: center;
+						  flex-wrap: wrap; /* responsive */
+					  }
+
+					  .red-text {
+						  flex: 1;
+					  }
+
+					  .red-text h2 {
+						  font-size: 36px;
+						  margin-bottom: 15px;
+					  }
+
+					  .red-text p {
+						  font-size: 18px;
+						  line-height: 1.6;
+						  text-align: justify;
+					  }
+
+					  .red-image {
+						  flex: 1;
+						  text-align: center;
+					  }
+
+					  .red-image img {
+						  max-width: 100%;
+						  border-radius: 12px;
+					  }
+
+					  /* Mobile friendly */
+					  @media (max-width: 768px) {
+						  .red-content {
+							  flex-direction: column;
+							  padding: 20px;
+						  }
+					  }
+					</style>
+
+					<!-- RED BACKGROUND SECTION -->
+							<div class="red-section">
+							  <div class="red-content">
+					<!-- Text Area -->
+								<div class="red-text">
+									<h2 class="text-uppercase" style="text-align:center; font-size:60px; color:#ffffff;">
+										<b>SNAPSHOT OF OUR PROGRAMS</b></h2>
+												  <p> We operate programs across six domains: Agriculture, Health, Education, Environment, Youth Empowerment,
+														and Women Empowerment, aiming for a resilient and prosperous Africa. The agriculture initiative enhances
+														food security and farmers’ livelihoods via modern farming techniques and agribusiness support. The health
+														and education programs improve disease prevention and healthcare access and promote quality education, including
+														adult literacy. Sustainable practices, climate change mitigation, and conservation are central to the
+														environmental agenda. The empowerment programs are designed to enhance women’s access to education, foster
+														leadership, improve economic participation, and advocate for rights, while the youth program develops skills
+														and leadership, preparing future African leaders.
+												  </p>
+											  </div>
+											  <!-- Image Area -->
+											  <div class="red-image">
+												  <img src="img/CRS-BDI-survey.jpg" alt="Our Work">
+											  </div>
+										  </div>
+										</div> <br><br><br><br><br><br>
+									
+			
+					<h5 class="text-uppercase text-primary" style="text-align:center; font-size:60px;"> <b>OUR BACK STORY</b></h5>
+								<!-- RED BACKGROUND SECTION -->
+							<div class="red-section">
+							  <div class="red-content">
+
+					<!-- Text Area -->
+					
+					<!-- Image Area -->
+						<div class="red-image">
+							<img src="img/Katherina.jpg" alt="Our Work">
+								</div>
+					<div class="col-xl-7">
+                        <h3 class="text-uppercase" style="text-align:left; font-size:55px; color:#ffffff;">
+										<b>Our Founding Journey: The Awakening of BASA Development Initiatives</b></h3>			
+								<div class="red-text">
+				<p style="font-size:26px;"> Dear Friend,
+		Did you know that almost 60% of Africa’s population is under 25, making it the world’s youngest continent? Yet, shockingly,
+		Liberia, a country rich in potential, reports that over 85% of its young people are unemployed. This stark contrast between
+		vibrant youthfulness and crippling unemployment forms the crux of our struggle and is why BASA Development Initiatives
+		(BDI) was born.
+												  </p> </div></div> </div></div><br>
+
+			       
+            <div class="container py-20">
+                <div class="text-center mx-auto mb-5" style="max-width: 1500px;">
+                    <p style="font-size:26px; text-align:justify;">Now let’s continue with our journey… <br>A Spark Ignites in Nairobi Every
+							impactful journey begins with a spark, an inspiration, a vision that fuels an indomitable desire to create change.
+								My awakening occurred on a typical day in Nairobi, Kenya, when BASA was conceived.
+								magine me, a young Liberian woman, committed to shaping the future of my homeland but caught in a whirlpool of questions —
+								What direction should I take? Which sector, private or non-profit, would let me contribute most meaningfully? What should
+								the name of my endeavor be?<br><br>
+				<b>The Birth of BASA: Embracing Our Roots</b> <br>The epiphany happened at Seroni Restaurant in Nairobi on July 14, 2019, while I conversed
+				with my brother. A seemingly ordinary incident unfolded before us: a fellow African, who had spent some years in the United States,
+				displayed resentment for the traditional African dish served to him, upset with the lack of utensils. “Why should African businesses serve
+				meals in such a primitive way? It’s unacceptable!” he stormed out of the restaurant.<br><br> 
+				The incident sparked a reflection. Why do we Africans, who’ve seen the world, often look down upon our roots instead of leveraging our global
+				experiences to uplift our continent? From this thought was born the powerful mantra, “Born African, Stay African,” or in shorthand, BASA.
+				This would become my beacon for encouraging Africans worldwide to take ownership of our narrative and drive development in our lands. My
+				resolve solidified: to weave the rich mosaic of Africa, one piece at a time.<br><br>
+				
+				<b>Seeds of Change: From an Online Store to a Vision</b><br>
+				The seed of BASA took root as an online store offering African slippers and bags, cultivating a sense of pride in our local artisanal creations.
+				But as I dove deeper into Liberia’s development sector, I saw an urgent need. The limitations of Liberian organizations in financial management,
+				procurement, and reporting were evident. Additionally, allegations of corruption and the sheer untapped potential of our youthful population
+				beckoned for attention. As a young Liberian woman, I felt a powerful call to shape this generation positively.<br><br>
+				
+				<b>BASA Development Initiatives:</b><br> A Journey Begins
+				Driven by this compelling need, I transitioned BASA into the BASA Development Initiatives (BDI) in June 2021. BDI’s mission is to bridge these
+				institutional gaps and empower women, transform their societal perception, and encourage youth development.<br><br>
+				
+				<b>Our Call to Action: The Power of Collaboration</b><br>
+				Bringing this mission to life is challenging; we cannot do it alone. We seek partners who share our passion for Liberia and Africa.
+				BDI embraces co-creation from project inception to completion. We extend our invitation to INGOs operating in Liberia, philanthropists,
+				donors, and other individuals to join hands with BDI and touch the lives of the youth and women of Liberia.<br><br>
+				
+				<b>Driving Impact Across Diverse Fields</b><br>
+				Our intervention areas are diverse yet focused, including agriculture (agribusiness), WASH, education, health promotion, conservation,
+				climate change, gender equality, youth, and women’s development. BDI is fortified with a dynamic team of professionals, each carrying 5-15
+				years of experience in their respective fields. While we may be new as an organization, our team members have contributed to significant
+				projects backed by prominent bodies like the World Bank, USAID, the European Union, Irish Aid, LGT, King Philanthropies, and the Australian
+				Development Agency.<br><br>
+				
+				<b>Join Us in Our Journey Towards Transformative Change</b><br>
+				Your support can be the wind beneath our wings, enabling us to impact the lives of countless underprivileged youth and women across Liberia.
+				Connect with me, and let us discuss how we can make a difference together.<br><br>
+				Thank you for reading our story. We hope it’s just the beginning of a shared transformative change journey.<br><br>
+				
+				Warm regards,<br><br>
+				
+				Katherina Martu Hopkins<br>
+				Founder & Chief Executive Officer<br>
+				Email: katherina.hopkins@basadev.org. 
+
+				
+				</p> <br>
+                </div> </div> </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+							</div>	 
+						</div>	
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer bg-dark text-body py-5">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item">
+                            <h4 class="mb-4 text-white" style="text-align:left;">LIBERIA OFFICE (Headquarter)</h4>
+                            <p class="mb-4" style="text-align:left; max-width: 900px;">BASA Avenue, 1st Floor, Morris Villa, ELWA Community, Paynesville, Monrovia,
+											Liberia Email: info@basadev.org Tel 1: +231 886 349 962 Tel 2: +231 88 675 7435</p>
+                            <div class="position-relative mx-auto">
+                                <input class="form-control border-0 bg-secondary w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
+                       <button type="button" class="btn-hover-bg btn btn-primary position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item">
+                            <h4 class="mb-4 text-white">UNITED STATES OFFICE</h4>
+                            <p class="mb-4" style="text-align:left";>984 Kettle Creek Road, Eagan, State of Minnesota, 55123 United States of America <br>
+											Email: info@basadev.org & anthony.sieh@basadev.org<br> Tel: +1 (651) 235-9896</p>
+                            <div class="position-relative mx-auto">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Quick Links</h4>
+                            <a href="about.html"><i class="fas fa-angle-right me-2"></i> Our Team</a>
+                            <a href="program.html"><i class="fas fa-angle-right me-2"></i> Our Programs</a>
+                            <a href="project.html"><i class="fas fa-angle-right me-2"></i> Our Projects</a>
+                            <a href="about.html"><i class="fas fa-angle-right me-2"></i> Who We Are</a>
+                            <a href="donation.html"><i class="fas fa-angle-right me-2"></i> Make a Donation</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item">
+                            <h4 class="mb-4 text-white">Our Gallery</h4>
+                            <div class="row g-2">
+                                <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="img/gallery-footer-1.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="img/gallery-footer-1.jpg" data-lightbox="footerGallery-1" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
+                               </div>
+                               <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="img/gallery-footer-2.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="img/gallery-footer-2.jpg" data-lightbox="footerGallery-2" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
+                               </div>
+                                <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="img/gallery-footer-3.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="img/gallery-footer-3.jpg" data-lightbox="footerGallery-3" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
+                               </div>
+                                <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="img/gallery-footer-4.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="img/gallery-footer-4.jpg" data-lightbox="footerGallery-4" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
+                               </div>
+                                <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="img/gallery-footer-5.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="img/gallery-footer-5.jpg" data-lightbox="footerGallery-5" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
+                               </div>
+                               <div class="col-4">
+									<div class="footer-gallery">
+										<img src="img/gallery-footer-6.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="img/gallery-footer-6.jpg" data-lightbox="footerGallery-6" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+
+         <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-4 text-center text-md-start mb-md-0">
+                        <span class="text-body"><a href="#"><i class="fas fa-copyright text-light me-2"></i>BASADev</a>, All right reserved.</span>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" class="btn-hover-color btn-square text-white me-0"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center text-md-end text-body">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        Designed By <a class="border-bottom" href="https://basadev.com">Godwin Wilson</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+    </body>
+
+</html>

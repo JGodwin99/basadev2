@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Basa Development Inititive Website</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Spinner Start -->
+        <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+		
+        <!-- Navbar start -->
+        <div class="container-fluid fixed-top px-0">
+            <div class="container px-0">
+			
+                <div class="topbar" style="padding:20px 90px 2px 90px;">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-md-8">
+                            <div class="topbar-info d-flex flex-wrap" style="font-size: 23px;">
+                                <a href="#" class="text-light me-4"><i class="fas fa-envelope text-white me-2"></i>      info@basadev.org</a>
+                                <a href="#" class="text-light"><i class="fas fa-phone-alt text-white me-2"></i>          +231779 205 152</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+						
+                            <div class="topbar-icon d-flex align-items-center justify-content-end">
+                                <a href="#" class="btn-square text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="btn-square text-white me-2"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="btn-square text-white me-2"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="btn-square text-white me-2"><i class="fab fa-pinterest"></i></a>
+                                <a href="#" class="btn-square text-white me-0"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav class="navbar navbar-light bg-light navbar-expand-xl" style="padding:20px 90px 2px 90px;">
+                    <div class="col-md-3">
+							<div class="header-logo">
+								<a href="index.html" class="logo">
+									<img src="./img/logo14.png" alt="">
+								</a>
+							</div>
+						</div>
+                    <button class="navbar-toggler py-4 px-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars text-primary"></span>
+                    </button>
+                    <div class="collapse navbar-collapse bg-light" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto">
+                            
+                            
+							<div class="nav-item dropdown">
+                                <a href="about.html" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">About Us▼</a>
+                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                                    <li><a href="about.html" class="dropdown-item active">Who We Are</a></li>
+									     <li><a href="program.html" class="dropdown-item active">Our Works</a></li>
+									<li><a href="news.html" class="dropdown-item active">News & Updates</a></li>
+									     <li><a href="contact.html" class="dropdown-item active">Contact Us</a></li>
+                                </div>
+                            </div>
+							
+                            <div class="nav-item dropdown">
+                                <a href="campaigns.html" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Campaings▼</a>
+                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                                    <li><a href="campaigns.html#agribusiness" class="dropdown-item active">AgriBusiness Growth Support</a></li>
+                                    <li><a href="campaigns.html#menstrual-hygiene" class="dropdown-item">Menstrual Hygiene</a></li>
+                                    <li><a href="campaigns.html#waste-management" class="dropdown-item">Community-Based Waste Management</a></li>
+                                    <li><a href="campaigns.html#malaria-prevention" class="dropdown-item">Malaria Prevention & Treatment</a></li>
+                                    <li><a href="campaigns.html#school-feeding" class="dropdown-item">School Feeding Programs</a>
+                                </div>
+                            </div>
+								
+                            <div class="nav-item dropdown">
+							
+                                <a href="project.hmtl" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects▼</a>
+                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                                    <li><a href="project.html#period-poverty" class="dropdown-item">Ending Period Poverty Campaign In Liberia</a></li>
+                                    <li><a href="project.html#Agricultural" class="dropdown-item">Liberia's Agricultural Financing Framework<br>Development</a></li>
+                                    <li><a href="project.html#schoolhealth" class="dropdown-item">School Eco & Health Clubs</a></li>
+                                    <li><a href="project.html#businesssupport" class="dropdown-item">Business Support Service (EU-Funded <br>Cassava Programs Projects)</a></li>
+									<li><a href="project.html#housesurvey" class="dropdown-item">Household Affordability Survey in <br>North-Western & Southeastern Liberia</a></li>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center flex-nowrap pt-xl-0" style="margin-left: 15px;">
+                            <a href="donation.html" class="btn-hover-bg btn btn-primary text-white py-2 px-4 me-3">Donate Now</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <!-- Navbar End -->
+
+        <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style="max-width: 900px;"><br><br><br>
+                <h3 class="text-white display-3 mb-4">Donation</h1>
+                <p class="fs-5 text-white mb-4">Help today because tomorrow you may be the one who needs more helping!</p>   
+            </div>
+        </div>
+        <!-- Header End -->
+
+        <!-- Donation Start -->
+        <div class="container-fluid donation py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5" style="max-width: 1500px;">
+                    <h2 class="text-uppercase text-primary" style="font-size: 60px;"><b>Join Us—Donate Today</b></h2>
+                    <h4 class="mb-3">“Your donations play a crucial role in our mission to lift Liberia and Africa out
+								of poverty, with a focus on girls, youth, and women’s development. Your generosity enables
+								us to create opportunities and drive sustainable change. Choose a convenient method to donate
+								and make a difference today.”</h4>
+                </div>
+				
+				<style>
+							.donation-boxes {
+							display: flex;
+							gap: 20px;
+							justify-content: center;
+							margin-top: 40px;
+						}
+
+						.donate-option {
+							background: #e60000;
+							padding: 50px;
+							width: 45%;
+							text-align: center;
+							border-radius: 8px;
+							cursor: pointer;
+							color: white;
+							transition: transform 0.2s ease;
+						}
+
+						.donate-option:hover {
+							transform: scale(1.02);
+						}
+
+						.donate-option h2 {
+							margin-bottom: 30px;
+							font-size: 32px;
+							font-weight: bold;
+						}
+
+						.support-btn {
+							background: white;
+							color: #e60000;
+							border: none;
+							padding: 15px 25px;
+							font-size: 18px;
+							border-radius: 6px;
+							cursor: pointer;
+							transition: 0.2s ease;
+						}
+
+						.support-btn:hover {
+							transform: scale(1.05);
+						}
+
+						/* Modal Background */
+						.modal {
+							display: none;
+							position: fixed;
+							z-index: 999;
+							left: 0;
+							top: 0;
+							width: 100%;
+							height: 100%;
+							background: rgba(0,0,0,0.7);
+						}
+
+						/* Slide-Up Animation */
+						.modal-content {
+							display: block;
+							margin: 0 auto;
+							padding-top: 145px;
+							max-width: 35%; 
+							height: auto;
+							object-fit: contain;
+							animation: slideUp 0.5s ease forwards;
+						}
+
+						@keyframes slideUp {
+							from {
+								opacity: 0;
+								transform: translateY(80px);
+							}
+							to {
+								opacity: 1;
+								transform: translateY(0);
+							}
+						}
+
+						.close {
+							position: absolute;
+							top: 20px;
+							right: 40px;
+							color: white;
+							font-size: 40px;
+							cursor: pointer;
+						}
+					</style>
+					</head>
+
+			<!-- Donation Boxes -->
+				<div class="donation-boxes">
+
+				<div class="donate-option" onclick="openImage ('img/bank-details2.jpg')">
+					<h2>Local Bank Transfer</h2>
+					<button class="support-btn">🏦 Support Our Cause</button>
+				</div>
+
+				<div class="donate-option" onclick="openImage ('img/bank-details.jpg')">
+					<h2>Mobile Money</h2>
+					<button class="support-btn">📱 Support Our Cause</button>
+				</div>
+			</div> <br> <br>
+			
+							<div class="donation-boxes">
+
+				<div class="donate-option">
+						  <h2>PayPal Donate</h2>
+						  <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" target="_blank">
+							<button class="support-btn">🏦 Support Our Cause</button>
+						  </a>
+						</div>
+						
+						
+						<div class="donate-option">
+						  <h2>Bank Card Transfer</h2>
+						  <a href="https://donate.stripe.com/test_fZueV68I468xgen6n48N200" target="_blank">
+							<button class="support-btn">🏦 Support Our Cause</button>
+						  </a>
+						</div>
+
+			</div>
+
+			<!-- Image Popup Modal -->
+			<div id="imageModal" class="modal" onclick="closeImage()">
+				<span class="close">&times;</span>
+				<img id="modalImage" class="modal-content">
+			</div>
+
+				<script>
+					function openImage(imagePath) {
+						const modal = document.getElementById("imageModal");
+						const modalImg = document.getElementById("modalImage");
+
+						modalImg.src = imagePath;
+
+						// Reset animation by cloning the image (ensures animation plays every click)
+						const newImg = modalImg.cloneNode(true);
+						modalImg.parentNode.replaceChild(newImg, modalImg);
+
+						document.getElementById("imageModal").style.display = "block";
+					}
+
+					function closeImage() {
+						document.getElementById("imageModal").style.display = "none";
+					}
+					</script>
+					</div>
+						</div>
+						<div class="row g-4">
+						
+		<div class="container-fluid donation py-10">
+            <div class="container py-5">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="donation-item">
+                            <img src="img/donation-1.jpg" class="img-fluid w-100" alt="Image">
+                            <div class="donation-content d-flex flex-column">
+                                <h5 class="text-uppercase text-primary mb-4">Health</h5>
+                                <a href="#" class="btn-hover-color display-6 text-white">Malaria Kills:</a>
+                                <h4 class="text-white mb-4">Combating Malaria:</h4>
+                                <p class="text-white mb-4">Combationg Malaria: Empowering Rural Liberia with Prevention and Treatment.</p>
+                                <div class="donation-btn d-flex align-items-center justify-content-start">
+                                    <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="donation.html">Donate !</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="donation-item">
+                            <img src="img/service-2.jpg" class="img-fluid w-100" alt="Image">
+                            <div class="donation-content d-flex flex-column">
+                                <h5 class="text-uppercase text-primary mb-4">General Donation</h5>
+                                <a href="#" class="btn-hover-color display-6 text-white">Join BDI's Mission</a>
+                                <h4 class="text-white mb-4">Making a Lasting Impact Through Your Donation</h4>
+                                <p class="text-white mb-4" style="font-size: 20px;"> <b>$30 (Goal Raised)
+									
+								
+									$50,000(Donation Goal)</b></p>
+                                <div class="donation-btn d-flex align-items-center justify-content-start">
+                                    <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="donation.html">Donate !</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="donation-item">
+                            <img src="img/donation-3.jpg" class="img-fluid w-100" alt="Image">
+                            <div class="donation-content d-flex flex-column">
+                                <h5 class="text-uppercase text-primary mb-4">Agriculture</h5>
+                                <a href="#" class="btn-hover-color display-6 text-white">Unleash Agribusiness</a>
+                                <h4 class="text-white mb-4">Potential-Be the Catalyst for Change!</h4>
+                                <p class="text-white mb-4">"Unleash Your Agribusiness Potential and Become the Driving Force for Change in Agriculture"</p>
+                                <div class="donation-btn d-flex align-items-center justify-content-start">
+                                    <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="donation.html">Donate !</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+					
+					
+					
+					
+					         <div class="col-lg-4">
+                        <div class="donation-item">
+                            <img src="img/donation-3.jpg" class="img-fluid w-100" alt="Image">
+                            <div class="donation-content d-flex flex-column">
+                                <h5 class="text-uppercase text-primary mb-4">Education</h5>
+                                <a href="#" class="btn-hover-color display-6 text-white">Nourishing Minds:</a>
+                                <h4 class="text-white mb-4">School Feeding in Liberia for Improved Learning Outcome</h4>
+                                <p class="text-white mb-4">"School Feeding in Liberia: Nourishing Students Today for Better Learning and a Brighter Tomorrow"</p>
+                                <div class="donation-btn d-flex align-items-center justify-content-start">
+                                    <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="donation.html">Donate !</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					
+					
+					         <div class="col-lg-4">
+                        <div class="donation-item">
+                            <img src="img/donation-3.jpg" class="img-fluid w-100" alt="Image">
+                            <div class="donation-content d-flex flex-column">
+                                <h5 class="text-uppercase text-primary mb-4">Health Menstrual Hygiene</h5>
+                                <a href="#" class="btn-hover-color display-6 text-white">Promoting health and hygiene</a>
+                                <h4 class="text-white mb-4">Ending Period Poverty in Liberia</h4>
+                                <p class="text-white mb-4">"Empowering Women and Girls in Liberia: Ending Period Poverty and Building a Healthier, Brighter Future"</p>
+                                <div class="donation-btn d-flex align-items-center justify-content-start">
+                                    <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="donation.html">Donate !</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					
+		
+				<div class="col-lg-4">
+                        <div class="donation-item">
+                            <img src="img/donation-3.jpg" class="img-fluid w-100" alt="Image">
+                            <div class="donation-content d-flex flex-column">
+                                <h5 class="text-uppercase text-primary mb-4">Enviroment</h5>
+                                <a href="#" class="btn-hover-color display-6 text-white">Sustainable Communities:</a>
+                                <h4 class="text-white mb-4">Empowering Liberia Through Community-Based Waste Management</h4>
+                                <p class="text-white mb-4">"Transforming Communities and the Environment Through Effective Waste Management"</p>
+                                <div class="donation-btn d-flex align-items-center justify-content-start">
+                                    <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="donation.html">Donate !</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					
+					
+					
+                    <div class="col-12">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="donation.html">All Donation</a>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+                    
+        <!-- Donation End -->
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer bg-dark text-body py-5">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item">
+                            <h4 class="mb-4 text-white" style="text-align:left;">LIBERIA OFFICE (Headquarter)</h4>
+                            <p class="mb-4" style="text-align:left; max-width: 900px;">BASA Avenue, 1st Floor, Morris Villa, ELWA Community, Paynesville, Monrovia,
+											Liberia Email: info@basadev.org Tel 1: +231 886 349 962 Tel 2: +231 88 675 7435</p>
+                            <div class="position-relative mx-auto">
+                                <input class="form-control border-0 bg-secondary w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
+                       <button type="button" class="btn-hover-bg btn btn-primary position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item">
+                            <h4 class="mb-4 text-white">UNITED STATES OFFICE</h4>
+                            <p class="mb-4" style="text-align:left";>984 Kettle Creek Road, Eagan, State of Minnesota, 55123 United States of America <br>
+											Email: info@basadev.org & anthony.sieh@basadev.org<br> Tel: +1 (651) 235-9896</p>
+                            <div class="position-relative mx-auto">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Quick Links</h4>
+                           <a href="about.html"><i class="fas fa-angle-right me-2"></i> Our Team</a>
+                            <a href="program.html"><i class="fas fa-angle-right me-2"></i> Our Programs</a>
+                            <a href="project.html"><i class="fas fa-angle-right me-2"></i> Our Projects</a>
+                            <a href="about.html"><i class="fas fa-angle-right me-2"></i> Who We Are</a>
+                            <a href="donation.html"><i class="fas fa-angle-right me-2"></i> Make a Donation</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item">
+                            <h4 class="mb-4 text-white">Our Gallery</h4>
+                            <div class="row g-2">
+                                <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="img/gallery-footer-1.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="img/gallery-footer-1.jpg" data-lightbox="footerGallery-1" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
+                               </div>
+                               <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="img/gallery-footer-2.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="img/gallery-footer-2.jpg" data-lightbox="footerGallery-2" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
+                               </div>
+                                <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="img/gallery-footer-3.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="img/gallery-footer-3.jpg" data-lightbox="footerGallery-3" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
+                               </div>
+                                <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="img/gallery-footer-4.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="img/gallery-footer-4.jpg" data-lightbox="footerGallery-4" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
+                               </div>
+                                <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="img/gallery-footer-5.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="img/gallery-footer-5.jpg" data-lightbox="footerGallery-5" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
+                               </div>
+                               <div class="col-4">
+									<div class="footer-gallery">
+										<img src="img/gallery-footer-6.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="img/gallery-footer-6.jpg" data-lightbox="footerGallery-6" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+
+         <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-4 text-center text-md-start mb-md-0">
+                        <span class="text-body"><a href="#"><i class="fas fa-copyright text-light me-2"></i>BASADev</a>, All right reserved.</span>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" class="btn-hover-color btn-square text-white me-0"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center text-md-end text-body">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        Designed By <a class="border-bottom" href="https://basadev.com">Godwin Wilson</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+    </body>
+
+</html>

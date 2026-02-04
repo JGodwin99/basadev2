@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Basa Development Inititive Website</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Spinner Start -->
+        <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+		
+        <!-- Navbar start -->
+        <div class="container-fluid fixed-top px-0">
+            <div class="container px-0">
+			
+                <div class="topbar" style="padding:20px 90px 2px 90px;">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-md-8">
+                            <div class="topbar-info d-flex flex-wrap" style="font-size: 23px;">
+                                <a href="#" class="text-light me-4"><i class="fas fa-envelope text-white me-2"></i>      info@basadev.org</a>
+                                <a href="#" class="text-light"><i class="fas fa-phone-alt text-white me-2"></i>          +231779 205 152</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+						
+                            <div class="topbar-icon d-flex align-items-center justify-content-end">
+                                <a href="#" class="btn-square text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="btn-square text-white me-2"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="btn-square text-white me-2"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="btn-square text-white me-2"><i class="fab fa-pinterest"></i></a>
+                                <a href="#" class="btn-square text-white me-0"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav class="navbar navbar-light bg-light navbar-expand-xl" style="padding:20px 90px 2px 90px;">
+                    <div class="col-md-3">
+							<div class="header-logo">
+								<a href="index.html" class="logo">
+									<img src="./img/logo14.png" alt="">
+								</a>
+							</div>
+						</div>
+                    <button class="navbar-toggler py-4 px-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars text-primary"></span>
+                    </button>
+                    <div class="collapse navbar-collapse bg-light" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto">
+                            
+                            
+							<div class="nav-item dropdown">
+                                <a href="about.html" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">About Us▼</a>
+                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                                    <li><a href="about.html" class="dropdown-item active">Who We Are</a></li>
+									     <li><a href="program.html" class="dropdown-item active">Our Works</a></li>
+									<li><a href="news.html" class="dropdown-item active">News & Updates</a></li>
+									     <li><a href="contact.html" class="dropdown-item active">Contact Us</a></li>
+                                </div>
+                            </div>
+							
+                            <div class="nav-item dropdown">
+                                <a href="campaigns.html" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Campaings▼</a>
+                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                                    <li><a href="campaigns.html#agribusiness" class="dropdown-item active">AgriBusiness Growth Support</a></li>
+                                    <li><a href="campaigns.html#menstrual-hygiene" class="dropdown-item">Menstrual Hygiene</a></li>
+                                    <li><a href="campaigns.html#waste-management" class="dropdown-item">Community-Based Waste Management</a></li>
+                                    <li><a href="campaigns.html#malaria-prevention" class="dropdown-item">Malaria Prevention & Treatment</a></li>
+                                    <li><a href="campaigns.html#school-feeding" class="dropdown-item">School Feeding Programs</a>
+                                </div>
+                            </div>
+								
+                            <div class="nav-item dropdown">
+							
+                                <a href="project.hmtl" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects▼</a>
+                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                                    <li><a href="project.html#period-poverty" class="dropdown-item">Ending Period Poverty Campaign In Liberia</a></li>
+                                    <li><a href="project.html#Agricultural" class="dropdown-item">Liberia's Agricultural Financing Framework<br>Development</a></li>
+                                    <li><a href="project.html#schoolhealth" class="dropdown-item">School Eco & Health Clubs</a></li>
+                                    <li><a href="project.html#businesssupport" class="dropdown-item">Business Support Service (EU-Funded <br>Cassava Programs Projects)</a></li>
+									<li><a href="project.html#housesurvey" class="dropdown-item">Household Affordability Survey in <br>North-Western & Southeastern Liberia</a></li>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center flex-nowrap pt-xl-0" style="margin-left: 15px;">
+                            <a href="donation.html" class="btn-hover-bg btn btn-primary text-white py-2 px-4 me-3">Donate Now</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <!-- Navbar End -->
+
+        <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style="max-width: 1500px;"><br><br>
+                <h3 class="text-white display-3 mb-4">Our Projects</h1>
+                <p class="fs-5 text-white mb-4">Help today because tomorrow you may be the one who needs more helping!</p>
+                     <a class="btn-hover-bg btn btn-primary text-white py-2 px-4" href="donation.html">Support These Projects Though Your Donation</a>
+            </div>
+        </div>
+       
+
+
+	   <!-- Agriculture Start -->
+								<style>
+								   .red-section {
+						  background-color: #c00000; /* deep red */
+						  padding: 60px 80px;        /* space inside the red area */
+						  color: white;
+					  }
+
+					  .red-content {
+						  max-width: 1200px;
+						  margin: auto;
+						  display: flex;
+						  gap: 40px;
+						  align-items: center;
+						  flex-wrap: wrap; /* responsive */
+					  }
+
+					  .red-text {
+						  flex: 1;
+					  }
+
+					  .red-text h2 {
+						  font-size: 36px;
+						  margin-bottom: 15px;
+					  }
+
+					  .red-text p {
+						  font-size: 18px;
+						  line-height: 1.6;
+						  text-align: justify;
+					  }
+
+					  .red-image {
+						  flex: 1;
+						  text-align: center;
+					  }
+
+					  .red-image img {
+						  max-width: 100%;
+						  border-radius: 12px;
+					  }
+
+					  /* Mobile friendly */
+					  @media (max-width: 768px) {
+						  .red-content {
+							  flex-direction: column;
+							  padding: 20px;
+						  }
+					  }
+					</style>
+			
+			
+			<section id="period-poverty">
+					<br><br><h5 class="text-uppercase text-primary" style="text-align:center; font-size:50px;"> <b>Ending Period Poverty Campaign in Liberia</b></h5>
+					
+							<div class="red-section">
+							  <div class="red-content">
+							<!-- Text Area -->
+								<div class="red-text">
+									<h2 class="text-uppercase" style="text-align:justify; font-size:25px; color:#ffffff;">
+										<b>This initiative is designed to empower girls in Liberia with the knowledge and skills necessary to manage their menstrual health effectively.
+										This initiative will gradually roll out nationally to keep rural schools going in classes during their periods.</b></h2>
+												  <p style="text-align:justify; font-size:23px;">
+												  Addressing period poverty is crucial to ensuring access to sanitary products, menstrual hygiene education,
+												  and proper sanitation facilities. It’s a global issue impacting the health and well-being of millions of
+												  menstruators. Biases, cultural beliefs, and systemic factors contribute to this problem. In Liberia,
+												  many girls face challenges accessing menstrual hygiene resources due to socio-economic constraints and
+												  cultural stigmas. Millions of girls and women struggle to afford sanitary products, leading to missed
+												  school days and significant economic impacts. Additionally, inadequate menstrual hygiene resources
+												  contribute to health risks and environmental issues.
+												  </p>
+											  </div>
+											  <!-- Image Area -->
+											  <div class="red-image">
+												  <img src="img/BDI-agr.jpg" alt="Our Work">
+											  </div>
+										  </div>
+										</div>
+										
+				<br><br><br><div class="red-content">
+					<!-- Text Area -->
+
+
+							<div class="red-image">
+												  <img src="img/sol.jpg" alt="Our Work">
+											  </div>
+								<div class="red-text">
+								<h2 class="text-uppercase" style="text-align:left; font-size:40px; color:#b50005;">
+								<b>Objectives and Deliverables</b></h2>
+								<p style="text-align:justify; font-size:21px;">
+									The objectives of this program were to introduce the menstrual cup and educate girls on good health and hygiene practices
+									during their periods,
+									signs and symptoms of menstruation, and complications that may arise during menstruation.
+									The program aimed to empower girls with the knowledge and skills necessary to manage their menstrual health effectively
+									and confidently.
+												  </p>
+											  </div>
+										  </div><br>
+										  
+			
+			<div class="container text-center py-2" style="max-width: 1500px;">
+			<h2 style="text-align:center; font-size:60px;"><b>Our Expected Results</b></h2><br>
+              </div>	
+			  
+			<div class="red-section">
+						<div class="red-content">
+					<!-- Text Area -->
+					<div class="container text-center py-2" style="max-width: 1500px;">
+								<div class="red-text">
+									<h5 class="text-lowercase" style="text-align:justify; font-size:25px; color:#ffffff;">
+										The program will educate girls on the physical and emotional changes they may experience during menstruation,
+										such as cramps, mood swings, and changes in body temperature. Furthermore, Girls were informed about potential
+										complications that may arise during menstruation, such as heavy bleeding, irregular periods, and menstrual cramps,
+										and how to manage these issues effectively.  
+											The objectives of this program were to introduce the menstrual cup and educate girls on good health and hygiene
+											practices during their periods, signs and symptoms of menstruation, and complications that may arise during menstruation.
+												The program aims to empower girls with the knowledge and skills necessary to manage their menstrual health
+												effectively and confidently.</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		
+	<!-- Agriculture End -->
+  
+  
+  
+    <!-- Health Start -->
+								<style>
+								   .red-section {
+						  background-color: #c00000; /* deep red */
+						  padding: 60px 80px;        /* space inside the red area */
+						  color: white;
+					  }
+
+					  .red-content {
+						  max-width: 1200px;
+						  margin: auto;
+						  display: flex;
+						  gap: 40px;
+						  align-items: center;
+						  flex-wrap: wrap; /* responsive */
+					  }
+
+					  .red-text {
+						  flex: 1;
+					  }
+
+					  .red-text h2 {
+						  font-size: 36px;
+						  margin-bottom: 15px;
+					  }
+
+					  .red-text p {
+						  font-size: 18px;
+						  line-height: 1.6;
+						  text-align: justify;
+					  }
+
+					  .red-image {
+						  flex: 1;
+						  text-align: center;
+					  }
+
+					  .red-image img {
+						  max-width: 100%;
+						  border-radius: 12px;
+					  }
+
+					  /* Mobile friendly */
+					  @media (max-width: 768px) {
+						  .red-content {
+							  flex-direction: column;
+							  padding: 20px;
+						  }
+					  }
+					</style>
+
+
+			
+	<section id="Agricultural">
+					<br><br><br><h5 class="text-uppercase text-primary" style="text-align:center; font-size:50px;"> <b>
+					Liberia’s Agricultural Financing Framework Development</b></h5>	
+				<div class="red-section">
+							  <div class="red-content">
+					<!-- Text Area -->
+								<div class="red-text">
+								<p style="text-align:justify; font-size:26px;">
+									 BASA Development Initiatives led the data collection and execution (data collection, training enumerators, logistics,
+									 finances, and operations) the data collection leading to the development of an agricultural financing framework for Liberia.
+									 BDI provided support to Elitrust Ghana. The research was funded by CERATH Development Organization through the EU-funded
+									 Cassava Transformation Project.<br><br>
+									The data collection was done in Monsterrado, Bong, Lofa, Grand Geedeh, and Sinoe Counties. Access to financing for
+									smallholder farmers, agribusinesses, and related service providers are focal areas for the Cassava Transformation project.
+									The project sought to enhance financing for the target agricultural value chains and related rural economies in Liberia.<br><br>
+									While there are (and have been) initiatives to stimulate financing for the agricultural and rural sectors, there is a need
+									for a national framework that will serve as the blueprint or road map for agricultural financing initiatives.
+												  </p>
+											  </div>
+										  </div>
+										</div>
+
+					</div>
+				</div>
+			</div>
+			<br><br><br>
+			
+			</section>
+		
+				<!-- Health End -->
+
+		    <!-- Environment Start -->
+					<style>
+								   .red-section {
+						  background-color: #c00000; /* deep red */
+						  padding: 60px 80px;        /* space inside the red area */
+						  color: white;
+					  }
+
+					  .red-content {
+						  max-width: 1200px;
+						  margin: auto;
+						  display: flex;
+						  gap: 40px;
+						  align-items: center;
+						  flex-wrap: wrap; /* responsive */
+					  }
+
+					  .red-text {
+						  flex: 1;
+					  }
+
+					  .red-text h2 {
+						  font-size: 36px;
+						  margin-bottom: 15px;
+					  }
+
+					  .red-text p {
+						  font-size: 18px;
+						  line-height: 1.6;
+						  text-align: justify;
+					  }
+
+					  .red-image {
+						  flex: 1;
+						  text-align: center;
+					  }
+
+					  .red-image img {
+						  max-width: 100%;
+						  border-radius: 12px;
+					  }
+
+					  /* Mobile friendly */
+					  @media (max-width: 768px) {
+						  .red-content {
+							  flex-direction: column;
+							  padding: 20px;
+						  }
+					  }
+					</style>
+
+
+				<section id="schoolhealth">
+
+					<br><br><h5 class="text-uppercase text-primary" style="text-align:center; font-size:60px;"> <b>Schools ECO & Health Clubs</b></h5>	
+        	<div class="red-section">
+							  <div class="red-content">
+					<!-- Text Area -->
+								<div class="red-text">
+							<h2 class="text-uppercase" style="text-align:left; font-size:27px; color:#ffffff;">
+								<b>The School Climate and Health Clubs initiative aims to empower Liberian students by fostering awareness
+								  about climate change, health, and sanitation. By integrating experiential learning, practical activities, and
+								  community engagement, we can create a holistic approach to student<br>well-being and environmental stewardship.</b></h2>
+								<p style="text-align:justify; font-size:26px;">
+									 The School Climate and Health Clubs project aims to create awareness and promote education in the areas of
+									 climate change, basic health, and sanitation among students in Liberian schools. The project recognizes
+									 the importance of equipping students with knowledge and practical skills to address environmental and
+									 health challenges in their communities. Through the establishment of School Climate and Health Clubs,
+									 the project seeks to empower students to become change-makers and advocates for sustainable practices,
+									 CLIMATE JUSTICE, and healthy living.
+												  </p>
+											  </div>
+										  </div>
+										</div>
+										
+										  
+										  
+			
+			</div>
+			<br>
+			
+		<!-- Environment End -->
+
+  
+  
+					    <!-- Education Start -->
+	   <style>
+								   .red-section {
+						  background-color: #c00000; /* deep red */
+						  padding: 60px 80px;        /* space inside the red area */
+						  color: white;
+					  }
+
+					  .red-content {
+						  max-width: 1200px;
+						  margin: auto;
+						  display: flex;
+						  gap: 40px;
+						  align-items: center;
+						  flex-wrap: wrap; /* responsive */
+					  }
+
+					  .red-text {
+						  flex: 1;
+					  }
+
+					  .red-text h2 {
+						  font-size: 36px;
+						  margin-bottom: 15px;
+					  }
+
+					  .red-text p {
+						  font-size: 18px;
+						  line-height: 1.6;
+						  text-align: justify;
+					  }
+
+					  .red-image {
+						  flex: 1;
+						  text-align: center;
+					  }
+
+					  .red-image img {
+						  max-width: 100%;
+						  border-radius: 12px;
+					  }
+
+					  /* Mobile friendly */
+					  @media (max-width: 768px) {
+						  .red-content {
+							  flex-direction: column;
+							  padding: 20px;
+						  }
+					  }
+					</style>
+					
+
+
+		
+					
+				<br><div class="red-content">
+					<!-- Text Area -->
+
+
+							<div class="red-image">
+												  <img src="img/BDI-educ.jpg" alt="Our Work">
+											  </div>
+								<div class="red-text">
+									<h2 class="text-uppercase" style="text-align:left; font-size:50px; color:#b50005;">
+										<b>Objectives</b></h2>
+												  <p style="text-align:justify; font-size:21px;">
+				<b>1. Climate Change Awareness and Action:</b><br>a. Educate students about climate change, its
+						local impact, and global significance.</li><br>
+						b. Encourage students to act within their school and community to mitigate climate change.</li><br>
+						c. Promote climate-smart practices, including sustainable agriculture and environmental conservation.</li><br>
+				<b>2. Health and Sanitation Education:</b><br>a. Raise awareness about essential health and hygiene practices.</li><br>
+						b. Address common health challenges faced by students in Liberia.<br>
+						c. Empower students to become health advocates within their families and neighborhoods.<br>
+						d. To promote the importance of basic health and sanitation practices among students.<br>
+												  </p>
+											  </div>
+										  </div><br>							  
+										  
+			<div class="red-section">
+						<div class="red-content">
+					<!-- Text Area -->
+					<div class="container text-center py-2" style="max-width: 1500px;">
+								<div class="red-text">
+									<h2 class="text-uppercase" style="text-align:center; font-size:35px; color:#ffffff;">
+										<b>Expected Results</b></h2>
+											  </div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<section class="agriculture-program container">
+
+			<p style="text-align:justify; font-size:26px;">
+			<b>Increased awareness and knowledge</b> among students about climate change, sustainable agriculture, and health and sanitation practices.<br>
+			<b>Empowered students</b> equipped with practical skills and information to promote climate-smart agriculture and healthy living in their communities.
+			Students become informed advocates for climate action and health.</b><br>
+			<b>Promotion of sustainable</b> and environmentally friendly practices within school settings and the broader community.</li><br>
+			<b>Improved health and sanitation</b> practices among students, contributing to a healthier school environment and community. 
+			Schools prioritize hygiene, sanitation, and environmental consciousness.</b><br>
+			<b>Community Impact:</b> Clubs extend their influence beyond school boundaries.</li></p>
+
+				</section>
+				
+	</section>
+		
+		<!-- Education End -->
+			
+  
+								    <!-- WOMEN EMPOWERMENT Start -->
+	   <style>
+								   .red-section {
+						  background-color: #c00000; /* deep red */
+						  padding: 60px 80px;        /* space inside the red area */
+						  color: white;
+					  }
+
+					  .red-content {
+						  max-width: 1200px;
+						  margin: auto;
+						  display: flex;
+						  gap: 40px;
+						  align-items: center;
+						  flex-wrap: wrap; /* responsive */
+					  }
+
+					  .red-text {
+						  flex: 1;
+					  }
+
+					  .red-text h2 {
+						  font-size: 36px;
+						  margin-bottom: 15px;
+					  }
+
+					  .red-text p {
+						  font-size: 18px;
+						  line-height: 1.6;
+						  text-align: justify;
+					  }
+
+					  .red-image {
+						  flex: 1;
+						  text-align: center;
+					  }
+
+					  .red-image img {
+						  max-width: 100%;
+						  border-radius: 12px;
+					  }
+
+					  /* Mobile friendly */
+					  @media (max-width: 768px) {
+						  .red-content {
+							  flex-direction: column;
+							  padding: 20px;
+						  }
+					  }
+					</style>
+
+	
+	<section id="businesssupport">
+										
+				<br><br><br><div class="red-content">
+					<!-- Text Area -->
+							<div class="red-image">
+							  <img src="img/BDI-wo-em.jpg" alt="Our Work">
+								</div>
+								<div class="red-text">
+									<h2 class="text-uppercase" style="text-align:left; font-size:40px; color:#b50005;">
+										<b>Business Support Service (EU-funded Cassava Transformation Project)</b></h2>
+							<p style="text-align:justify; font-size:21px;">BDI-Liberia is involved in the EU-funded Cassava
+							Transformation Project in Southeast Liberia, providing business support services and training in
+							climate-smart agriculture and good agricultural practices to project beneficiaries. The services
+							offered by BDI include coaching, business management training, and mentorship, among others. BDI’s focus
+							is on integrating climate-smart agriculture into the farming system and enhancing effective agricultural practices.
+							The organization operates in three counties, namely Maryland, Sinoe, and River Gee, Maryland, and Sinoe.
+							 </p>
+								</div>
+									</div><br>							  
+										  
+			<div class="red-section">
+						<div class="red-content">
+					<!-- Text Area -->
+					<div class="container text-center py-2" style="max-width: 1500px;">
+								
+									<h2 class="text-uppercase" style="text-align:center; font-size:35px; color:#ffffff;">
+										<b>results</b></h2>
+											  
+				
+					<p style="text-align:justify; font-size:24px;">
+        <b>– 27 Training and formation of VSLAs (understanding the enterprise concept of growth.</b><br>
+		<b>–  Training 400 farmers in 3 counties on climate-smart agriculture practices.</b><br>
+		<b>– Coached and developed plans and structures for 6 Agribusinesses.</b><br>
+		<b>– Coordinating operations with 4 cooperatives.</b>
+				</div>
+			</div>
+			</div>
+			
+	</section>
+
+		<!-- WOMEN EMPOWERMENT End -->
+		
+		
+		
+		
+										    <!-- YOUTH EMPOWERMENT Start -->
+	   <style>
+								   .red-section {
+						  background-color: #c00000; /* deep red */
+						  padding: 60px 80px;        /* space inside the red area */
+						  color: white;
+					  }
+
+					  .red-content {
+						  max-width: 1200px;
+						  margin: auto;
+						  display: flex;
+						  gap: 40px;
+						  align-items: center;
+						  flex-wrap: wrap; /* responsive */
+					  }
+
+					  .red-text {
+						  flex: 1;
+					  }
+
+					  .red-text h2 {
+						  font-size: 36px;
+						  margin-bottom: 15px;
+					  }
+
+					  .red-text p {
+						  font-size: 18px;
+						  line-height: 1.6;
+						  text-align: justify;
+					  }
+
+					  .red-image {
+						  flex: 1;
+						  text-align: center;
+					  }
+
+					  .red-image img {
+						  max-width: 100%;
+						  border-radius: 12px;
+					  }
+
+					  /* Mobile friendly */
+					  @media (max-width: 768px) {
+						  .red-content {
+							  flex-direction: column;
+							  padding: 20px;
+						  }
+					  }
+					</style>
+
+
+
+	<section id="housesurvey">
+	
+					<br><br><br><br><h5 class="text-uppercase text-primary" style="text-align:center; font-size:40px;">
+									<b>Household Affordability Survey in (North-) Western and Southeastern Liberia</b></h5>
+					
+        	<div class="red-section">
+							  <div class="red-content">
+					<!-- Text Area -->
+								<div class="red-text">
+							<h2 class="text-uppercase" style="text-align:left; font-size:27px; color:#ffffff;">
+								<b>BASA Development Initiatives conducted a Household Affordability Survey for GIZ in (North-) Western and Southeastern
+								Liberia as a critical initiative to enhance electricity access for low-income households through market-based solutions.</b></h2>
+								<p style="text-align:justify; font-size:26px;">
+									 The primary objective of the survey is to gather socio-economic data to determine demand-side subsidies
+									 for the distribution of solar home systems (SHS) in Liberia. This aligns with the overarching goal of the
+									 project, which is to accelerate electricity access for low-income households and support the development
+									 of the off-grid solar (OGS) market in Liberia, ultimately contributing to sustainable development in the region.
+												  </p>
+											  </div>
+										  </div>
+										</div>
+										
+				<br><br><br><div class="red-content">
+					<!-- Text Area -->
+
+
+							<div class="red-image">
+												  <img src="img/BDI-yo-em.jpg" alt="Our Work">
+											  </div>
+								<div class="red-text">
+									<h2 class="text-uppercase" style="text-align:left; font-size:40px; color:#b50005;">
+										<b>Objectives and Deliverables</b></h2>
+												  <p style="text-align:justify; font-size:21px;">
+				<b>The specific objectives</b> of the survey include assessing household income and expenditures, including those related to
+				energy services and cooking energy. It also aims to gauge household willingness and ability to pay for improved cookstoves
+				and solar home systems, as well as household size, gender distribution, and occupation. Through these objectives, the survey
+				will provide valuable insights into the affordability of SHS and help determine the appropriate subsidy levels for different
+				counties in Liberia.<br><br>
+				<b>In terms of deliverables,</b> when selected, BDI will develop comprehensive household surveys in cooperation
+				with GIZ/EnDev and conduct surveys in selected areas within the specified counties. The data collected will
+				be compiled and analyzed to identify trends and patterns, which will be presented in an overall narrative report.
+				This report will be submitted to GIZ/EnDev for review and approval, ensuring the findings are accurate, reliable,
+				and actionable.
+												  </p>
+											  </div>
+										  </div><br>
+		</section>
+										  
+			
+		
+		<!-- WOMEN EMPOWERMENT End -->
+  
+  
+  
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer bg-dark text-body py-5">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item">
+                            <h4 class="mb-4 text-white" style="text-align:left;">LIBERIA OFFICE (Headquarter)</h4>
+                            <p class="mb-4" style="text-align:left; max-width: 900px;">BASA Avenue, 1st Floor, Morris Villa, ELWA Community, Paynesville, Monrovia,
+											Liberia Email: info@basadev.org Tel 1: +231 886 349 962 Tel 2: +231 88 675 7435</p>
+                            <div class="position-relative mx-auto">
+                                <input class="form-control border-0 bg-secondary w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
+                       <button type="button" class="btn-hover-bg btn btn-primary position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item">
+                            <h4 class="mb-4 text-white">UNITED STATES OFFICE</h4>
+                            <p class="mb-4" style="text-align:left";>984 Kettle Creek Road, Eagan, State of Minnesota, 55123 United States of America <br>
+											Email: info@basadev.org & anthony.sieh@basadev.org<br> Tel: +1 (651) 235-9896</p>
+                            <div class="position-relative mx-auto">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Quick Links</h4>
+                            <a href="about.html"><i class="fas fa-angle-right me-2"></i> Our Team</a>
+                            <a href="program.html"><i class="fas fa-angle-right me-2"></i> Our Programs</a>
+                            <a href="project.html"><i class="fas fa-angle-right me-2"></i> Our Projects</a>
+                            <a href="about.html"><i class="fas fa-angle-right me-2"></i> Who We Are</a>
+                            <a href="donation.html"><i class="fas fa-angle-right me-2"></i> Make a Donation</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item">
+                            <h4 class="mb-4 text-white">Our Gallery</h4>
+                            <div class="row g-2">
+                                <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="img/gallery-footer-1.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="img/gallery-footer-1.jpg" data-lightbox="footerGallery-1" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
+                               </div>
+                               <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="img/gallery-footer-2.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="img/gallery-footer-2.jpg" data-lightbox="footerGallery-2" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
+                               </div>
+                                <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="img/gallery-footer-3.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="img/gallery-footer-3.jpg" data-lightbox="footerGallery-3" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
+                               </div>
+                                <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="img/gallery-footer-4.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="img/gallery-footer-4.jpg" data-lightbox="footerGallery-4" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
+                               </div>
+                                <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="img/gallery-footer-5.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="img/gallery-footer-5.jpg" data-lightbox="footerGallery-5" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
+                               </div>
+                               <div class="col-4">
+									<div class="footer-gallery">
+										<img src="img/gallery-footer-6.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="img/gallery-footer-6.jpg" data-lightbox="footerGallery-6" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+
+         <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-4 text-center text-md-start mb-md-0">
+                        <span class="text-body"><a href="#"><i class="fas fa-copyright text-light me-2"></i>BASADev</a>, All right reserved.</span>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="btn-hover-color btn-square text-white me-2"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" class="btn-hover-color btn-square text-white me-0"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center text-md-end text-body">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        Designed By <a class="border-bottom" href="https://basadev.com">Godwin Wilson</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+    </body>
+
+</html>
