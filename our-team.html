@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team - BASA Development Initiatives</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+  :root {
+            --brand-red: #990033;   
+            --brand-green: #005e4d;
+            --sidebar-tan: #e9e6d1;
+            --text-dark: #333;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; } 
+
+        /* --- TOPBAR --- */
+        .topbar {
+            background-color: var(--brand-red);
+            padding: 17px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--white);
+        }
+        .topbar-info { display: flex; gap: 20px; font-size: 19px; }
+        .topbar-info a { color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .topbar-socials { display: flex; gap: 10px; }
+        .social-btn {
+            width: 38px; height: 28px; border: 1px solid rgba(255,255,255,0.3);
+            display: flex; align-items: center; justify-content: center;
+            color: white; text-decoration: none; border-radius: 3px; font-size: 15px;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10 60px;
+            height: 100px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo img { height: 90px; display: block; }
+
+        .nav-links { display: flex; list-style: none; height: 100%; gap: 85px; }
+        .has-mega { position: static; }
+
+         .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 700;
+            padding: 0 -10px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            font-size: 20px;
+            cursor: pointer; /* Indicates it is clickable */
+            transition: var(--transition);
+        }
+
+        .nav-link i { font-size: 14px; margin-left: 6px; color: #888; transition: transform 0.3s; }
+
+        /* --- MEGA MENU BASE --- */
+        .mega-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            display: none; /* Hidden until is-active class is added */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-top: 1px solid #eee;
+        }
+
+        /* Toggled Active State */
+        .has-mega.is-active .mega-menu { display: flex; }
+        .has-mega.is-active .nav-link { color: var(--brand-green); background: #f9f9f9; }
+        .has-mega.is-active .nav-link i { transform: rotate(180deg); }
+
+        .mega-sidebar { background-color: var(--sidebar-tan); width: 320px; padding: 40px; flex-shrink: 0; }
+        .sidebar-img { width: 100%; border-radius: 5px; margin-bottom: 20px; }
+        .sidebar-title { font-weight: 700; font-size: 18px; margin-bottom: 10px; }
+        .sidebar-text { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+        
+        .btn-green-sm {
+            background-color: var(--brand-green);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .mega-grid { flex-grow: 1; padding: 40px 60px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .mega-col h4 { color: var(--brand-green); font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+        .mega-col h4 span { color: #666; margin-right: 8px; font-weight: 400; }
+        .mega-col ul { list-style: none; }
+        .mega-col ul li { margin-bottom: 12px; }
+        .mega-col ul li a { text-decoration: none; color: var(--brand-green); font-size: 14px; font-weight: 600; }
+        .mega-col ul li a:hover { color: var(--brand-red); padding-left: 5px; transition: 0.2s; }
+
+        /* --- RIGHT UTILS --- */
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .search-btn { background: #f1f1f1; border: 1px solid #333; padding: 10px 14px; cursor: pointer; }
+        .donate-main {
+            background: var(--brand-red); color: white; padding: 12px 28px;
+            border-radius: 30px; text-decoration: none; font-weight: 700;
+        }
+  
+  
+  
+  
+  
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; } 
+    :root {
+      --red:#B40205; --red-dark:#8C0204; --red-pale:#FFF0F0;
+      --teal:#0E7C7B; --teal-dark:#0A5C5B; --teal-light:#17BEBB;
+      --teal-pale:#E8F8F8; --teal-border:#B2E4E4;
+      --navy:#1A1A2E; --warm-bg:#F8F6F2; --warm-mid:#EDE9E2;
+      --white:#FFFFFF; --text:#1A1A1A; --text-mid:#374151;
+      --text-muted:#6B7280; --border:#E5E7EB; --border-warm:#DDD6CC;
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:'DM Sans',sans-serif; font-size:16px; color:var(--text); background:var(--white); line-height:1.6; }
+	
+	
+	
+		.action-card-photo {
+    overflow: hidden; /* Ensures the image doesn't spill out of the corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This is the "magic" line: it crops the photo to fill the space without stretching it */
+    display: block;
+}
+	
+	
+	
+	
+
+    /* NAV */
+    nav { position:sticky; top:0; z-index:100; background:var(--white); border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; padding:0 48px; height:72px; }
+    .nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+    .nav-logo-icon { width:42px; height:42px; background:var(--red); border-radius:8px; display:flex; align-items:center; justify-content:center; }
+    .nav-logo-icon svg { width:22px; height:22px; }
+    .nav-logo-text { font-weight:700; font-size:14px; color:var(--navy); line-height:1.3; }
+    .nav-links { display:flex; align-items:center; gap:36px; list-style:none; }
+    .nav-links a { font-size:14px; font-weight:500; color:var(--navy); text-decoration:none; transition:color .2s; }
+    .nav-links a:hover { color:var(--teal); }
+    .nav-donate { background:var(--red); color:var(--white)!important; padding:10px 24px; border-radius:6px; font-weight:700!important; font-size:13px!important; letter-spacing:.06em; text-transform:uppercase; }
+
+    /* HERO */
+    .hero { background:var(--navy); padding:90px 80px 80px; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; top:-100px; right:-100px; width:540px; height:540px; border-radius:50%; border:1px solid rgba(23,190,187,.09); }
+    .hero::after  { content:''; position:absolute; bottom:-80px; left:200px; width:320px; height:320px; border-radius:50%; border:1px solid rgba(23,190,187,.06); }
+    .breadcrumb { display:flex; align-items:center; gap:8px; font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; margin-bottom:32px; position:relative; z-index:2; flex-wrap:wrap; }
+    .breadcrumb a { color:rgba(255,255,255,.4); text-decoration:none; }
+    .breadcrumb .sep { color:rgba(255,255,255,.2); }
+    .breadcrumb .current { color:var(--teal-light); }
+    .hero-inner { display:grid; grid-template-columns:1fr 400px; gap:80px; align-items:center; position:relative; z-index:2; }
+    .hero-eyebrow { font-size:11px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--teal-light); margin-bottom:18px; animation:fadeUp .6s ease both; }
+    .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(36px,4.2vw,58px); font-weight:900; color:var(--white); line-height:1.1; margin-bottom:24px; animation:fadeUp .7s .08s ease both; }
+    .hero h1 em { font-style:italic; color:var(--teal-light); }
+    .hero-desc { font-size:17px; color:rgba(255,255,255,.68); line-height:1.75; max-width:520px; animation:fadeUp .7s .16s ease both; }
+    /* team count badges */
+    .hero-counts { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; animation:fadeUp .7s .22s ease both; }
+    .hero-count { background:rgba(255,255,255,.06); border:1px solid rgba(23,190,187,.2); border-radius:14px; padding:22px 20px; }
+    .hero-count-val { font-family:'Playfair Display',serif; font-size:42px; font-weight:900; color:var(--white); line-height:1; }
+    .hero-count-val.teal { color:var(--teal-light); }
+    .hero-count-label { font-size:12px; color:rgba(255,255,255,.5); margin-top:5px; line-height:1.35; }
+
+    /* DEMO NOTE */
+    .demo-note { background:#FFF8E7; border-top:3px solid #D4A017; padding:16px 80px; display:flex; align-items:flex-start; gap:12px; }
+    .demo-note svg { width:20px; height:20px; color:#92400E; flex-shrink:0; margin-top:1px; }
+    .demo-note p { font-size:13px; color:#78400E; line-height:1.6; }
+    .demo-note strong { font-weight:700; }
+
+    /* DEPT COUNT STRIP */
+    .dept-strip { background:var(--teal); padding:32px 80px; display:grid; grid-template-columns:repeat(6,1fr); gap:2px; }
+    .dept-item { padding:12px 14px; text-align:center; border-right:1px solid rgba(255,255,255,.15); }
+    .dept-item:last-child { border-right:none; }
+    .dept-name { font-size:12px; font-weight:700; color:var(--white); margin-bottom:3px; line-height:1.35; }
+    .dept-count { font-size:11px; color:rgba(255,255,255,.6); }
+
+    /* ── TEAM SECTIONS ── */
+    .team-page { padding:0 80px 80px; }
+
+    /* Section divider */
+    .dept-section { padding-top:64px; }
+    .dept-header { display:flex; align-items:center; gap:20px; margin-bottom:36px; padding-bottom:20px; border-bottom:2px solid var(--teal-border); }
+    .dept-header-icon { width:46px; height:46px; border-radius:12px; background:var(--teal-pale); border:1px solid var(--teal-border); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .dept-header-icon svg { width:22px; height:22px; }
+    .dept-header-title { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:var(--navy); }
+    .dept-header-desc { font-size:13px; color:var(--text-muted); margin-top:2px; }
+
+    /* Team card grid */
+    .team-grid { display:grid; gap:20px; }
+    .team-grid.cols-4 { grid-template-columns:repeat(4,1fr); }
+    .team-grid.cols-3 { grid-template-columns:repeat(3,1fr); }
+    .team-grid.cols-2 { grid-template-columns:repeat(2,1fr); }
+    .team-grid.cols-5 { grid-template-columns:repeat(5,1fr); }
+
+    /* Team card */
+    .team-card {
+      background:var(--white); border:1px solid var(--border-warm);
+      border-radius:18px; overflow:hidden;
+      transition:box-shadow .25s, transform .25s, border-color .25s;
+    }
+    .team-card:hover { box-shadow:0 8px 32px rgba(14,124,123,.12); transform:translateY(-4px); border-color:var(--teal-border); }
+
+    /* Photo area */
+    .team-photo { aspect-ratio:1/1; position:relative; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px; overflow:hidden; }
+    .team-photo img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
+    .team-photo.ph-navy  { background:linear-gradient(145deg, #22223A 0%, var(--navy) 100%); }
+    .team-photo.ph-teal  { background:linear-gradient(145deg, var(--teal-pale) 0%, #A8D8D8 100%); }
+    .team-photo.ph-red   { background:linear-gradient(145deg, var(--red-pale) 0%, #F5C8C8 100%); }
+    .team-photo.ph-warm  { background:linear-gradient(145deg, var(--warm-bg) 0%, var(--warm-mid) 100%); }
+    .team-photo.ph-deep  { background:linear-gradient(145deg, #1A3A5C 0%, #0A2040 100%); }
+    .team-photo.ph-green { background:linear-gradient(145deg, #E8F5EE 0%, #B8DFC8 100%); }
+    .team-photo.ph-amber { background:linear-gradient(145deg, #FFFBEB 0%, #FDE68A 100%); }
+    .team-photo.ph-plum  { background:linear-gradient(145deg, #F5F0FF 0%, #DDD5FF 100%); }
+    .ph-icon { opacity:.28; }
+    .ph-icon svg { width:36px; height:36px; }
+    .ph-small { font-size:9px; color:rgba(0,0,0,.28); letter-spacing:.08em; text-transform:uppercase; text-align:center; line-height:1.5; max-width:120px; }
+    .ph-small-light { font-size:9px; color:rgba(255,255,255,.28); letter-spacing:.08em; text-transform:uppercase; text-align:center; line-height:1.5; max-width:120px; }
+
+    /* Card body */
+    .team-body { padding:18px 16px; }
+    .team-name { font-family:'Playfair Display',serif; font-size:16px; font-weight:700; color:var(--navy); margin-bottom:4px; line-height:1.25; }
+    .team-role { font-size:11px; font-weight:700; color:var(--teal); text-transform:uppercase; letter-spacing:.05em; margin-bottom:10px; line-height:1.4; }
+    .team-bio  { font-size:12px; color:var(--text-muted); line-height:1.6; }
+    .team-tags { display:flex; flex-wrap:wrap; gap:5px; margin-top:10px; }
+    .team-tag  { font-size:9px; font-weight:700; background:var(--teal-pale); border:1px solid var(--teal-border); color:var(--teal); padding:3px 8px; border-radius:10px; }
+    .team-county { display:flex; align-items:center; gap:5px; font-size:11px; color:var(--text-muted); margin-top:10px; }
+    .team-county svg { width:11px; height:11px; flex-shrink:0; }
+
+    /* Featured card (wider) */
+    .team-card.featured { grid-column:span 2; display:grid; grid-template-columns:220px 1fr; }
+    .team-card.featured .team-photo { aspect-ratio:auto; min-height:100%; border-radius:0; }
+    .team-card.featured .team-body { padding:28px 24px; display:flex; flex-direction:column; justify-content:center; }
+    .team-card.featured .team-name { font-size:20px; }
+    .team-card.featured .team-role { font-size:12px; margin-bottom:12px; }
+    .team-card.featured .team-bio { font-size:13px; }
+
+    /* Sinoe highlight */
+    .sinoe-badge { position:absolute; top:10px; right:10px; background:var(--teal); color:var(--white); font-size:9px; font-weight:700; padding:3px 8px; border-radius:6px; letter-spacing:.06em; text-transform:uppercase; }
+
+    /* CULTURE SECTION */
+    .culture-section { background:var(--navy); padding:80px 80px; position:relative; overflow:hidden; }
+    .culture-section::before { content:''; position:absolute; bottom:-100px; right:-100px; width:500px; height:500px; border-radius:50%; border:1px solid rgba(23,190,187,.08); }
+    .culture-inner { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; position:relative; z-index:2; }
+    .culture-overline { font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--teal-light); margin-bottom:14px; }
+    .culture-heading { font-family:'Playfair Display',serif; font-size:clamp(26px,2.8vw,38px); font-weight:900; color:var(--white); line-height:1.2; margin-bottom:20px; }
+    .culture-body { font-size:16px; color:rgba(255,255,255,.65); line-height:1.8; }
+    .culture-values { display:flex; flex-direction:column; gap:14px; }
+    .culture-val { background:rgba(255,255,255,.05); border:1px solid rgba(23,190,187,.15); border-radius:12px; padding:18px 20px; display:flex; align-items:center; gap:14px; transition:background .2s; }
+    .culture-val:hover { background:rgba(23,190,187,.08); }
+    .culture-val-icon { width:38px; height:38px; border-radius:9px; background:rgba(23,190,187,.15); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .culture-val-icon svg { width:18px; height:18px; }
+    .culture-val-title { font-size:14px; font-weight:700; color:var(--white); margin-bottom:2px; }
+    .culture-val-desc  { font-size:12px; color:rgba(255,255,255,.55); line-height:1.4; }
+
+    /* JOIN US */
+    .join-section { padding:72px 80px; background:var(--warm-bg); }
+    .join-inner { background:var(--white); border:1px solid var(--border-warm); border-radius:24px; padding:52px 56px; display:grid; grid-template-columns:1fr 280px; gap:56px; align-items:center; }
+    .join-heading { font-family:'Playfair Display',serif; font-size:clamp(24px,2.5vw,34px); font-weight:900; color:var(--navy); line-height:1.2; margin-bottom:16px; }
+    .join-body { font-size:16px; color:var(--text-mid); line-height:1.8; margin-bottom:24px; }
+    .join-email { display:flex; align-items:center; gap:10px; font-size:15px; color:var(--teal); font-weight:600; text-decoration:none; }
+    .join-email:hover { color:var(--teal-dark); }
+    .join-email svg { width:18px; height:18px; }
+    .join-actions { display:flex; flex-direction:column; gap:12px; }
+    .btn-red { display:flex; align-items:center; justify-content:center; gap:8px; background:var(--red); color:var(--white); font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:15px 24px; border-radius:10px; text-decoration:none; transition:background .2s; }
+    .btn-red:hover { background:var(--red-dark); }
+    .btn-teal-outline { display:flex; align-items:center; justify-content:center; gap:8px; border:2px solid var(--teal); color:var(--teal); font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:13px 24px; border-radius:10px; text-decoration:none; transition:background .2s,color .2s; }
+    .btn-teal-outline:hover { background:var(--teal); color:var(--white); }
+
+    /* GOV NAV */
+    .gov-nav-section { padding:72px 80px; }
+    .gov-nav-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:44px; }
+    .gov-nav-card { background:var(--white); border:1px solid var(--border-warm); border-radius:18px; overflow:hidden; text-decoration:none; transition:box-shadow .2s,transform .2s,border-color .2s; display:flex; flex-direction:column; }
+    .gov-nav-card:hover { box-shadow:0 8px 32px rgba(14,124,123,.12); transform:translateY(-4px); border-color:var(--teal-border); }
+    .gov-nav-card-top { height:100px; display:flex; align-items:center; justify-content:center; }
+    .gov-nav-card-top.navy-top { background:var(--navy); }
+    .gov-nav-card-top.red-top  { background:var(--red-pale); }
+    .gov-nav-card-top.teal-top { background:var(--teal-pale); }
+    .gov-nav-card-body { padding:22px; flex:1; display:flex; flex-direction:column; }
+    .gov-nav-tag { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--teal); margin-bottom:8px; }
+    .gov-nav-title { font-family:'Playfair Display',serif; font-size:19px; font-weight:700; color:var(--navy); line-height:1.3; margin-bottom:8px; }
+    .gov-nav-desc { font-size:13px; color:var(--text-muted); line-height:1.55; flex:1; }
+    .gov-nav-arrow { margin-top:16px; display:flex; align-items:center; gap:6px; font-size:13px; font-weight:700; color:var(--teal); }
+    .gov-nav-arrow svg { width:14px; height:14px; transition:transform .2s; }
+    .gov-nav-card:hover .gov-nav-arrow svg { transform:translateX(4px); }
+
+    /* CTA */
+    .cta-section { background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 100%); padding:80px 80px; text-align:center; position:relative; overflow:hidden; }
+    .cta-section::before { content:''; position:absolute; top:-60px; left:50%; transform:translateX(-50%); width:600px; height:600px; border-radius:50%; border:1px solid rgba(255,255,255,.07); }
+    .cta-section h2 { font-family:'Playfair Display',serif; font-size:clamp(28px,3.5vw,46px); font-weight:900; color:var(--white); max-width:680px; margin:0 auto 40px; line-height:1.2; position:relative; z-index:1; }
+    .cta-buttons { display:flex; justify-content:center; gap:16px; position:relative; z-index:1; }
+    .btn-white { background:var(--white); color:var(--red); font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:16px 36px; border-radius:50px; text-decoration:none; transition:opacity .2s; }
+    .btn-white:hover { opacity:.9; }
+    .btn-outline-white { background:transparent; border:2px solid rgba(255,255,255,.4); color:var(--white); font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:16px 36px; border-radius:50px; text-decoration:none; transition:border-color .2s; }
+    .btn-outline-white:hover { border-color:rgba(255,255,255,.85); }
+
+    /* FOOTER */
+    footer { background:#0D0D1F; padding:64px 80px 0; }
+    .footer-grid { display:grid; grid-template-columns:280px 1fr 1fr 260px; gap:48px; padding-bottom:48px; }
+    .footer-logo { display:flex; align-items:center; gap:10px; margin-bottom:18px; }
+    .footer-logo-icon { width:36px; height:36px; background:var(--red); border-radius:6px; display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-weight:900; font-size:16px; color:var(--white); }
+    .footer-logo-text { font-weight:700; font-size:15px; color:var(--white); }
+    .footer-tagline { font-size:13px; color:rgba(255,255,255,.45); line-height:1.7; margin-bottom:22px; }
+    .footer-socials { display:flex; gap:10px; }
+    .social-dot { width:34px; height:34px; border-radius:8px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1); }
+    .footer-heading { font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--teal-light); margin-bottom:18px; opacity:.7; }
+    .footer-links { list-style:none; display:flex; flex-direction:column; gap:11px; }
+    .footer-links a { font-size:14px; color:rgba(255,255,255,.65); text-decoration:none; transition:color .2s; }
+    .footer-links a:hover { color:var(--teal-light); }
+    .footer-loc-name { font-size:15px; font-weight:700; color:var(--white); line-height:1.4; margin-bottom:10px; }
+    .footer-loc-detail { font-size:13px; color:rgba(255,255,255,.45); line-height:1.6; margin-bottom:3px; }
+    .footer-nl-label { font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--teal-light); margin-bottom:12px; opacity:.7; }
+    .footer-nl-note { font-size:13px; color:rgba(255,255,255,.5); margin-bottom:14px; line-height:1.6; }
+    .footer-input { width:100%; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:8px; padding:12px 16px; font-size:13px; color:var(--white); outline:none; margin-bottom:10px; font-family:'DM Sans',sans-serif; }
+    .footer-input::placeholder { color:rgba(255,255,255,.28); }
+    .footer-subscribe { width:100%; background:var(--teal); color:var(--white); font-family:'DM Sans',sans-serif; font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:13px; border:none; border-radius:8px; cursor:pointer; transition:background .2s; }
+    .footer-subscribe:hover { background:var(--teal-dark); }
+    .footer-bottom { border-top:1px solid rgba(255,255,255,.07); padding:22px 0; display:flex; justify-content:space-between; align-items:center; }
+    .footer-bottom p { font-size:12px; color:rgba(255,255,255,.3); }
+    .footer-bottom-links { display:flex; gap:24px; }
+    .footer-bottom-links a { font-size:12px; color:rgba(255,255,255,.35); text-decoration:none; }
+    .footer-bottom-links a:hover { color:rgba(255,255,255,.7); }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+    @media(max-width:1100px){
+      nav{padding:0 24px}
+      .hero{padding:60px 32px}
+      .hero-inner{grid-template-columns:1fr;gap:40px}
+      .demo-note,.dept-strip,.team-page,.culture-section,.join-section,.gov-nav-section,.cta-section,footer{padding-left:32px;padding-right:32px}
+      .dept-strip{grid-template-columns:repeat(3,1fr)}
+      .team-grid.cols-4,.team-grid.cols-5{grid-template-columns:repeat(2,1fr)}
+      .team-grid.cols-3{grid-template-columns:repeat(2,1fr)}
+      .team-card.featured{grid-template-columns:1fr;grid-column:span 1}
+      .team-card.featured .team-photo{min-height:200px;aspect-ratio:16/7}
+      .culture-inner{grid-template-columns:1fr}
+      .join-inner{grid-template-columns:1fr}
+      .gov-nav-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="topbar">
+        <div class="topbar-info">
+            <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
+            <a href="tel:+231779205152"><i class="fa-solid fa-phone"></i> +231 779 205 152</a>
+        </div>
+        <div class="topbar-socials">
+            <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"> <img src="./img/logo14.png" alt="BDI Logo"></a>
+        </div>
+
+        <ul class="nav-links">
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Our Work </b><i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>What We Do</u></h4>
+                            <ul>
+                                <li><a href="agriculture.html">Agriculture & Agribusiness</a></li>
+                                <li><a href="health.html">Health & Nutrition</a></li>
+                                <li><a href="education.html">Education</a></li>
+                                <li><a href="environment.html">Environment & Climate</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Where We Work</u></h4>
+                            <ul><li><a href="#">View all countries</a></li></ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Development & Inclusion</u></h4>
+                            <ul>
+                                <li><a href="gender-youth.html">Gender & Youth Empowerment</a></li>
+                                <li><a href="fisheries.html">Fisheries & Aquaculture</a></li>
+                                <li><a href="disability.html">Disability Inclusion</a></li>
+                                <li><a href="partnership.html">Research & Partnership</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Latest News & Updates</u></h4>
+                            <ul><li><a href="#">View All Our News</a></li></ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>About Us </b><i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                       <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Who we are</u></h4>
+                            <ul>
+                                <li><a href="our-values.html">Our Values</a></li>
+                                <li><a href="founding-story.html">Our founding Story</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Governance</u></h4>
+                            <ul>
+                                <li><a href="governance-structure.html">Our Governance Structure</a></li>
+                                <li><a href="board.html">Our Board of Directors</a></li>
+                                <li><a href="our-ceo.html">Our CEO</a></li>
+                                <li><a href="our-team.html">Our Team</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>How We Raise Money</u></h4>
+                            <ul>
+                                <li><a href="iinstitutional-donors.html">Institutional Donors</a></li>
+                                <li><a href="partners.html">Partners</a></li>
+                                <li><a href="individual-donations.html">Individual Donations</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Transparency and accountability</u></h4>
+                            <ul>
+                                <li><a href="annual-reports.html">Annual Reports</a></li>
+                                <li><a href="how-donations-are-spent.html">How donations are spent</a></li>
+								<li><a href="audited-financials.html">Audited Financial Statements</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Support us</b> <i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Donate Now</u></h4>
+                            <ul>
+                                <li><a href="#">Donate to safe drug victims</a></li>
+                                <li><a href="#">End Period Poverty</a></li>
+                                <li><a href="#">Support Women in Agribusiness</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Corporate support</u></h4>
+                            <ul>
+                                <li><a href="#">Become a corporate supporter</a></li>
+                                <li><a href="#">Partner with us</a></li>
+                                <li><a href="#">Staff fundraising</a></li>
+                                <li><a href="#">Payroll Giving</a></li>
+                                <li><a href="#">Make a corporate donation</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Fundraise for BDI</u></h4>
+                            <ul>
+                                <li><a href="#">Start your own fundraiser</a></li>
+                                <li><a href="#">Find a friend to sponsor</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Volunteer Remotely</u></h4>
+                            <ul><li><a href="#">You can Volunteer with us</a></li></ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Other ways to give</u></h4>
+                            <ul>
+                                <li><a href="#">Donate in memory</a></li>
+                                <li><a href="#">Leave a gift in your Will</a></li>
+                                <li><a href="#">Your donation and tax back</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Resource Centre</b> <i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Knowledge Hub Resources</u></h4>
+                            <ul>
+                                <li><a href="#">Research</a></li>
+                                <li><a href="#">Evaluations</a></li>
+                                <li><a href="#">Newsletters</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="nav-right">
+            <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="donate-main">Donate Now</a>
+        </div>
+    </nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow">The People Behind the Work</p>
+      <h1>A team of Liberians<br>building a <em>better</em><br>Liberia.</h1>
+      <p class="hero-desc">BDI's team is its greatest asset. Each person on this page brings deep expertise, genuine passion, and an unshakeable commitment to the communities they serve. Together, they are making BDI's vision of a Liberia without poverty a measurable, daily reality.</p>
+    </div>
+    <div class="hero-counts">
+      <div class="hero-count">
+        <div class="hero-count-val">19</div>
+        <div class="hero-count-label">Total Team Members</div>
+      </div>
+      <div class="hero-count">
+        <div class="hero-count-val teal">3</div>
+        <div class="hero-count-label">Office Locations</div>
+      </div>
+      <div class="hero-count">
+        <div class="hero-count-val">8</div>
+        <div class="hero-count-label">Program Areas Led</div>
+      </div>
+      <div class="hero-count">
+        <div class="hero-count-val teal">15</div>
+        <div class="hero-count-label">Counties We Serve</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- DEPT STRIP -->
+<div class="dept-strip">
+  <div class="dept-item"><p class="dept-name">Executive</p><p class="dept-count">2 members</p></div>
+  <div class="dept-item"><p class="dept-name">Programs</p><p class="dept-count">8 members</p></div>
+  <div class="dept-item"><p class="dept-name">Tech Backstopping</p><p class="dept-count">3 members</p></div>
+  <div class="dept-item"><p class="dept-name">Partnership &amp; M&amp;E</p><p class="dept-count">3 members</p></div>
+  <div class="dept-item"><p class="dept-name">Finance &amp; Ops</p><p class="dept-count">2 members</p></div>
+  <div class="dept-item"><p class="dept-name">Communications</p><p class="dept-count">2 members</p></div>
+</div>
+
+<!-- ── TEAM SECTIONS ── -->
+<div class="team-page">
+
+  <!-- 1. EXECUTIVE LEADERSHIP -->
+  <div class="dept-section">
+    <div class="dept-header">
+      <div class="dept-header-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <div>
+        <p class="dept-header-title">Executive Leadership</p>
+        <p class="dept-header-desc">Setting strategy, managing operations, and leading BDI toward its 2029 vision</p>
+      </div>
+    </div>
+    <div class="team-grid cols-2">
+
+      <!-- CEO - featured with real photo -->
+      <div class="team-card featured">
+        <div class="team-photo ph-navy">
+           <div class="action-card-photo p1">
+		<img src="img/causes-1.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+        </div>
+        <div class="team-body">
+          <p class="team-name">Katherina M. Hopkins</p>
+          <p class="team-role">Founder &amp; Chief Executive Officer</p>
+          <p class="team-bio">Founder of BASA Development Initiatives and the visionary behind BDI's growth from a concept in 2019 to an eight-program NGO operating across Liberia. Katherina leads with a philosophy of inside-out development, where communities are partners, not beneficiaries.</p>
+          <div class="team-tags">
+            <span class="team-tag">Community Development</span>
+            <span class="team-tag">Strategy</span>
+            <span class="team-tag">Fundraising</span>
+            <span class="team-tag">Women Empowerment</span>
+          </div>
+          <div class="team-county"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Monrovia, Montserrado County</div>
+        </div>
+      </div>
+
+      <!-- COO -->
+      <div class="team-card featured">
+        <div class="team-photo ph-deep">
+           <div class="action-card-photo p1">
+    <img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+        </div>
+        <div class="team-body">
+          <p class="team-name">Chief Operating Officer</p>
+          <p class="team-role">Chief Operating Officer</p>
+          <p class="team-bio">Oversees BDI's day-to-day operational functions, ensuring that programs, systems, and teams are aligned and working efficiently toward the organization's strategic objectives. The COO is the operational backbone that keeps BDI moving.</p>
+          <div class="team-tags">
+            <span class="team-tag">Operations</span>
+            <span class="team-tag">Management</span>
+            <span class="team-tag">Systems</span>
+          </div>
+          <div class="team-county"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Monrovia, Montserrado County</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 2. TECHNICAL BACKSTOPPING -->
+  <div class="dept-section">
+    <div class="dept-header">
+      <div class="dept-header-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3M6.343 6.343l-.707-.707M10.121 20.364l.707-.707M13.879 20.364l-.707-.707M17.657 6.343l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg></div>
+      <div>
+        <p class="dept-header-title">Technical Backstopping</p>
+        <p class="dept-header-desc">Providing technical quality assurance and field presence across all program areas</p>
+      </div>
+    </div>
+    <div class="team-grid cols-3">
+
+      <div class="team-card">
+        <div class="team-photo ph-navy">
+          <div class="action-card-photo p1">
+    <img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+        </div>
+        <div class="team-body">
+          <p class="team-name">Isaac F. Donkor</p>
+          <p class="team-role">Technical Backstopping Lead</p>
+          <p class="team-bio">Provides technical oversight and quality assurance across BDI's program portfolio, ensuring that all activities meet the highest standards of evidence-based practice.</p>
+          <div class="team-tags"><span class="team-tag">Technical Quality</span><span class="team-tag">Program Oversight</span></div>
+          <div class="team-county"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Monrovia, Montserrado County</div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo ph-teal">
+          <div class="action-card-photo p1">
+    <img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+        </div>
+        <div class="team-body">
+          <p class="team-name">James Jasay</p>
+          <p class="team-role">Program Associate</p>
+          <p class="team-bio">Supports program coordination and field-level implementation across BDI's active program areas, working closely with the Technical Backstopping Lead.</p>
+          <div class="team-tags"><span class="team-tag">Program Coordination</span><span class="team-tag">Field Operations</span></div>
+          <div class="team-county"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Monrovia, Montserrado County</div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo ph-green" style="position:relative">
+          <span class="sinoe-badge">Sinoe Office</span>
+          <div class="action-card-photo p1">
+    <img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+        </div>
+        <div class="team-body">
+          <p class="team-name">Alvin Swen T.</p>
+          <p class="team-role">Sinoe County Field Officer</p>
+          <p class="team-bio">Leads BDI's on-the-ground presence in Sinoe County, coordinating community engagement and program delivery in Liberia's Southeast region.</p>
+          <div class="team-tags"><span class="team-tag">Field Operations</span><span class="team-tag">Community Engagement</span></div>
+          <div class="team-county"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Greenville, Sinoe County</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 3. PROGRAMS -->
+  <div class="dept-section">
+    <div class="dept-header">
+      <div class="dept-header-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div>
+        <p class="dept-header-title">Programs</p>
+        <p class="dept-header-desc">Designing and delivering BDI's eight thematic program areas across Liberia</p>
+      </div>
+    </div>
+    <div class="team-grid cols-4">
+
+      <!-- Director of Programs - featured across 2 cols -->
+      <div class="team-card featured" style="grid-column:span 2">
+        <div class="team-photo ph-deep">
+          <div class="action-card-photo p1">
+    <img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+        </div>
+        <div class="team-body">
+          <p class="team-name">Charles Brewer</p>
+          <p class="team-role">Director of Programs</p>
+          <p class="team-bio">Oversees BDI's full portfolio of eight program areas, managing Program Leads, M&amp;E, and ensuring that program design, delivery, and reporting meet the highest standards of quality and accountability. Charles leads BDI's cross-sectoral programming approach and coordinates across all thematic areas.</p>
+          <div class="team-tags"><span class="team-tag">Program Management</span><span class="team-tag">M&amp;E</span><span class="team-tag">Agriculture</span><span class="team-tag">Environment</span></div>
+          <div class="team-county"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Monrovia, Montserrado County</div>
+        </div>
+      </div>
+
+      <!-- GESI & Health Lead -->
+      <div class="team-card">
+        <div class="team-photo ph-plum">
+          <div class="action-card-photo p1">
+    <img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+        </div>
+        <div class="team-body">
+          <p class="team-name">Famata Brown</p>
+          <p class="team-role">GESI &amp; Health Lead</p>
+          <p class="team-bio">Leads BDI's Gender, Equality, Social Inclusion and Health programs, overseeing a team of health officers and managing community health outreach across target counties.</p>
+          <div class="team-tags"><span class="team-tag">GESI</span><span class="team-tag">Health</span><span class="team-tag">Women Empowerment</span></div>
+          <div class="team-county"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Monrovia, Montserrado County</div>
+        </div>
+      </div>
+
+      <!-- Education Lead -->
+      <div class="team-card">
+        <div class="team-photo ph-amber">
+          <div class="action-card-photo p1">
+    <img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+        </div>
+        <div class="team-body">
+          <p class="team-name">Krubo D. K. Solomon</p>
+          <p class="team-role">Education Lead</p>
+          <p class="team-bio">Manages BDI's Education program, driving initiatives that improve school enrollment, digital literacy, and vocational training for youth and out-of-school learners.</p>
+          <div class="team-tags"><span class="team-tag">Education</span><span class="team-tag">Vocational Training</span><span class="team-tag">Digital Literacy</span></div>
+          <div class="team-county"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Monrovia, Montserrado County</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Health Officers row -->
+    <div style="margin-top:16px">
+      <p style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px;padding-left:4px">Health Program Officers &mdash; Reporting to GESI &amp; Health Lead</p>
+      <div class="team-grid cols-4">
+        <div class="team-card">
+          <div class="team-photo ph-teal" style="aspect-ratio:4/3">
+            <div class="action-card-photo p1">
+    <img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+          </div>
+          <div class="team-body">
+            <p class="team-name">Masline Gee</p>
+            <p class="team-role">Community Health Officer</p>
+            <p class="team-bio">Delivers community-based health outreach including menstrual health education, maternal support, and preventive health campaigns.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo ph-warm" style="aspect-ratio:4/3">
+            <div class="action-card-photo p1">
+    <img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+          </div>
+          <div class="team-body">
+            <p class="team-name">Chris Lower</p>
+            <p class="team-role">Public Health Officer</p>
+            <p class="team-bio">Leads preventive health campaigns targeting malaria, malnutrition, and diarrhea across BDI's target communities.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo ph-navy" style="aspect-ratio:4/3">
+            <div class="ph-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <p class="ph-small-light">PHOTO PLACEHOLDER</p>
+          </div>
+          <div class="team-body">
+            <p class="team-name">Pitman Clement</p>
+            <p class="team-role">Public Health Officer</p>
+            <p class="team-bio">Supports mobile health outreach clinics and community health worker training in remote and underserved communities.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo ph-plum" style="aspect-ratio:4/3">
+            <div class="action-card-photo p1">
+    <img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+          </div>
+          <div class="team-body">
+            <p class="team-name">Patience Freeman</p>
+            <p class="team-role">Youth &amp; Women Development Officer</p>
+            <p class="team-bio">Drives BDI's gender and youth empowerment programming, supporting entrepreneurship training and women-led enterprise development.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. PARTNERSHIP, FUNDRAISING & M&E -->
+  <div class="dept-section">
+    <div class="dept-header">
+      <div class="dept-header-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div>
+        <p class="dept-header-title">Partnership, Fundraising, Business Development &amp; M&amp;E</p>
+        <p class="dept-header-desc">Building partnerships, mobilizing resources, and tracking BDI's impact across all programs</p>
+      </div>
+    </div>
+    <div class="team-grid cols-3">
+
+      <div class="team-card">
+        <div class="team-photo ph-deep">
+          <div class="action-card-photo p1">
+    <img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+        </div>
+        <div class="team-body">
+          <p class="team-name">Nuwoe Naileh</p>
+          <p class="team-role">Head, Partnership &amp; Fundraising</p>
+          <p class="team-bio">Manages BDI's partnerships pipeline, leads proposal development, and stewards relationships with donors and strategic partners to grow BDI's funding base toward $2M annually by 2029.</p>
+          <div class="team-tags"><span class="team-tag">Partnerships</span><span class="team-tag">Fundraising</span><span class="team-tag">Proposal Writing</span></div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo ph-navy">
+          <div class="action-card-photo p1">
+    <img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+        </div>
+        <div class="team-body">
+          <p class="team-name">Siotepoh Broh</p>
+          <p class="team-role">Head of Business Development</p>
+          <p class="team-bio">Drives BDI's business development and social enterprise strategy, identifying new revenue streams and opportunities to strengthen BDI's financial sustainability alongside grant funding.</p>
+          <div class="team-tags"><span class="team-tag">Business Development</span><span class="team-tag">Social Enterprise</span><span class="team-tag">Strategy</span></div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo ph-teal">
+          <div class="action-card-photo p1">
+    <img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+        </div>
+        <div class="team-body">
+          <p class="team-name">Lee Barduae</p>
+          <p class="team-role">M&amp;E Lead</p>
+          <p class="team-bio">Leads BDI's monitoring, evaluation, accountability, and learning functions, ensuring that program data is collected, analyzed, and used to drive continuous improvement across all eight program areas.</p>
+          <div class="team-tags"><span class="team-tag">M&amp;E</span><span class="team-tag">Data Analysis</span><span class="team-tag">Impact Reporting</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Agri/Env team and M&E Officer -->
+    <div style="margin-top:16px">
+      <p style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px;padding-left:4px">Agriculture, Environment &amp; M&amp;E Officers</p>
+      <div class="team-grid cols-3">
+        <div class="team-card">
+          <div class="team-photo ph-green" style="aspect-ratio:4/3">
+            <div class="action-card-photo p1">
+		<img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+          </div>
+          <div class="team-body">
+            <p class="team-name">Dans Jonhson</p>
+            <p class="team-role">Agribusiness &amp; Environment Lead</p>
+            <p class="team-bio">Leads BDI's Agriculture, Agribusiness and Environment program delivery, overseeing field-level implementation across Sinoe and other target counties.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo ph-warm" style="aspect-ratio:4/3">
+		<div class="action-card-photo p1">
+			<img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+          </div>
+          <div class="team-body">
+            <p class="team-name">Clarence Powell</p>
+            <p class="team-role">Associate, Agriculture &amp; Agribusiness</p>
+            <p class="team-bio">Supports farmer field school delivery, cooperative formation, and market linkage activities within BDI's Agriculture and Agribusiness program.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo ph-teal" style="aspect-ratio:4/3">
+             <div class="action-card-photo p1">
+			<img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+          </div>
+          <div class="team-body">
+            <p class="team-name">Blayon Himmie</p>
+            <p class="team-role">Forestry &amp; Environment Officer</p>
+            <p class="team-bio">Manages BDI's tree planting, NRM committee work, and conservation campaigns, including the 5,000-tree coastal planting initiative and school climate clubs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- M&E Officer -->
+    <div style="margin-top:16px">
+      <p style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px;padding-left:4px">M&amp;E Officer &mdash; Reporting to M&amp;E Lead</p>
+      <div class="team-grid cols-4">
+        <div class="team-card">
+          <div class="team-photo ph-navy" style="aspect-ratio:4/3">
+             <div class="action-card-photo p1">
+    <img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+          </div>
+          <div class="team-body">
+            <p class="team-name">Cecelia Juohah</p>
+            <p class="team-role">M&amp;E Officer</p>
+            <p class="team-bio">Supports data collection, database management, and indicator tracking across BDI's programs under the M&amp;E Lead.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. FINANCE & OPERATIONS -->
+  <div class="dept-section">
+    <div class="dept-header">
+      <div class="dept-header-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+      <div>
+        <p class="dept-header-title">Finance &amp; Operations</p>
+        <p class="dept-header-desc">Ensuring financial integrity, compliance, and operational efficiency across the organization</p>
+      </div>
+    </div>
+    <div class="team-grid cols-4">
+      <div class="team-card">
+        <div class="team-photo ph-deep">
+           <div class="action-card-photo p1">
+    <img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+        </div>
+        <div class="team-body">
+          <p class="team-name">Ishmael Turner</p>
+          <p class="team-role">Director of Finance &amp; Operations</p>
+          <p class="team-bio">Oversees BDI's financial management, budget controls, audit readiness, and operational systems to ensure the highest standards of accountability to donors and stakeholders.</p>
+          <div class="team-tags"><span class="team-tag">Finance</span><span class="team-tag">Operations</span><span class="team-tag">Compliance</span></div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo ph-teal">
+           <div class="action-card-photo p1">
+    <img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+        </div>
+        <div class="team-body">
+          <p class="team-name">Finance Officer</p>
+          <p class="team-role">Finance Officer</p>
+          <p class="team-bio">Manages day-to-day financial transactions, expenditure tracking, and financial reporting across all BDI program areas, reporting directly to the Director of Finance and Operations.</p>
+          <div class="team-tags"><span class="team-tag">Accounting</span><span class="team-tag">Reporting</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. COMMUNICATIONS -->
+  <div class="dept-section">
+    <div class="dept-header">
+      <div class="dept-header-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+      <div>
+        <p class="dept-header-title">Communications</p>
+        <p class="dept-header-desc">Amplifying BDI's story, impact, and brand to donors, partners, and the world</p>
+      </div>
+    </div>
+    <div class="team-grid cols-4">
+      <div class="team-card">
+        <div class="team-photo ph-navy">
+	<div class="action-card-photo p1">
+    <img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+        </div>
+        <div class="team-body">
+          <p class="team-name">Alphonso Kofi</p>
+          <p class="team-role">Head of Communications</p>
+          <p class="team-bio">Leads BDI's communications strategy, managing the organization's brand, digital presence, donor communications, and public visibility across all platforms and program areas.</p>
+          <div class="team-tags"><span class="team-tag">Communications</span><span class="team-tag">Brand</span><span class="team-tag">Digital Strategy</span></div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo ph-warm">
+          <div class="action-card-photo p1">
+    <img src="img/causes-04.jpg" alt="Farmer Field School" class="action-img">
+			</div>
+        </div>
+        <div class="team-body">
+          <p class="team-name">Jenkins G. Wilson</p>
+          <p class="team-role">Visibility Specialist</p>
+          <p class="team-bio">Manages BDI's visual communications, including photography, design, web content, and social media, ensuring BDI's work is seen, understood, and celebrated.</p>
+          <div class="team-tags"><span class="team-tag">Visual Design</span><span class="team-tag">Social Media</span><span class="team-tag">Photography</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end team-page -->
+
+<!-- CULTURE SECTION -->
+<section class="culture-section">
+  <div class="culture-inner">
+    <div>
+      <p class="culture-overline">Our Team Culture</p>
+      <h2 class="culture-heading">A team bound by more than job descriptions.</h2>
+      <p class="culture-body" align= "justify";>Every person on BDI's team was hired not just for their skills, but for their alignment with BDI's values and their genuine commitment to Liberia. We work hard, we learn constantly, we hold each other accountable, and we celebrate every milestone - however small - because we know what it means for the communities behind each number.</p>
+    </div>
+    <div class="culture-values">
+      <div class="culture-val">
+        <div class="culture-val-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#17BEBB" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><p class="culture-val-title">Mission First</p><p class="culture-val-desc">Every decision is weighed against one question: does this serve the communities we exist for?</p></div>
+      </div>
+      <div class="culture-val">
+        <div class="culture-val-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#17BEBB" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+        <div><p class="culture-val-title">Evidence Over Assumptions</p><p class="culture-val-desc">We collect data, study what it says, and change course when the evidence demands it.</p></div>
+      </div>
+      <div class="culture-val">
+        <div class="culture-val-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#17BEBB" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div><p class="culture-val-title">Grow Together</p><p class="culture-val-desc">BDI invests in its staff because organizational impact is only as strong as individual capacity.</p></div>
+      </div>
+      <div class="culture-val">
+        <div class="culture-val-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#17BEBB" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <div><p class="culture-val-title">Community is Why We Are Here</p><p class="culture-val-desc">The people we serve are not our target group. They are the reason every single one of us shows up.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN US -->
+<section class="join-section">
+  <div class="join-inner">
+    <div>
+      <h2 class="join-heading">Want to join a team building a Liberia without poverty?</h2>
+      <p class="join-body">BDI is a growing organization with ambitions that match Liberia's needs. We periodically recruit for program, finance, communications, and field-based roles. If you are passionate about community-led development and want to be part of something meaningful, we would love to hear from you.</p>
+      <a href="mailto:info@basadev.org" class="join-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        info@basadev.org
+      </a>
+    </div>
+    <div class="join-actions">
+      <a href="#" class="btn-red">View Open Positions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="governance-ceo.html" class="btn-teal-outline">Meet Our CEO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- GOV NAV -->
+<section class="gov-nav-section">
+  <p style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:12px">More in Governance</p>
+  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(26px,2.8vw,38px);font-weight:900;color:var(--navy);line-height:1.2;margin-bottom:44px">Explore BDI's full governance and leadership.</h2>
+  <div class="gov-nav-grid">
+    <a href="governance-structure.html" class="gov-nav-card">
+      <div class="gov-nav-card-top navy-top"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(23,190,187,.6)" stroke-width="1.5" width="40" height="40"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+      <div class="gov-nav-card-body">
+        <p class="gov-nav-tag">Structure</p>
+        <p class="gov-nav-title">Governance Structure</p>
+        <p class="gov-nav-desc">See BDI's high-level governance structure from the Board of Directors through to program and operations teams.</p>
+        <div class="gov-nav-arrow">View Structure <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </div>
+    </a>
+    <a href="governance-board.html" class="gov-nav-card">
+      <div class="gov-nav-card-top red-top"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(180,2,5,.5)" stroke-width="1.5" width="40" height="40"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+      <div class="gov-nav-card-body">
+        <p class="gov-nav-tag">Oversight</p>
+        <p class="gov-nav-title">Board of Directors</p>
+        <p class="gov-nav-desc">Meet the Board members who provide strategic guidance and fiduciary oversight for BASA Development Initiatives.</p>
+        <div class="gov-nav-arrow">Meet the Board <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </div>
+    </a>
+    <a href="governance-ceo.html" class="gov-nav-card">
+      <div class="gov-nav-card-top teal-top"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(14,124,123,.6)" stroke-width="1.5" width="40" height="40"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <div class="gov-nav-card-body">
+        <p class="gov-nav-tag">Executive Leadership</p>
+        <p class="gov-nav-title">Our CEO</p>
+        <p class="gov-nav-desc">Meet Katherina M. Hopkins, the Founder and CEO driving BDI's mission, strategy, and community-led vision for Liberia.</p>
+        <div class="gov-nav-arrow">Meet Katherina <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Proud of this team. Excited about what they will build. Partner with us.</h2>
+  <div class="cta-buttons">
+    <a href="#" class="btn-white">Partner With BDI</a>
+    <a href="#" class="btn-outline-white">Support Our Work</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo"><div class="footer-logo-icon">B</div><span class="footer-logo-text">BDI</span></div>
+      <p class="footer-tagline">BASA Development Initiatives (BDI) is an NGO dedicated to building a more inclusive, resilient, and sustainable Liberia.</p>
+      <div class="footer-socials"><div class="social-dot"></div><div class="social-dot"></div><div class="social-dot"></div><div class="social-dot"></div></div>
+    </div>
+    <div>
+      <p class="footer-heading">Governance</p>
+      <ul class="footer-links">
+        <li><a href="#">Governance Structure</a></li>
+        <li><a href="#">Board of Directors</a></li>
+        <li><a href="#">Our CEO</a></li>
+        <li><a href="#">Our Team</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Location</p>
+      <p class="footer-loc-name">Monrovia,<br>Liberia, West Africa</p>
+      <p class="footer-loc-detail">info@basadev.org</p>
+      <p class="footer-loc-detail">www.basadev.org</p>
+      <p class="footer-loc-detail">Operating across 15 counties in Liberia.</p>
+    </div>
+    <div>
+      <p class="footer-nl-label">Stay Updated</p>
+      <p class="footer-nl-note">Join our newsletter for the latest impact updates.</p>
+      <input class="footer-input" type="email" placeholder="Your email address" />
+      <button class="footer-subscribe">Subscribe</button>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 BASA Development Initiatives (BDI). Registered NGO in Liberia.</p>
+    <div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </div>
+</footer>
+</body>
+<script>
+        const megaItems = document.querySelectorAll('.has-mega');
+
+        megaItems.forEach(item => {
+            const link = item.querySelector('.nav-link');
+            
+            link.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevents document click from firing immediately
+                
+                // Toggle current item
+                const isActive = item.classList.contains('is-active');
+                
+                // Close all other menus first
+                megaItems.forEach(i => i.classList.remove('is-active'));
+                
+                // If it wasn't active, open it
+                if (!isActive) {
+                    item.classList.add('is-active');
+                }
+            });
+        });
+
+        // Close menu if clicking anywhere outside the navbar
+        document.addEventListener('click', () => {
+            megaItems.forEach(i => i.classList.remove('is-active'));
+        });
+    </script>
+</html>

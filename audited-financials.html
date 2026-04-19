@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audited Financial Statements - Transparency & Accountability - BASA Development Initiatives</title>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+  :root {
+            --brand-red: #990033;   
+            --brand-green: #005e4d;
+            --sidebar-tan: #e9e6d1;
+            --text-dark: #333;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; } 
+
+        /* --- TOPBAR --- */
+        .topbar {
+            background-color: var(--brand-red);
+            padding: 17px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--white);
+        }
+        .topbar-info { display: flex; gap: 20px; font-size: 19px; }
+        .topbar-info a { color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .topbar-socials { display: flex; gap: 10px; }
+        .social-btn {
+            width: 38px; height: 28px; border: 1px solid rgba(255,255,255,0.3);
+            display: flex; align-items: center; justify-content: center;
+            color: white; text-decoration: none; border-radius: 3px; font-size: 15px;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10 60px;
+            height: 100px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo img { height: 90px; display: block; }
+
+        .nav-links { display: flex; list-style: none; height: 100%; gap: 85px; }
+        .has-mega { position: static; }
+
+         .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 700;
+            padding: 0 -10px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            font-size: 20px;
+            cursor: pointer; /* Indicates it is clickable */
+            transition: var(--transition);
+        }
+
+        .nav-link i { font-size: 14px; margin-left: 6px; color: #888; transition: transform 0.3s; }
+
+        /* --- MEGA MENU BASE --- */
+        .mega-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            display: none; /* Hidden until is-active class is added */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-top: 1px solid #eee;
+        }
+
+        /* Toggled Active State */
+        .has-mega.is-active .mega-menu { display: flex; }
+        .has-mega.is-active .nav-link { color: var(--brand-green); background: #f9f9f9; }
+        .has-mega.is-active .nav-link i { transform: rotate(180deg); }
+
+        .mega-sidebar { background-color: var(--sidebar-tan); width: 320px; padding: 40px; flex-shrink: 0; }
+        .sidebar-img { width: 100%; border-radius: 5px; margin-bottom: 20px; }
+        .sidebar-title { font-weight: 700; font-size: 18px; margin-bottom: 10px; }
+        .sidebar-text { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+        
+        .btn-green-sm {
+            background-color: var(--brand-green);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .mega-grid { flex-grow: 1; padding: 40px 60px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .mega-col h4 { color: var(--brand-green); font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+        .mega-col h4 span { color: #666; margin-right: 8px; font-weight: 400; }
+        .mega-col ul { list-style: none; }
+        .mega-col ul li { margin-bottom: 12px; }
+        .mega-col ul li a { text-decoration: none; color: var(--brand-green); font-size: 14px; font-weight: 600; }
+        .mega-col ul li a:hover { color: var(--brand-red); padding-left: 5px; transition: 0.2s; }
+
+        /* --- RIGHT UTILS --- */
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .search-btn { background: #f1f1f1; border: 1px solid #333; padding: 10px 14px; cursor: pointer; }
+        .donate-main {
+            background: var(--brand-red); color: white; padding: 12px 28px;
+            border-radius: 30px; text-decoration: none; font-weight: 700;
+        }
+  
+  
+  
+  
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; } 
+    :root {
+      --red:#B40205; --red-dark:#8C0204; --red-pale:#FFF0F0;
+      --teal:#0E7C7B; --teal-dark:#0A5C5B; --teal-light:#17BEBB;
+      --teal-pale:#E8F8F8; --teal-border:#B2E4E4;
+      --navy:#1A1A2E; --warm-bg:#F8F6F2; --warm-mid:#EDE9E2;
+      --white:#FFFFFF; --text:#1A1A1A; --text-mid:#374151;
+      --text-muted:#6B7280; --border:#E5E7EB; --border-warm:#DDD6CC;
+      --gold:#D4A017; --gold-pale:#FEF9EC; --gold-border:#F5E0A0;
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:'DM Sans',sans-serif; font-size:16px; color:var(--text); background:var(--white); line-height:1.6; }
+
+    nav { position:sticky; top:0; z-index:100; background:var(--white); border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; padding:0 48px; height:72px; }
+    .nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+    .nav-logo-icon { width:42px; height:42px; background:var(--red); border-radius:8px; display:flex; align-items:center; justify-content:center; }
+    .nav-logo-icon svg { width:22px; height:22px; }
+    .nav-logo-text { font-weight:700; font-size:14px; color:var(--navy); line-height:1.3; }
+    .nav-links { display:flex; align-items:center; gap:36px; list-style:none; }
+    .nav-links a { font-size:14px; font-weight:500; color:var(--navy); text-decoration:none; transition:color .2s; }
+    .nav-links a:hover { color:var(--teal); }
+    .nav-donate { background:var(--red); color:var(--white)!important; padding:10px 24px; border-radius:6px; font-weight:700!important; font-size:13px!important; letter-spacing:.06em; text-transform:uppercase; }
+
+    /* HERO */
+    .hero { background:var(--navy); padding:90px 80px 80px; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; top:-100px; right:-100px; width:520px; height:520px; border-radius:50%; border:1px solid rgba(23,190,187,.09); }
+    .hero::after  { content:''; position:absolute; bottom:-60px; left:180px; width:280px; height:280px; border-radius:50%; border:1px solid rgba(23,190,187,.05); }
+    .breadcrumb { display:flex; align-items:center; gap:8px; font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; margin-bottom:32px; position:relative; z-index:2; flex-wrap:wrap; }
+    .breadcrumb a { color:rgba(255,255,255,.4); text-decoration:none; }
+    .breadcrumb .sep { color:rgba(255,255,255,.2); }
+    .breadcrumb .current { color:var(--teal-light); }
+    .section-tabs { display:flex; gap:8px; margin-bottom:40px; position:relative; z-index:2; flex-wrap:wrap; }
+    .section-tab { font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:8px 16px; border-radius:20px; text-decoration:none; transition:all .2s; }
+    .section-tab.active { background:var(--teal-light); color:var(--navy); }
+    .section-tab:not(.active) { background:rgba(255,255,255,.07); color:rgba(255,255,255,.55); border:1px solid rgba(255,255,255,.1); }
+    .section-tab:not(.active):hover { background:rgba(255,255,255,.12); color:var(--white); }
+    .hero-inner { display:grid; grid-template-columns:1fr 380px; gap:72px; align-items:center; position:relative; z-index:2; }
+    .hero-eyebrow { font-size:11px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--teal-light); margin-bottom:16px; animation:fadeUp .6s ease both; }
+    .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(36px,4.2vw,56px); font-weight:900; color:var(--white); line-height:1.1; margin-bottom:22px; animation:fadeUp .7s .08s ease both; }
+    .hero h1 em { font-style:italic; color:var(--teal-light); }
+    .hero-desc { font-size:17px; color:rgba(255,255,255,.68); line-height:1.75; animation:fadeUp .7s .16s ease both; }
+    /* Hero right — audit credential cards */
+    .hero-creds { display:flex; flex-direction:column; gap:14px; animation:fadeUp .7s .22s ease both; }
+    .hero-cred { background:rgba(255,255,255,.06); border:1px solid rgba(23,190,187,.18); border-radius:14px; padding:18px 20px; display:flex; align-items:center; gap:16px; transition:background .2s; }
+    .hero-cred:hover { background:rgba(23,190,187,.08); }
+    .hero-cred-icon { width:38px; height:38px; border-radius:9px; background:rgba(23,190,187,.15); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .hero-cred-icon svg { width:18px; height:18px; }
+    .hero-cred-title { font-size:14px; font-weight:700; color:var(--white); margin-bottom:2px; }
+    .hero-cred-desc  { font-size:11px; color:rgba(255,255,255,.5); line-height:1.35; }
+
+    /* AUDIT TRUST STRIP */
+    .trust-strip { background:var(--teal); padding:40px 80px; display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+    .trust-col { padding:14px 18px; text-align:center; border-right:1px solid rgba(255,255,255,.15); }
+    .trust-col:last-child { border-right:none; }
+    .trust-val { font-family:'Playfair Display',serif; font-size:40px; font-weight:900; color:var(--white); line-height:1; }
+    .trust-label { font-size:12px; color:rgba(255,255,255,.65); margin-top:7px; line-height:1.4; }
+
+    /* INTRO SECTION */
+    .intro-section { padding:80px 80px; display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
+    .overline { font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--teal); margin-bottom:12px; }
+    .section-heading { font-family:'Playfair Display',serif; font-size:clamp(26px,2.8vw,38px); font-weight:900; color:var(--navy); line-height:1.2; margin-bottom:16px; }
+    .section-sub  { font-size:16px; color:var(--text-muted); line-height:1.8; max-width:700px; margin-bottom:52px; }
+    .body-text    { font-size:16px; color:var(--text-mid); line-height:1.85; margin-bottom:18px; }
+    /* what audited financials contain */
+    .contains-box { background:var(--teal-pale); border:1px solid var(--teal-border); border-radius:16px; padding:28px; }
+    .contains-title { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); margin-bottom:16px; }
+    .contains-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .contains-list li { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:var(--text-mid); line-height:1.55; }
+    .ci-dot { width:6px; height:6px; border-radius:50%; background:var(--teal-light); flex-shrink:0; margin-top:7px; }
+    .ci-bold { font-weight:700; color:var(--navy); }
+
+    /* STATEMENT CARDS */
+    .statements-section { padding:0 80px 80px; }
+    .statements-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+
+    .stmt-card { border-radius:20px; overflow:hidden; border:1px solid var(--border-warm); display:flex; flex-direction:column; transition:box-shadow .25s,transform .25s,border-color .25s; }
+    .stmt-card:hover { box-shadow:0 10px 40px rgba(14,124,123,.12); transform:translateY(-4px); border-color:var(--teal-border); }
+
+    .stmt-top { padding:28px 26px 22px; position:relative; overflow:hidden; }
+    .stmt-top::after { content:''; position:absolute; bottom:-40px; right:-40px; width:150px; height:150px; border-radius:50%; background:rgba(255,255,255,.05); }
+    .stmt-top.y2024 { background:linear-gradient(135deg, var(--navy) 0%, #1A2A4A 100%); }
+    .stmt-top.y2023 { background:linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%); }
+    .stmt-top.y2022 { background:linear-gradient(135deg, #1A3A5A 0%, #0A1A3A 100%); }
+
+    .stmt-badge { display:inline-block; font-size:9px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; padding:4px 10px; border-radius:10px; margin-bottom:14px; }
+    .stmt-badge.y2024 { background:rgba(23,190,187,.2); color:var(--teal-light); }
+    .stmt-badge.y2023 { background:rgba(255,255,255,.18); color:var(--white); }
+    .stmt-badge.y2022 { background:rgba(23,190,187,.15); color:var(--teal-light); }
+
+    .stmt-year { font-family:'Playfair Display',serif; font-size:48px; font-weight:900; color:var(--white); line-height:1; margin-bottom:6px; }
+    .stmt-title { font-size:15px; font-weight:700; color:rgba(255,255,255,.85); margin-bottom:4px; }
+    .stmt-sub   { font-size:12px; color:rgba(255,255,255,.55); margin-bottom:20px; line-height:1.5; }
+
+    /* audit verified badge */
+    .audit-verified { display:inline-flex; align-items:center; gap:7px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); border-radius:8px; padding:7px 13px; }
+    .av-icon { width:16px; height:16px; }
+    .av-text { font-size:11px; font-weight:700; color:rgba(255,255,255,.8); letter-spacing:.05em; }
+    .av-dot  { width:6px; height:6px; border-radius:50%; background:#4ADE80; flex-shrink:0; }
+
+    .stmt-body { background:var(--white); padding:24px 26px; flex:1; display:flex; flex-direction:column; }
+
+    /* financial highlights inside card */
+    .stmt-highlights { margin-bottom:20px; }
+    .sh-label { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--teal); margin-bottom:12px; }
+    .sh-row { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid var(--border); }
+    .sh-row:last-child { border-bottom:none; }
+    .sh-name { font-size:13px; color:var(--text-mid); }
+    .sh-val  { font-size:13px; font-weight:700; color:var(--navy); }
+    .sh-val.positive { color:#166534; }
+    .sh-val.neutral  { color:var(--teal); }
+
+    /* audit details */
+    .stmt-audit-info { background:var(--gold-pale); border:1px solid var(--gold-border); border-radius:10px; padding:14px 16px; margin-bottom:18px; }
+    .sai-label { font-size:9px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#7A5010; margin-bottom:8px; }
+    .sai-row  { display:flex; justify-content:space-between; font-size:12px; color:#7A5010; margin-bottom:4px; }
+    .sai-row:last-child { margin-bottom:0; }
+    .sai-row strong { font-weight:700; color:#5A3800; }
+
+    .stmt-download { display:flex; align-items:center; justify-content:center; gap:10px; background:var(--teal); color:var(--white); font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:14px 22px; border-radius:10px; text-decoration:none; transition:background .2s; margin-top:auto; }
+    .stmt-download:hover { background:var(--teal-dark); }
+    .stmt-download svg { width:16px; height:16px; }
+
+    /* WHAT AUDITED MEANS SECTION */
+    .audit-explainer { padding:80px 80px; background:var(--warm-bg); }
+    .explainer-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:44px; }
+    .exp-card { background:var(--white); border:1px solid var(--border-warm); border-radius:16px; padding:26px 22px; transition:box-shadow .2s,transform .2s,border-color .2s; }
+    .exp-card:hover { box-shadow:0 6px 24px rgba(14,124,123,.09); transform:translateY(-2px); border-color:var(--teal-border); }
+    .exp-step { width:36px; height:36px; border-radius:10px; background:var(--teal-pale); border:1px solid var(--teal-border); display:flex; align-items:center; justify-content:center; margin-bottom:14px; font-family:'Playfair Display',serif; font-size:16px; font-weight:900; color:var(--teal); }
+    .exp-title { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px; }
+    .exp-body  { font-size:13px; color:var(--text-muted); line-height:1.7; }
+
+    /* WHAT AUDIT CONFIRMS */
+    .confirms-section { padding:80px 80px; }
+    .confirms-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:44px; }
+    .confirm-card { border-radius:16px; padding:26px 24px; border:1px solid; display:flex; gap:18px; align-items:flex-start; transition:box-shadow .2s,transform .2s; }
+    .confirm-card:hover { box-shadow:0 5px 20px rgba(0,0,0,.07); transform:translateY(-2px); }
+    .confirm-card.c1 { background:var(--teal-pale);  border-color:var(--teal-border); }
+    .confirm-card.c2 { background:var(--gold-pale);  border-color:var(--gold-border); }
+    .confirm-card.c3 { background:var(--red-pale);   border-color:#F5C8C8; }
+    .confirm-card.c4 { background:#F0F4FF;            border-color:#C8D8F8; }
+    .confirm-card.c5 { background:#F0F8F0;            border-color:#B8D8B8; }
+    .confirm-card.c6 { background:#FAF0FF;            border-color:#DDD5FF; }
+    .confirm-icon { width:44px; height:44px; border-radius:11px; background:rgba(255,255,255,.7); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .confirm-icon svg { width:22px; height:22px; }
+    .confirm-title { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:7px; }
+    .confirm-desc  { font-size:13px; color:var(--text-mid); line-height:1.7; }
+
+    /* FINANCIAL TRENDS */
+    .trends-section { padding:80px 80px; background:var(--navy); position:relative; overflow:hidden; }
+    .trends-section::before { content:''; position:absolute; top:-80px; right:-80px; width:440px; height:440px; border-radius:50%; border:1px solid rgba(23,190,187,.07); }
+    .trends-inner { position:relative; z-index:2; }
+    .trends-overline { font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--teal-light); margin-bottom:12px; }
+    .trends-heading { font-family:'Playfair Display',serif; font-size:clamp(26px,2.8vw,38px); font-weight:900; color:var(--white); line-height:1.2; margin-bottom:16px; }
+    .trends-sub { font-size:16px; color:rgba(255,255,255,.6); line-height:1.8; max-width:680px; margin-bottom:52px; }
+    .trends-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .trend-card { background:rgba(255,255,255,.05); border:1px solid rgba(23,190,187,.15); border-radius:16px; padding:28px 24px; transition:background .2s; }
+    .trend-card:hover { background:rgba(23,190,187,.08); }
+    .trend-year { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--teal-light); margin-bottom:12px; }
+    .trend-metric { margin-bottom:16px; padding-bottom:16px; border-bottom:1px solid rgba(255,255,255,.08); }
+    .trend-metric:last-child { margin-bottom:0; padding-bottom:0; border-bottom:none; }
+    .tm-label { font-size:11px; color:rgba(255,255,255,.5); margin-bottom:5px; }
+    .tm-val { font-family:'Playfair Display',serif; font-size:24px; font-weight:900; color:var(--white); line-height:1; }
+    .tm-note { font-size:11px; color:rgba(255,255,255,.4); margin-top:2px; }
+    .tm-bar { height:5px; background:rgba(255,255,255,.08); border-radius:3px; overflow:hidden; margin-top:8px; }
+    .tm-bar-fill { height:100%; border-radius:3px; background:linear-gradient(90deg, var(--teal) 0%, var(--teal-light) 100%); }
+
+    /* AUDIT INTEGRITY COMMITMENTS */
+    .integrity-section { padding:80px 80px; background:var(--warm-bg); }
+    .integrity-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:44px; }
+    .integrity-card { background:var(--white); border:1px solid var(--border-warm); border-radius:16px; padding:28px 24px; display:grid; grid-template-columns:48px 1fr; gap:18px; align-items:start; transition:box-shadow .2s,transform .2s,border-color .2s; }
+    .integrity-card:hover { box-shadow:0 6px 24px rgba(14,124,123,.09); transform:translateY(-2px); border-color:var(--teal-border); }
+    .int-num { width:48px; height:48px; border-radius:12px; background:var(--teal-pale); border:1px solid var(--teal-border); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .int-num-text { font-family:'Playfair Display',serif; font-size:20px; font-weight:900; color:var(--teal); }
+    .int-title { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px; }
+    .int-desc  { font-size:13px; color:var(--text-muted); line-height:1.7; }
+
+    /* DONOR REQUEST SECTION */
+    .request-section { padding:80px 80px; }
+    .request-inner { background:var(--white); border:1px solid var(--border-warm); border-radius:24px; padding:52px 56px; display:grid; grid-template-columns:1fr 320px; gap:60px; align-items:center; }
+    .req-heading { font-family:'Playfair Display',serif; font-size:clamp(22px,2.5vw,32px); font-weight:900; color:var(--navy); line-height:1.2; margin-bottom:16px; }
+    .req-body { font-size:16px; color:var(--text-mid); line-height:1.8; margin-bottom:22px; }
+    .req-note { background:var(--teal-pale); border:1px solid var(--teal-border); border-radius:10px; padding:14px 16px; font-size:13px; color:var(--text-mid); line-height:1.65; }
+    .req-note strong { color:var(--teal); font-weight:700; }
+    .req-actions { display:flex; flex-direction:column; gap:12px; }
+    .btn-teal-solid { display:flex; align-items:center; justify-content:center; gap:8px; background:var(--teal); color:var(--white); font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:15px 24px; border-radius:10px; text-decoration:none; transition:background .2s; }
+    .btn-teal-solid:hover { background:var(--teal-dark); }
+    .btn-outline-teal { display:flex; align-items:center; justify-content:center; gap:8px; border:2px solid var(--teal); color:var(--teal); font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:13px 24px; border-radius:10px; text-decoration:none; transition:background .2s,color .2s; }
+    .btn-outline-teal:hover { background:var(--teal); color:var(--white); }
+
+    /* SIBLING NAV */
+    .sibling-nav { padding:60px 80px; border-top:1px solid var(--border); display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .sib-card { background:var(--white); border:1px solid var(--border-warm); border-radius:16px; padding:28px 26px; text-decoration:none; display:flex; justify-content:space-between; align-items:center; transition:box-shadow .2s,transform .2s,border-color .2s; }
+    .sib-card:hover { box-shadow:0 6px 24px rgba(14,124,123,.09); transform:translateY(-2px); border-color:var(--teal-border); }
+    .sib-dir   { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--teal); margin-bottom:6px; }
+    .sib-title { font-family:'Playfair Display',serif; font-size:19px; font-weight:700; color:var(--navy); }
+    .sib-arrow { width:40px; height:40px; border-radius:50%; background:var(--teal-pale); border:1px solid var(--teal-border); display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:background .2s; }
+    .sib-card:hover .sib-arrow { background:var(--teal); }
+    .sib-card:hover .sib-arrow svg { stroke:var(--white); }
+    .sib-arrow svg { width:16px; height:16px; }
+
+    /* CTA */
+    .cta-section { background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 100%); padding:80px 80px; text-align:center; position:relative; overflow:hidden; }
+    .cta-section::before { content:''; position:absolute; top:-60px; left:50%; transform:translateX(-50%); width:600px; height:600px; border-radius:50%; border:1px solid rgba(255,255,255,.07); }
+    .cta-section h2 { font-family:'Playfair Display',serif; font-size:clamp(26px,3.2vw,44px); font-weight:900; color:var(--white); max-width:680px; margin:0 auto 40px; line-height:1.2; position:relative; z-index:1; }
+    .cta-buttons { display:flex; justify-content:center; gap:16px; position:relative; z-index:1; flex-wrap:wrap; }
+    .btn-white { background:var(--white); color:var(--red); font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:16px 36px; border-radius:50px; text-decoration:none; transition:opacity .2s; }
+    .btn-white:hover { opacity:.9; }
+    .btn-outline-white { background:transparent; border:2px solid rgba(255,255,255,.4); color:var(--white); font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:16px 36px; border-radius:50px; text-decoration:none; transition:border-color .2s; }
+    .btn-outline-white:hover { border-color:rgba(255,255,255,.85); }
+
+    footer { background:#0D0D1F; padding:64px 80px 0; }
+    .footer-grid { display:grid; grid-template-columns:280px 1fr 1fr 260px; gap:48px; padding-bottom:48px; }
+    .footer-logo { display:flex; align-items:center; gap:10px; margin-bottom:18px; }
+    .footer-logo-icon { width:36px; height:36px; background:var(--red); border-radius:6px; display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-weight:900; font-size:16px; color:var(--white); }
+    .footer-logo-text { font-weight:700; font-size:15px; color:var(--white); }
+    .footer-tagline { font-size:13px; color:rgba(255,255,255,.45); line-height:1.7; margin-bottom:22px; }
+    .footer-socials { display:flex; gap:10px; }
+    .social-dot { width:34px; height:34px; border-radius:8px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1); }
+    .footer-col-h { font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--teal-light); margin-bottom:18px; opacity:.7; }
+    .footer-links { list-style:none; display:flex; flex-direction:column; gap:11px; }
+    .footer-links a { font-size:14px; color:rgba(255,255,255,.65); text-decoration:none; transition:color .2s; }
+    .footer-links a:hover { color:var(--teal-light); }
+    .footer-loc-name { font-size:15px; font-weight:700; color:var(--white); line-height:1.4; margin-bottom:10px; }
+    .footer-loc-detail { font-size:13px; color:rgba(255,255,255,.45); line-height:1.6; margin-bottom:3px; }
+    .footer-nl-note { font-size:13px; color:rgba(255,255,255,.5); margin-bottom:14px; line-height:1.6; }
+    .footer-input { width:100%; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:8px; padding:12px 16px; font-size:13px; color:var(--white); outline:none; margin-bottom:10px; font-family:'DM Sans',sans-serif; }
+    .footer-input::placeholder { color:rgba(255,255,255,.28); }
+    .footer-subscribe { width:100%; background:var(--teal); color:var(--white); font-family:'DM Sans',sans-serif; font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:13px; border:none; border-radius:8px; cursor:pointer; transition:background .2s; }
+    .footer-subscribe:hover { background:var(--teal-dark); }
+    .footer-bottom { border-top:1px solid rgba(255,255,255,.07); padding:22px 0; display:flex; justify-content:space-between; align-items:center; }
+    .footer-bottom p { font-size:12px; color:rgba(255,255,255,.3); }
+    .footer-bottom-links { display:flex; gap:24px; }
+    .footer-bottom-links a { font-size:12px; color:rgba(255,255,255,.35); text-decoration:none; }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+    @media(max-width:1100px){
+      nav{padding:0 24px}
+      .hero{padding:60px 32px}
+      .hero-inner{grid-template-columns:1fr;gap:40px}
+      .trust-strip,.intro-section,.statements-section,.audit-explainer,.confirms-section,.trends-section,.integrity-section,.request-section,.sibling-nav,.cta-section,footer{padding-left:32px;padding-right:32px}
+      .trust-strip{grid-template-columns:1fr 1fr}
+      .intro-section{grid-template-columns:1fr}
+      .statements-grid{grid-template-columns:1fr}
+      .explainer-grid{grid-template-columns:1fr 1fr}
+      .confirms-grid{grid-template-columns:1fr}
+      .trends-grid{grid-template-columns:1fr}
+      .integrity-grid{grid-template-columns:1fr}
+      .request-inner{grid-template-columns:1fr}
+      .sibling-nav{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+
+
+
+<!-- NAV -->
+<div class="topbar">
+        <div class="topbar-info">
+            <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
+            <a href="tel:+231779205152"><i class="fa-solid fa-phone"></i> +231 779 205 152</a>
+        </div>
+        <div class="topbar-socials">
+            <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"> <img src="./img/logo14.png" alt="BDI Logo"></a>
+        </div>
+
+        <ul class="nav-links">
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Our Work </b><i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>What We Do</u></h4>
+                            <ul>
+                                <li><a href="agriculture.html">Agriculture & Agribusiness</a></li>
+                                <li><a href="health.html">Health & Nutrition</a></li>
+                                <li><a href="education.html">Education</a></li>
+                                <li><a href="environment.html">Environment & Climate</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Where We Work</u></h4>
+                            <ul><li><a href="#">View all countries</a></li></ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Development & Inclusion</u></h4>
+                            <ul>
+                                <li><a href="gender-youth.html">Gender & Youth Empowerment</a></li>
+                                <li><a href="fisheries.html">Fisheries & Aquaculture</a></li>
+                                <li><a href="disability.html">Disability Inclusion</a></li>
+                                <li><a href="partnership.html">Research & Partnership</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Latest News & Updates</u></h4>
+                            <ul><li><a href="#">View All Our News</a></li></ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>About Us </b><i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                       <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Who we are</u></h4>
+                            <ul>
+                                <li><a href="our-values.html">Our Values</a></li>
+                                <li><a href="founding-story.html">Our founding Story</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Governance</u></h4>
+                            <ul>
+                                <li><a href="governance-structure.html">Our Governance Structure</a></li>
+                                <li><a href="board.html">Our Board of Directors</a></li>
+                                <li><a href="our-ceo.html">Our CEO</a></li>
+                                <li><a href="our-team.html">Our Team</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>How We Raise Money</u></h4>
+                            <ul>
+                                <li><a href="iinstitutional-donors.html">Institutional Donors</a></li>
+                                <li><a href="partners.html">Partners</a></li>
+                                <li><a href="individual-donations.html">Individual Donations</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Transparency and accountability</u></h4>
+                            <ul>
+                                <li><a href="annual-reports.html">Annual Reports</a></li>
+                                <li><a href="how-donations-are-spent.html">How donations are spent</a></li>
+								<li><a href="audited-financials.html">Audited Financial Statements</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Support us</b> <i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Donate Now</u></h4>
+                            <ul>
+                                <li><a href="#">Donate to safe drug victims</a></li>
+                                <li><a href="#">End Period Poverty</a></li>
+                                <li><a href="#">Support Women in Agribusiness</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Corporate support</u></h4>
+                            <ul>
+                                <li><a href="#">Become a corporate supporter</a></li>
+                                <li><a href="#">Partner with us</a></li>
+                                <li><a href="#">Staff fundraising</a></li>
+                                <li><a href="#">Payroll Giving</a></li>
+                                <li><a href="#">Make a corporate donation</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Fundraise for BDI</u></h4>
+                            <ul>
+                                <li><a href="#">Start your own fundraiser</a></li>
+                                <li><a href="#">Find a friend to sponsor</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Volunteer Remotely</u></h4>
+                            <ul><li><a href="#">You can Volunteer with us</a></li></ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Other ways to give</u></h4>
+                            <ul>
+                                <li><a href="#">Donate in memory</a></li>
+                                <li><a href="#">Leave a gift in your Will</a></li>
+                                <li><a href="#">Your donation and tax back</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Resource Centre</b> <i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Knowledge Hub Resources</u></h4>
+                            <ul>
+                                <li><a href="#">Research</a></li>
+                                <li><a href="#">Evaluations</a></li>
+                                <li><a href="#">Newsletters</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="nav-right">
+            <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="donate-main">Donate Now</a>
+        </div>
+    </nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="section-tabs">
+    <a href="annual-reports.html" class="section-tab">Annual Reports</a>
+    <a href="how-donations-are-spent.html" class="section-tab">How Donations Are Spent</a>
+    <a href="audited-financials.html" class="section-tab active">Audited Financial Statements</a>
+  </div>
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow">Transparency &amp; Accountability</p>
+      <h1>Three years.<br>Three clean audits.<br><em>Open to anyone.</em></h1>
+      <p class="hero-desc" align= "justify";>BDI's audited financial statements are independently verified by an external auditor every year — covering every shilling of income and expenditure. They are publicly available, unconditionally, to any donor, partner, government authority, or member of the public who wishes to review them.</p>
+    </div>
+    <div class="hero-creds">
+      <div class="hero-cred">
+        <div class="hero-cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#17BEBB" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div><p class="hero-cred-title">Independently Audited</p><p class="hero-cred-desc">External auditor appointed by the Board — separate from BDI management</p></div>
+      </div>
+      <div class="hero-cred">
+        <div class="hero-cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#17BEBB" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+        <div><p class="hero-cred-title">Publicly Available</p><p class="hero-cred-desc">No registration required — download any statement directly from this page</p></div>
+      </div>
+      <div class="hero-cred">
+        <div class="hero-cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#17BEBB" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+        <div><p class="hero-cred-title">Annual Without Exception</p><p class="hero-cred-desc">BDI commits to an annual audit every year — regardless of donor requirements</p></div>
+      </div>
+      <div class="hero-cred">
+        <div class="hero-cred-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#17BEBB" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><p class="hero-cred-title">Board-Reviewed and Approved</p><p class="hero-cred-desc">Every audited statement is formally reviewed and approved by BDI's Board of Directors</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-col">
+    <div class="trust-val">3</div>
+    <div class="trust-label">Consecutive years of independently audited accounts, 2022-2024</div>
+  </div>
+  <div class="trust-col">
+    <div class="trust-val">0</div>
+    <div class="trust-label">Qualified audit opinions received — all audits returned clean</div>
+  </div>
+  <div class="trust-col">
+    <div class="trust-val">100%</div>
+    <div class="trust-label">Of income and expenditure independently verified each year</div>
+  </div>
+  <div class="trust-col">
+    <div class="trust-val">Free</div>
+    <div class="trust-label">All statements available to download — no barriers, no conditions</div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro-section">
+  <div>
+    <p class="overline">About Our Audited Financial Statements</p>
+    <h2 class="section-heading">What an audit is, what it tells you, and why BDI does one every year.</h2>
+    <p class="body-text" align= "justify";>An audited financial statement is a financial report that has been independently reviewed by a certified external auditor — someone entirely separate from BDI's management — who verifies that BDI's financial records are accurate, complete, and prepared in accordance with recognized accounting standards.</p>
+    <p class="body-text" align= "justify";>An audit is the highest form of financial accountability available to a nonprofit organization. It is stronger than a self-prepared financial report, stronger than a donor compliance report, and stronger than a management review. When an external auditor signs off on BDI's accounts, they are staking their professional reputation on the accuracy of what they have certified.</p>
+    <p class="body-text" align= "justify";>BDI has commissioned an independent external audit every year since its formal establishment in 2022 — not because any single donor required it, but because the Board and CEO believe that every organization that asks people to trust it with resources has an obligation to verify that trust through independent scrutiny. Our audit partner is appointed by the Board of Directors, ensuring full independence from management.</p>
+  </div>
+  <div class="contains-box">
+    <p class="contains-title">What Each Audited Statement Contains</p>
+    <ul class="contains-list">
+      <li><span class="ci-dot"></span><span><span class="ci-bold">Independent Auditor's Report</span> — the auditor's formal opinion on whether the accounts present a true and fair view of BDI's financial position</span></li>
+      <li><span class="ci-dot"></span><span><span class="ci-bold">Statement of Financial Position</span> — BDI's assets, liabilities, and net assets (balance sheet) at year end</span></li>
+      <li><span class="ci-dot"></span><span><span class="ci-bold">Statement of Income and Expenditure</span> — all income received and all expenditure incurred during the year</span></li>
+      <li><span class="ci-dot"></span><span><span class="ci-bold">Statement of Cash Flows</span> — how money moved into and out of BDI's accounts during the year</span></li>
+      <li><span class="ci-dot"></span><span><span class="ci-bold">Notes to the Accounts</span> — detailed explanations of each line item, accounting policies, and material transactions</span></li>
+      <li><span class="ci-dot"></span><span><span class="ci-bold">Management Representation Letter</span> — BDI management's formal confirmation of representations made to the auditor</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- AUDITED STATEMENTS — DOWNLOADABLE -->
+<section class="statements-section">
+  <div class="statements-grid">
+
+    <!-- 2024 -->
+    <div class="stmt-card">
+      <div class="stmt-top y2024">
+        <span class="stmt-badge y2024">Latest Statement</span>
+        <p class="stmt-year">2024</p>
+        <p class="stmt-title">Audited Financial Statements</p>
+        <p class="stmt-sub">BASA Development Initiatives — Financial Year ended 31 December 2024</p>
+        <div class="audit-verified">
+          <div class="av-dot"></div>
+          <svg class="av-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span class="av-text">Audit Complete — Clean Opinion</span>
+        </div>
+      </div>
+      <div class="stmt-body">
+        <div class="stmt-highlights">
+          <p class="sh-label">Key Financial Highlights — 2024</p>
+          <div class="sh-row"><span class="sh-name">Total Income</span><span class="sh-val neutral">USD [To be confirmed]</span></div>
+          <div class="sh-row"><span class="sh-name">Total Expenditure</span><span class="sh-val">USD [To be confirmed]</span></div>
+          <div class="sh-row"><span class="sh-name">Program Expenditure Share</span><span class="sh-val positive">78%</span></div>
+          <div class="sh-row"><span class="sh-name">Audit Opinion</span><span class="sh-val positive">Unqualified (Clean)</span></div>
+        </div>
+        <div class="stmt-audit-info">
+          <p class="sai-label">Audit Information</p>
+          <div class="sai-row"><span>Reporting Period</span><strong>1 January – 31 December 2024</strong></div>
+          <div class="sai-row"><span>Auditor</span><strong>Independent External Auditor</strong></div>
+          <div class="sai-row"><span>Standard</span><strong>IPSAS / Liberian NGO Standards</strong></div>
+          <div class="sai-row"><span>Board Approval</span><strong>Formally Approved</strong></div>
+        </div>
+        <a href="downloads/BDI-Audited-Financials-2024.pdf" download class="stmt-download">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Audited Statement 2024
+        </a>
+      </div>
+    </div>
+
+    <!-- 2023 -->
+    <div class="stmt-card">
+      <div class="stmt-top y2023">
+        <span class="stmt-badge y2023">2023 Statement</span>
+        <p class="stmt-year">2023</p>
+        <p class="stmt-title">Audited Financial Statements</p>
+        <p class="stmt-sub">BASA Development Initiatives — Financial Year ended 31 December 2023</p>
+        <div class="audit-verified">
+          <div class="av-dot"></div>
+          <svg class="av-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span class="av-text">Audit Complete — Clean Opinion</span>
+        </div>
+      </div>
+      <div class="stmt-body">
+        <div class="stmt-highlights">
+          <p class="sh-label">Key Financial Highlights — 2023</p>
+          <div class="sh-row"><span class="sh-name">Total Income</span><span class="sh-val neutral">USD [To be confirmed]</span></div>
+          <div class="sh-row"><span class="sh-name">Total Expenditure</span><span class="sh-val">USD [To be confirmed]</span></div>
+          <div class="sh-row"><span class="sh-name">Program Expenditure Share</span><span class="sh-val positive">78%</span></div>
+          <div class="sh-row"><span class="sh-name">Audit Opinion</span><span class="sh-val positive">Unqualified (Clean)</span></div>
+        </div>
+        <div class="stmt-audit-info">
+          <p class="sai-label">Audit Information</p>
+          <div class="sai-row"><span>Reporting Period</span><strong>1 January – 31 December 2023</strong></div>
+          <div class="sai-row"><span>Auditor</span><strong>Independent External Auditor</strong></div>
+          <div class="sai-row"><span>Standard</span><strong>IPSAS / Liberian NGO Standards</strong></div>
+          <div class="sai-row"><span>Board Approval</span><strong>Formally Approved</strong></div>
+        </div>
+        <a href="downloads/BDI-Audited-Financials-2023.pdf" download class="stmt-download">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Audited Statement 2023
+        </a>
+      </div>
+    </div>
+
+    <!-- 2022 -->
+    <div class="stmt-card">
+      <div class="stmt-top y2022">
+        <span class="stmt-badge y2022">Founding Year</span>
+        <p class="stmt-year">2022</p>
+        <p class="stmt-title">Audited Financial Statements</p>
+        <p class="stmt-sub">BASA Development Initiatives — Financial Year ended 31 December 2022 (partial year, June – December)</p>
+        <div class="audit-verified">
+          <div class="av-dot"></div>
+          <svg class="av-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span class="av-text">Audit Complete — Clean Opinion</span>
+        </div>
+      </div>
+      <div class="stmt-body">
+        <div class="stmt-highlights">
+          <p class="sh-label">Key Financial Highlights — 2022</p>
+          <div class="sh-row"><span class="sh-name">Total Income</span><span class="sh-val neutral">USD [To be confirmed]</span></div>
+          <div class="sh-row"><span class="sh-name">Total Expenditure</span><span class="sh-val">USD [To be confirmed]</span></div>
+          <div class="sh-row"><span class="sh-name">Program Expenditure Share</span><span class="sh-val positive">78%</span></div>
+          <div class="sh-row"><span class="sh-name">Audit Opinion</span><span class="sh-val positive">Unqualified (Clean)</span></div>
+        </div>
+        <div class="stmt-audit-info">
+          <p class="sai-label">Audit Information</p>
+          <div class="sai-row"><span>Reporting Period</span><strong>June – 31 December 2022</strong></div>
+          <div class="sai-row"><span>Auditor</span><strong>Independent External Auditor</strong></div>
+          <div class="sai-row"><span>Standard</span><strong>IPSAS / Liberian NGO Standards</strong></div>
+          <div class="sai-row"><span>Board Approval</span><strong>Formally Approved</strong></div>
+        </div>
+        <a href="downloads/BDI-Audited-Financials-2022.pdf" download class="stmt-download">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Audited Statement 2022
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+
+</section>
+
+<!-- WHAT DOES AUDITED MEAN -->
+<section class="audit-explainer">
+  <p class="overline">Understanding the Audit Process</p>
+  <h2 class="section-heading">What "audited" actually means — and why it matters.</h2>
+  <p class="section-sub">Many organizations publish financial summaries. BDI publishes independently audited financial statements. Here is the difference, explained in six steps.</p>
+  <div class="explainer-grid">
+    <div class="exp-card">
+      <div class="exp-step">1</div>
+      <p class="exp-title">Board Appoints an Independent Auditor</p>
+      <p class="exp-body">BDI's Board of Directors — not management — selects and appoints an independent, certified external auditor each year. This ensures the auditor has no commercial or personal relationship with BDI's management team that could compromise their objectivity.</p>
+    </div>
+    <div class="exp-card">
+      <div class="exp-step">2</div>
+      <p class="exp-title">Auditor Plans the Scope of Work</p>
+      <p class="exp-body">The auditor designs a testing plan covering BDI's income streams, expenditure categories, bank reconciliations, donor fund tracking, procurement records, payroll, and asset registers. The plan is designed to identify any material misstatement or irregularity.</p>
+    </div>
+    <div class="exp-card">
+      <div class="exp-step">3</div>
+      <p class="exp-title">Field Work and Evidence Collection</p>
+      <p class="exp-body">The auditor reviews BDI's physical financial records — receipts, contracts, bank statements, payment vouchers, staff timesheets, and donor reports. They verify that transactions are supported by evidence and that expenditure matches approved budgets and donor agreements.</p>
+    </div>
+    <div class="exp-card">
+      <div class="exp-step">4</div>
+      <p class="exp-title">Management Queries and Responses</p>
+      <p class="exp-body">Where the auditor identifies questions, inconsistencies, or areas requiring explanation, management is required to respond in writing. These queries and responses form part of the audit working papers and are retained in the auditor's file.</p>
+    </div>
+    <div class="exp-card">
+      <div class="exp-step">5</div>
+      <p class="exp-title">Draft Report and Management Review</p>
+      <p class="exp-body">The auditor produces a draft report and shares it with management for factual accuracy review. Management may correct factual errors but cannot change the auditor's opinion or findings. The auditor's conclusions are entirely their own.</p>
+    </div>
+    <div class="exp-card">
+      <div class="exp-step">6</div>
+      <p class="exp-title">Final Report — Board Approval and Publication</p>
+      <p class="exp-body">The final audited financial statements are presented to BDI's Board of Directors, formally approved, and then published publicly on this website. An "unqualified" or "clean" audit opinion means the auditor found no material misstatements in BDI's accounts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT THE AUDIT CONFIRMS -->
+<section class="confirms-section">
+  <p class="overline">What a Clean Audit Tells You</p>
+  <h2 class="section-heading">Six things an unqualified audit opinion confirms about BDI.</h2>
+  <p class="section-sub">When an external auditor issues an unqualified opinion on BDI's financial statements, they are independently confirming each of the following — not on BDI's word, but on the basis of their own professional review of the evidence.</p>
+  <div class="confirms-grid">
+    <div class="confirm-card c1">
+      <div class="confirm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <div>
+        <p class="confirm-title">Income Is Accurately Recorded</p>
+        <p class="confirm-desc">All grants, donations, and other income received by BDI have been correctly recorded in the financial accounts, and no income has been omitted, diverted, or misrepresented.</p>
+      </div>
+    </div>
+    <div class="confirm-card c2">
+      <div class="confirm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#92400E" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+      <div>
+        <p class="confirm-title">Expenditure Is Supported by Evidence</p>
+        <p class="confirm-desc">Every item of expenditure has been reviewed by the auditor and confirmed to be supported by legitimate, contemporaneous financial documentation — receipts, contracts, payment vouchers, and bank records.</p>
+      </div>
+    </div>
+    <div class="confirm-card c3">
+      <div class="confirm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#B40205" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div>
+        <p class="confirm-title">Donor Funds Used for Intended Purposes</p>
+        <p class="confirm-desc">Funds restricted by institutional donors to specific programs or activities have been used for those purposes. The auditor confirms that BDI has not diverted restricted funds to other uses — a critical assurance for all institutional donors.</p>
+      </div>
+    </div>
+    <div class="confirm-card c4">
+      <div class="confirm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      <div>
+        <p class="confirm-title">Financial Statements Present a True and Fair View</p>
+        <p class="confirm-desc">Taken as a whole, BDI's financial statements accurately represent its financial position and performance for the year — there are no material misstatements, whether from error or fraud, that would change a reader's understanding.</p>
+      </div>
+    </div>
+    <div class="confirm-card c5">
+      <div class="confirm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#166534" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3M6.343 6.343l-.707-.707M10.121 20.364l.707-.707M13.879 20.364l-.707-.707M17.657 6.343l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg></div>
+      <div>
+        <p class="confirm-title">Accounting Policies Are Consistent and Appropriate</p>
+        <p class="confirm-desc">BDI has applied consistent accounting policies in preparing its financial statements, and those policies are appropriate for a nonprofit organization of BDI's type and scale operating in Liberia.</p>
+      </div>
+    </div>
+    <div class="confirm-card c6">
+      <div class="confirm-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#6D28D9" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div>
+        <p class="confirm-title">BDI Is a Going Concern</p>
+        <p class="confirm-desc">The auditor confirms that BDI has the financial resources to continue operating for the foreseeable future — that it is not at risk of insolvency or financial collapse — giving donors and partners confidence that their engagement with BDI is sustainable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINANCIAL TRENDS -->
+<section class="trends-section">
+  <div class="trends-inner">
+    <p class="trends-overline">Financial Growth Trajectory — 2022 to 2024</p>
+    <h2 class="trends-heading">Three years of consistent growth, responsibly managed.</h2>
+    <p class="trends-sub">The trends below reflect BDI's audited financial data across its first three years of operation. Exact figures are available in each year's downloadable audited statement. These metrics demonstrate BDI's trajectory toward the $2 million annual budget target set in the Strategic Plan 2025-2029.</p>
+    <div class="trends-grid">
+
+      <div class="trend-card">
+        <p class="trend-year">Financial Year 2022 — Founding Year</p>
+        <div class="trend-metric">
+          <p class="tm-label">Total Budget Scale</p>
+          <p class="tm-val">Baseline</p>
+          <p class="tm-note">First partial year (June – December)</p>
+          <div class="tm-bar"><div class="tm-bar-fill" style="width:15%"></div></div>
+        </div>
+        <div class="trend-metric">
+          <p class="tm-label">Program Spend Ratio</p>
+          <p class="tm-val">78%</p>
+          <p class="tm-note">Established from year one</p>
+          <div class="tm-bar"><div class="tm-bar-fill" style="width:78%"></div></div>
+        </div>
+        <div class="trend-metric">
+          <p class="tm-label">Audit Opinion</p>
+          <p class="tm-val" style="font-size:16px;color:#4ADE80">Unqualified</p>
+          <p class="tm-note">First audit — clean result</p>
+        </div>
+      </div>
+
+      <div class="trend-card">
+        <p class="trend-year">Financial Year 2023 — Growth Year</p>
+        <div class="trend-metric">
+          <p class="tm-label">Budget Scale vs. 2022</p>
+          <p class="tm-val">+Growth</p>
+          <p class="tm-note">First full operating year</p>
+          <div class="tm-bar"><div class="tm-bar-fill" style="width:40%"></div></div>
+        </div>
+        <div class="trend-metric">
+          <p class="tm-label">Program Spend Ratio</p>
+          <p class="tm-val">78%</p>
+          <p class="tm-note">Consistent with 2022 baseline</p>
+          <div class="tm-bar"><div class="tm-bar-fill" style="width:78%"></div></div>
+        </div>
+        <div class="trend-metric">
+          <p class="tm-label">Audit Opinion</p>
+          <p class="tm-val" style="font-size:16px;color:#4ADE80">Unqualified</p>
+          <p class="tm-note">Second consecutive clean audit</p>
+        </div>
+      </div>
+
+      <div class="trend-card">
+        <p class="trend-year">Financial Year 2024 — Expansion Year</p>
+        <div class="trend-metric">
+          <p class="tm-label">Budget Scale vs. 2022</p>
+          <p class="tm-val">+Growth</p>
+          <p class="tm-note">Programs expanded to 5 active areas</p>
+          <div class="tm-bar"><div class="tm-bar-fill" style="width:70%"></div></div>
+        </div>
+        <div class="trend-metric">
+          <p class="tm-label">Program Spend Ratio</p>
+          <p class="tm-val">78%</p>
+          <p class="tm-note">Maintained as programs scaled</p>
+          <div class="tm-bar"><div class="tm-bar-fill" style="width:78%"></div></div>
+        </div>
+        <div class="trend-metric">
+          <p class="tm-label">Audit Opinion</p>
+          <p class="tm-val" style="font-size:16px;color:#4ADE80">Unqualified</p>
+          <p class="tm-note">Third consecutive clean audit</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AUDIT INTEGRITY COMMITMENTS -->
+<section class="integrity-section">
+  <p class="overline">BDI's Audit Integrity Commitments</p>
+  <h2 class="section-heading">The standards BDI holds itself to — beyond what any donor requires.</h2>
+  <div class="integrity-grid">
+    <div class="integrity-card">
+      <div class="int-num"><span class="int-num-text">1</span></div>
+      <div>
+        <p class="int-title">Annual Audit — Every Year, Without Exception</p>
+        <p class="int-desc">BDI commits to commissioning an independent external audit every financial year, regardless of whether any individual donor requires it. This is a governance decision made by BDI's Board, not a compliance concession made for a funder.</p>
+      </div>
+    </div>
+    <div class="integrity-card">
+      <div class="int-num"><span class="int-num-text">2</span></div>
+      <div>
+        <p class="int-title">Auditor Independence — Appointed by the Board, Not Management</p>
+        <p class="int-desc">BDI's external auditor is selected and appointed by the Board of Directors — not by the CEO or Finance team. This structural independence ensures the auditor is accountable to the Board, not to the management whose work they are reviewing.</p>
+      </div>
+    </div>
+    <div class="integrity-card">
+      <div class="int-num"><span class="int-num-text">3</span></div>
+      <div>
+        <p class="int-title">Public Disclosure — No Barriers, No Conditions</p>
+        <p class="int-desc">Audited financial statements are published on this page as free PDF downloads immediately following Board approval. BDI does not gate-keep its financial information behind registration forms, donor portals, or email lists. Transparency should be unconditional.</p>
+      </div>
+    </div>
+    <div class="integrity-card">
+      <div class="int-num"><span class="int-num-text">4</span></div>
+      <div>
+        <p class="int-title">Management Letter Actions — Followed Up and Reported</p>
+        <p class="int-desc">Every year, the auditor provides BDI with a management letter identifying any internal control weaknesses or process improvements recommended. BDI tracks each recommendation as a formal action item and reports on its implementation at the next Board meeting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REQUEST / CONTACT SECTION -->
+<section class="request-section">
+  <div class="request-inner">
+    <div>
+      <h2 class="req-heading">Need more detail than what is on this page?</h2>
+      <p class="req-body">BDI's Director of Finance and Operations is available to walk institutional donors, government authorities, and prospective partners through our audited financial statements in detail — including explanations of specific line items, fund tracking methodology, and our internal control framework.</p>
+      <div class="req-note">
+        <strong>For institutional due diligence requests</strong> — including full financial data packages, prior year comparatives, grant-specific financial reporting, and auditor contact details — please email <strong>info@basadev.org</strong> with the subject line "Financial Due Diligence Request." BDI commits to responding within five working days.
+      </div>
+    </div>
+    <div class="req-actions">
+      <a href="mailto:info@basadev.org?subject=Financial Due Diligence Request" class="btn-teal-solid">
+        Request a Briefing
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
+      <a href="transparency-how-donations-are-spent.html" class="btn-outline-teal">
+        How Donations Are Spent
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="annual-reports.html" class="btn-outline-teal">
+        Download Annual Reports
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SIBLING NAV -->
+<div class="sibling-nav">
+  <a href="annual-reports.html" class="sib-card">
+    <div>
+      <p class="sib-dir">&larr; First in This Section</p>
+      <p class="sib-title">Annual Reports</p>
+    </div>
+    <div class="sib-arrow" style="transform:rotate(180deg)"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+  </a>
+  <a href="how-donations-are-spent.html" class="sib-card">
+    <div>
+      <p class="sib-dir">&larr; Previous</p>
+      <p class="sib-title">How Donations Are Spent</p>
+    </div>
+    <div class="sib-arrow" style="transform:rotate(180deg)"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+  </a>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Three consecutive clean audits. Every dollar verified. Every statement public. That is BDI's standard.</h2>
+  <div class="cta-buttons">
+    <a href="#" class="btn-white">Donate With Confidence</a>
+    <a href="fundraising-institutional-donors.html" class="btn-outline-white">Become an Institutional Donor</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo"><div class="footer-logo-icon">B</div><span class="footer-logo-text">BDI</span></div>
+      <p class="footer-tagline">BASA Development Initiatives (BDI) is an NGO dedicated to building a more inclusive, resilient, and sustainable Liberia.</p>
+      <div class="footer-socials"><div class="social-dot"></div><div class="social-dot"></div><div class="social-dot"></div><div class="social-dot"></div></div>
+    </div>
+    <div>
+      <p class="footer-col-h">Transparency</p>
+      <ul class="footer-links">
+        <li><a href="#">Annual Reports</a></li>
+        <li><a href="#">How Donations Are Spent</a></li>
+        <li><a href="#">Audited Financial Statements</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-h">Location</p>
+      <p class="footer-loc-name">Monrovia,<br>Liberia, West Africa</p>
+      <p class="footer-loc-detail">info@basadev.org</p>
+      <p class="footer-loc-detail">www.basadev.org</p>
+    </div>
+    <div>
+      <p class="footer-col-h">Stay Updated</p>
+      <p class="footer-nl-note">Join our newsletter for the latest impact updates and new statement notifications.</p>
+      <input class="footer-input" type="email" placeholder="Your email address" />
+      <button class="footer-subscribe">Subscribe</button>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 BASA Development Initiatives (BDI). Registered NGO in Liberia.</p>
+    <div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </div>
+</footer>
+</body>
+<script>
+        const megaItems = document.querySelectorAll('.has-mega');
+
+        megaItems.forEach(item => {
+            const link = item.querySelector('.nav-link');
+            
+            link.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevents document click from firing immediately
+                
+                // Toggle current item
+                const isActive = item.classList.contains('is-active');
+                
+                // Close all other menus first
+                megaItems.forEach(i => i.classList.remove('is-active'));
+                
+                // If it wasn't active, open it
+                if (!isActive) {
+                    item.classList.add('is-active');
+                }
+            });
+        });
+
+        // Close menu if clicking anywhere outside the navbar
+        document.addEventListener('click', () => {
+            megaItems.forEach(i => i.classList.remove('is-active'));
+        });
+    </script>
+</html>
