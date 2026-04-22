@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agriculture & Agribusiness - BASA Development Initiatives</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+   :root {
+            --brand-red: #990033;
+            --brand-green: #005e4d;
+            --sidebar-tan: #e9e6d1;
+            --text-dark: #333;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+        /* --- TOPBAR --- */
+        .topbar {
+            background-color: var(--brand-red);
+            padding: 17px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--white);
+        }
+        .topbar-info { display: flex; gap: 20px; font-size: 19px; }
+        .topbar-info a { color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .topbar-socials { display: flex; gap: 10px; }
+        .social-btn {
+            width: 38px; height: 28px; border: 1px solid rgba(255,255,255,0.3);
+            display: flex; align-items: center; justify-content: center;
+            color: white; text-decoration: none; border-radius: 3px; font-size: 15px;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10 60px;
+            height: 100px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo img { height: 90px; display: block; }
+
+        .nav-links { display: flex; list-style: none; height: 100%; gap: 36px; }
+        .has-mega { position: static; }
+
+         .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 700;
+            padding: 0 0px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            font-size: 20px;
+            cursor: pointer; /* Indicates it is clickable */
+            transition: var(--transition);
+        }
+
+        .nav-link i { font-size: 14px; margin-left: 6px; color: #888; transition: transform 0.3s; }
+
+        /* --- MEGA MENU BASE --- */
+        .mega-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            display: none; /* Hidden until is-active class is added */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-top: 1px solid #eee;
+        }
+
+        /* Toggled Active State */
+        .has-mega.is-active .mega-menu { display: flex; }
+        .has-mega.is-active .nav-link { color: var(--brand-green); background: #f9f9f9; }
+        .has-mega.is-active .nav-link i { transform: rotate(180deg); }
+
+        .mega-sidebar { background-color: var(--sidebar-tan); width: 320px; padding: 40px; flex-shrink: 0; }
+        .sidebar-img { width: 100%; border-radius: 5px; margin-bottom: 20px; }
+        .sidebar-title { font-weight: 700; font-size: 18px; margin-bottom: 10px; }
+        .sidebar-text { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+        
+        .btn-green-sm {
+            background-color: var(--brand-green);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .mega-grid { flex-grow: 1; padding: 40px 60px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .mega-col h4 { color: var(--brand-green); font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+        .mega-col h4 span { color: #666; margin-right: 8px; font-weight: 400; }
+        .mega-col ul { list-style: none; }
+        .mega-col ul li { margin-bottom: 12px; }
+        .mega-col ul li a { text-decoration: none; color: var(--brand-green); font-size: 14px; font-weight: 600; }
+        .mega-col ul li a:hover { color: var(--brand-red); padding-left: 5px; transition: 0.2s; }
+
+        /* --- RIGHT UTILS --- */
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .search-btn { background: #f1f1f1; border: 1px solid #333; padding: 10px 14px; cursor: pointer; }
+        .donate-main {
+            background: var(--brand-red); color: white; padding: 12px 28px;
+            border-radius: 30px; text-decoration: none; font-weight: 700;
+        }
+  
+  
+  
+  
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:        #C0392B;
+      --red-dark:   #9B2D20;
+      --gold:       #D4A017;
+      --navy:       #1A1A2E;
+      --navy-card:  #1E1E34;
+      --edu:        #92400E;
+      --edu-mid:    #B45309;
+      --edu-light:  #D97706;
+      --edu-pale:   #FFFBEB;
+      --edu-border: #FDE68A;
+      --white:      #FFFFFF;
+      --text-muted: #6B7280;
+      --border:     #E5E7EB;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; font-size: 16px; color: #1A1A1A; background: var(--white); line-height: 1.6; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 72px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo-icon { width: 42px; height: 42px; background: var(--red); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .nav-logo-icon svg { width: 22px; height: 22px; }
+    .nav-logo-text { font-weight: 700; font-size: 14px; color: var(--navy); line-height: 1.3; }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--navy); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--red); }
+    .nav-donate { background: var(--red); color: var(--white) !important; padding: 10px 24px; border-radius: 6px; font-weight: 700 !important; font-size: 13px !important; letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.2s !important; }
+    .nav-donate:hover { background: var(--red-dark) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; height: 440px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 140px 80px; overflow: hidden;
+      background: linear-gradient(
+        108deg,
+        rgba(30, 18, 6, 0.94) 38%,
+        rgba(92, 40, 14, 0.52) 100%
+      ),
+      url('img/BD-Classrom-outreach.jpg')
+        center/cover no-repeat;
+    }
+    .breadcrumb {
+      position: absolute; top: 32px; left: 80px;
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .breadcrumb span { color: var(--red); }
+    .breadcrumb .sep { color: rgba(255,255,255,0.4); }
+
+    /* stat highlight strip below hero title */
+    .hero-highlight {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(217,119,6,0.18); border: 1px solid rgba(217,119,6,0.35);
+      border-radius: 6px; padding: 6px 14px; margin-bottom: 18px;
+      font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.85);
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero-highlight-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--edu-light); }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(52px, 6.5vw, 86px); font-weight: 900;
+      color: var(--white); line-height: 1.0; max-width: 620px;
+      animation: fadeUp 0.7s 0.08s ease both;
+    }
+    .hero p {
+      margin-top: 18px; text-align: justify; font-size: 18px; font-weight: 400;
+      color: rgba(255,255,255,0.82); max-width: 540px;
+      animation: fadeUp 0.7s 0.18s ease both;
+    }
+    .hero-accent {
+      position: absolute; bottom: 0; right: 0;
+      width: 440px; height: 440px;
+      background: radial-gradient(circle, rgba(180,83,9,0.22) 0%, transparent 68%);
+      pointer-events: none;
+    }
+
+    /* ── STATS STRIP ── */
+    .stats-strip { background: var(--navy); padding: 0 80px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .stat-card {
+      background: var(--navy-card); padding: 32px 28px;
+      display: flex; align-items: center; gap: 20px;
+      position: relative; transition: background 0.2s;
+    }
+    .stat-card:hover { background: #232340; }
+    .stat-card.target-card::after {
+      content: '2029 TARGET';
+      position: absolute; top: 12px; right: 12px;
+      background: var(--red); color: var(--white);
+      font-size: 9px; font-weight: 700; letter-spacing: 0.1em;
+      padding: 3px 8px; border-radius: 3px;
+    }
+    .stat-icon { width: 48px; height: 48px; border-radius: 10px; background: var(--edu); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .stat-icon.gold-icon { background: rgba(212,160,23,0.18); }
+    .stat-icon svg { width: 22px; height: 22px; }
+    .stat-value { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--white); line-height: 1; }
+    .stat-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 5px; }
+
+    /* ── MAIN CONTENT ── */
+    .main-content {
+      padding: 80px 80px;
+      display: grid; grid-template-columns: 1fr 380px;
+      gap: 64px; align-items: start;
+    }
+
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--edu-mid); margin-bottom: 16px; }
+    .overview-heading { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3vw, 40px); font-weight: 700; color: var(--navy); line-height: 1.2; max-width: 580px; margin-bottom: 24px; }
+    .overview-body { font-size: 18px; text-align: justify; color: #4B5563; max-width: 580px; line-height: 1.75; margin-bottom: 48px; }
+
+    /* Pillars row */
+    .pillars-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
+    .pillars-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 48px; }
+    .pillar-card {
+      background: var(--edu-pale); border: 1px solid var(--edu-border);
+      border-radius: 12px; padding: 22px 18px;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .pillar-card:hover { border-color: var(--edu-light); box-shadow: 0 4px 16px rgba(146,64,14,0.10); }
+    .pillar-icon {
+      width: 38px; height: 38px; border-radius: 8px;
+      background: var(--edu); display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px;
+    }
+    .pillar-icon svg { width: 18px; height: 18px; }
+    .pillar-name { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .pillar-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+    .objectives-heading { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 24px; }
+    .objectives-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .objective-card {
+      background: var(--edu-pale); border: 1px solid var(--edu-border);
+      border-radius: 12px; padding: 20px 20px 20px 16px;
+      display: flex; align-items: flex-start; gap: 14px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .objective-card:hover { border-color: var(--edu-light); box-shadow: 0 4px 16px rgba(146,64,14,0.08); }
+    .obj-check {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: rgba(146,64,14,0.10); border: 2px solid var(--edu);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .obj-check svg { width: 11px; height: 11px; }
+    .objective-card p { font-size: 14px; font-weight: 600; color: var(--navy); line-height: 1.4; }
+
+    /* Girls focus callout */
+    .callout-strip {
+      margin-top: 40px;
+      background: linear-gradient(135deg, var(--navy) 0%, #2A1A4E 100%);
+      border-radius: 16px; padding: 32px 36px;
+      display: flex; align-items: center; gap: 32px;
+    }
+    .callout-stat {
+      flex-shrink: 0; text-align: center;
+    }
+    .callout-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px; font-weight: 900;
+      color: var(--edu-light); line-height: 1;
+    }
+    .callout-unit { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 4px; }
+    .callout-divider { width: 1px; height: 70px; background: rgba(255,255,255,0.12); flex-shrink: 0; }
+    .callout-body {}
+    .callout-body h4 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .callout-body p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+    .sdg-section { margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--border); }
+    .sdg-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 14px; }
+    .sdg-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .sdg-tag { background: var(--navy); color: rgba(255,255,255,0.85); font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 20px; }
+
+    /* ── SIDEBAR ── */
+    .sidebar { position: sticky; top: 92px; display: flex; flex-direction: column; gap: 16px; }
+    .sidebar-card { background: var(--white); border: 1px solid #E5E7EB; border-radius: 16px; padding: 28px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+    .sidebar-title { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 20px; }
+    .sidebar-title-icon { width: 32px; height: 32px; border-radius: 8px; background: rgba(146,64,14,0.10); display: flex; align-items: center; justify-content: center; }
+    .sidebar-title-icon svg { width: 16px; height: 16px; }
+
+    .project-item { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 10px; padding: 16px; margin-bottom: 12px; }
+    .project-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+    .project-name { font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.3; }
+    .badge { font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 9px; border-radius: 4px; white-space: nowrap; flex-shrink: 0; }
+    .badge-pending { background: #FEF3C7; color: #92400E; }
+    .project-location { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); }
+    .project-location svg { width: 12px; height: 12px; }
+
+    .sidebar-divider { height: 1px; background: var(--border); margin: 20px 0; }
+    .sidebar-note { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px; }
+    .donate-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: var(--red); color: var(--white); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 16px; border-radius: 8px; text-decoration: none; transition: background 0.2s; }
+    .donate-btn:hover { background: var(--red-dark); }
+    .donate-btn svg { width: 16px; height: 16px; }
+
+    /* target preview card in sidebar */
+    .targets-card { background: var(--edu-pale); border: 1px solid var(--edu-border); border-radius: 12px; padding: 22px; }
+    .targets-card-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--edu); margin-bottom: 16px; }
+    .target-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--edu-border); }
+    .target-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .target-row-label { font-size: 12px; color: #4B5563; }
+    .target-row-val { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--edu); }
+
+    /* ── CTA BANNER ── */
+    .cta-banner { background: var(--navy); padding: 80px 80px; text-align: center; position: relative; overflow: hidden; }
+    .cta-blob { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 420px; height: 420px; opacity: 0.06; }
+    .cta-banner h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 46px); font-weight: 900; color: var(--white); max-width: 700px; margin: 0 auto 40px; line-height: 1.2; position: relative; z-index: 1; }
+    .cta-buttons { display: flex; justify-content: center; gap: 16px; position: relative; z-index: 1; }
+    .btn-white { background: var(--white); color: var(--navy); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 16px 36px; border-radius: 50px; text-decoration: none; transition: opacity 0.2s; }
+    .btn-white:hover { opacity: 0.9; }
+    .btn-outline { background: transparent; border: 2px solid rgba(255,255,255,0.3); color: var(--white); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 16px 36px; border-radius: 50px; text-decoration: none; transition: border-color 0.2s; }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.7); }
+
+    /* ── FOOTER ── */
+    footer { background: #0E0E1E; padding: 64px 80px 0; }
+    .footer-grid { display: grid; grid-template-columns: 280px 1fr 1fr 260px; gap: 48px; padding-bottom: 48px; }
+    .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .footer-logo-icon { width: 36px; height: 36px; background: var(--red); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 16px; color: var(--white); }
+    .footer-logo-text { font-weight: 700; font-size: 15px; color: var(--white); }
+    .footer-tagline { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 24px; }
+    .footer-socials { display: flex; gap: 10px; }
+    .social-dot { width: 34px; height: 34px; border-radius: 8px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); }
+    .footer-heading { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 20px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-location-name { font-size: 15px; font-weight: 700; color: var(--white); line-height: 1.4; margin-bottom: 10px; }
+    .footer-location-detail { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 4px; }
+    .footer-stay-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 14px; }
+    .footer-newsletter-note { font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 16px; line-height: 1.6; }
+    .footer-input { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 12px 16px; font-size: 13px; color: var(--white); outline: none; margin-bottom: 10px; font-family: 'DM Sans', sans-serif; }
+    .footer-input::placeholder { color: rgba(255,255,255,0.3); }
+    .footer-subscribe { width: 100%; background: var(--red); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 13px; border: none; border-radius: 8px; cursor: pointer; transition: background 0.2s; }
+    .footer-subscribe:hover { background: var(--red-dark); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 24px 0; display: flex; justify-content: space-between; align-items: center; }
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.35); }
+    .footer-bottom-links { display: flex; gap: 24px; }
+    .footer-bottom-links a { font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 1024px) {
+      nav, .hero { padding-left: 32px; padding-right: 32px; }
+      .hero .breadcrumb { left: 32px; }
+      .stats-strip, .main-content, .cta-banner, footer { padding-left: 32px; padding-right: 32px; }
+      .main-content { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .pillars-row { grid-template-columns: 1fr; }
+      .callout-strip { flex-direction: column; text-align: center; }
+      .callout-divider { display: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<div class="topbar">
+        <div class="topbar-info">
+            <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
+            <a href="tel:+231779205152"><i class="fa-solid fa-phone"></i> +231 779 205 152</a>
+        </div>
+        <div class="topbar-socials">
+            <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"> <img src="./img/logo14.png" alt="BDI Logo"></a>
+        </div>
+
+        <ul class="nav-links">
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Our Work </b><i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>What We Do</u></h4>
+                            <ul>
+                                <li><a href="agriculture.html">Agriculture & Agribusiness</a></li>
+                                <li><a href="health.html">Health & Nutrition</a></li>
+                                <li><a href="education.html">Education</a></li>
+                                <li><a href="environment.html">Environment & Climate</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Where We Work</u></h4>
+                            <ul><li><a href="#">View all countries</a></li></ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Development & Inclusion</u></h4>
+                            <ul>
+                                <li><a href="gender-youth.html">Gender & Youth Empowerment</a></li>
+                                <li><a href="fisheries.html">Fisheries & Aquaculture</a></li>
+                                <li><a href="disability.html">Disability Inclusion</a></li>
+                                <li><a href="partnership.html">Research & Partnership</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Latest News & Updates</u></h4>
+                            <ul><li><a href="#">View All Our News</a></li></ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>About Us </b><i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                       <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Who we are</u></h4>
+                            <ul>
+                                <li><a href="our-values.html">Our Values</a></li>
+                                <li><a href="founding-story.html">Our founding Story</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Governance</u></h4>
+                            <ul>
+                                <li><a href="governance-structure.html">Our Governance Structure</a></li>
+                                <li><a href="board.html">Our Board of Directors</a></li>
+                                <li><a href="our-ceo.html">Our CEO</a></li>
+                                <li><a href="our-team.html">Our Team</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>How We Raise Money</u></h4>
+                            <ul>
+                                <li><a href="iinstitutional-donors.html">Institutional Donors</a></li>
+                                <li><a href="partners.html">Partners</a></li>
+                                <li><a href="individual-donations.html">Individual Donations</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Transparency and accountability</u></h4>
+                            <ul>
+                                <li><a href="annual-reports.html">Annual Reports</a></li>
+                                <li><a href="how-donations-are-spent.html">How donations are spent</a></li>
+								<li><a href="audited-financials.html">Audited Financial Statements</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Support us</b> <i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Donate Now</u></h4>
+                            <ul>
+                                <li><a href="#">Donate to safe drug victims</a></li>
+                                <li><a href="#">End Period Poverty</a></li>
+                                <li><a href="#">Support Women in Agribusiness</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Corporate support</u></h4>
+                            <ul>
+                                <li><a href="#">Become a corporate supporter</a></li>
+                                <li><a href="#">Partner with us</a></li>
+                                <li><a href="#">Staff fundraising</a></li>
+                                <li><a href="#">Payroll Giving</a></li>
+                                <li><a href="#">Make a corporate donation</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Fundraise for BDI</u></h4>
+                            <ul>
+                                <li><a href="#">Start your own fundraiser</a></li>
+                                <li><a href="#">Find a friend to sponsor</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Volunteer Remotely</u></h4>
+                            <ul><li><a href="#">You can Volunteer with us</a></li></ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Other ways to give</u></h4>
+                            <ul>
+                                <li><a href="#">Donate in memory</a></li>
+                                <li><a href="#">Leave a gift in your Will</a></li>
+                                <li><a href="#">Your donation and tax back</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Resource Centre</b> <i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Knowledge Hub Resources</u></h4>
+                            <ul>
+                                <li><a href="#">Research</a></li>
+                                <li><a href="#">Evaluations</a></li>
+                                <li><a href="#">Newsletters</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="nav-right">
+            <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="donate-main">Donate Now</a>
+        </div>
+    </nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-highlight">
+    <span class="hero-highlight-dot"></span>
+    15-20% of Liberian school-age children remain out of school
+  </div>
+  <h1>Education</h1>
+  <p>Keeping every child in school, equipping every youth with skills, and closing Liberia's education gap for good.</p>
+  <div class="hero-accent"></div>
+</section>
+
+<!-- ── STATS STRIP ── -->
+<div class="stats-strip">
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div>
+        <div class="stat-value">500</div>
+        <div class="stat-label">Girls Supported to Stay in School</div>
+      </div>
+    </div>
+
+    <div class="stat-card target-card">
+      <div class="stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+      </div>
+      <div>
+        <div class="stat-value">800</div>
+        <div class="stat-label">Youth in Vocational Training Annually</div>
+      </div>
+    </div>
+
+    <div class="stat-card target-card">
+      <div class="stat-icon gold-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      </div>
+      <div>
+        <div class="stat-value">+15%</div>
+        <div class="stat-label">Enrollment and Attendance Growth Target</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── MAIN CONTENT ── -->
+<section class="main-content">
+
+  <!-- LEFT -->
+  <div>
+    <p class="section-label">Overview</p>
+    <h2 class="overview-heading">Education is not a privilege. In Liberia, we are working to make it a lived reality.</h2>
+    <p class="overview-body">
+      BASA Development Initiatives (BDI) approaches education as the foundation of long-term
+economic mobility, social stability, and national development. Yet across Liberia, the
+education system continues to face deep and persistent challenges. An estimated 15–20%
+of school-age children remain out of school, with higher rates in rural and hard-to-reach
+counties. Even among those enrolled, completion remains low, with the average Liberian
+attaining fewer than five years of formal schooling. Foundational learning is a major concern,
+with many children in upper primary unable to read or perform basic numeracy tasks at
+grade level.<br>
+The barriers are layered and reinforcing. Poverty remains the single largest constraint, with
+families unable to cover informal school costs, uniforms, or learning materials. Distance to
+schools, especially at the junior and senior secondary levels, further limits access for rural
+children. Girls face compounded challenges, including early pregnancy, caregiving
+responsibilities, and lack of menstrual health support, which contributes to absenteeism and
+dropout. In many schools, overcrowded classrooms, limited teaching and learning materials,
+and underqualified or unsupported teachers affect the quality of instruction. At the same
+time, there is a widening gap between what is taught and the skills needed for employment,
+with digital literacy, problem-solving, and practical competencies largely absent from most
+learning environments. <br>
+BDI’s Education Program is designed to address these challenges through a fully integrated
+model that connects access, learning quality, life skills, and transition to opportunity. This
+approach is anchored in what BDI defines as the <b>“Learn–Apply–Advance (LAA)
+Education Model”</b>—a practical, context-driven framework that moves beyond traditional
+schooling to ensure that learning translates into real-world capability and economic
+participation.<br><br>
+The <b>Learn–Apply–Advance Model</b> is built on three interconnected layers. The first focuses
+on <b>access and foundational learning,</b> ensuring that children—especially girls and
+vulnerable groups—are enrolled, retained, and supported to achieve basic literacy and
+numeracy through improved teaching methods, structured learning support, and inclusive
+school environments. This includes addressing non-academic barriers such as menstrual
+health, school feeding linkages, and community engagement to keep children in school.<br><br>
+The second layer emphasizes <b>applied learning and relevance.</b> BDI works with schools and
+communities to integrate practical, skills-based learning into education, including digital
+literacy, environmental awareness, financial literacy, and problem-solving. This ensures that
+students are not only progressing through grades but are developing competencies that
+reflect real-life demands. Teachers are supported with continuous professional development,
+coaching, and simple, adaptable tools that improve classroom practice without
+overburdening already stretched systems.<br>
+The third layer focuses on transition and advancement, supporting young
+people—particularly adolescents and out-of-school youth—to move from education into
+livelihoods, entrepreneurship, or further training. This includes linking schools to vocational
+pathways, supporting youth-led enterprises, and creating bridges between learning and local
+economic opportunities, particularly in sectors such as agriculture, climate resilience, and
+small business development. <br><br>
+Across all components, BDI’s approach is grounded in community ownership and system
+strengthening. Schools are not treated as isolated institutions but as part of a broader
+ecosystem that includes families, local leaders, and service providers. The program
+leverages low-cost, scalable solutions such as community-based learning support, radio and offline
+digital content where connectivityis limited, and partnerships with local institutions to
+sustain impact.
+    </p>
+
+    <!-- Three pillars -->
+    <p class="pillars-label">Our Three Focus Areas</p>
+    <div class="pillars-row">
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <p class="pillar-name">Access and Retention</p>
+        <p class="pillar-desc">Scholarships, learning materials, and menstrual health support to keep children - especially girls - in school and learning.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <p class="pillar-name">Digital and Vocational Skills</p>
+        <p class="pillar-desc">Vocational training centers and ICT literacy programs that connect out-of-school youth to real economic opportunities.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <p class="pillar-name">Teacher and System Support</p>
+        <p class="pillar-desc">Training teachers in child-friendly, gender-responsive pedagogy and advocating for inclusive classrooms at the policy level.</p>
+      </div>
+    </div>
+
+    <h3 class="objectives-heading">Key Objectives</h3>
+    <div class="objectives-grid">
+      <div class="objective-card">
+        <div class="obj-check">
+          <svg viewBox="0 0 12 12" fill="none" stroke="#92400E" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg>
+        </div>
+        <p>Strengthen literacy and numeracy outcomes in primary schools.</p>
+      </div>
+      <div class="objective-card">
+        <div class="obj-check">
+          <svg viewBox="0 0 12 12" fill="none" stroke="#92400E" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg>
+        </div>
+        <p>Provide vocational and technical training for out-of-school youth.</p>
+      </div>
+      <div class="objective-card">
+        <div class="obj-check">
+          <svg viewBox="0 0 12 12" fill="none" stroke="#92400E" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg>
+        </div>
+        <p>Expand digital learning and ICT literacy for students and teachers.</p>
+      </div>
+      <div class="objective-card">
+        <div class="obj-check">
+          <svg viewBox="0 0 12 12" fill="none" stroke="#92400E" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg>
+        </div>
+        <p>Advocate for disability-inclusive classrooms and accessible infrastructure.</p>
+      </div>
+    </div>
+
+    <!-- Girls focus callout -->
+    <div class="callout-strip">
+      <div class="callout-stat">
+        <div class="callout-number">500</div>
+        <div class="callout-unit">Girls Supported</div>
+      </div>
+      <div class="callout-divider"></div>
+      <div class="callout-body">
+        <h4>Keeping Girls in School During Their Period</h4>
+        <p>BDI has already supported 500 school-going girls to remain in class during their menstrual cycle, through hygiene supplies and education. In Liberia, period poverty is one of the leading hidden causes of school dropout among girls. We are changing that, one school at a time.</p>
+      </div>
+    </div>
+
+    <div class="sdg-section">
+      <p class="sdg-label">SDG Alignment</p>
+      <div class="sdg-tags">
+        <span class="sdg-tag">SDG 4 - Quality Education</span>
+        <span class="sdg-tag">SDG 5 - Gender Equality</span>
+        <span class="sdg-tag">SDG 8 - Decent Work</span>
+        <span class="sdg-tag">SDG 10 - Reduced Inequalities</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Sidebar -->
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <div class="sidebar-title">
+        <div class="sidebar-title-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#92400E" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        Active Projects
+      </div>
+
+      <div class="project-item">
+        <div class="project-top">
+          <span class="project-name">Girls Scholarship and School Retention Initiative</span>
+          <span class="badge badge-pending">Pending Funding</span>
+        </div>
+        <div class="project-location">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Sinoe, Bong and Montserrado Counties
+        </div>
+      </div>
+
+      <div class="sidebar-divider"></div>
+      <p class="sidebar-note">Support this program and help us keep more children in school, put vocational skills in the hands of youth, and bring digital literacy to communities that need it most.</p>
+      <a href="#" class="donate-btn">
+        Donate to This Cause
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <!-- 2029 target preview -->
+    <div class="targets-card">
+      <p class="targets-card-label">What We Are Building Toward by 2029</p>
+      <div class="target-row">
+        <span class="target-row-label">Youth in vocational training</span>
+        <span class="target-row-val">800/yr</span>
+      </div>
+      <div class="target-row">
+        <span class="target-row-label">Learners in ICT literacy</span>
+        <span class="target-row-val">500/yr</span>
+      </div>
+      <div class="target-row">
+        <span class="target-row-label">Enrollment growth</span>
+        <span class="target-row-val">+15%</span>
+      </div>
+      <div class="target-row">
+        <span class="target-row-label">Literacy and numeracy gains</span>
+        <span class="target-row-val">+20%</span>
+      </div>
+    </div>
+
+  </aside>
+
+</section>
+
+<!-- ── CTA BANNER ── -->
+<section class="cta-banner">
+  <svg class="cta-blob" viewBox="0 0 200 200" fill="white"><path d="M44.7,-62.7C56.8,-55.8,63.3,-39.4,68.4,-22.4C73.5,-5.4,77.1,12.2,71.3,26.4C65.5,40.6,50.3,51.4,35.1,60.2C19.9,69,4.7,75.8,-11.5,75.5C-27.7,75.2,-44.9,67.8,-56.1,55.5C-67.3,43.2,-72.5,26,-73.1,8.8C-73.7,-8.4,-69.7,-25.6,-60,-38.1C-50.3,-50.6,-34.9,-58.4,-19.7,-64.2C-4.5,-70,10.5,-73.8,25.3,-71.2C40.1,-68.6,54.8,-59.6,44.7,-62.7Z" transform="translate(100 100)"/></svg>
+  <h2>Partner with us to build a generation of educated, skilled, and empowered Liberians.</h2>
+  <div class="cta-buttons">
+    <a href="#" class="btn-white">Get in Touch</a>
+    <a href="#" class="btn-outline">Volunteer</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">
+        <div class="footer-logo-icon">B</div>
+        <span class="footer-logo-text">BDI</span>
+      </div>
+      <p class="footer-tagline">BASA Development Initiatives (BDI) is an NGO dedicated to building a more inclusive, resilient, and sustainable Liberia.</p>
+      <div class="footer-socials">
+        <div class="social-dot"></div><div class="social-dot"></div>
+        <div class="social-dot"></div><div class="social-dot"></div>
+      </div>
+    </div>
+    <div>
+      <p class="footer-heading">Quick Links</p>
+      <ul class="footer-links">
+        <li><a href="#">Core Programs</a></li>
+        <li><a href="#">Donation Causes</a></li>
+        <li><a href="#">Impact &amp; Reports</a></li>
+        <li><a href="#">Work With Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Location</p>
+      <p class="footer-location-name">Monrovia,<br>Liberia, West Africa</p>
+      <p class="footer-location-detail">info@basadev.org</p>
+      <p class="footer-location-detail">Operating across 15 counties in Liberia.</p>
+    </div>
+    <div>
+      <p class="footer-stay-label">Stay Updated</p>
+      <p class="footer-newsletter-note">Join our newsletter for the latest impact updates.</p>
+      <input class="footer-input" type="email" placeholder="Your email address" />
+      <button class="footer-subscribe">Subscribe</button>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 BASA Development Initiatives (BDI). Registered NGO in Liberia.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+<script>
+        const megaItems = document.querySelectorAll('.has-mega');
+
+        megaItems.forEach(item => {
+            const link = item.querySelector('.nav-link');
+            
+            link.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevents document click from firing immediately
+                
+                // Toggle current item
+                const isActive = item.classList.contains('is-active');
+                
+                // Close all other menus first
+                megaItems.forEach(i => i.classList.remove('is-active'));
+                
+                // If it wasn't active, open it
+                if (!isActive) {
+                    item.classList.add('is-active');
+                }
+            });
+        });
+
+        // Close menu if clicking anywhere outside the navbar
+        document.addEventListener('click', () => {
+            megaItems.forEach(i => i.classList.remove('is-active'));
+        });
+    </script>
+</html>
