@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Volunteer Remotely - BASA Development Initiatives</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+  :root {
+            --brand-red: #990033;
+            --brand-green: #005e4d;
+            --sidebar-tan: #e9e6d1;
+            --text-dark: #333;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; } 
+
+        /* --- TOPBAR --- */
+        .topbar {
+            background-color: var(--brand-red);
+            padding: 17px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--white);
+        }
+        .topbar-info { display: flex; gap: 20px; font-size: 19px; }
+        .topbar-info a { color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .topbar-socials { display: flex; gap: 10px; }
+        .social-btn {
+            width: 38px; height: 28px; border: 1px solid rgba(255,255,255,0.3);
+            display: flex; align-items: center; justify-content: center;
+            color: white; text-decoration: none; border-radius: 3px; font-size: 15px;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10 60px;
+            height: 100px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo img { height: 90px; display: block; }
+
+        .nav-links { display: flex; list-style: none; height: 100%; gap: 85px; }
+        .has-mega { position: static; }
+
+         .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 700;
+            padding: 0 -10px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            font-size: 20px;
+            cursor: pointer; /* Indicates it is clickable */
+            transition: var(--transition);
+        }
+
+        .nav-link i { font-size: 14px; margin-left: 6px; color: #888; transition: transform 0.3s; }
+
+        /* --- MEGA MENU BASE --- */
+        .mega-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            display: none; /* Hidden until is-active class is added */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-top: 1px solid #eee;
+        }
+
+        /* Toggled Active State */
+        .has-mega.is-active .mega-menu { display: flex; }
+        .has-mega.is-active .nav-link { color: var(--brand-green); background: #f9f9f9; }
+        .has-mega.is-active .nav-link i { transform: rotate(180deg); }
+
+        .mega-sidebar { background-color: var(--sidebar-tan); width: 320px; padding: 40px; flex-shrink: 0; }
+        .sidebar-img { width: 100%; border-radius: 5px; margin-bottom: 20px; }
+        .sidebar-title { font-weight: 700; font-size: 18px; margin-bottom: 10px; }
+        .sidebar-text { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+        
+        .btn-green-sm {
+            background-color: var(--brand-green);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .mega-grid { flex-grow: 1; padding: 40px 60px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .mega-col h4 { color: var(--brand-green); font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+        .mega-col h4 span { color: #666; margin-right: 8px; font-weight: 400; }
+        .mega-col ul { list-style: none; }
+        .mega-col ul li { margin-bottom: 12px; }
+        .mega-col ul li a { text-decoration: none; color: var(--brand-green); font-size: 14px; font-weight: 600; }
+        .mega-col ul li a:hover { color: var(--brand-red); padding-left: 5px; transition: 0.2s; }
+
+        /* --- RIGHT UTILS --- */
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .search-btn { background: #f1f1f1; border: 1px solid #333; padding: 10px 14px; cursor: pointer; }
+        .donate-main {
+            background: var(--brand-red); color: white; padding: 12px 28px;
+            border-radius: 30px; text-decoration: none; font-weight: 700;
+        }
+  
+  
+  
+  
+  
+  
+  
+  
+    :root {
+        --brand-red: #990033;
+        --brand-green: #005e4d;
+        --brand-navy: #0f172a;
+        --soft-blue: #f1f5f9;
+        --text-main: #334155; 
+        --white: #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background-color: var(--white); color: var(--text-main); line-height: 1.6; }
+
+    /* --- TOPBAR --- */
+    .topbar {
+        background-color: var(--brand-red);
+        padding: 15px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--white);
+        font-size: 14px;
+    }
+    .topbar a { color: white; text-decoration: none; margin-left: 15px; }
+
+    /* --- NAVIGATION --- */
+    .navbar {
+        background: var(--white);
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 0 60px; height: 100px;
+        position: sticky; top: 0; z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .logo img { height: 75px; }
+    .nav-links { display: flex; list-style: none; gap: 30px; }
+    .nav-link { text-decoration: none; color: var(--brand-navy); font-weight: 700; font-size: 15px; }
+    .btn-apply {
+        background: var(--brand-green); color: white; padding: 12px 24px;
+        border-radius: 5px; text-decoration: none; font-weight: 700;
+    }
+
+    /* --- HERO --- */
+    .hero {
+      background: linear-gradient(135deg, rgba(0, 94, 77, 0.95) 0%, rgba(15, 23, 42, 0.9) 100%), 
+                  url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1920&q=80') center/cover;
+      padding: 120px 80px;
+      color: white;
+      text-align: center;
+    }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: 52px; line-height: 1.2; margin-bottom: 20px; }
+    .hero p { font-size: 20px; max-width: 800px; margin: 0 auto; opacity: 0.9; }
+
+    /* --- WHY VOLUNTEER SECTION --- */
+    .section-padding { padding: 90px 80px; }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .tag { color: var(--brand-red); font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 2px; margin-bottom: 15px; display: block; }
+    .heading { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--brand-navy); margin-bottom: 25px; }
+    
+    /* --- CONTRIBUTION CARDS --- */
+    .roles-bg { background-color: var(--soft-blue); }
+    .roles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
+    .role-card { background: white; padding: 40px; border-radius: 12px; transition: 0.3s; border-bottom: 4px solid transparent; }
+    .role-card:hover { transform: translateY(-10px); border-bottom-color: var(--brand-red); box-shadow: 0 20px 30px rgba(0,0,0,0.05); }
+    .role-card i { font-size: 35px; color: var(--brand-green); margin-bottom: 20px; }
+    .role-card h4 { font-size: 18px; color: var(--brand-navy); margin-bottom: 15px; }
+    .role-card p { font-size: 14px; color: var(--text-main); }
+
+    /* --- THE VOLUNTEER PROFILE --- */
+    .profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
+    .profile-box { background: #fff; border: 1px solid #e2e8f0; padding: 30px; border-radius: 10px; display: flex; gap: 20px; }
+    .profile-box i { color: var(--brand-red); font-size: 24px; margin-top: 5px; }
+    .profile-box h5 { font-size: 17px; margin-bottom: 8px; color: var(--brand-navy); }
+    .profile-box p { font-size: 14px; }
+
+    /* --- STEPS --- */
+    .steps-row { display: flex; justify-content: space-between; margin-top: 60px; position: relative; }
+    .step-item { flex: 1; text-align: center; padding: 0 20px; position: relative; }
+    .step-number { width: 50px; height: 50px; background: var(--brand-red); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: 700; font-size: 20px; z-index: 2; position: relative; }
+    .step-item h5 { font-size: 16px; margin-bottom: 10px; }
+
+    /* --- FORM SECTION --- */
+    .form-container { max-width: 800px; margin: 0 auto; background: white; padding: 50px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); margin-top: -50px; position: relative; z-index: 5; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--brand-navy); }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 15px; outline: none; }
+    .form-group input:focus { border-color: var(--brand-green); }
+    .submit-btn { background: var(--brand-red); color: white; border: none; padding: 15px 40px; border-radius: 6px; font-weight: 700; cursor: pointer; width: 100%; transition: 0.3s; }
+    .submit-btn:hover { background: #7a0029; }
+
+    /* --- FOOTER --- */
+    .footer { background: var(--brand-navy); color: white; padding: 80px 80px 40px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
+    .footer-logo img { height: 55px; margin-bottom: 20px; }
+    .footer-title { color: var(--brand-red); font-size: 14px; text-transform: uppercase; margin-bottom: 25px; letter-spacing: 1px; }
+    .footer-links a { color: #94a3b8; text-decoration: none; display: block; margin-bottom: 12px; font-size: 14px; }
+    .footer-bottom { text-align: center; border-top: 1px solid #1e293b; padding-top: 30px; font-size: 13px; color: #64748b; }
+
+    @media (max-width: 1024px) {
+        .intro-grid, .roles-grid, .profile-grid, .footer-grid, .steps-row { grid-template-columns: 1fr; flex-direction: column; }
+        .hero, .section-padding { padding: 60px 30px; }
+        .form-container { margin: 0 20px; margin-top: -30px; padding: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<div class="topbar">
+        <div class="topbar-info">
+            <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
+            <a href="tel:+231779205152"><i class="fa-solid fa-phone"></i> +231 779 205 152</a>
+        </div>
+        <div class="topbar-socials">
+            <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"> <img src="./img/logo14.png" alt="BDI Logo"></a>
+        </div>
+
+        <ul class="nav-links">
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Our Work </b><i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>What We Do</u></h4>
+                            <ul>
+                                <li><a href="agriculture.html">Agriculture & Agribusiness</a></li>
+                                <li><a href="health.html">Health & Nutrition</a></li>
+                                <li><a href="education.html">Education</a></li>
+                                <li><a href="environment.html">Environment & Climate</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Where We Work</u></h4>
+                            <ul><li><a href="#">View all countries</a></li></ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Development & Inclusion</u></h4>
+                            <ul>
+                                <li><a href="gender-youth.html">Gender & Youth Empowerment</a></li>
+                                <li><a href="fisheries.html">Fisheries & Aquaculture</a></li>
+                                <li><a href="disability.html">Disability Inclusion</a></li>
+                                <li><a href="partnership.html">Research & Partnership</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Latest News & Updates</u></h4>
+                            <ul><li><a href="#">View All Our News</a></li></ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>About Us </b><i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                       <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Who we are</u></h4>
+                            <ul>
+                                <li><a href="our-values.html">Our Values</a></li>
+                                <li><a href="founding-story.html">Our founding Story</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Governance</u></h4>
+                            <ul>
+                                <li><a href="governance-structure.html">Our Governance Structure</a></li>
+                                <li><a href="board.html">Our Board of Directors</a></li>
+                                <li><a href="our-ceo.html">Our CEO</a></li>
+                                <li><a href="our-team.html">Our Team</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>How We Raise Money</u></h4>
+                            <ul>
+                                <li><a href="iinstitutional-donors.html">Institutional Donors</a></li>
+                                <li><a href="partners.html">Partners</a></li>
+                                <li><a href="individual-donations.html">Individual Donations</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Transparency and accountability</u></h4>
+                            <ul>
+                                <li><a href="annual-reports.html">Annual Reports</a></li>
+                                <li><a href="how-donations-are-spent.html">How donations are spent</a></li>
+								<li><a href="audited-financials.html">Audited Financial Statements</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Support us</b> <i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Donate Now</u></h4>
+                            <ul>
+                                <li><a href="safe drug victims.html">Donate to safe drug victims</a></li>
+                                <li><a href="End Period Poverty.html">End Period Poverty</a></li>
+                                <li><a href="Women and Youth in Agribusiness.html">Support Women in Agribusiness</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Corporate support</u></h4>
+                            <ul>
+                                <li><a href="Become a Corporate Partner.html">Become a corporate supporter</a></li>
+                                <li><a href="Partner With Us.html">Partner with us</a></li>
+                                <li><a href="Staff Fundraising.html">Staff fundraising</a></li>
+                                <li><a href="Payroll Giving.html">Payroll Giving</a></li>
+                                <li><a href="Corporate Donations.html">Make a corporate donation</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Fundraise for BDI</u></h4>
+                            <ul>
+                                <li><a href="Start your own fundraiser.html">Start your own fundraiser</a></li>
+                                <li><a href="Find a Friend to Sponsor.html">Find a friend to sponsor</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Volunteer Remotely</u></h4>
+                            <ul><li><a href="Volunteer Remotely.html">You can Volunteer with us</a></li></ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Other ways to give</u></h4>
+                            <ul>
+                                <li><a href="Donate in Memory.html">Donate in memory</a></li>
+                                <li><a href="Leave a Gift in Your Will.html">Leave a gift in your Will</a></li>
+                                <li><a href="Donate Your Tax Refund.html">Your donation and tax back</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Resource Centre</b> <i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Knowledge Hub Resources</u></h4>
+                            <ul>
+                                <li><a href="#">Research</a></li>
+                                <li><a href="#">Evaluations</a></li>
+                                <li><a href="#">Newsletters</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="nav-right">
+            <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="donate-main">Donate Now</a>
+        </div>
+    </nav>
+
+<!-- ── NAVIGATION END ── -->
+
+<section class="hero">
+    <h1>Volunteer With BDI — Use Your Skills Where They Matter</h1>
+    <p>Impact doesn’t require a plane ticket. Bring your time, skills, and networks to the table and play a direct role in strengthening Liberia’s future.</p>
+</section>
+
+<section class="section-padding">
+    <div class="intro-grid">
+        <div>
+            <span class="tag">Meaningful Contribution</span>
+            <h2 class="heading">Not all impact requires funding. Some requires your time.</h2>
+            <p>BDI works at the frontlines of community development, supporting women, youth, and vulnerable populations. Volunteering with us means contributing to work that is grounded, relevant, and focused on real outcomes. Your input is not symbolic; it directly supports program delivery and organizational growth.</p>
+        </div>
+        <div style="background: var(--soft-blue); padding: 40px; border-radius: 15px;">
+            <h3 style="font-size: 22px; margin-bottom: 20px; color: var(--brand-green);">What You Gain</h3>
+            <ul style="list-style: none;">
+                <li style="margin-bottom: 15px; display: flex; gap: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--brand-red);"></i> Direct exposure to real-world development</li>
+                <li style="margin-bottom: 15px; display: flex; gap: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--brand-red);"></i> Application of skills in meaningful contexts</li>
+                <li style="margin-bottom: 15px; display: flex; gap: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--brand-red);"></i> Membership in a credible, growing NGO</li>
+                <li style="margin-bottom: 15px; display: flex; gap: 10px;"><i class="fa-solid fa-circle-check" style="color: var(--brand-red);"></i> Contribution to measurable change</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding roles-bg">
+    <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <span class="tag">Priority Opportunities</span>
+        <h2 class="heading">Where You Can Contribute</h2>
+        <p>BDI is currently seeking remote volunteers with specific technical expertise to help expand our reach and strategic direction.</p>
+    </div>
+    <div class="roles-grid">
+        <div class="role-card">
+            <i class="fa-solid fa-bullhorn"></i>
+            <h4>Marketing & Branding</h4>
+            <p>Help us tell our story and raise visibility for Liberia’s most pressing community needs.</p>
+        </div>
+        <div class="role-card">
+            <i class="fa-solid fa-pen-nib"></i>
+            <h4>Grant & Proposal Writing</h4>
+            <p>Contribute technical input to strengthen our funding pipelines and expand program reach.</p>
+        </div>
+        <div class="role-card">
+            <i class="fa-solid fa-users-gear"></i>
+            <h4>Advisory & Governance</h4>
+            <p>Provide board-level expertise to improve our strategic direction and organizational systems.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div style="text-align: center;">
+        <span class="tag">The BDI Volunteer Profile</span>
+        <h2 class="heading">What You Bring to the Team</h2>
+    </div>
+    <div class="profile-grid">
+        <div class="profile-box">
+            <i class="fa-solid fa-award"></i>
+            <div>
+                <h5>Professional Expertise</h5>
+                <p>Relevant professional skills in your chosen area of contribution.</p>
+            </div>
+        </div>
+        <div class="profile-box">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+                <h5>Consistent Commitment</h5>
+                <p>A willingness to commit time consistently to meet project milestones.</p>
+            </div>
+        </div>
+        <div class="profile-box">
+            <i class="fa-solid fa-chart-line"></i>
+            <div>
+                <h5>Results-Oriented</h5>
+                <p>A practical approach focused on delivering sustainable, local impact.</p>
+            </div>
+        </div>
+        <div class="profile-box">
+            <i class="fa-solid fa-earth-africa"></i>
+            <div>
+                <h5>Local Alignment</h5>
+                <p>A commitment to BDI’s focus on locally led development and systems.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="steps-row">
+        <div class="step-item">
+            <div class="step-number">1</div>
+            <h5>Express Interest</h5>
+            <p>Fill out our short volunteer form.</p>
+        </div>
+        <div class="step-item">
+            <div class="step-number">2</div>
+            <h5>Align Roles</h5>
+            <p>We'll coordinate on expectations and commitment.</p>
+        </div>
+        <div class="step-item">
+            <div class="step-number">3</div>
+            <h5>Deliver Impact</h5>
+            <p>Join a structured team and start contributing.</p>
+        </div>
+    </div>
+</section>
+
+<section id="volunteer-form" class="section-padding roles-bg">
+    <div class="form-container">
+        <h3 style="text-align: center; font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 30px;">Volunteer Application</h3>
+        <form>
+            <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Primary Expertise</label>
+                <select>
+                    <option>Grant Writing</option>
+                    <option>Marketing & Social Media</option>
+                    <option>Strategic Advising</option>
+                    <option>Fundraising</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Briefly describe your experience and why you'd like to join BDI</label>
+                <textarea rows="4" placeholder="Tell us about yourself..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+    </div>
+</section>
+
+
+
+
+<!-- Footer Start -->
+<style>
+    .super-footer {
+        background-color: #064d3b;
+        color: #ffffff;
+        padding: 80px 0 30px 0; /* Increased top padding for a larger feel */
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        width: 100%;
+    }
+
+    .super-footer .sf-container {
+        /* Increased max-width and significantly larger side padding */
+        max-width: 1600px; 
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 60px; /* Hit larger from left to right */
+    }
+
+    .super-footer .sf-col {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 40px;
+        /* Increased gutter between columns */
+        padding: 0 30px; 
+    }
+
+    /* Brand Section */
+    .super-footer .sf-logo img {
+        max-width: 220px;
+        height: auto;
+        margin-bottom: 25px;
+    }
+
+    .super-footer .sf-description {
+        font-size: 18px;
+        opacity: 0.85;
+        margin-bottom: 30px;
+        max-width: 320px;
+    }
+
+    .super-footer .sf-socials {
+        display: flex;
+        gap: 15px;
+    }
+
+    .super-footer .sf-socials a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .super-footer .sf-socials a:hover {
+        background: #ffffff;
+        color: #064d3b;
+        border-color: #ffffff;
+        transform: translateY(-3px);
+    }
+
+    /* Headlines & Links */
+    .super-footer .sf-title {
+        color: #22c4a9;
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 35px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+
+    .super-footer .sf-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+		font-size: 17px;
+        font-weight: 700;
+    }
+
+    .super-footer .sf-links li {
+        margin-bottom: 15px;
+    }
+
+    .super-footer .sf-links a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 15px;
+        opacity: 0.9;
+        transition: 0.2s;
+    }
+
+    .super-footer .sf-links a:hover {
+        color: #22c4a9;
+        opacity: 1;
+        padding-left: 8px;
+    }
+
+    /* Locations */
+    .super-footer .sf-loc-item {
+        margin-bottom: 25px;
+    }
+
+    .super-footer .sf-loc-item h5 {
+        margin: 0 0 8px 0;
+        font-size: 18px;
+        font-weight: 700;
+		color:white;
+    }
+
+    .super-footer .sf-loc-item p {
+        margin: 0;
+        font-size: 16px;
+        opacity: 0.8;
+    }
+
+    /* Newsletter Form */
+    .super-footer .sf-newsletter-text {
+        font-size: 17px;
+        margin-bottom: 25px;
+        opacity: 0.9;
+    }
+
+    .super-footer .sf-subscribe input {
+        width: 100%;
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(34, 196, 169, 0.5);
+        border-radius: 6px;
+        color: #b40000;
+        margin-bottom: 15px;
+        outline: none;
+        transition: border 0.3s;
+    }
+
+    .super-footer .sf-subscribe input:focus {
+        border-color: #b40000;
+    }
+
+    .super-footer .sf-subscribe button {
+        width: 100%;
+        padding: 15px;
+        background: #bd0000;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-weight: 700;
+        text-transform: uppercase;
+        cursor: pointer;
+        letter-spacing: 1px;
+        transition: background 0.3s;
+    }
+
+    .super-footer .sf-subscribe button:hover {
+        background: #e60000;
+    }
+
+    /* Bottom Copyright Bar */
+    .super-footer .sf-bottom-bar {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 40px;
+        padding: 30px 60px 0 60px; /* Aligned with container padding */
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 13px;
+        opacity: 0.6;
+    }
+
+    /* Responsive Logic */
+    @media (max-width: 1024px) {
+        .super-footer .sf-container, 
+        .super-footer .sf-bottom-bar { padding: 0 30px; }
+    }
+
+    @media (max-width: 768px) {
+        .super-footer .sf-col { flex: 1 1 45%; }
+    }
+
+    @media (max-width: 600px) {
+        .super-footer .sf-col { flex: 1 1 100%; padding: 0 15px; }
+        .super-footer { text-align: center; }
+        .super-footer .sf-socials { justify-content: center; }
+        .super-footer .sf-description { margin: 0 auto 30px auto; }
+    }
+</style>
+
+
+<footer class="super-footer">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <div class="sf-container">
+        <div class="sf-col">
+            <div class="sf-logo">
+        <img src="./img/logo14-1.png" alt="BASA Development Initiatives">
+      </div>
+            <p class="sf-description">
+                BASA Development Initiatives (BDI) is an NGO dedicated to building a more inclusive, resilient, and sustainable Liberia.
+            </p>
+            <div class="sf-socials">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="sf-col">
+            <h4 class="sf-title">Quick Links</h4>
+            <ul class="sf-links">
+                <li><a href="our-values.html">Our Values</a></li>
+                <li><a href="our-team">Our Team</a></li>
+                <li><a href="partners">Partner With Us</a></li>
+                <li><a href="testimonials">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="sf-col">
+            <h4 class="sf-title">Locations</h4>
+            <div class="sf-loc-item">
+                <h5 class="white-bold">HEADQUARTER: Monrovia, Liberia</h5>
+                <p>Morris Villa, ELWA Community,
+				Email: info@basadev.org<br>Tel 1: +231 886 349 962 <br> +231 88 675 7435</p>
+				
+            </div>
+            <div class="sf-loc-item">
+                <h5>State of Minnesota, USA</h5>
+                <p>Regional Coordination Office</p>
+                <p>Tel: +1 (651) 235-9896 <br>Email: info@basadev.org </p>
+            </div>
+        </div>
+
+        <div class="sf-col">
+            <h4 class="sf-title">Stay Updated</h4>
+            <p class="sf-newsletter-text">Join our newsletter for the latest impact updates.</p>
+            <form class="sf-subscribe" onsubmit="return false;">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="sf-bottom-bar">
+        <p>&copy; 2026 BASA Development Initiatives (BDI). Registered NGO in Liberia</p>
+    </div>
+</footer>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Footer End -->
+
+</body>
+<script>
+  // Hamburger toggle
+  const hamburger = document.getElementById('hamburgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  if (hamburger) {
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navLinks.classList.toggle('show');
+    });
+  }
+
+  // Mega menu toggles for both desktop & mobile (close on outside)
+  const megaItems = document.querySelectorAll('.has-mega');
+  megaItems.forEach(item => {
+    const link = item.querySelector('.nav-link');
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      // close others
+      megaItems.forEach(i => {
+        if (i !== item) i.classList.remove('is-active');
+      });
+      item.classList.toggle('is-active');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.has-mega') && !e.target.closest('.hamburger')) {
+      megaItems.forEach(i => i.classList.remove('is-active'));
+      if (navLinks && window.innerWidth < 992) navLinks.classList.remove('show');
+    }
+  });
+
+  // Responsive: close mega on window resize if open
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 992) {
+      if (navLinks) navLinks.classList.remove('show');
+    } else {
+      // ensure mobiles don't have leftover mega expansions weird
+    }
+  });
+</script>
+</html>

@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Donate - BASA Development Initiatives</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+   :root {
+            --brand-red: #990033;
+            --brand-green: #005e4d;
+            --sidebar-tan: #e9e6d1;
+            --text-dark: #333;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+        /* --- TOPBAR --- */
+        .topbar {
+            background-color: var(--brand-red);
+            padding: 17px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--white);
+        }
+        .topbar-info { display: flex; gap: 20px; font-size: 19px; }
+        .topbar-info a { color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .topbar-socials { display: flex; gap: 10px; }
+        .social-btn {
+            width: 38px; height: 28px; border: 1px solid rgba(255,255,255,0.3);
+            display: flex; align-items: center; justify-content: center;
+            color: white; text-decoration: none; border-radius: 3px; font-size: 15px;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10 60px;
+            height: 100px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo img { height: 90px; display: block; }
+
+        .nav-links { display: flex; list-style: none; height: 100%; gap: 85px; }
+        .has-mega { position: static; }
+
+         .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 700;
+            padding: 0 -10px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            font-size: 20px;
+            cursor: pointer; /* Indicates it is clickable */
+            transition: var(--transition);
+        }
+
+        .nav-link i { font-size: 14px; margin-left: 6px; color: #888; transition: transform 0.3s; }
+
+        /* --- MEGA MENU BASE --- */
+        .mega-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            display: none; /* Hidden until is-active class is added */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-top: 1px solid #eee;
+        }
+
+        /* Toggled Active State */
+        .has-mega.is-active .mega-menu { display: flex; }
+        .has-mega.is-active .nav-link { color: var(--brand-green); background: #f9f9f9; }
+        .has-mega.is-active .nav-link i { transform: rotate(180deg); }
+
+        .mega-sidebar { background-color: var(--sidebar-tan); width: 320px; padding: 40px; flex-shrink: 0; }
+        .sidebar-img { width: 100%; border-radius: 5px; margin-bottom: 20px; }
+        .sidebar-title { font-weight: 700; font-size: 18px; margin-bottom: 10px; }
+        .sidebar-text { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+        
+        .btn-green-sm {
+            background-color: var(--brand-green);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .mega-grid { flex-grow: 1; padding: 40px 60px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .mega-col h4 { color: var(--brand-green); font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+        .mega-col h4 span { color: #666; margin-right: 8px; font-weight: 400; }
+        .mega-col ul { list-style: none; }
+        .mega-col ul li { margin-bottom: 12px; }
+        .mega-col ul li a { text-decoration: none; color: var(--brand-green); font-size: 14px; font-weight: 600; }
+        .mega-col ul li a:hover { color: var(--brand-red); padding-left: 5px; transition: 0.2s; }
+
+        /* --- RIGHT UTILS --- */
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .search-btn { background: #f1f1f1; border: 1px solid #333; padding: 10px 14px; cursor: pointer; }
+        .donate-main {
+            background: var(--brand-red); color: white; padding: 12px 28px;
+            border-radius: 30px; text-decoration: none; font-weight: 700;
+        }
+  
+  
+  
+  
+  
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:         #C0392B;
+      --red-dark:    #9B2D20;
+      --gold:        #D4A017;
+      --navy:        #1A1A2E;
+      --navy-card:   #1E1E34;
+      --health:      #1A4A6E;
+      --health-mid:  #1E5A84;
+      --health-light:#2478AD;
+      --health-pale: #EBF4FA;
+      --health-border:#BDD9EE;
+      --white:       #FFFFFF;
+      --text-muted:  #6B7280;
+      --border:      #E5E7EB;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px; color: #1A1A1A;
+      background: var(--white); line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 72px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo-icon { width: 42px; height: 42px; background: var(--red); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .nav-logo-icon svg { width: 22px; height: 22px; }
+    .nav-logo-text { font-weight: 700; font-size: 14px; color: var(--navy); line-height: 1.3; }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--navy); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--red); }
+    .nav-donate { background: var(--red); color: var(--white) !important; padding: 10px 24px; border-radius: 6px; font-weight: 700 !important; font-size: 13px !important; letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.2s !important; }
+    .nav-donate:hover { background: var(--red-dark) !important; }
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/* All styles are scoped to .giving-don to prevent collisions */
+        .giving-don * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .giving-don {
+            font-family: 'Open Sans', sans-serif;
+            color: #444;
+            line-height: 1.6;
+            width: 100%;
+        }
+
+        /* 1. Page Header with Breadcrumbs */
+        .giving-don .don-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/BD-Classrom-outreach.jpg') no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+		{
+    
+    /* 2. This makes the image cover the entire header area */
+    background-size: cover; 
+    
+    /* 3. Keeps the header tall enough to show the image */
+    height: 400px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+        .giving-don .don-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .giving-don .don-header .breadcrumbs {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .giving-don .don-header .breadcrumbs a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .giving-don .don-header .breadcrumbs a:hover {
+            color: #fff;
+        }
+
+        .giving-don .don-header .breadcrumbs .sep {
+            margin: 0 10px;
+            color: #888;
+        }
+
+        .giving-don .don-header .breadcrumbs span.current {
+            color: #fff;
+        }
+
+        /* 2. Portfolio Grid (6 Cards) */
+        .giving-don .portfolio-section {
+            padding: 80px 20px;
+            background-color: #fcfbf8; 
+            display: flex;
+            justify-content: center;
+        }
+
+        .giving-don .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1140px;
+            width: 100%;
+        }
+
+        .giving-don .portfolio-card {
+            background-color: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .giving-don .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .giving-don .portfolio-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .giving-don .portfolio-content {
+            padding: 25px;
+            text-align: left;
+        }
+
+        .giving-don .portfolio-tag {
+            display: inline-block;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 3px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .giving-don .portfolio-tag.food { background-color: #f1c40f; } 
+        .giving-don .portfolio-tag.charity { background-color: #e67e22; } 
+        .giving-don .portfolio-tag.health { background-color: #3498db; } 
+
+        .giving-don .portfolio-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 900;
+        }
+
+        .giving-don .portfolio-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .giving-don .portfolio-card .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .giving-don .portfolio-card .card-footer a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .giving-don .portfolio-card .card-footer a:hover {
+            color: #e67e22;
+        }
+
+        /* 3. Dark Blue CTA and Service Cards Section */
+        .giving-don .services-section {
+            padding: 100px 20px;
+            background-color: #112a2e; 
+            color: #fff;
+            display: flex;
+            justify-content: center;
+        }
+
+        .giving-don .services-container {
+            max-width: 1140px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1.7fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .giving-don .cta-content {
+            text-align: left;
+        }
+
+        .giving-don .cta-subtitle {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .giving-don .cta-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            color: #f1c40f; 
+        }
+
+        .giving-don .cta-content p {
+            font-size: 1rem;
+            color: #ccc;
+            margin-bottom: 40px;
+        }
+
+        .giving-don .cta-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .giving-don .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .giving-don .btn-yellow {
+            background-color: #f1c40f;
+            color: #333;
+        }
+
+        .giving-don .btn-yellow:hover {
+            background-color: #e1b400;
+        }
+
+        .giving-don .btn-teal {
+            background-color: #1abc9c;
+            color: #fff;
+        }
+
+        .giving-don .btn-teal:hover {
+            background-color: #16a085;
+        }
+
+        /* Floating 4-Card Grid on Dark Background */
+        .giving-don .card-block-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            position: relative;
+        }
+
+        /* SVG Icon in Background */
+        .giving-don .bg-icon-svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.03); 
+            stroke-width: 0.5;
+            z-index: 1;
+        }
+
+        .giving-don .service-card {
+            background-color: rgba(255, 255, 255, 0.98); 
+            border-radius: 8px; /* Slightly more rounded for images */
+            overflow: hidden; /* Added to keep image corners rounded */
+            text-align: left;
+            position: relative;
+            z-index: 2; 
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .giving-don .service-card:hover {
+            transform: scale(1.03);
+        }
+
+        /* New class for images in small cards */
+        .giving-don .service-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .giving-don .service-body {
+            padding: 20px;
+        }
+
+        .giving-don .service-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        /* Icon Colors */
+        .giving-don .service-icon.teal { background-color: #1abc9c; } 
+        .giving-don .service-icon.orange { background-color: #e67e22; } 
+        .giving-don .service-icon.gold { background-color: #f1c40f; } 
+        .giving-don .service-icon.blue { background-color: #3498db; }
+
+        .giving-don .service-card h4 {
+            font-family: 'Playfair Display', serif;
+            color: #333;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .giving-don .service-card p {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 992px) {
+            .giving-don .services-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            .giving-don .don-header {
+                height: 250px;
+            }
+            .giving-don .don-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .giving-don .card-block-grid {
+                grid-template-columns: 1fr; 
+            }
+            .giving-don .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            .giving-don .don-header h1 {
+                font-size: 2rem;
+            }
+            .giving-don .cta-content h2 {
+                font-size: 1.8rem;
+            }
+            .giving-don .cta-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .giving-don .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<div class="topbar">
+        <div class="topbar-info">
+            <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
+            <a href="tel:+231779205152"><i class="fa-solid fa-phone"></i> +231 779 205 152</a>
+        </div>
+        <div class="topbar-socials">
+            <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"> <img src="./img/logo14.png" alt="BDI Logo"></a>
+        </div>
+
+        <ul class="nav-links">
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Our Work </b><i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>What We Do</u></h4>
+                            <ul>
+                                <li><a href="agriculture.html">Agriculture & Agribusiness</a></li>
+                                <li><a href="health.html">Health & Nutrition</a></li>
+                                <li><a href="education.html">Education</a></li>
+                                <li><a href="environment.html">Environment & Climate</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Where We Work</u></h4>
+                            <ul><li><a href="#">View all countries</a></li></ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Development & Inclusion</u></h4>
+                            <ul>
+                                <li><a href="gender-youth.html">Gender & Youth Empowerment</a></li>
+                                <li><a href="fisheries.html">Fisheries & Aquaculture</a></li>
+                                <li><a href="disability.html">Disability Inclusion</a></li>
+                                <li><a href="partnership.html">Research & Partnership</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Latest News & Updates</u></h4>
+                            <ul><li><a href="#">View All Our News</a></li></ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>About Us </b><i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                       <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Who we are</u></h4>
+                            <ul>
+                                <li><a href="our-values.html">Our Values</a></li>
+                                <li><a href="founding-story.html">Our founding Story</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Governance</u></h4>
+                            <ul>
+                                <li><a href="governance-structure.html">Our Governance Structure</a></li>
+                                <li><a href="board.html">Our Board of Directors</a></li>
+                                <li><a href="our-ceo.html">Our CEO</a></li>
+                                <li><a href="our-team.html">Our Team</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>How We Raise Money</u></h4>
+                            <ul>
+                                <li><a href="iinstitutional-donors.html">Institutional Donors</a></li>
+                                <li><a href="partners.html">Partners</a></li>
+                                <li><a href="individual-donations.html">Individual Donations</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Transparency and accountability</u></h4>
+                            <ul>
+                                <li><a href="annual-reports.html">Annual Reports</a></li>
+                                <li><a href="how-donations-are-spent.html">How donations are spent</a></li>
+								<li><a href="audited-financials.html">Audited Financial Statements</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Support us</b> <i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Donate Now</u></h4>
+                            <ul>
+                                <li><a href="safe drug victims.html">Donate to safe drug victims</a></li>
+                                <li><a href="End Period Poverty.html">End Period Poverty</a></li>
+                                <li><a href="Women and Youth in Agribusiness.html">Support Women in Agribusiness</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Corporate support</u></h4>
+                            <ul>
+                                <li><a href="Become a Corporate Partner.html">Become a corporate supporter</a></li>
+                                <li><a href="Partner With Us.html">Partner with us</a></li>
+                                <li><a href="Staff Fundraising.html">Staff fundraising</a></li>
+                                <li><a href="Payroll Giving.html">Payroll Giving</a></li>
+                                <li><a href="Corporate Donations.html">Make a corporate donation</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Fundraise for BDI</u></h4>
+                            <ul>
+                                <li><a href="Start your own fundraiser.html">Start your own fundraiser</a></li>
+                                <li><a href="Find a Friend to Sponsor.html">Find a friend to sponsor</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Volunteer Remotely</u></h4>
+                            <ul><li><a href="Volunteer Remotely.html">You can Volunteer with us</a></li></ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Other ways to give</u></h4>
+                            <ul>
+                                <li><a href="Donate in Memory.html">Donate in memory</a></li>
+                                <li><a href="Leave a Gift in Your Will.html">Leave a gift in your Will</a></li>
+                                <li><a href="Donate Your Tax Refund.html">Your donation and tax back</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Resource Centre</b> <i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Knowledge Hub Resources</u></h4>
+                            <ul>
+                                <li><a href="#">Research</a></li>
+                                <li><a href="#">Evaluations</a></li>
+                                <li><a href="#">Newsletters</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="nav-right">
+            <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="donate-main">Donate Now</a>
+        </div>
+    </nav>
+
+<!-- ── NAVIGATION END ── -->
+
+        <section class="services-section">
+            <div class="services-container">
+                <div class="cta-content">
+                    <p class="cta-subtitle">You Are Welcome To</p>
+                    <h1>Join Us—Donate Today</h1>
+                    <p>“Your donations play a crucial role in our mission to lift Liberia and Africa out of poverty, with a focus on girls, youth, and women’s
+					development.Your generosity enables us to create opportunities and drive sustainable change. Choose a convenient method to
+					donate and make a difference today.”</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-yellow">Join Now</a>
+                        <a href="#" class="btn btn-teal">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="card-block-grid">
+                    <svg class="bg-icon-svg" viewBox="0 0 100 100">
+                        <circle cx="50" cy="30" r="10"/>
+                        <path d="M50,45 L40,65 L50,85 L60,65 Z" fill="none"/>
+                        <path d="M20,60 L35,65 L30,80 L20,75 Z" fill="none"/>
+                        <path d="M80,60 L65,65 L70,80 L80,75 Z" fill="none"/>
+                    </svg>
+
+                    <div class="service-card">
+                        <img src="img/bank-details.jpg" alt="Mobile Money" class="service-img">
+                        <div class="service-body">
+                            <div class="service-icon teal"><i class="fas fa-money-bill-wave"></i></div>
+                            <h4>Mobile Money</h4>
+                            <p>Donate quickly and securely using your mobile phone. With mobile money services like MTN
+							Mobile Money and Orange Money.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="img/bank-details2.jpg" alt="Local Bank" class="service-img">
+                        <div class="service-body">
+                            <div class="service-icon orange"><i class="fas fa-university"></i></div>
+                            <h4>Local Bank Transfer</h4>
+                            <p>Support our mission through a secure and reliable bank transfer by sending
+							your donation directly from your bank account.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="img/bank-details3.jpg" alt="Social Ventures" class="service-img">
+                        <div class="service-body">
+                            <div class="service-icon gold"><i class="fab fa-paypal"></i></div>
+                            <h4>PayPal Donate</h4>
+                            <p>Make a fast and secure donation online using PayPal. With just a few clicks,
+							you can support our mission from anywhere in the world</p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <img src="img/bank-details4.jpg" alt="Global Health" class="service-img">
+                        <div class="service-body">
+                            <div class="service-icon blue"><i class="fas fa-credit-card"></i></div>
+                            <h4>Bank Card Transfer</h4>
+                            <p>Donate easily using your debit or credit card for a fast and secure transaction. With just a few details,
+							.your contribution can be processed instantly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div> 
+
+
+<!-- ── FOOTER ── -->
+
+<!-- Footer Start -->
+<style>
+    .super-footer {
+        background-color: #064d3b;
+        color: #ffffff;
+        padding: 80px 0 30px 0; /* Increased top padding for a larger feel */
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        width: 100%;
+    }
+
+    .super-footer .sf-container {
+        /* Increased max-width and significantly larger side padding */
+        max-width: 1600px; 
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 60px; /* Hit larger from left to right */
+    }
+
+    .super-footer .sf-col {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 40px;
+        /* Increased gutter between columns */
+        padding: 0 30px; 
+    }
+
+    /* Brand Section */
+    .super-footer .sf-logo img {
+        max-width: 220px;
+        height: auto;
+        margin-bottom: 25px;
+    }
+
+    .super-footer .sf-description {
+        font-size: 18px;
+        opacity: 0.85;
+        margin-bottom: 30px;
+        max-width: 320px;
+    }
+
+    .super-footer .sf-socials {
+        display: flex;
+        gap: 15px;
+    }
+
+    .super-footer .sf-socials a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 35px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .super-footer .sf-socials a:hover {
+        background: #ffffff;
+        color: #064d3b;
+        border-color: #ffffff;
+        transform: translateY(-3px);
+    }
+
+    /* Headlines & Links */
+    .super-footer .sf-title {
+        color: #22c4a9;
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 35px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+
+    .super-footer .sf-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+		font-size: 17px;
+        font-weight: 700;
+    }
+
+    .super-footer .sf-links li {
+        margin-bottom: 15px;
+    }
+
+    .super-footer .sf-links a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 15px;
+        opacity: 0.9;
+        transition: 0.2s;
+    }
+
+    .super-footer .sf-links a:hover {
+        color: #22c4a9;
+        opacity: 1;
+        padding-left: 8px;
+    }
+
+    /* Locations */
+    .super-footer .sf-loc-item {
+        margin-bottom: 25px;
+    }
+
+    .super-footer .sf-loc-item h5 {
+        margin: 0 0 8px 0;
+        font-size: 18px;
+        font-weight: 700;
+		color:white;
+    }
+
+    .super-footer .sf-loc-item p {
+        margin: 0;
+        font-size: 16px;
+        opacity: 0.8;
+    }
+
+    /* Newsletter Form */
+    .super-footer .sf-newsletter-text {
+        font-size: 17px;
+        margin-bottom: 25px;
+        opacity: 0.9;
+    }
+
+    .super-footer .sf-subscribe input {
+        width: 100%;
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(34, 196, 169, 0.5);
+        border-radius: 6px;
+        color: #b40000;
+        margin-bottom: 15px;
+        outline: none;
+        transition: border 0.3s;
+    }
+
+    .super-footer .sf-subscribe input:focus {
+        border-color: #b40000;
+    }
+
+    .super-footer .sf-subscribe button {
+        width: 100%;
+        padding: 15px;
+        background: #bd0000;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-weight: 700;
+        text-transform: uppercase;
+        cursor: pointer;
+        letter-spacing: 1px;
+        transition: background 0.3s;
+    }
+
+    .super-footer .sf-subscribe button:hover {
+        background: #e60000;
+    }
+
+    /* Bottom Copyright Bar */
+    .super-footer .sf-bottom-bar {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 40px;
+        padding: 30px 60px 0 60px; /* Aligned with container padding */
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 13px;
+        opacity: 0.6;
+    }
+
+    /* Responsive Logic */
+    @media (max-width: 1024px) {
+        .super-footer .sf-container, 
+        .super-footer .sf-bottom-bar { padding: 0 30px; }
+    }
+
+    @media (max-width: 768px) {
+        .super-footer .sf-col { flex: 1 1 45%; }
+    }
+
+    @media (max-width: 600px) {
+        .super-footer .sf-col { flex: 1 1 100%; padding: 0 15px; }
+        .super-footer { text-align: center; }
+        .super-footer .sf-socials { justify-content: center; }
+        .super-footer .sf-description { margin: 0 auto 30px auto; }
+    }
+</style>
+
+
+
+<!-- Footer Start -->
+<style>
+    .super-footer {
+        background-color: #064d3b;
+        color: #ffffff;
+        padding: 80px 0 30px 0; /* Increased top padding for a larger feel */
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        width: 100%;
+    }
+
+    .super-footer .sf-container {
+        /* Increased max-width and significantly larger side padding */
+        max-width: 1600px; 
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 60px; /* Hit larger from left to right */
+    }
+
+    .super-footer .sf-col {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 40px;
+        /* Increased gutter between columns */
+        padding: 0 30px; 
+    }
+
+    /* Brand Section */
+    .super-footer .sf-logo img {
+        max-width: 220px;
+        height: auto;
+        margin-bottom: 25px;
+    }
+
+    .super-footer .sf-description {
+        font-size: 18px;
+        opacity: 0.85;
+        margin-bottom: 30px;
+        max-width: 320px;
+    }
+
+    .super-footer .sf-socials {
+        display: flex;
+        gap: 15px;
+    }
+
+    .super-footer .sf-socials a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 35px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .super-footer .sf-socials a:hover {
+        background: #ffffff;
+        color: #064d3b;
+        border-color: #ffffff;
+        transform: translateY(-3px);
+    }
+
+    /* Headlines & Links */
+    .super-footer .sf-title {
+        color: #22c4a9;
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 35px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+
+    .super-footer .sf-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+		font-size: 17px;
+        font-weight: 700;
+    }
+
+    .super-footer .sf-links li {
+        margin-bottom: 15px;
+    }
+
+    .super-footer .sf-links a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 15px;
+        opacity: 0.9;
+        transition: 0.2s;
+    }
+
+    .super-footer .sf-links a:hover {
+        color: #22c4a9;
+        opacity: 1;
+        padding-left: 8px;
+    }
+
+    /* Locations */
+    .super-footer .sf-loc-item {
+        margin-bottom: 25px;
+    }
+
+    .super-footer .sf-loc-item h5 {
+        margin: 0 0 8px 0;
+        font-size: 18px;
+        font-weight: 700;
+		color:white;
+    }
+
+    .super-footer .sf-loc-item p {
+        margin: 0;
+        font-size: 16px;
+        opacity: 0.8;
+    }
+
+    /* Newsletter Form */
+    .super-footer .sf-newsletter-text {
+        font-size: 17px;
+        margin-bottom: 25px;
+        opacity: 0.9;
+    }
+
+    .super-footer .sf-subscribe input {
+        width: 100%;
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(34, 196, 169, 0.5);
+        border-radius: 6px;
+        color: #b40000;
+        margin-bottom: 15px;
+        outline: none;
+        transition: border 0.3s;
+    }
+
+    .super-footer .sf-subscribe input:focus {
+        border-color: #b40000;
+    }
+
+    .super-footer .sf-subscribe button {
+        width: 100%;
+        padding: 15px;
+        background: #bd0000;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-weight: 700;
+        text-transform: uppercase;
+        cursor: pointer;
+        letter-spacing: 1px;
+        transition: background 0.3s;
+    }
+
+    .super-footer .sf-subscribe button:hover {
+        background: #e60000;
+    }
+
+    /* Bottom Copyright Bar */
+    .super-footer .sf-bottom-bar {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 40px;
+        padding: 30px 60px 0 60px; /* Aligned with container padding */
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 13px;
+        opacity: 0.6;
+    }
+
+    /* Responsive Logic */
+    @media (max-width: 1024px) {
+        .super-footer .sf-container, 
+        .super-footer .sf-bottom-bar { padding: 0 30px; }
+    }
+
+    @media (max-width: 768px) {
+        .super-footer .sf-col { flex: 1 1 45%; }
+    }
+
+    @media (max-width: 600px) {
+        .super-footer .sf-col { flex: 1 1 100%; padding: 0 15px; }
+        .super-footer { text-align: center; }
+        .super-footer .sf-socials { justify-content: center; }
+        .super-footer .sf-description { margin: 0 auto 30px auto; }
+    }
+</style>
+
+
+
+<footer class="super-footer">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <div class="sf-container">
+        <div class="sf-col">
+            <div class="sf-logo">
+        <img src="./img/logo14-1.png" alt="BASA Development Initiatives">
+      </div>
+            <p class="sf-description">
+                BASA Development Initiatives (BDI) is an NGO dedicated to building a more inclusive, resilient, and sustainable Liberia.
+            </p>
+            <div class="sf-socials">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="sf-col">
+            <h4 class="sf-title">Quick Links</h4>
+            <ul class="sf-links">
+                <li><a href="our-values.html">Our Values</a></li>
+                <li><a href="our-team">Our Team</a></li>
+                <li><a href="partners">Partner With Us</a></li>
+                <li><a href="testimonials">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="sf-col">
+            <h4 class="sf-title">Locations</h4>
+            <div class="sf-loc-item">
+                <h5 class="white-bold">HEADQUARTER: Monrovia, Liberia</h5>
+                <p>Morris Villa, ELWA Community,
+				Email: info@basadev.org<br>Tel 1: +231 886 349 962 <br> +231 88 675 7435</p>
+				
+            </div>
+            <div class="sf-loc-item">
+                <h5>State of Minnesota, USA</h5>
+                <p>Regional Coordination Office</p>
+                <p>Tel: +1 (651) 235-9896 <br>Email: info@basadev.org </p>
+            </div>
+        </div>
+
+        <div class="sf-col">
+            <h4 class="sf-title">Stay Updated</h4>
+            <p class="sf-newsletter-text">Join our newsletter for the latest impact updates.</p>
+            <form class="sf-subscribe" onsubmit="return false;">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="sf-bottom-bar">
+        <p>&copy; 2026 BASA Development Initiatives (BDI). Registered NGO in Liberia</p>
+    </div>
+</footer>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Footer End -->
+
+</body>
+<script>
+        const megaItems = document.querySelectorAll('.has-mega');
+
+        megaItems.forEach(item => {
+            const link = item.querySelector('.nav-link');
+            
+            link.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevents document click from firing immediately
+                
+                // Toggle current item
+                const isActive = item.classList.contains('is-active');
+                
+                // Close all other menus first
+                megaItems.forEach(i => i.classList.remove('is-active'));
+                
+                // If it wasn't active, open it
+                if (!isActive) {
+                    item.classList.add('is-active');
+                }
+            });
+        });
+
+        // Close menu if clicking anywhere outside the navbar
+        document.addEventListener('click', () => {
+            megaItems.forEach(i => i.classList.remove('is-active'));
+        });
+    </script>
+</html>

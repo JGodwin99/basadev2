@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partnership, Research & Fundraising - BASA Development Initiatives</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+  :root {
+            --brand-red: #990033;
+            --brand-green: #005e4d; 
+            --sidebar-tan: #e9e6d1;
+            --text-dark: #333;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+        /* --- TOPBAR --- */
+        .topbar {
+            background-color: var(--brand-red);
+            padding: 17px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--white);
+        }
+        .topbar-info { display: flex; gap: 20px; font-size: 19px; }
+        .topbar-info a { color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .topbar-socials { display: flex; gap: 10px; }
+        .social-btn {
+            width: 38px; height: 28px; border: 1px solid rgba(255,255,255,0.3);
+            display: flex; align-items: center; justify-content: center;
+            color: white; text-decoration: none; border-radius: 3px; font-size: 15px;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10 60px;
+            height: 100px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo img { height: 90px; display: block; }
+
+        .nav-links { display: flex; list-style: none; height: 100%; gap: 85px; }
+        .has-mega { position: static; }
+
+         .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 700;
+            padding: 0 -10px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            font-size: 20px;
+            cursor: pointer; /* Indicates it is clickable */
+            transition: var(--transition);
+        }
+
+        .nav-link i { font-size: 14px; margin-left: 6px; color: #888; transition: transform 0.3s; }
+
+        /* --- MEGA MENU BASE --- */
+        .mega-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            display: none; /* Hidden until is-active class is added */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-top: 1px solid #eee;
+        }
+
+        /* Toggled Active State */
+        .has-mega.is-active .mega-menu { display: flex; }
+        .has-mega.is-active .nav-link { color: var(--brand-green); background: #f9f9f9; }
+        .has-mega.is-active .nav-link i { transform: rotate(180deg); }
+
+        .mega-sidebar { background-color: var(--sidebar-tan); width: 320px; padding: 40px; flex-shrink: 0; }
+        .sidebar-img { width: 100%; border-radius: 5px; margin-bottom: 20px; }
+        .sidebar-title { font-weight: 700; font-size: 18px; margin-bottom: 10px; }
+        .sidebar-text { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+        
+        .btn-green-sm {
+            background-color: var(--brand-green);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .mega-grid { flex-grow: 1; padding: 40px 60px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .mega-col h4 { color: var(--brand-green); font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+        .mega-col h4 span { color: #666; margin-right: 8px; font-weight: 400; }
+        .mega-col ul { list-style: none; }
+        .mega-col ul li { margin-bottom: 12px; }
+        .mega-col ul li a { text-decoration: none; color: var(--brand-green); font-size: 14px; font-weight: 600; }
+        .mega-col ul li a:hover { color: var(--brand-red); padding-left: 5px; transition: 0.2s; }
+
+        /* --- RIGHT UTILS --- */
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .search-btn { background: #f1f1f1; border: 1px solid #333; padding: 10px 14px; cursor: pointer; }
+        .donate-main {
+            background: var(--brand-red); color: white; padding: 12px 28px;
+            border-radius: 30px; text-decoration: none; font-weight: 700;
+        }
+  
+  
+  
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:        #C0392B;
+      --red-dark:   #9B2D20;
+      --gold:       #D4A017;
+      --gold-dark:  #A87C10;
+      --gold-light: #F0BC2E;
+      --gold-pale:  #FFFBEB;
+      --gold-border:#FDE68A;
+      --navy:       #1A1A2E;
+      --navy-card:  #1E1E34;
+      --white:      #FFFFFF;
+      --text-muted: #6B7280;
+      --border:     #E5E7EB;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; font-size: 16px; color: #1A1A1A; background: var(--white); line-height: 1.6; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 72px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo-icon { width: 42px; height: 42px; background: var(--red); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .nav-logo-icon svg { width: 22px; height: 22px; }
+    .nav-logo-text { font-weight: 700; font-size: 14px; color: var(--navy); line-height: 1.3; }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--navy); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--red); }
+    .nav-donate { background: var(--red); color: var(--white) !important; padding: 10px 24px; border-radius: 6px; font-weight: 700 !important; font-size: 13px !important; letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.2s !important; }
+    .nav-donate:hover { background: var(--red-dark) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; height: 430px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 60px 80px; overflow: hidden;
+      background: linear-gradient(
+        112deg,
+        rgba(10, 8, 4, 0.96) 38%,
+        rgba(60, 40, 4, 0.58) 100%
+      ),
+      url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&q=80')
+        center/cover no-repeat;
+    }
+    .breadcrumb {
+      position: absolute; top: 32px; left: 80px;
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .breadcrumb span { color: var(--red); }
+    .breadcrumb .sep { color: rgba(255,255,255,0.4); }
+
+    .hero-engine {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(212,160,23,0.15); border: 1px solid rgba(212,160,23,0.35);
+      border-radius: 6px; padding: 7px 14px; margin-bottom: 20px;
+      animation: fadeUp 0.6s ease both;
+    }
+    .engine-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold-light); flex-shrink: 0; }
+    .engine-text { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.82); }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 5vw, 68px); font-weight: 900;
+      color: var(--white); line-height: 1.05; max-width: 760px;
+      animation: fadeUp 0.7s 0.1s ease both;
+    }
+    .hero p {
+      margin-top: 18px; font-size: 18px; font-weight: 400;
+      color: rgba(255,255,255,0.82); max-width: 580px;
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+    .hero-accent {
+      position: absolute; bottom: 0; right: 0;
+      width: 440px; height: 440px;
+      background: radial-gradient(circle, rgba(212,160,23,0.20) 0%, transparent 68%);
+      pointer-events: none;
+    }
+
+    /* ── STATS STRIP ── */
+    .stats-strip { background: var(--navy); padding: 0 80px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .stat-card {
+      background: var(--navy-card); padding: 32px 28px;
+      display: flex; align-items: center; gap: 20px;
+      position: relative; transition: background 0.2s;
+    }
+    .stat-card:hover { background: #232340; }
+    .stat-card.target-card::after {
+      content: '2029 TARGET';
+      position: absolute; top: 12px; right: 12px;
+      background: var(--red); color: var(--white);
+      font-size: 9px; font-weight: 700; letter-spacing: 0.1em;
+      padding: 3px 8px; border-radius: 3px;
+    }
+    .stat-icon { width: 48px; height: 48px; border-radius: 10px; background: var(--gold-dark); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .stat-icon.gold-icon { background: rgba(212,160,23,0.22); }
+    .stat-icon svg { width: 22px; height: 22px; }
+    .stat-value { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--white); line-height: 1; }
+    .stat-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 5px; }
+
+    /* ── MAIN CONTENT ── */
+    .main-content {
+      padding: 80px 80px;
+      display: grid; grid-template-columns: 1fr 380px;
+      gap: 64px; align-items: start;
+    }
+
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 16px; }
+    .overview-heading { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3vw, 40px); font-weight: 700; color: var(--navy); line-height: 1.2; max-width: 580px; margin-bottom: 24px; }
+    .overview-body { font-size: 18px; text-align: justify; color: #4B5563; max-width: 580px; line-height: 1.75; margin-bottom: 48px; }
+
+    /* Research highlight */
+    .research-block {
+      background: var(--navy); border-radius: 16px; padding: 36px;
+      margin-bottom: 48px; position: relative; overflow: hidden;
+    }
+    .research-block::after {
+      content: '';
+      position: absolute; top: -40px; right: -40px;
+      width: 180px; height: 180px;
+      border-radius: 50%; border: 1px solid rgba(212,160,23,0.12);
+    }
+    .research-block-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .research-stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 24px; }
+    .r-stat {}
+    .r-stat-val { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 900; color: var(--white); line-height: 1; }
+    .r-stat-label { font-size: 11px; color: rgba(255,255,255,0.55); margin-top: 5px; line-height: 1.4; }
+    .research-block-divider { height: 1px; background: rgba(255,255,255,0.10); margin-bottom: 20px; }
+    .research-block-desc { font-size: 14px; color: rgba(255,255,255,0.68); line-height: 1.7; }
+    .research-block-desc strong { color: var(--white); }
+
+    /* Three strategic approaches */
+    .approach-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
+    .approach-trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 48px; }
+    .approach-tile {
+      background: var(--gold-pale); border: 1px solid var(--gold-border);
+      border-radius: 12px; padding: 22px 18px;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .approach-tile:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(168,124,16,0.12); }
+    .approach-tile-icon {
+      width: 38px; height: 38px; border-radius: 9px;
+      background: var(--gold-dark); display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px;
+    }
+    .approach-tile-icon svg { width: 18px; height: 18px; }
+    .approach-tile-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .approach-tile-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+    .objectives-heading { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 24px; }
+    .objectives-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .objective-card {
+      background: var(--gold-pale); border: 1px solid var(--gold-border);
+      border-radius: 12px; padding: 20px 20px 20px 16px;
+      display: flex; align-items: flex-start; gap: 14px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .objective-card:hover { border-color: var(--gold); box-shadow: 0 4px 16px rgba(168,124,16,0.08); }
+    .obj-check {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: rgba(168,124,16,0.12); border: 2px solid var(--gold-dark);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .obj-check svg { width: 11px; height: 11px; }
+    .objective-card p { font-size: 14px; font-weight: 600; color: var(--navy); line-height: 1.4; }
+
+    /* Financial trajectory */
+    .trajectory-section { margin-top: 48px; }
+    .trajectory-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 20px; }
+    .trajectory-rows { display: flex; flex-direction: column; gap: 14px; }
+    .trajectory-row {
+      display: grid; grid-template-columns: 160px 1fr auto;
+      align-items: center; gap: 16px;
+      background: #F9FAFB; border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 18px;
+    }
+    .traj-period { font-size: 12px; font-weight: 700; color: var(--navy); }
+    .traj-bar-wrap { height: 8px; background: #E5E7EB; border-radius: 4px; overflow: hidden; }
+    .traj-bar { height: 100%; border-radius: 4px; background: var(--gold); }
+    .traj-amount { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--gold-dark); white-space: nowrap; }
+
+    .sdg-section { margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--border); }
+    .sdg-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 14px; }
+    .sdg-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .sdg-tag { background: var(--navy); color: rgba(255,255,255,0.85); font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 20px; }
+
+    /* ── SIDEBAR ── */
+    .sidebar { position: sticky; top: 92px; display: flex; flex-direction: column; gap: 16px; }
+    .sidebar-card { background: var(--white); border: 1px solid #E5E7EB; border-radius: 16px; padding: 28px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+    .sidebar-title { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .sidebar-title-icon { width: 32px; height: 32px; border-radius: 8px; background: rgba(168,124,16,0.12); display: flex; align-items: center; justify-content: center; }
+    .sidebar-title-icon svg { width: 16px; height: 16px; }
+    .sidebar-subtitle { font-size: 12px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5; }
+
+    /* Partnership type cards */
+    .partner-type { background: #F9FAFB; border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; margin-bottom: 10px; }
+    .partner-type:last-child { margin-bottom: 0; }
+    .partner-type-top { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
+    .partner-badge {
+      font-size: 9px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 4px;
+    }
+    .badge-funder  { background: #FEF3C7; color: #92400E; }
+    .badge-research{ background: #DBEAFE; color: #1E40AF; }
+    .badge-impl    { background: #D1FAE5; color: #065F46; }
+    .partner-type-title { font-size: 13px; font-weight: 700; color: var(--navy); }
+    .partner-type-desc { font-size: 11px; color: var(--text-muted); line-height: 1.5; }
+
+    .sidebar-divider { height: 1px; background: var(--border); margin: 18px 0; }
+    .sidebar-note { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px; }
+    .partner-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; background: var(--gold-dark); color: var(--white);
+      font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 16px; border-radius: 8px;
+      text-decoration: none; transition: background 0.2s; margin-bottom: 10px;
+    }
+    .partner-btn:hover { background: var(--gold); }
+    .partner-btn svg { width: 16px; height: 16px; }
+    .donate-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: var(--red); color: var(--white); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 16px; border-radius: 8px; text-decoration: none; transition: background 0.2s; }
+    .donate-btn:hover { background: var(--red-dark); }
+    .donate-btn svg { width: 16px; height: 16px; }
+
+    /* Pipeline preview card */
+    .pipeline-card { background: var(--navy); border-radius: 12px; padding: 22px; }
+    .pipeline-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 18px; }
+    .pipeline-goal { text-align: center; margin-bottom: 20px; }
+    .pipeline-goal-val { font-family: 'Playfair Display', serif; font-size: 44px; font-weight: 900; color: var(--gold-light); line-height: 1; }
+    .pipeline-goal-label { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 6px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .pipeline-divider { height: 1px; background: rgba(255,255,255,0.10); margin-bottom: 16px; }
+    .pipeline-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .pipeline-row:last-child { margin-bottom: 0; }
+    .pipeline-row-label { font-size: 11px; color: rgba(255,255,255,0.5); }
+    .pipeline-row-val { font-size: 14px; font-weight: 700; color: var(--white); }
+
+    /* ── CTA BANNER ── */
+    .cta-banner { background: var(--navy); padding: 80px 80px; text-align: center; position: relative; overflow: hidden; }
+    .cta-blob { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 420px; height: 420px; opacity: 0.06; }
+    .cta-banner h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 46px); font-weight: 900; color: var(--white); max-width: 700px; margin: 0 auto 40px; line-height: 1.2; position: relative; z-index: 1; }
+    .cta-buttons { display: flex; justify-content: center; gap: 16px; position: relative; z-index: 1; }
+    .btn-gold { background: var(--gold); color: var(--navy); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 16px 36px; border-radius: 50px; text-decoration: none; transition: opacity 0.2s; }
+    .btn-gold:hover { opacity: 0.9; }
+    .btn-outline { background: transparent; border: 2px solid rgba(255,255,255,0.3); color: var(--white); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 16px 36px; border-radius: 50px; text-decoration: none; transition: border-color 0.2s; }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.7); }
+
+    /* ── FOOTER ── */
+    footer { background: #0E0E1E; padding: 64px 80px 0; }
+    .footer-grid { display: grid; grid-template-columns: 280px 1fr 1fr 260px; gap: 48px; padding-bottom: 48px; }
+    .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .footer-logo-icon { width: 36px; height: 36px; background: var(--red); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 16px; color: var(--white); }
+    .footer-logo-text { font-weight: 700; font-size: 15px; color: var(--white); }
+    .footer-tagline { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 24px; }
+    .footer-socials { display: flex; gap: 10px; }
+    .social-dot { width: 34px; height: 34px; border-radius: 8px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); }
+    .footer-heading { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 20px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-location-name { font-size: 15px; font-weight: 700; color: var(--white); line-height: 1.4; margin-bottom: 10px; }
+    .footer-location-detail { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 4px; }
+    .footer-stay-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 14px; }
+    .footer-newsletter-note { font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 16px; line-height: 1.6; }
+    .footer-input { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 12px 16px; font-size: 13px; color: var(--white); outline: none; margin-bottom: 10px; font-family: 'DM Sans', sans-serif; }
+    .footer-input::placeholder { color: rgba(255,255,255,0.3); }
+    .footer-subscribe { width: 100%; background: var(--red); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 13px; border: none; border-radius: 8px; cursor: pointer; transition: background 0.2s; }
+    .footer-subscribe:hover { background: var(--red-dark); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 24px 0; display: flex; justify-content: space-between; align-items: center; }
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.35); }
+    .footer-bottom-links { display: flex; gap: 24px; }
+    .footer-bottom-links a { font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 1024px) {
+      nav, .hero { padding-left: 32px; padding-right: 32px; }
+      .hero .breadcrumb { left: 32px; }
+      .stats-strip, .main-content, .cta-banner, footer { padding-left: 32px; padding-right: 32px; }
+      .main-content { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .approach-trio, .research-stats-row { grid-template-columns: 1fr; }
+      .trajectory-row { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<div class="topbar">
+        <div class="topbar-info">
+            <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
+            <a href="tel:+231779205152"><i class="fa-solid fa-phone"></i> +231 779 205 152</a>
+        </div>
+        <div class="topbar-socials">
+            <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"> <img src="./img/logo14.png" alt="BDI Logo"></a>
+        </div>
+
+        <ul class="nav-links">
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Our Work </b><i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>What We Do</u></h4>
+                            <ul>
+                                <li><a href="agriculture.html">Agriculture & Agribusiness</a></li>
+                                <li><a href="health.html">Health & Nutrition</a></li>
+                                <li><a href="education.html">Education</a></li>
+                                <li><a href="environment.html">Environment & Climate</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Where We Work</u></h4>
+                            <ul><li><a href="#">View all countries</a></li></ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Development & Inclusion</u></h4>
+                            <ul>
+                                <li><a href="gender-youth.html">Gender & Youth Empowerment</a></li>
+                                <li><a href="fisheries.html">Fisheries & Aquaculture</a></li>
+                                <li><a href="disability.html">Disability Inclusion</a></li>
+                                <li><a href="partnership.html">Research & Partnership</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Latest News & Updates</u></h4>
+                            <ul><li><a href="#">View All Our News</a></li></ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>About Us </b><i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                       <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Who we are</u></h4>
+                            <ul>
+                                <li><a href="our-values.html">Our Values</a></li>
+                                <li><a href="founding-story.html">Our founding Story</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Governance</u></h4>
+                            <ul>
+                                <li><a href="governance-structure.html">Our Governance Structure</a></li>
+                                <li><a href="board.html">Our Board of Directors</a></li>
+                                <li><a href="our-ceo.html">Our CEO</a></li>
+                                <li><a href="our-team.html">Our Team</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>How We Raise Money</u></h4>
+                            <ul>
+                                <li><a href="iinstitutional-donors.html">Institutional Donors</a></li>
+                                <li><a href="partners.html">Partners</a></li>
+                                <li><a href="individual-donations.html">Individual Donations</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Transparency and accountability</u></h4>
+                            <ul>
+                                <li><a href="annual-reports.html">Annual Reports</a></li>
+                                <li><a href="how-donations-are-spent.html">How donations are spent</a></li>
+								<li><a href="audited-financials.html">Audited Financial Statements</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Support us</b> <i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Donate Now</u></h4>
+                            <ul>
+                                <li><a href="safe drug victims.html">Donate to safe drug victims</a></li>
+                                <li><a href="End Period Poverty.html">End Period Poverty</a></li>
+                                <li><a href="Women and Youth in Agribusiness.html">Support Women in Agribusiness</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Corporate support</u></h4>
+                            <ul>
+                                <li><a href="Become a Corporate Partner.html">Become a corporate supporter</a></li>
+                                <li><a href="Partner With Us.html">Partner with us</a></li>
+                                <li><a href="Staff Fundraising.html">Staff fundraising</a></li>
+                                <li><a href="Payroll Giving.html">Payroll Giving</a></li>
+                                <li><a href="Corporate Donations.html">Make a corporate donation</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Fundraise for BDI</u></h4>
+                            <ul>
+                                <li><a href="Start your own fundraiser.html">Start your own fundraiser</a></li>
+                                <li><a href="Find a Friend to Sponsor.html">Find a friend to sponsor</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Volunteer Remotely</u></h4>
+                            <ul><li><a href="Volunteer Remotely.html">You can Volunteer with us</a></li></ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Other ways to give</u></h4>
+                            <ul>
+                                <li><a href="Donate in Memory.html">Donate in memory</a></li>
+                                <li><a href="Leave a Gift in Your Will.html">Leave a gift in your Will</a></li>
+                                <li><a href="Donate Your Tax Refund.html">Your donation and tax back</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Resource Centre</b> <i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Knowledge Hub Resources</u></h4>
+                            <ul>
+                                <li><a href="#">Research</a></li>
+                                <li><a href="#">Evaluations</a></li>
+                                <li><a href="#">Newsletters</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="nav-right">
+            <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="donate-main">Donate Now</a>
+        </div>
+    </nav>
+
+<!-- ── NAVIGATION END ── -->
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-engine">
+    <span class="engine-dot"></span>
+    <span class="engine-text">The institutional engine powering all eight BDI program areas.</span>
+  </div>
+  <h1>Partnership, Research<br>&amp; Fundraising</h1>
+  <p>Building the partnerships, evidence base, and financial foundation that make lasting development possible across Liberia.</p>
+  <div class="hero-accent"></div>
+</section>
+
+<!-- ── STATS STRIP ── -->
+<div class="stats-strip">
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+      </div>
+      <div>
+        <div class="stat-value">3</div>
+        <div class="stat-label">Research Projects Completed</div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div>
+        <div class="stat-value">3,500</div>
+        <div class="stat-label">Farmers and Households Reached via Research</div>
+      </div>
+    </div>
+
+    <div class="stat-card target-card">
+      <div class="stat-icon gold-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      </div>
+      <div>
+        <div class="stat-value">$2M</div>
+        <div class="stat-label">Annual Fundraising Target by 2029</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── MAIN CONTENT ── -->
+<section class="main-content">
+
+  <!-- LEFT -->
+  <div>
+    <p class="section-label">Overview</p>
+    <h2 class="overview-heading">No program survives without evidence. No evidence scales without partnerships. No partnership thrives without trust.</h2>
+    <p class="overview-body">
+      No organization achieves lasting development impact in isolation. BDI's ability to serve communities at scale depends on three things working together: the strength of our partnerships, the quality of our evidence, and the diversity of our funding. This program area is the institutional engine that makes all other programs possible. BDI occupies a unique position in Liberia's civil society landscape - locally led, credible, corruption-resistant, and deeply mission-driven. These qualities make us a natural partner for international NGOs, foundations, bilateral donors, and government agencies seeking to maximize the impact of their investment in Liberia. We do not chase funding. We build relationships, generate evidence, and grow partnerships that outlast any single project cycle.
+    </p>
+
+    <!-- Research highlight block -->
+    <div class="research-block">
+      <p class="research-block-label">Research Impact to Date</p>
+      <div class="research-stats-row">
+        <div class="r-stat">
+          <div class="r-stat-val">3</div>
+          <p class="r-stat-label">Research Projects Completed</p>
+        </div>
+        <div class="r-stat">
+          <div class="r-stat-val">2,000+</div>
+          <p class="r-stat-label">Farmers Reached Through Research Findings</p>
+        </div>
+        <div class="r-stat">
+          <div class="r-stat-val">1,500+</div>
+          <p class="r-stat-label">Households Supported Through Research Insights</p>
+        </div>
+      </div>
+      <div class="research-block-divider"></div>
+      <p class="research-block-desc">BDI's completed research projects have generated <strong>actionable evidence on agricultural financing, smallholder credit access, and community-level food security</strong> across four Liberian counties. These findings have directly informed program design, donor proposals, and policy advocacy - demonstrating that research is not an academic exercise for BDI. It is a practical tool for change.</p>
+    </div>
+
+    <!-- Three strategic pillars -->
+    <p class="approach-label">Three Pillars of This Program</p>
+    <div class="approach-trio">
+      <div class="approach-tile">
+        <div class="approach-tile-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <p class="approach-tile-title">Strategic Partnerships</p>
+        <p class="approach-tile-desc">Building and managing MOUs with government, civil society, and international organizations. Target: 10 new partnerships per year.</p>
+      </div>
+      <div class="approach-tile">
+        <div class="approach-tile-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        </div>
+        <p class="approach-tile-title">Evidence and Research</p>
+        <p class="approach-tile-desc">Conducting participatory research studies that inform program design, advocacy, and policy. Target: 5 studies completed per year.</p>
+      </div>
+      <div class="approach-tile">
+        <div class="approach-tile-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <p class="approach-tile-title">Resource Mobilization</p>
+        <p class="approach-tile-desc">Submitting grant proposals, stewarding donors, and building social enterprise income. Target: 15 proposals submitted per year.</p>
+      </div>
+    </div>
+
+    <h3 class="objectives-heading">Key Objectives</h3>
+    <div class="objectives-grid">
+      <div class="objective-card">
+        <div class="obj-check">
+          <svg viewBox="0 0 12 12" fill="none" stroke="#A87C10" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg>
+        </div>
+        <p>Achieve a 25% annual increase in partnerships and funds mobilized.</p>
+      </div>
+      <div class="objective-card">
+        <div class="obj-check">
+          <svg viewBox="0 0 12 12" fill="none" stroke="#A87C10" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg>
+        </div>
+        <p>Conduct 5 high-quality research studies annually to drive evidence-based decisions.</p>
+      </div>
+      <div class="objective-card">
+        <div class="obj-check">
+          <svg viewBox="0 0 12 12" fill="none" stroke="#A87C10" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg>
+        </div>
+        <p>Formalize 10 new strategic partnerships per year through MOUs and agreements.</p>
+      </div>
+      <div class="objective-card">
+        <div class="obj-check">
+          <svg viewBox="0 0 12 12" fill="none" stroke="#A87C10" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg>
+        </div>
+        <p>Maintain 90%+ donor retention through strong stewardship and impact storytelling.</p>
+      </div>
+    </div>
+
+    <!-- Financial trajectory -->
+    <div class="trajectory-section">
+      <p class="trajectory-label">BDI's Financial Growth Trajectory</p>
+      <div class="trajectory-rows">
+        <div class="trajectory-row">
+          <span class="traj-period">2022-2024 Baseline</span>
+          <div class="traj-bar-wrap"><div class="traj-bar" style="width: 3%"></div></div>
+          <span class="traj-amount">$50K-$60K</span>
+        </div>
+        <div class="trajectory-row">
+          <span class="traj-period">2025-2026 Growth</span>
+          <div class="traj-bar-wrap"><div class="traj-bar" style="width: 25%"></div></div>
+          <span class="traj-amount">$500K</span>
+        </div>
+        <div class="trajectory-row">
+          <span class="traj-period">2027-2029 Scale</span>
+          <div class="traj-bar-wrap"><div class="traj-bar" style="width: 100%"></div></div>
+          <span class="traj-amount">$1.5M-$2M</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sdg-section">
+      <p class="sdg-label">SDG Alignment</p>
+      <div class="sdg-tags">
+        <span class="sdg-tag">SDG 4 - Quality Education</span>
+        <span class="sdg-tag">SDG 5 - Gender Equality</span>
+        <span class="sdg-tag">SDG 10 - Reduced Inequalities</span>
+        <span class="sdg-tag">SDG 17 - Partnerships for the Goals</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Sidebar -->
+  <aside class="sidebar">
+
+    <!-- Partnership opportunities (creative replacement for active projects) -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">
+        <div class="sidebar-title-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#A87C10" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        Partnership Opportunities
+      </div>
+      <p class="sidebar-subtitle">BDI is actively seeking partners across three engagement modalities. Find the one that fits your organization.</p>
+
+      <div class="partner-type">
+        <div class="partner-type-top">
+          <span class="partner-badge badge-funder">Funding Partner</span>
+        </div>
+        <p class="partner-type-title">Donors and Foundations</p>
+        <p class="partner-type-desc">Support one or more of BDI's eight program areas through grants, multi-year commitments, or restricted project funding.</p>
+      </div>
+
+      <div class="partner-type">
+        <div class="partner-type-top">
+          <span class="partner-badge badge-research">Research Partner</span>
+        </div>
+        <p class="partner-type-title">Academic and Policy Institutions</p>
+        <p class="partner-type-desc">Co-design and conduct research studies on agriculture, health, gender, fisheries, or disability in the Liberian context.</p>
+      </div>
+
+      <div class="partner-type">
+        <div class="partner-type-top">
+          <span class="partner-badge badge-impl">Implementation Partner</span>
+        </div>
+        <p class="partner-type-title">NGOs, INGOs and Government</p>
+        <p class="partner-type-desc">Join BDI in consortium proposals, joint programming, or co-implementation of projects across Liberia's 15 counties.</p>
+      </div>
+
+      <div class="sidebar-divider"></div>
+      <p class="sidebar-note">BDI is locally led, independently managed, and committed to transparency. We welcome partnerships that share our values and our belief that Liberians should own Liberia's development.</p>
+      <a href="#" class="partner-btn">
+        Explore Partnership
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#" class="donate-btn">
+        Support Our Work
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <!-- Pipeline card -->
+    <div class="pipeline-card">
+      <p class="pipeline-label">Fundraising Pipeline - 2029 Vision</p>
+      <div class="pipeline-goal">
+        <div class="pipeline-goal-val">$2M</div>
+        <p class="pipeline-goal-label">Annual Fundraising Target</p>
+      </div>
+      <div class="pipeline-divider"></div>
+      <div class="pipeline-row">
+        <span class="pipeline-row-label">Proposals submitted per year</span>
+        <span class="pipeline-row-val">15</span>
+      </div>
+      <div class="pipeline-row">
+        <span class="pipeline-row-label">New partnerships per year</span>
+        <span class="pipeline-row-val">10</span>
+      </div>
+      <div class="pipeline-row">
+        <span class="pipeline-row-label">Donor retention rate target</span>
+        <span class="pipeline-row-val">90%+</span>
+      </div>
+      <div class="pipeline-row">
+        <span class="pipeline-row-label">Research studies per year</span>
+        <span class="pipeline-row-val">5</span>
+      </div>
+      <div class="pipeline-row">
+        <span class="pipeline-row-label">Annual income growth target</span>
+        <span class="pipeline-row-val">+25%</span>
+      </div>
+    </div>
+
+  </aside>
+
+</section>
+
+<!-- ── CTA BANNER ── -->
+<section class="cta-banner">
+  <svg class="cta-blob" viewBox="0 0 200 200" fill="white"><path d="M44.7,-62.7C56.8,-55.8,63.3,-39.4,68.4,-22.4C73.5,-5.4,77.1,12.2,71.3,26.4C65.5,40.6,50.3,51.4,35.1,60.2C19.9,69,4.7,75.8,-11.5,75.5C-27.7,75.2,-44.9,67.8,-56.1,55.5C-67.3,43.2,-72.5,26,-73.1,8.8C-73.7,-8.4,-69.7,-25.6,-60,-38.1C-50.3,-50.6,-34.9,-58.4,-19.7,-64.2C-4.5,-70,10.5,-73.8,25.3,-71.2C40.1,-68.6,54.8,-59.6,44.7,-62.7Z" transform="translate(100 100)"/></svg>
+  <h2>Partner with BDI and help us build a financially sustainable, evidence-driven future for Liberia.</h2>
+  <div class="cta-buttons">
+    <a href="#" class="btn-gold">Become a Partner</a>
+    <a href="#" class="btn-outline">Get in Touch</a>
+  </div>
+</section>
+
+<!-- Footer Start -->
+<style>
+    .super-footer {
+        background-color: #064d3b;
+        color: #ffffff;
+        padding: 80px 0 30px 0; /* Increased top padding for a larger feel */
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        width: 100%;
+    }
+
+    .super-footer .sf-container {
+        /* Increased max-width and significantly larger side padding */
+        max-width: 1600px; 
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 60px; /* Hit larger from left to right */
+    }
+
+    .super-footer .sf-col {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 40px;
+        /* Increased gutter between columns */
+        padding: 0 30px; 
+    }
+
+    /* Brand Section */
+    .super-footer .sf-logo img {
+        max-width: 220px;
+        height: auto;
+        margin-bottom: 25px;
+    }
+
+    .super-footer .sf-description {
+        font-size: 18px;
+        opacity: 0.85;
+        margin-bottom: 30px;
+        max-width: 320px;
+    }
+
+    .super-footer .sf-socials {
+        display: flex;
+        gap: 15px;
+    }
+
+    .super-footer .sf-socials a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .super-footer .sf-socials a:hover {
+        background: #ffffff;
+        color: #064d3b;
+        border-color: #ffffff;
+        transform: translateY(-3px);
+    }
+
+    /* Headlines & Links */
+    .super-footer .sf-title {
+        color: #22c4a9;
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 35px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+
+    .super-footer .sf-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+		font-size: 17px;
+        font-weight: 700;
+    }
+
+    .super-footer .sf-links li {
+        margin-bottom: 15px;
+    }
+
+    .super-footer .sf-links a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 15px;
+        opacity: 0.9;
+        transition: 0.2s;
+    }
+
+    .super-footer .sf-links a:hover {
+        color: #22c4a9;
+        opacity: 1;
+        padding-left: 8px;
+    }
+
+    /* Locations */
+    .super-footer .sf-loc-item {
+        margin-bottom: 25px;
+    }
+
+    .super-footer .sf-loc-item h5 {
+        margin: 0 0 8px 0;
+        font-size: 18px;
+        font-weight: 700;
+		color:white;
+    }
+
+    .super-footer .sf-loc-item p {
+        margin: 0;
+        font-size: 16px;
+        opacity: 0.8;
+    }
+
+    /* Newsletter Form */
+    .super-footer .sf-newsletter-text {
+        font-size: 17px;
+        margin-bottom: 25px;
+        opacity: 0.9;
+    }
+
+    .super-footer .sf-subscribe input {
+        width: 100%;
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(34, 196, 169, 0.5);
+        border-radius: 6px;
+        color: #b40000;
+        margin-bottom: 15px;
+        outline: none;
+        transition: border 0.3s;
+    }
+
+    .super-footer .sf-subscribe input:focus {
+        border-color: #b40000;
+    }
+
+    .super-footer .sf-subscribe button {
+        width: 100%;
+        padding: 15px;
+        background: #bd0000;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-weight: 700;
+        text-transform: uppercase;
+        cursor: pointer;
+        letter-spacing: 1px;
+        transition: background 0.3s;
+    }
+
+    .super-footer .sf-subscribe button:hover {
+        background: #e60000;
+    }
+
+    /* Bottom Copyright Bar */
+    .super-footer .sf-bottom-bar {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 40px;
+        padding: 30px 60px 0 60px; /* Aligned with container padding */
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 13px;
+        opacity: 0.6;
+    }
+
+    /* Responsive Logic */
+    @media (max-width: 1024px) {
+        .super-footer .sf-container, 
+        .super-footer .sf-bottom-bar { padding: 0 30px; }
+    }
+
+    @media (max-width: 768px) {
+        .super-footer .sf-col { flex: 1 1 45%; }
+    }
+
+    @media (max-width: 600px) {
+        .super-footer .sf-col { flex: 1 1 100%; padding: 0 15px; }
+        .super-footer { text-align: center; }
+        .super-footer .sf-socials { justify-content: center; }
+        .super-footer .sf-description { margin: 0 auto 30px auto; }
+    }
+</style>
+
+
+<footer class="super-footer">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <div class="sf-container">
+        <div class="sf-col">
+            <div class="sf-logo">
+        <img src="./img/logo14-1.png" alt="BASA Development Initiatives">
+      </div>
+            <p class="sf-description">
+                BASA Development Initiatives (BDI) is an NGO dedicated to building a more inclusive, resilient, and sustainable Liberia.
+            </p>
+            <div class="sf-socials">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="sf-col">
+            <h4 class="sf-title">Quick Links</h4>
+            <ul class="sf-links">
+                <li><a href="our-values.html">Our Values</a></li>
+                <li><a href="our-team">Our Team</a></li>
+                <li><a href="partners">Partner With Us</a></li>
+                <li><a href="testimonials">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="sf-col">
+            <h4 class="sf-title">Locations</h4>
+            <div class="sf-loc-item">
+                <h5 class="white-bold">HEADQUARTER: Monrovia, Liberia</h5>
+                <p>Morris Villa, ELWA Community,
+				Email: info@basadev.org<br>Tel 1: +231 886 349 962 <br> +231 88 675 7435</p>
+				
+            </div>
+            <div class="sf-loc-item">
+                <h5>State of Minnesota, USA</h5>
+                <p>Regional Coordination Office</p>
+                <p>Tel: +1 (651) 235-9896 <br>Email: info@basadev.org </p>
+            </div>
+        </div>
+
+        <div class="sf-col">
+            <h4 class="sf-title">Stay Updated</h4>
+            <p class="sf-newsletter-text">Join our newsletter for the latest impact updates.</p>
+            <form class="sf-subscribe" onsubmit="return false;">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="sf-bottom-bar">
+        <p>&copy; 2026 BASA Development Initiatives (BDI). Registered NGO in Liberia</p>
+    </div>
+</footer>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Footer End -->
+</body>
+<script>
+        const megaItems = document.querySelectorAll('.has-mega');
+
+        megaItems.forEach(item => {
+            const link = item.querySelector('.nav-link');
+            
+            link.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevents document click from firing immediately
+                
+                // Toggle current item
+                const isActive = item.classList.contains('is-active');
+                
+                // Close all other menus first
+                megaItems.forEach(i => i.classList.remove('is-active'));
+                
+                // If it wasn't active, open it
+                if (!isActive) {
+                    item.classList.add('is-active');
+                }
+            });
+        });
+
+        // Close menu if clicking anywhere outside the navbar
+        document.addEventListener('click', () => {
+            megaItems.forEach(i => i.classList.remove('is-active'));
+        });
+    </script>
+</html>

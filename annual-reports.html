@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Annual Reports - Transparency & Accountability - BASA Development Initiatives</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+  :root {
+            --brand-red: #990033;   
+            --brand-green: #005e4d;
+            --sidebar-tan: #e9e6d1;
+            --text-dark: #333;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; } 
+
+        /* --- TOPBAR --- */
+        .topbar {
+            background-color: var(--brand-red);
+            padding: 17px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--white);
+        }
+        .topbar-info { display: flex; gap: 20px; font-size: 19px; }
+        .topbar-info a { color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .topbar-socials { display: flex; gap: 10px; }
+        .social-btn {
+            width: 38px; height: 28px; border: 1px solid rgba(255,255,255,0.3);
+            display: flex; align-items: center; justify-content: center;
+            color: white; text-decoration: none; border-radius: 3px; font-size: 15px;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10 60px;
+            height: 100px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo img { height: 90px; display: block; }
+
+        .nav-links { display: flex; list-style: none; height: 100%; gap: 85px; }
+        .has-mega { position: static; }
+
+         .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 700;
+            padding: 0 -10px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            font-size: 20px;
+            cursor: pointer; /* Indicates it is clickable */
+            transition: var(--transition);
+        }
+
+        .nav-link i { font-size: 14px; margin-left: 6px; color: #888; transition: transform 0.3s; }
+
+        /* --- MEGA MENU BASE --- */
+        .mega-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            display: none; /* Hidden until is-active class is added */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-top: 1px solid #eee;
+        }
+
+        /* Toggled Active State */
+        .has-mega.is-active .mega-menu { display: flex; }
+        .has-mega.is-active .nav-link { color: var(--brand-green); background: #f9f9f9; }
+        .has-mega.is-active .nav-link i { transform: rotate(180deg); }
+
+        .mega-sidebar { background-color: var(--sidebar-tan); width: 320px; padding: 40px; flex-shrink: 0; }
+        .sidebar-img { width: 100%; border-radius: 5px; margin-bottom: 20px; }
+        .sidebar-title { font-weight: 700; font-size: 18px; margin-bottom: 10px; }
+        .sidebar-text { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+        
+        .btn-green-sm {
+            background-color: var(--brand-green);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
+        .mega-grid { flex-grow: 1; padding: 40px 60px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .mega-col h4 { color: var(--brand-green); font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+        .mega-col h4 span { color: #666; margin-right: 8px; font-weight: 400; }
+        .mega-col ul { list-style: none; }
+        .mega-col ul li { margin-bottom: 12px; }
+        .mega-col ul li a { text-decoration: none; color: var(--brand-green); font-size: 14px; font-weight: 600; }
+        .mega-col ul li a:hover { color: var(--brand-red); padding-left: 5px; transition: 0.2s; }
+
+        /* --- RIGHT UTILS --- */
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .search-btn { background: #f1f1f1; border: 1px solid #333; padding: 10px 14px; cursor: pointer; }
+        .donate-main {
+            background: var(--brand-red); color: white; padding: 12px 28px;
+            border-radius: 30px; text-decoration: none; font-weight: 700;
+        }
+		
+  
+  
+  
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; } 
+    :root {
+      --red:#B40205; --red-dark:#8C0204; --red-pale:#FFF0F0;
+      --teal:#0E7C7B; --teal-dark:#0A5C5B; --teal-light:#17BEBB;
+      --teal-pale:#E8F8F8; --teal-border:#B2E4E4;
+      --navy:#1A1A2E; --warm-bg:#F8F6F2; --warm-mid:#EDE9E2;
+      --white:#FFFFFF; --text:#1A1A1A; --text-mid:#374151;
+      --text-muted:#6B7280; --border:#E5E7EB; --border-warm:#DDD6CC;
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:'DM Sans',sans-serif; font-size:16px; color:var(--text); background:var(--white); line-height:1.6; }
+
+    nav { position:sticky; top:0; z-index:100; background:var(--white); border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; padding:0 48px; height:72px; }
+    .nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+    .nav-logo-icon { width:42px; height:42px; background:var(--red); border-radius:8px; display:flex; align-items:center; justify-content:center; }
+    .nav-logo-icon svg { width:22px; height:22px; }
+    .nav-logo-text { font-weight:700; font-size:14px; color:var(--navy); line-height:1.3; }
+    .nav-links { display:flex; align-items:center; gap:36px; list-style:none; }
+    .nav-links a { font-size:14px; font-weight:500; color:var(--navy); text-decoration:none; transition:color .2s; }
+    .nav-links a:hover { color:var(--teal); }
+    .nav-donate { background:var(--red); color:var(--white)!important; padding:10px 24px; border-radius:6px; font-weight:700!important; font-size:13px!important; letter-spacing:.06em; text-transform:uppercase; }
+
+    /* HERO */
+    .hero { background:var(--navy); padding:90px 80px 80px; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; top:-100px; right:-100px; width:520px; height:520px; border-radius:50%; border:1px solid rgba(23,190,187,.09); }
+    .hero::after  { content:''; position:absolute; bottom:-60px; left:200px; width:280px; height:280px; border-radius:50%; border:1px solid rgba(23,190,187,.05); }
+    .breadcrumb { display:flex; align-items:center; gap:8px; font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; margin-bottom:32px; position:relative; z-index:2; flex-wrap:wrap; }
+    .breadcrumb a { color:rgba(255,255,255,.4); text-decoration:none; }
+    .breadcrumb .sep { color:rgba(255,255,255,.2); }
+    .breadcrumb .current { color:var(--teal-light); }
+    /* section tabs */
+    .section-tabs { display:flex; gap:8px; margin-bottom:40px; position:relative; z-index:2; flex-wrap:wrap; }
+    .section-tab { font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:8px 16px; border-radius:20px; text-decoration:none; transition:all .2s; }
+    .section-tab.active { background:var(--teal-light); color:var(--navy); }
+    .section-tab:not(.active) { background:rgba(255,255,255,.07); color:rgba(255,255,255,.55); border:1px solid rgba(255,255,255,.1); }
+    .section-tab:not(.active):hover { background:rgba(255,255,255,.12); color:var(--white); }
+    .hero-inner { display:grid; grid-template-columns:1fr 380px; gap:72px; align-items:center; position:relative; z-index:2; }
+    .hero-eyebrow { font-size:11px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--teal-light); margin-bottom:16px; animation:fadeUp .6s ease both; }
+    .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(36px,4.2vw,56px); font-weight:900; color:var(--white); line-height:1.1; margin-bottom:22px; animation:fadeUp .7s .08s ease both; }
+    .hero h1 em { font-style:italic; color:var(--teal-light); }
+    .hero-desc { font-size:17px; color:rgba(255,255,255,.68); line-height:1.75; animation:fadeUp .7s .16s ease both; }
+    /* hero right — quick stats */
+    .hero-stats { display:flex; flex-direction:column; gap:14px; animation:fadeUp .7s .22s ease both; }
+    .hero-stat-row { background:rgba(255,255,255,.06); border:1px solid rgba(23,190,187,.18); border-radius:12px; padding:16px 20px; display:flex; align-items:center; justify-content:space-between; }
+    .hero-stat-label { font-size:13px; color:rgba(255,255,255,.65); }
+    .hero-stat-val { font-family:'Playfair Display',serif; font-size:20px; font-weight:900; color:var(--teal-light); }
+
+    /* COMMITMENT STRIP */
+    .commit-strip { background:var(--teal); padding:36px 80px; display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+    .commit-col { padding:14px 18px; text-align:center; border-right:1px solid rgba(255,255,255,.15); }
+    .commit-col:last-child { border-right:none; }
+    .commit-icon { width:34px; height:34px; border-radius:8px; background:rgba(255,255,255,.15); display:flex; align-items:center; justify-content:center; margin:0 auto 10px; }
+    .commit-icon svg { width:16px; height:16px; }
+    .commit-name { font-size:12px; font-weight:700; color:var(--white); margin-bottom:2px; }
+    .commit-desc { font-size:11px; color:rgba(255,255,255,.6); line-height:1.35; }
+
+    /* INTRO */
+    .intro-section { padding:72px 80px; display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; }
+    .overline { font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--teal); margin-bottom:12px; }
+    .section-heading { font-family:'Playfair Display',serif; font-size:clamp(26px,2.8vw,38px); font-weight:900; color:var(--navy); line-height:1.2; margin-bottom:16px; }
+    .body-text { font-size:16px; color:var(--text-mid); line-height:1.85; margin-bottom:18px; }
+    /* what's inside box */
+    .inside-box { background:var(--teal-pale); border:1px solid var(--teal-border); border-radius:16px; padding:28px; }
+    .inside-title { font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); margin-bottom:16px; }
+    .inside-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .inside-list li { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:var(--text-mid); line-height:1.55; }
+    .inside-dot { width:6px; height:6px; border-radius:50%; background:var(--teal-light); flex-shrink:0; margin-top:7px; }
+
+    /* REPORT CARDS */
+    .reports-section { padding:0 80px 80px; }
+    .reports-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:28px; }
+
+    .report-card {
+      border-radius:20px; overflow:hidden;
+      border:1px solid var(--border-warm);
+      transition:box-shadow .25s, transform .25s, border-color .25s;
+      display:flex; flex-direction:column;
+    }
+    .report-card:hover { box-shadow:0 10px 40px rgba(14,124,123,.12); transform:translateY(-4px); border-color:var(--teal-border); }
+
+    /* report top band */
+    .report-top { padding:32px 32px 24px; position:relative; overflow:hidden; }
+    .report-top.y2025 { background:linear-gradient(135deg, var(--navy) 0%, #1A2A4A 100%); }
+    .report-top.y2024 { background:linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%); }
+    .report-top.y2023 { background:linear-gradient(135deg, #2A3A5A 0%, var(--navy) 100%); }
+    .report-top.y2022 { background:linear-gradient(135deg, #1A3A2A 0%, #0A2015 100%); }
+    .report-top::after { content:''; position:absolute; top:-40px; right:-40px; width:180px; height:180px; border-radius:50%; background:rgba(255,255,255,.04); }
+    .report-year-badge { display:inline-block; font-size:9px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; padding:5px 12px; border-radius:12px; margin-bottom:14px; }
+    .report-year-badge.y2025 { background:rgba(23,190,187,.2); color:var(--teal-light); }
+    .report-year-badge.y2024 { background:rgba(255,255,255,.18); color:var(--white); }
+    .report-year-badge.y2023 { background:rgba(23,190,187,.15); color:var(--teal-light); }
+    .report-year-badge.y2022 { background:rgba(23,190,187,.15); color:var(--teal-light); }
+    .report-title { font-family:'Playfair Display',serif; font-size:22px; font-weight:900; color:var(--white); margin-bottom:6px; line-height:1.2; }
+    .report-subtitle { font-size:13px; color:rgba(255,255,255,.6); margin-bottom:20px; line-height:1.5; }
+    /* PDF icon + size */
+    .report-pdf-row { display:flex; align-items:center; gap:10px; }
+    .pdf-badge { display:flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); border-radius:8px; padding:6px 12px; }
+    .pdf-badge svg { width:14px; height:14px; }
+    .pdf-badge span { font-size:11px; font-weight:700; color:rgba(255,255,255,.8); letter-spacing:.06em; text-transform:uppercase; }
+    .pdf-size { font-size:11px; color:rgba(255,255,255,.4); }
+
+    /* report body */
+    .report-body { padding:24px 28px; background:var(--white); flex:1; display:flex; flex-direction:column; }
+    .report-highlights { margin-bottom:20px; }
+    .highlights-label { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--teal); margin-bottom:12px; }
+    .highlight-items { display:flex; flex-direction:column; gap:8px; }
+    .hi-row { display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--text-mid); line-height:1.5; }
+    .hi-dot { width:5px; height:5px; border-radius:50%; background:var(--teal-light); flex-shrink:0; margin-top:7px; }
+    .report-meta { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:20px; }
+    .meta-item { background:var(--warm-bg); border-radius:8px; padding:10px 12px; }
+    .meta-label { font-size:9px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); margin-bottom:3px; }
+    .meta-val { font-size:13px; font-weight:700; color:var(--navy); }
+    /* download button */
+    .report-download {
+      display:flex; align-items:center; justify-content:center; gap:10px;
+      background:var(--teal); color:var(--white);
+      font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+      padding:14px 24px; border-radius:10px; text-decoration:none;
+      transition:background .2s; margin-top:auto;
+    }
+    .report-download:hover { background:var(--teal-dark); }
+    .report-download svg { width:16px; height:16px; }
+    /* secondary download */
+    .report-download-sec {
+      display:flex; align-items:center; justify-content:center; gap:8px;
+      border:1px solid var(--border-warm); color:var(--text-muted);
+      font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+      padding:10px 18px; border-radius:8px; text-decoration:none;
+      transition:border-color .2s, color .2s; margin-top:10px;
+    }
+    .report-download-sec:hover { border-color:var(--teal); color:var(--teal); }
+
+    /* WHAT'S IN THE REPORT EXPLAINER */
+    .explainer-section { padding:80px 80px; background:var(--warm-bg); }
+    .explainer-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:44px; }
+    .explainer-card { background:var(--white); border:1px solid var(--border-warm); border-radius:16px; padding:26px 22px; transition:box-shadow .2s,transform .2s,border-color .2s; }
+    .explainer-card:hover { box-shadow:0 6px 24px rgba(14,124,123,.09); transform:translateY(-2px); border-color:var(--teal-border); }
+    .explainer-icon { width:44px; height:44px; border-radius:11px; background:var(--teal-pale); display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+    .explainer-icon svg { width:22px; height:22px; }
+    .explainer-title { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px; }
+    .explainer-body { font-size:13px; color:var(--text-muted); line-height:1.7; }
+
+    /* ACCOUNTABILITY COMMITMENT */
+    .commit-section { padding:80px 80px; background:var(--navy); position:relative; overflow:hidden; }
+    .commit-section::before { content:''; position:absolute; top:-80px; right:-80px; width:440px; height:440px; border-radius:50%; border:1px solid rgba(23,190,187,.07); }
+    .commit-inner { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start; position:relative; z-index:2; }
+    .commit-overline { font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--teal-light); margin-bottom:14px; }
+    .commit-heading { font-family:'Playfair Display',serif; font-size:clamp(26px,2.8vw,38px); font-weight:900; color:var(--white); line-height:1.2; margin-bottom:20px; }
+    .commit-body { font-size:16px; color:rgba(255,255,255,.65); line-height:1.8; }
+    .commit-items { display:flex; flex-direction:column; gap:14px; }
+    .commit-item { background:rgba(255,255,255,.05); border:1px solid rgba(23,190,187,.15); border-radius:12px; padding:18px 20px; display:flex; align-items:flex-start; gap:14px; transition:background .2s; }
+    .commit-item:hover { background:rgba(23,190,187,.08); }
+    .commit-item-icon { width:36px; height:36px; border-radius:9px; background:rgba(23,190,187,.15); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .commit-item-icon svg { width:17px; height:17px; }
+    .commit-item-title { font-size:14px; font-weight:700; color:var(--white); margin-bottom:3px; }
+    .commit-item-desc  { font-size:12px; color:rgba(255,255,255,.55); line-height:1.45; }
+
+    /* SIBLING NAV */
+    .sibling-nav { padding:60px 80px; border-top:1px solid var(--border); display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .sib-card { background:var(--white); border:1px solid var(--border-warm); border-radius:16px; padding:28px 26px; text-decoration:none; display:flex; justify-content:space-between; align-items:center; transition:box-shadow .2s,transform .2s,border-color .2s; }
+    .sib-card:hover { box-shadow:0 6px 24px rgba(14,124,123,.09); transform:translateY(-2px); border-color:var(--teal-border); }
+    .sib-dir   { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--teal); margin-bottom:6px; }
+    .sib-title { font-family:'Playfair Display',serif; font-size:19px; font-weight:700; color:var(--navy); }
+    .sib-arrow { width:40px; height:40px; border-radius:50%; background:var(--teal-pale); border:1px solid var(--teal-border); display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:background .2s; }
+    .sib-card:hover .sib-arrow { background:var(--teal); }
+    .sib-card:hover .sib-arrow svg { stroke:var(--white); }
+    .sib-arrow svg { width:16px; height:16px; }
+
+    /* CTA */
+    .cta-section { background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 100%); padding:80px 80px; text-align:center; position:relative; overflow:hidden; }
+    .cta-section::before { content:''; position:absolute; top:-60px; left:50%; transform:translateX(-50%); width:600px; height:600px; border-radius:50%; border:1px solid rgba(255,255,255,.07); }
+    .cta-section h2 { font-family:'Playfair Display',serif; font-size:clamp(26px,3.2vw,42px); font-weight:900; color:var(--white); max-width:680px; margin:0 auto 40px; line-height:1.2; position:relative; z-index:1; }
+    .cta-buttons { display:flex; justify-content:center; gap:16px; position:relative; z-index:1; flex-wrap:wrap; }
+    .btn-white { background:var(--white); color:var(--red); font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:16px 36px; border-radius:50px; text-decoration:none; transition:opacity .2s; }
+    .btn-white:hover { opacity:.9; }
+    .btn-outline-white { background:transparent; border:2px solid rgba(255,255,255,.4); color:var(--white); font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:16px 36px; border-radius:50px; text-decoration:none; transition:border-color .2s; }
+    .btn-outline-white:hover { border-color:rgba(255,255,255,.85); }
+
+    footer { background:#0D0D1F; padding:64px 80px 0; }
+    .footer-grid { display:grid; grid-template-columns:280px 1fr 1fr 260px; gap:48px; padding-bottom:48px; }
+    .footer-logo { display:flex; align-items:center; gap:10px; margin-bottom:18px; }
+    .footer-logo-icon { width:36px; height:36px; background:var(--red); border-radius:6px; display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-weight:900; font-size:16px; color:var(--white); }
+    .footer-logo-text { font-weight:700; font-size:15px; color:var(--white); }
+    .footer-tagline { font-size:13px; color:rgba(255,255,255,.45); line-height:1.7; margin-bottom:22px; }
+    .footer-socials { display:flex; gap:10px; }
+    .social-dot { width:34px; height:34px; border-radius:8px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1); }
+    .footer-col-h { font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--teal-light); margin-bottom:18px; opacity:.7; }
+    .footer-links { list-style:none; display:flex; flex-direction:column; gap:11px; }
+    .footer-links a { font-size:14px; color:rgba(255,255,255,.65); text-decoration:none; transition:color .2s; }
+    .footer-links a:hover { color:var(--teal-light); }
+    .footer-loc-name { font-size:15px; font-weight:700; color:var(--white); line-height:1.4; margin-bottom:10px; }
+    .footer-loc-detail { font-size:13px; color:rgba(255,255,255,.45); line-height:1.6; margin-bottom:3px; }
+    .footer-nl-note { font-size:13px; color:rgba(255,255,255,.5); margin-bottom:14px; line-height:1.6; }
+    .footer-input { width:100%; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:8px; padding:12px 16px; font-size:13px; color:var(--white); outline:none; margin-bottom:10px; font-family:'DM Sans',sans-serif; }
+    .footer-input::placeholder { color:rgba(255,255,255,.28); }
+    .footer-subscribe { width:100%; background:var(--teal); color:var(--white); font-family:'DM Sans',sans-serif; font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:13px; border:none; border-radius:8px; cursor:pointer; transition:background .2s; }
+    .footer-subscribe:hover { background:var(--teal-dark); }
+    .footer-bottom { border-top:1px solid rgba(255,255,255,.07); padding:22px 0; display:flex; justify-content:space-between; align-items:center; }
+    .footer-bottom p { font-size:12px; color:rgba(255,255,255,.3); }
+    .footer-bottom-links { display:flex; gap:24px; }
+    .footer-bottom-links a { font-size:12px; color:rgba(255,255,255,.35); text-decoration:none; }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+    @media(max-width:1100px){
+      nav{padding:0 24px}
+      .hero{padding:60px 32px}
+      .hero-inner{grid-template-columns:1fr;gap:40px}
+      .commit-strip,.intro-section,.reports-section,.explainer-section,.commit-section,.sibling-nav,.cta-section,footer{padding-left:32px;padding-right:32px}
+      .commit-strip{grid-template-columns:1fr 1fr}
+      .intro-section{grid-template-columns:1fr}
+      .reports-grid{grid-template-columns:1fr}
+      .explainer-grid{grid-template-columns:1fr 1fr}
+      .commit-inner{grid-template-columns:1fr}
+      .sibling-nav{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<div class="topbar">
+        <div class="topbar-info">
+            <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
+            <a href="tel:+231779205152"><i class="fa-solid fa-phone"></i> +231 779 205 152</a>
+        </div>
+        <div class="topbar-socials">
+            <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"> <img src="./img/logo14.png" alt="BDI Logo"></a>
+        </div>
+
+        <ul class="nav-links">
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Our Work </b><i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>What We Do</u></h4>
+                            <ul>
+                                <li><a href="agriculture.html">Agriculture & Agribusiness</a></li>
+                                <li><a href="health.html">Health & Nutrition</a></li>
+                                <li><a href="education.html">Education</a></li>
+                                <li><a href="environment.html">Environment & Climate</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Where We Work</u></h4>
+                            <ul><li><a href="#">View all countries</a></li></ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Development & Inclusion</u></h4>
+                            <ul>
+                                <li><a href="gender-youth.html">Gender & Youth Empowerment</a></li>
+                                <li><a href="fisheries.html">Fisheries & Aquaculture</a></li>
+                                <li><a href="disability.html">Disability Inclusion</a></li>
+                                <li><a href="partnership.html">Research & Partnership</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Latest News & Updates</u></h4>
+                            <ul><li><a href="#">View All Our News</a></li></ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>About Us </b><i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                       <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Who we are</u></h4>
+                            <ul>
+                                <li><a href="our-values.html">Our Values</a></li>
+                                <li><a href="founding-story.html">Our founding Story</a></li>
+                                <li><a href="testimonials.html">Testimonials</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Governance</u></h4>
+                            <ul>
+                                <li><a href="governance-structure.html">Our Governance Structure</a></li>
+                                <li><a href="board.html">Our Board of Directors</a></li>
+                                <li><a href="our-ceo.html">Our CEO</a></li>
+                                <li><a href="our-team.html">Our Team</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>How We Raise Money</u></h4>
+                            <ul>
+                                <li><a href="iinstitutional-donors.html">Institutional Donors</a></li>
+                                <li><a href="partners.html">Partners</a></li>
+                                <li><a href="individual-donations.html">Individual Donations</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Transparency and accountability</u></h4>
+                            <ul>
+                                <li><a href="annual-reports.html">Annual Reports</a></li>
+                                <li><a href="how-donations-are-spent.html">How donations are spent</a></li>
+								<li><a href="audited-financials.html">Audited Financial Statements</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Support us</b> <i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Donate Now</u></h4>
+                            <ul>
+                                <li><a href="safe drug victims.html">Donate to safe drug victims</a></li>
+                                <li><a href="End Period Poverty.html">End Period Poverty</a></li>
+                                <li><a href="Women and Youth in Agribusiness.html">Support Women in Agribusiness</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Corporate support</u></h4>
+                            <ul>
+                                <li><a href="Become a Corporate Partner.html">Become a corporate supporter</a></li>
+                                <li><a href="Partner With Us.html">Partner with us</a></li>
+                                <li><a href="Staff Fundraising.html">Staff fundraising</a></li>
+                                <li><a href="Payroll Giving.html">Payroll Giving</a></li>
+                                <li><a href="Corporate Donations.html">Make a corporate donation</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Fundraise for BDI</u></h4>
+                            <ul>
+                                <li><a href="Start your own fundraiser.html">Start your own fundraiser</a></li>
+                                <li><a href="Find a Friend to Sponsor.html">Find a friend to sponsor</a></li>
+                            </ul>
+                            <h4 style="margin-top:30px;"><span>></span> <u>Volunteer Remotely</u></h4>
+                            <ul><li><a href="Volunteer Remotely.html">You can Volunteer with us</a></li></ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Other ways to give</u></h4>
+                            <ul>
+                                <li><a href="Donate in Memory.html">Donate in memory</a></li>
+                                <li><a href="Leave a Gift in Your Will.html">Leave a gift in your Will</a></li>
+                                <li><a href="Donate Your Tax Refund.html">Your donation and tax back</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-mega">
+                <a class="nav-link" style="font-size: 16px;"><b>Resource Centre</b> <i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-sidebar">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
+                        <h3 class="sidebar-title">Donate Today</h3>
+                        <p class="sidebar-text">Give your support where it's needed most</p>
+                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
+                    </div>
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4><span>></span> <u>Knowledge Hub Resources</u></h4>
+                            <ul>
+                                <li><a href="#">Research</a></li>
+                                <li><a href="#">Evaluations</a></li>
+                                <li><a href="#">Newsletters</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="nav-right">
+            <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="donate-main">Donate Now</a>
+        </div>
+    </nav>
+
+<!-- ── NAVIGATION END ── -->
+
+<!-- HERO -->
+<section class="hero">
+  <div class="section-tabs">
+    <a href="annual-reports.html" class="section-tab active">Annual Reports</a>
+    <a href="how-donations-are-spent.html" class="section-tab">How Donations Are Spent</a>
+    <a href="audited-financials.html" class="section-tab">Audited Financial Statements</a>
+  </div>
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow">Transparency &amp; Accountability</p>
+      <h1>Four years.<br>Four reports.<br><em>Nothing hidden.</em></h1>
+      <p class="hero-desc">BDI publishes a comprehensive annual impact report for every year of its operation. These reports document what we set out to achieve, what we delivered, what we learned, and what we will do differently. They are our accountability to every donor, partner, and community that has trusted us.</p>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat-row">
+        <span class="hero-stat-label">Reports Published</span>
+        <span class="hero-stat-val">4</span>
+      </div>
+      <div class="hero-stat-row">
+        <span class="hero-stat-label">Years Covered</span>
+        <span class="hero-stat-val">2022 — 2025</span>
+      </div>
+      <div class="hero-stat-row">
+        <span class="hero-stat-label">Program Areas Reported</span>
+        <span class="hero-stat-val">8</span>
+      </div>
+      <div class="hero-stat-row">
+        <span class="hero-stat-label">All Reports</span>
+        <span class="hero-stat-val">Free to Download</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMITMENT STRIP -->
+<div class="commit-strip">
+  <div class="commit-col">
+    <div class="commit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+    <p class="commit-name">Comprehensive</p>
+    <p class="commit-desc">Every program area, every county, every indicator — reported fully</p>
+  </div>
+  <div class="commit-col">
+    <div class="commit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+    <p class="commit-name">Honest</p>
+    <p class="commit-desc">Results, challenges, and lessons learned included without spin</p>
+  </div>
+  <div class="commit-col">
+    <div class="commit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+    <p class="commit-name">Timely</p>
+    <p class="commit-desc">Published within six months of each reporting year end</p>
+  </div>
+  <div class="commit-col">
+    <div class="commit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+    <p class="commit-name">Publicly Available</p>
+    <p class="commit-desc">Free to download — no registration, no paywall, no barriers</p>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro-section">
+  <div>
+    <p class="overline">About Our Annual Reports</p>
+    <h2 class="section-heading">Every report is a commitment, not just a document.</h2>
+    <p class="body-text" align= "justify";>BDI's annual reports are not polished marketing documents designed to impress. They are evidence-based accountability documents designed to inform. Each report is built around BDI's program indicators, financial performance, and the honest assessment of what worked, what did not, and what the organization is doing about it.</p>
+    <p class="body-text" align= "justify";>We publish these reports because accountability is not something BDI does when asked. It is something BDI does by default — to the communities who trust us, the donors who fund us, the partners who work alongside us, and the Liberian public whose development these programs are meant to serve.</p>
+  </div>
+  <div class="inside-box">
+    <p class="inside-title">What Each Annual Report Contains</p>
+    <ul class="inside-list">
+      <li><span class="inside-dot"></span>Message from the CEO — strategic reflection on the year and the road ahead</li>
+      <li><span class="inside-dot"></span>Program results across all active thematic areas with indicator tracking</li>
+      <li><span class="inside-dot"></span>Financial summary — income, expenditure, and funding source breakdown</li>
+      <li><span class="inside-dot"></span>Community voices and beneficiary stories from program counties</li>
+      <li><span class="inside-dot"></span>MEAL data — what the evidence shows and how it shaped program decisions</li>
+      <li><span class="inside-dot"></span>Challenges and lessons — what BDI would do differently</li>
+      <li><span class="inside-dot"></span>Governance highlights — board activity and compliance updates</li>
+      <li><span class="inside-dot"></span>Partnerships and funding acknowledgements</li>
+      <li><span class="inside-dot"></span>Priorities and targets for the year ahead</li>
+    </ul>
+  </div>
+</section>
+
+<!-- REPORT CARDS -->
+<section class="reports-section">
+  <div class="reports-grid">
+
+    <!-- 2025 -->
+    <div class="report-card">
+      <div class="report-top y2025">
+        <span class="report-year-badge y2025">Latest Report</span>
+        <p class="report-title">BDI Annual Impact Report 2025</p>
+        <p class="report-subtitle">Year four of operations — scaling programs, growing partnerships, and launching the Strategic Plan 2025-2029.</p>
+        <div class="report-pdf-row">
+          <div class="pdf-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="14" height="14"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span>PDF</span>
+          </div>
+          <span class="pdf-size">Available for download</span>
+        </div>
+      </div>
+      <div class="report-body">
+        <div class="report-highlights">
+          <p class="highlights-label">Report Highlights</p>
+          <div class="highlight-items">
+            <div class="hi-row"><span class="hi-dot"></span>Launch of the Strategic Plan 2025-2029 and all eight program areas formally activated</div>
+            <div class="hi-row"><span class="hi-dot"></span>UNICEF Liberia proposal submitted and NaFAA/OPEC Fund fisheries shortlisting achieved</div>
+            <div class="hi-row"><span class="hi-dot"></span>PSEA policy and MEAL Framework completed and operationalized</div>
+            <div class="hi-row"><span class="hi-dot"></span>Digital Rights Action Plan 2026 submitted to WACSI; DARA membership formalized</div>
+          </div>
+        </div>
+        <div class="report-meta">
+          <div class="meta-item"><p class="meta-label">Reporting Period</p><p class="meta-val">Jan – Dec 2025</p></div>
+          <div class="meta-item"><p class="meta-label">Programs Covered</p><p class="meta-val">8 Program Areas</p></div>
+          <div class="meta-item"><p class="meta-label">Counties Reached</p><p class="meta-val">3 Active + 15 Target</p></div>
+          <div class="meta-item"><p class="meta-label">Language</p><p class="meta-val">English</p></div>
+        </div>
+        <a href="downloads/BDI-Annual-Report-2025.pdf" download class="report-download">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Report 2025
+        </a>
+      </div>
+    </div>
+
+    <!-- 2024 -->
+    <div class="report-card">
+      <div class="report-top y2024">
+        <span class="report-year-badge y2024">2024 Report</span>
+        <p class="report-title">BDI Annual Impact Report 2024</p>
+        <p class="report-subtitle">Year three of operations — deepening program impact across agriculture, environment, health, and education.</p>
+        <div class="report-pdf-row">
+          <div class="pdf-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="14" height="14"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span>PDF</span>
+          </div>
+          <span class="pdf-size">Available for download</span>
+        </div>
+      </div>
+      <div class="report-body">
+        <div class="report-highlights">
+          <p class="highlights-label">Report Highlights</p>
+          <div class="highlight-items">
+            <div class="hi-row"><span class="hi-dot"></span>600+ farmers trained in climate-smart agriculture across Sinoe and Bong counties</div>
+            <div class="hi-row"><span class="hi-dot"></span>5,000+ trees planted and 10 school climate clubs established in coastal communities</div>
+            <div class="hi-row"><span class="hi-dot"></span>500 school-going girls supported through menstrual health education program</div>
+            <div class="hi-row"><span class="hi-dot"></span>Agriculture financing research completed across four Liberian counties</div>
+          </div>
+        </div>
+        <div class="report-meta">
+          <div class="meta-item"><p class="meta-label">Reporting Period</p><p class="meta-val">Jan – Dec 2024</p></div>
+          <div class="meta-item"><p class="meta-label">Programs Covered</p><p class="meta-val">5 Active Areas</p></div>
+          <div class="meta-item"><p class="meta-label">Counties Reached</p><p class="meta-val">Sinoe, Bong, Montserrado</p></div>
+          <div class="meta-item"><p class="meta-label">Language</p><p class="meta-val">English</p></div>
+        </div>
+        <a href="downloads/BDI-Annual-Report-2024.pdf" download class="report-download">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Report 2024
+        </a>
+      </div>
+    </div>
+
+    <!-- 2023 -->
+    <div class="report-card">
+      <div class="report-top y2023">
+        <span class="report-year-badge y2023">2023 Report</span>
+        <p class="report-title">BDI Annual Impact Report 2023</p>
+        <p class="report-subtitle">Year two of operations — building systems, strengthening partnerships, and expanding community reach.</p>
+        <div class="report-pdf-row">
+          <div class="pdf-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="14" height="14"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span>PDF</span>
+          </div>
+          <span class="pdf-size">Available for download</span>
+        </div>
+      </div>
+      <div class="report-body">
+        <div class="report-highlights">
+          <p class="highlights-label">Report Highlights</p>
+          <div class="highlight-items">
+            <div class="hi-row"><span class="hi-dot"></span>GEF/Conservation International SBCRP project successfully implemented in Sinoe County</div>
+            <div class="hi-row"><span class="hi-dot"></span>First formal farmer cooperatives established and linked to market access pathways</div>
+            <div class="hi-row"><span class="hi-dot"></span>NCSCL membership formalized and first national policy engagement activities completed</div>
+            <div class="hi-row"><span class="hi-dot"></span>BDI HR Policy, Financial Management Policy, and Staff Code of Conduct adopted</div>
+          </div>
+        </div>
+        <div class="report-meta">
+          <div class="meta-item"><p class="meta-label">Reporting Period</p><p class="meta-val">Jan – Dec 2023</p></div>
+          <div class="meta-item"><p class="meta-label">Programs Covered</p><p class="meta-val">3 Active Areas</p></div>
+          <div class="meta-item"><p class="meta-label">Counties Reached</p><p class="meta-val">Sinoe &amp; Montserrado</p></div>
+          <div class="meta-item"><p class="meta-label">Language</p><p class="meta-val">English</p></div>
+        </div>
+        <a href="downloads/BDI-Annual-Report-2023.pdf" download class="report-download">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Report 2023
+        </a>
+      </div>
+    </div>
+
+    <!-- 2022 -->
+    <div class="report-card">
+      <div class="report-top y2022">
+        <span class="report-year-badge y2022">Founding Year</span>
+        <p class="report-title">BDI Annual Impact Report 2022</p>
+        <p class="report-subtitle">Year one of operations — formal registration, first programs launched, and the foundation laid for everything BDI has built since.</p>
+        <div class="report-pdf-row">
+          <div class="pdf-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="14" height="14"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span>PDF</span>
+          </div>
+          <span class="pdf-size">Available for download</span>
+        </div>
+      </div>
+      <div class="report-body">
+        <div class="report-highlights">
+          <p class="highlights-label">Report Highlights</p>
+          <div class="highlight-items">
+            <div class="hi-row"><span class="hi-dot"></span>BDI formally registered as a 501(C)3 NGO in Liberia; headquarters established in Monrovia</div>
+            <div class="hi-row"><span class="hi-dot"></span>First agriculture and environment programs launched in Sinoe County</div>
+            <div class="hi-row"><span class="hi-dot"></span>Initial team recruited and organizational governance structures established</div>
+            <div class="hi-row"><span class="hi-dot"></span>First community consultations completed; relationships built with key county stakeholders</div>
+          </div>
+        </div>
+        <div class="report-meta">
+          <div class="meta-item"><p class="meta-label">Reporting Period</p><p class="meta-val">Jun – Dec 2022</p></div>
+          <div class="meta-item"><p class="meta-label">Programs Launched</p><p class="meta-val">2 Program Areas</p></div>
+          <div class="meta-item"><p class="meta-label">County of Operations</p><p class="meta-val">Sinoe County</p></div>
+          <div class="meta-item"><p class="meta-label">Language</p><p class="meta-val">English</p></div>
+        </div>
+        <a href="downloads/BDI-Annual-Report-2022.pdf" download class="report-download">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Report 2022
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHAT TO LOOK FOR IN THE REPORTS -->
+<section class="explainer-section">
+  <p class="overline">How to Read Our Reports</p>
+  <h2 class="section-heading">Six things worth looking for in every BDI annual report.</h2>
+  <div class="explainer-grid">
+    <div class="explainer-card">
+      <div class="explainer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+      <p class="explainer-title">Indicator Performance</p>
+      <p class="explainer-body">Every report tracks BDI's progress against the program indicators set at the start of the year. Look for the percentage of targets achieved and the explanation of any gaps — this is where the most honest assessment of BDI's performance lives.</p>
+    </div>
+    <div class="explainer-card">
+      <div class="explainer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+      <p class="explainer-title">Financial Summary</p>
+      <p class="explainer-body">The financial section shows total income, total expenditure, and the breakdown by program area and funding source. This tells you where BDI's money came from and exactly where it went — program by program and county by county.</p>
+    </div>
+    <div class="explainer-card">
+      <div class="explainer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+      <p class="explainer-title">Community Voices</p>
+      <p class="explainer-body">Each report includes direct testimony from the communities BDI serves. These are not marketing quotes selected to impress — they are representative voices from the program areas that give context and humanity to the numerical results.</p>
+    </div>
+    <div class="explainer-card">
+      <div class="explainer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3M6.343 6.343l-.707-.707M10.121 20.364l.707-.707M13.879 20.364l-.707-.707M17.657 6.343l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg></div>
+      <p class="explainer-title">Lessons Learned</p>
+      <p class="explainer-body">BDI's reports include a dedicated section on what we would do differently. This is unusual in the NGO sector — and it is what makes BDI's reporting credible. Organizations that only publish their successes have something to hide. BDI does not.</p>
+    </div>
+    <div class="explainer-card">
+      <div class="explainer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <p class="explainer-title">Partner Acknowledgements</p>
+      <p class="explainer-body">Every partner, donor, and supporting institution is acknowledged in the report. The partnership section also describes the nature of each relationship and the specific value each partner contributed — financial and non-financial.</p>
+    </div>
+    <div class="explainer-card">
+      <div class="explainer-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <p class="explainer-title">Priorities for the Year Ahead</p>
+      <p class="explainer-body">Each report closes with BDI's priorities for the following year — specific, measurable, and grounded in what the evidence from the current year has shown. This section is the basis against which the next annual report will hold BDI accountable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ACCOUNTABILITY COMMITMENT -->
+<section class="commit-section">
+  <div class="commit-inner">
+    <div>
+      <p class="commit-overline">Our Reporting Commitment</p>
+      <h2 class="commit-heading">We report not because we have to — but because it is the right thing to do.</h2>
+      <p class="commit-body" align= "justify";>Many NGOs publish annual reports only when donors require them, and only show the parts of their work that look good. BDI's approach is different. We publish annual reports as a matter of principle — because the communities we serve, the Liberian public, and the wider development sector deserve to know exactly what BDI is doing with the trust and resources they have provided. If you read our reports and have questions, we welcome them.</p>
+    </div>
+    <div class="commit-items">
+      <div class="commit-item">
+        <div class="commit-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#17BEBB" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div><p class="commit-item-title">Published Annually, Every Year</p><p class="commit-item-desc">BDI commits to publishing a report for every year of operations, without exception, within six months of the year end.</p></div>
+      </div>
+      <div class="commit-item">
+        <div class="commit-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#17BEBB" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+        <div><p class="commit-item-title">Publicly Available — No Barriers</p><p class="commit-item-desc">All reports are available here as free PDF downloads. No registration required, no email capture, no paywall. Transparency should not have conditions.</p></div>
+      </div>
+      <div class="commit-item">
+        <div class="commit-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#17BEBB" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><p class="commit-item-title">Honest About Challenges</p><p class="commit-item-desc">BDI's reports include what did not work alongside what did. Selective reporting is a form of dishonesty — and we will not practice it.</p></div>
+      </div>
+      <div class="commit-item">
+        <div class="commit-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#17BEBB" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div><p class="commit-item-title">Questions Always Welcome</p><p class="commit-item-desc">If you read our reports and want to discuss anything — methodology, results, finances — contact us directly. We welcome scrutiny from donors, partners, and the public.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIBLING NAV -->
+<div class="sibling-nav">
+  <a href="how-donations-are-spent.html" class="sib-card">
+    <div>
+      <p class="sib-dir">Next in This Section</p>
+      <p class="sib-title">How Donations Are Spent</p>
+    </div>
+    <div class="sib-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+  </a>
+  <a href="audited-financials.html" class="sib-card">
+    <div>
+      <p class="sib-dir">Also in This Section</p>
+      <p class="sib-title">Audited Financial Statements</p>
+    </div>
+    <div class="sib-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+  </a>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Transparency builds trust. Trust builds the partnerships that change Liberia.</h2>
+  <div class="cta-buttons">
+    <a href="audited-financials.html" class="btn-white">View Audited Financial Statements</a>
+    <a href="how-donations-are-spent.html" class="btn-outline-white">How Donations Are Spent</a>
+  </div>
+</section>
+
+<!-- Footer Start -->
+<style>
+    .super-footer {
+        background-color: #064d3b;
+        color: #ffffff;
+        padding: 80px 0 30px 0; /* Increased top padding for a larger feel */
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        width: 100%;
+    }
+
+    .super-footer .sf-container {
+        /* Increased max-width and significantly larger side padding */
+        max-width: 1600px; 
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 60px; /* Hit larger from left to right */
+    }
+
+    .super-footer .sf-col {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 40px;
+        /* Increased gutter between columns */
+        padding: 0 30px; 
+    }
+
+    /* Brand Section */
+    .super-footer .sf-logo img {
+        max-width: 220px;
+        height: auto;
+        margin-bottom: 25px;
+    }
+
+    .super-footer .sf-description {
+        font-size: 18px;
+        opacity: 0.85;
+        margin-bottom: 30px;
+        max-width: 320px;
+    }
+
+    .super-footer .sf-socials {
+        display: flex;
+        gap: 15px;
+    }
+
+    .super-footer .sf-socials a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .super-footer .sf-socials a:hover {
+        background: #ffffff;
+        color: #064d3b;
+        border-color: #ffffff;
+        transform: translateY(-3px);
+    }
+
+    /* Headlines & Links */
+    .super-footer .sf-title {
+        color: #22c4a9;
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 35px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+    }
+
+    .super-footer .sf-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+		font-size: 17px;
+        font-weight: 700;
+    }
+
+    .super-footer .sf-links li {
+        margin-bottom: 15px;
+    }
+
+    .super-footer .sf-links a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 15px;
+        opacity: 0.9;
+        transition: 0.2s;
+    }
+
+    .super-footer .sf-links a:hover {
+        color: #22c4a9;
+        opacity: 1;
+        padding-left: 8px;
+    }
+
+    /* Locations */
+    .super-footer .sf-loc-item {
+        margin-bottom: 25px;
+    }
+
+    .super-footer .sf-loc-item h5 {
+        margin: 0 0 8px 0;
+        font-size: 18px;
+        font-weight: 700;
+		color:white;
+    }
+
+    .super-footer .sf-loc-item p {
+        margin: 0;
+        font-size: 16px;
+        opacity: 0.8;
+    }
+
+    /* Newsletter Form */
+    .super-footer .sf-newsletter-text {
+        font-size: 17px;
+        margin-bottom: 25px;
+        opacity: 0.9;
+    }
+
+    .super-footer .sf-subscribe input {
+        width: 100%;
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(34, 196, 169, 0.5);
+        border-radius: 6px;
+        color: #b40000;
+        margin-bottom: 15px;
+        outline: none;
+        transition: border 0.3s;
+    }
+
+    .super-footer .sf-subscribe input:focus {
+        border-color: #b40000;
+    }
+
+    .super-footer .sf-subscribe button {
+        width: 100%;
+        padding: 15px;
+        background: #bd0000;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-weight: 700;
+        text-transform: uppercase;
+        cursor: pointer;
+        letter-spacing: 1px;
+        transition: background 0.3s;
+    }
+
+    .super-footer .sf-subscribe button:hover {
+        background: #e60000;
+    }
+
+    /* Bottom Copyright Bar */
+    .super-footer .sf-bottom-bar {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 40px;
+        padding: 30px 60px 0 60px; /* Aligned with container padding */
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 13px;
+        opacity: 0.6;
+    }
+
+    /* Responsive Logic */
+    @media (max-width: 1024px) {
+        .super-footer .sf-container, 
+        .super-footer .sf-bottom-bar { padding: 0 30px; }
+    }
+
+    @media (max-width: 768px) {
+        .super-footer .sf-col { flex: 1 1 45%; }
+    }
+
+    @media (max-width: 600px) {
+        .super-footer .sf-col { flex: 1 1 100%; padding: 0 15px; }
+        .super-footer { text-align: center; }
+        .super-footer .sf-socials { justify-content: center; }
+        .super-footer .sf-description { margin: 0 auto 30px auto; }
+    }
+</style>
+
+
+<footer class="super-footer">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <div class="sf-container">
+        <div class="sf-col">
+            <div class="sf-logo">
+        <img src="./img/logo14-1.png" alt="BASA Development Initiatives">
+      </div>
+            <p class="sf-description">
+                BASA Development Initiatives (BDI) is an NGO dedicated to building a more inclusive, resilient, and sustainable Liberia.
+            </p>
+            <div class="sf-socials">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="sf-col">
+            <h4 class="sf-title">Quick Links</h4>
+            <ul class="sf-links">
+                <li><a href="our-values.html">Our Values</a></li>
+                <li><a href="our-team">Our Team</a></li>
+                <li><a href="partners">Partner With Us</a></li>
+                <li><a href="testimonials">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="sf-col">
+            <h4 class="sf-title">Locations</h4>
+            <div class="sf-loc-item">
+                <h5 class="white-bold">HEADQUARTER: Monrovia, Liberia</h5>
+                <p>Morris Villa, ELWA Community,
+				Email: info@basadev.org<br>Tel 1: +231 886 349 962 <br> +231 88 675 7435</p>
+				
+            </div>
+            <div class="sf-loc-item">
+                <h5>State of Minnesota, USA</h5>
+                <p>Regional Coordination Office</p>
+                <p>Tel: +1 (651) 235-9896 <br>Email: info@basadev.org </p>
+            </div>
+        </div>
+
+        <div class="sf-col">
+            <h4 class="sf-title">Stay Updated</h4>
+            <p class="sf-newsletter-text">Join our newsletter for the latest impact updates.</p>
+            <form class="sf-subscribe" onsubmit="return false;">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="sf-bottom-bar">
+        <p>&copy; 2026 BASA Development Initiatives (BDI). Registered NGO in Liberia</p>
+    </div>
+</footer>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Footer End -->
+</body>
+<script>
+        const megaItems = document.querySelectorAll('.has-mega');
+
+        megaItems.forEach(item => {
+            const link = item.querySelector('.nav-link');
+            
+            link.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevents document click from firing immediately
+                
+                // Toggle current item
+                const isActive = item.classList.contains('is-active');
+                
+                // Close all other menus first
+                megaItems.forEach(i => i.classList.remove('is-active'));
+                
+                // If it wasn't active, open it
+                if (!isActive) {
+                    item.classList.add('is-active');
+                }
+            });
+        });
+
+        // Close menu if clicking anywhere outside the navbar
+        document.addEventListener('click', () => {
+            megaItems.forEach(i => i.classList.remove('is-active'));
+        });
+    </script>
+</html>
