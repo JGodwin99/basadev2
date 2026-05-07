@@ -1356,6 +1356,141 @@ img, video, iframe {
     }
 }
 
+/* ===== FORCED MOBILE DROPDOWN FIX - FULL HEIGHT SCROLLABLE ===== */
+@media screen and (max-width: 992px) {
+    /* Make navbar allow absolute positioning */
+    .navbar {
+        position: relative !important;
+        overflow: visible !important;
+    }
+    
+    /* Mobile menu container - full width */
+    .nav-links {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        background: white !important;
+        max-height: 85vh !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        z-index: 9999 !important;
+        box-shadow: 0 20px 30px rgba(0,0,0,0.2) !important;
+        border-top: 2px solid var(--brand-red) !important;
+    }
+    
+    /* Each menu item wrapper */
+    .has-mega {
+        width: 100% !important;
+        display: block !important;
+        border-bottom: 1px solid #e0e0e0 !important;
+    }
+    
+    /* The clickable nav link */
+    .nav-link {
+        padding: 16px 20px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        font-size: 16px !important;
+        background: white !important;
+        cursor: pointer !important;
+    }
+    
+    /* DROPDOWN MEGA MENU - FULL WIDTH AND TALL */
+    .mega-menu {
+        position: relative !important;
+        display: none !important;
+        width: 100% !important;
+        background: #f5f5f5 !important;
+        border-top: 1px solid #ddd !important;
+        flex-direction: column !important;
+    }
+    
+    /* When active - show as block with full height */
+    .has-mega.is-active .mega-menu {
+        display: block !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    
+    /* Sidebar inside dropdown - full width */
+    .mega-sidebar {
+        width: 100% !important;
+        padding: 20px !important;
+        background: #e8e5d4 !important;
+        display: block !important;
+    }
+    
+    .sidebar-img {
+        width: 100% !important;
+        max-height: 180px !important;
+        object-fit: cover !important;
+    }
+    
+    /* Grid area - stack vertically */
+    .mega-grid {
+        display: block !important;
+        padding: 20px !important;
+        width: 100% !important;
+    }
+    
+    /* Each column - full width */
+    .mega-col {
+        width: 100% !important;
+        margin-bottom: 30px !important;
+        display: block !important;
+    }
+    
+    .mega-col:last-child {
+        margin-bottom: 0 !important;
+    }
+    
+    .mega-col h4 {
+        font-size: 16px !important;
+        margin-bottom: 15px !important;
+        color: var(--brand-green) !important;
+        border-bottom: 2px solid var(--brand-green) !important;
+        display: inline-block !important;
+        padding-bottom: 5px !important;
+    }
+    
+    .mega-col ul {
+        list-style: none !important;
+        padding-left: 0 !important;
+    }
+    
+    .mega-col ul li {
+        margin-bottom: 12px !important;
+        display: block !important;
+    }
+    
+    .mega-col ul li a {
+        font-size: 14px !important;
+        color: var(--brand-green) !important;
+        text-decoration: none !important;
+        display: block !important;
+        padding: 8px 0 !important;
+    }
+    
+    .mega-col ul li a:hover {
+        padding-left: 10px !important;
+        color: var(--brand-red) !important;
+    }
+    
+    /* Ensure the donate button is visible */
+    .btn-green-sm {
+        display: inline-block !important;
+        margin-top: 15px !important;
+    }
+    
+    /* Make sure caret rotates */
+    .has-mega.is-active .nav-link i {
+        transform: rotate(180deg) !important;
+    }
+}
+
   </style>
 </head>
 <body>
@@ -1991,61 +2126,65 @@ that contributes meaningfully to food security, economic growth, and rural trans
 
 </body>
   <script>
-    // Mega menu toggle for desktop
+    // Mega menu toggle for both desktop and mobile
     const megaItems = document.querySelectorAll('.has-mega');
 
     megaItems.forEach(item => {
         const link = item.querySelector('.nav-link');
         
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            // On mobile, we want to toggle the dropdown
-            if (window.innerWidth <= 992) {
-                // Toggle current item
-                const isActive = item.classList.contains('is-active');
+        if (link) {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
                 
-                // Close all other menus
-                megaItems.forEach(i => i.classList.remove('is-active'));
+                // Check if we're on mobile
+                const isMobile = window.innerWidth <= 992;
                 
-                // If it wasn't active, open it
-                if (!isActive) {
-                    item.classList.add('is-active');
+                if (isMobile) {
+                    // Mobile: toggle the clicked menu
+                    const isActive = item.classList.contains('is-active');
+                    
+                    // Close all other menus first
+                    megaItems.forEach(i => i.classList.remove('is-active'));
+                    
+                    // Open this one if it wasn't open
+                    if (!isActive) {
+                        item.classList.add('is-active');
+                    }
+                } else {
+                    // Desktop: toggle behavior
+                    const isActive = item.classList.contains('is-active');
+                    megaItems.forEach(i => i.classList.remove('is-active'));
+                    if (!isActive) {
+                        item.classList.add('is-active');
+                    }
                 }
-            } else {
-                // Desktop behavior - toggle current item
-                const isActive = item.classList.contains('is-active');
-                megaItems.forEach(i => i.classList.remove('is-active'));
-                if (!isActive) {
-                    item.classList.add('is-active');
-                }
-            }
-        });
+            });
+        }
     });
 
-    // Close menu if clicking anywhere outside
+    // Close menus when clicking outside
     document.addEventListener('click', function(event) {
-        const isClickInside = event.target.closest('.navbar');
-        if (!isClickInside) {
+        if (!event.target.closest('.navbar')) {
             megaItems.forEach(i => i.classList.remove('is-active'));
-            // Also close mobile menu
+            
+            // Also close mobile main menu if open
             if (window.innerWidth <= 992) {
                 const navLinks = document.querySelector('.nav-links');
-                if (navLinks) {
+                if (navLinks && navLinks.classList.contains('active')) {
                     navLinks.classList.remove('active');
-                }
-                const mobileBtn = document.getElementById('mobileMenuBtn');
-                if (mobileBtn) {
-                    const icon = mobileBtn.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
+                    const mobileBtn = document.getElementById('mobileMenuBtn');
+                    if (mobileBtn) {
+                        const icon = mobileBtn.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
                 }
             }
         }
     });
 
-    // Mobile menu toggle
+    // Mobile main menu toggle (hamburger)
     const mobileBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.querySelector('.nav-links');
 
@@ -2059,7 +2198,7 @@ that contributes meaningfully to food security, economic growth, and rural trans
             if (navLinks.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
-                // Reset any open mega menus when opening main menu
+                // Close any open dropdowns when opening main menu
                 megaItems.forEach(i => i.classList.remove('is-active'));
             } else {
                 icon.classList.remove('fa-times');
@@ -2068,29 +2207,10 @@ that contributes meaningfully to food security, economic growth, and rural trans
         });
     }
 
-    // Close mobile menu when clicking a link (but not the dropdown toggle)
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-            if (window.innerWidth <= 992) {
-                // Don't close if it's a dropdown toggle (has mega menu)
-                const parent = link.closest('.has-mega');
-                if (!parent) {
-                    // Regular link - close menu
-                    navLinks.classList.remove('active');
-                    if (mobileBtn) {
-                        const icon = mobileBtn.querySelector('i');
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
-                }
-            }
-        });
-    });
-
-    // Handle window resize - reset mobile menu state
+    // Handle window resize
     window.addEventListener('resize', function() {
         if (window.innerWidth > 992) {
-            // Desktop mode - ensure mobile menu is closed
+            // Desktop mode - reset mobile menu state
             if (navLinks) {
                 navLinks.classList.remove('active');
             }
@@ -2099,8 +2219,6 @@ that contributes meaningfully to food security, economic growth, and rural trans
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
             }
-            // Reset any open mega menus
-            megaItems.forEach(i => i.classList.remove('is-active'));
         }
     });
 </script>
