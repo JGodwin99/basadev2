@@ -683,6 +683,490 @@ img, video, iframe {
     }
 }
 
+/* ============================================
+   COMPLETE RESPONSIVE FIXES FOR ALL DEVICES
+   ============================================ */
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Container System */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== TOPBAR RESPONSIVE ===== */
+@media screen and (max-width: 992px) {
+    .topbar {
+        padding: 12px 30px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .topbar-info {
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topbar {
+        padding: 10px 15px;
+    }
+    
+    .topbar-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+    }
+    
+    .topbar-socials {
+        justify-content: center;
+    }
+    
+    .social-btn {
+        width: 32px;
+        height: 28px;
+        font-size: 12px;
+    }
+}
+
+/* ===== NAVBAR RESPONSIVE ===== */
+@media screen and (max-width: 1200px) {
+    .navbar {
+        padding: 0 30px;
+    }
+    
+    .nav-links {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .navbar {
+        padding: 0 20px;
+        height: auto;
+        flex-wrap: wrap;
+        position: relative;
+    }
+    
+    .logo img {
+        height: 60px;
+    }
+    
+    /* Mobile menu button (hamburger) */
+    .mobile-menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: var(--brand-red);
+        cursor: pointer;
+        padding: 10px;
+    }
+    
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        z-index: 1000;
+        gap: 0;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .has-mega {
+        position: relative;
+        width: 100%;
+    }
+    
+    .nav-link {
+        padding: 12px 0;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .mega-menu {
+        position: static;
+        display: none;
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .has-mega.is-active .mega-menu {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .mega-sidebar {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .mega-grid {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 30px;
+    }
+    
+    .nav-right {
+        margin-left: auto;
+    }
+    
+    .donate-main {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Add hamburger button to navbar - add this HTML after .logo */
+@media screen and (max-width: 992px) {
+    .navbar {
+        position: relative;
+    }
+}
+
+/* ===== HERO RESPONSIVE ===== */
+@media screen and (max-width: 992px) {
+    .hero {
+        height: auto;
+        min-height: 350px;
+        padding: 80px 40px 60px;
+    }
+    
+    .hero h1 {
+        font-size: clamp(36px, 5vw, 60px);
+    }
+    
+    .breadcrumb {
+        left: 40px;
+        top: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        padding: 60px 25px 50px;
+    }
+    
+    .hero h1 {
+        font-size: 32px;
+    }
+    
+    .hero p {
+        font-size: 15px;
+        max-width: 100%;
+    }
+    
+    .breadcrumb {
+        left: 20px;
+        top: 15px;
+        font-size: 10px;
+    }
+}
+
+/* ===== STATS STRIP RESPONSIVE ===== */
+@media screen and (max-width: 992px) {
+    .stats-strip {
+        padding: 0 30px;
+    }
+    
+    .stats-grid {
+        gap: 1px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .stats-strip {
+        padding: 0 20px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .stat-card {
+        padding: 20px;
+    }
+    
+    .stat-value {
+        font-size: 28px;
+    }
+    
+    .stat-label {
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ===== MAIN CONTENT RESPONSIVE (CRITICAL FIX) ===== */
+@media screen and (max-width: 1024px) {
+    .main-content {
+        padding: 60px 40px;
+        gap: 40px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        padding: 50px 30px;
+        gap: 50px;
+    }
+    
+    .sidebar {
+        position: static;
+        top: 0;
+        max-width: 500px;
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    .overview-heading {
+        font-size: clamp(28px, 4vw, 36px);
+        max-width: 100%;
+    }
+    
+    .overview-body {
+        max-width: 100%;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main-content {
+        padding: 40px 20px;
+    }
+    
+    .objectives-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .objective-card {
+        padding: 16px;
+    }
+    
+    .overview-body {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+}
+
+/* ===== SIDEBAR CARD RESPONSIVE ===== */
+@media screen and (max-width: 768px) {
+    .sidebar-card {
+        padding: 20px !important;
+    }
+    
+    .project-item {
+        padding: 15px;
+    }
+    
+    .project-top {
+        flex-wrap: wrap;
+    }
+    
+    .project-name {
+        font-size: 13px;
+    }
+    
+    .badge {
+        font-size: 8px;
+        padding: 4px 8px;
+    }
+}
+
+/* ===== SDG TAGS RESPONSIVE ===== */
+@media screen and (max-width: 600px) {
+    .sdg-tags {
+        gap: 8px;
+    }
+    
+    .sdg-tag {
+        font-size: 10px;
+        padding: 4px 12px;
+    }
+}
+
+/* ===== CTA BANNER RESPONSIVE ===== */
+@media screen and (max-width: 992px) {
+    .cta-banner {
+        padding: 60px 40px;
+    }
+    
+    .cta-banner h2 {
+        font-size: clamp(24px, 4vw, 36px);
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cta-banner {
+        padding: 50px 30px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .btn-white, .btn-outline {
+        padding: 12px 30px;
+        font-size: 11px;
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cta-banner {
+        padding: 40px 20px;
+    }
+    
+    .cta-banner h2 {
+        font-size: 22px;
+    }
+}
+
+/* ===== FOOTER RESPONSIVE ===== */
+@media screen and (max-width: 1024px) {
+    .super-footer .sf-container {
+        padding: 0 40px !important;
+    }
+    
+    .super-footer .sf-bottom-bar {
+        padding: 30px 40px 0 40px !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .super-footer {
+        padding: 50px 0 20px 0;
+    }
+    
+    .super-footer .sf-container {
+        flex-direction: column !important;
+        padding: 0 25px !important;
+    }
+    
+    .super-footer .sf-col {
+        flex: 1 1 100% !important;
+        text-align: center;
+        padding: 0 !important;
+        margin-bottom: 35px;
+    }
+    
+    .super-footer .sf-description {
+        margin: 0 auto 25px auto;
+        font-size: 15px;
+    }
+    
+    .super-footer .sf-socials {
+        justify-content: center;
+    }
+    
+    .super-footer .sf-links {
+        text-align: center;
+    }
+    
+    .super-footer .sf-links a:hover {
+        padding-left: 0;
+    }
+    
+    .super-footer .sf-bottom-bar {
+        text-align: center;
+        padding: 25px 25px 0 25px !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .super-footer .sf-container {
+        padding: 0 15px !important;
+    }
+    
+    .super-footer .sf-title {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    
+    .super-footer .sf-logo img {
+        max-width: 160px;
+    }
+    
+    .sf-subscribe input, 
+    .sf-subscribe button {
+        padding: 12px;
+    }
+}
+
+/* ===== GENERAL TEXT RESPONSIVE ===== */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+    
+    h1, .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2, .overview-heading {
+        font-size: 1.5rem;
+    }
+    
+    h3, .objectives-heading {
+        font-size: 1.25rem;
+    }
+    
+    p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+}
+
   </style>
 </head>
 <body>
@@ -706,6 +1190,10 @@ img, video, iframe {
         <div class="logo">
             <a href="index.html"> <img src="./img/logo14.png" alt="BDI Logo"></a>
         </div>
+		
+		<button class="mobile-menu-btn" id="mobileMenuBtn">
+    <i class="fa-solid fa-bars"></i>
+		</button>
 
         <ul class="nav-links">
             <li class="has-mega">
@@ -1339,5 +1827,40 @@ that contributes meaningfully to food security, economic growth, and rural trans
         document.addEventListener('click', () => {
             megaItems.forEach(i => i.classList.remove('is-active'));
         });
+		
+		
+		
+		// Mobile menu toggle
+const mobileBtn = document.getElementById('mobileMenuBtn');
+const navLinks = document.querySelector('.nav-links');
+
+if (mobileBtn) {
+    mobileBtn.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        // Change icon
+        const icon = this.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+}
+
+// Close mobile menu when clicking a link
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 992) {
+            navLinks.classList.remove('active');
+            if (mobileBtn) {
+                const icon = mobileBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+    });
+});
     </script>
 </html>
