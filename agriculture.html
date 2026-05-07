@@ -969,6 +969,226 @@ iframe {
     }
 }
 
+
+
+
+
+
+
+
+
+/* =========================================================
+   FINAL RESPONSIVE ENHANCEMENTS
+   NON-DESCTRUCTIVE — DESIGN PRESERVED
+========================================================= */
+
+/* Prevent any accidental overflow */
+* {
+    max-width: 100%;
+}
+
+body,
+html {
+    overflow-x: hidden;
+}
+
+/* Better flexible containers */
+.navbar,
+.topbar,
+.main-content,
+.stats-grid,
+.objectives-grid,
+.cta-buttons,
+.sf-container {
+    width: 100%;
+}
+
+/* =========================
+   MOBILE NAVIGATION FIX
+========================= */
+@media (max-width: 992px) {
+
+    .navbar {
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 0;
+        margin-top: 10px;
+    }
+
+    .has-mega {
+        width: 100%;
+    }
+
+    .nav-link {
+        width: 100%;
+        justify-content: space-between;
+        border-bottom: 1px solid #eee;
+        padding: 14px 0 !important;
+    }
+
+    .mega-menu {
+        width: 100%;
+        box-shadow: none;
+        border-top: none;
+    }
+
+    .mega-sidebar {
+        padding: 25px;
+    }
+
+    .mega-grid {
+        padding: 25px;
+        grid-template-columns: 1fr;
+    }
+
+    .mega-col {
+        width: 100%;
+    }
+
+    .nav-right {
+        margin-top: 10px;
+    }
+}
+
+/* =========================
+   HERO SECTION FIXES
+========================= */
+@media (max-width: 768px) {
+
+    .hero {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: clamp(36px, 10vw, 60px);
+        word-break: break-word;
+    }
+
+    .hero p {
+        width: 100%;
+        text-align: left;
+    }
+
+    .hero-accent {
+        opacity: 0.5;
+    }
+}
+
+/* =========================
+   MAIN CONTENT FIXES
+========================= */
+@media (max-width: 992px) {
+
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .overview-heading,
+    .overview-body {
+        max-width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .sidebar-card {
+        width: 100%;
+    }
+}
+
+/* =========================
+   OBJECTIVE CARD FIXES
+========================= */
+@media (max-width: 768px) {
+
+    .objective-card {
+        align-items: flex-start;
+    }
+
+    .objective-card p {
+        width: 100%;
+    }
+}
+
+/* =========================
+   CTA BUTTON FIXES
+========================= */
+@media (max-width: 600px) {
+
+    .cta-buttons {
+        gap: 12px;
+    }
+
+    .btn-white,
+    .btn-outline {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* =========================
+   FOOTER FIXES
+========================= */
+@media (max-width: 768px) {
+
+    .super-footer .sf-container {
+        gap: 20px;
+    }
+
+    .super-footer .sf-col {
+        margin-bottom: 20px;
+    }
+
+    .super-footer .sf-links li {
+        margin-bottom: 10px;
+    }
+}
+
+/* =========================
+   EXTRA SMALL DEVICES
+========================= */
+@media (max-width: 480px) {
+
+    .topbar-info a {
+        font-size: 13px;
+        word-break: break-word;
+    }
+
+    .stat-value {
+        font-size: 26px;
+    }
+
+    .project-name {
+        font-size: 13px;
+    }
+
+    .badge {
+        font-size: 8px;
+    }
+
+    .sidebar-note {
+        font-size: 12px;
+    }
+
+    .donate-btn {
+        font-size: 11px;
+    }
+
+    .sf-description,
+    .sf-newsletter-text,
+    .sf-loc-item p {
+        font-size: 14px;
+    }
+}
+
   </style>
 </head>
 <body>
@@ -1625,5 +1845,33 @@ that contributes meaningfully to food security, economic growth, and rural trans
         document.addEventListener('click', () => {
             megaItems.forEach(i => i.classList.remove('is-active'));
         });
+		
+		
+		
+		/* =========================================
+   MOBILE MEGA MENU IMPROVEMENT
+========================================= */
+
+if (window.innerWidth <= 992) {
+
+    megaItems.forEach(item => {
+
+        const link = item.querySelector('.nav-link');
+
+        link.addEventListener('click', function () {
+
+            const menu = item.querySelector('.mega-menu');
+
+            if (menu) {
+
+                menu.style.display =
+                    menu.style.display === 'block'
+                    ? 'none'
+                    : 'block';
+            }
+        });
+    });
+}
     </script>
+	
 </html>
