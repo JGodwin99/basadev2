@@ -34,7 +34,7 @@
       overflow-x: hidden;
     }
 
-    /* --- TOPBAR (fully responsive) --- */
+    /* --- TOPBAR --- */
     .topbar {
       background-color: var(--brand-red);
       padding: 12px 60px;
@@ -57,7 +57,7 @@
     }
     .social-btn:hover { background: white; color: var(--brand-red); border-color: white; transform: translateY(-2px); }
 
-    /* --- NAVBAR (standard desktop + mobile hamburger matching your reference) --- */
+    /* --- NAVBAR --- */
     .navbar {
       background: var(--white);
       display: flex;
@@ -73,7 +73,7 @@
     }
     .logo img { height: 75px; display: block; max-width: 100%; }
     
-    /* Hamburger button - matches reference style */
+    /* Hamburger button */
     .mobile-menu-btn {
       display: none;
       background: var(--brand-red);
@@ -226,7 +226,7 @@
     .super-footer .sf-subscribe button:hover { background: #e60000; transform: translateY(-2px); }
     .super-footer .sf-bottom-bar { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; padding: 30px 60px 0 60px; text-align: center; font-size: 13px; opacity: 0.7; }
 
-    /* --- RESPONSIVE BREAKPOINTS (EXACTLY MATCHING YOUR REFERENCE BEHAVIOR) --- */
+    /* --- RESPONSIVE BREAKPOINTS: On mobile, nav-links appear BELOW the mega content (Donate Today image) --- */
     @media screen and (max-width: 1100px) {
       .topbar { padding: 10px 30px; }
       .navbar { padding: 0 30px; }
@@ -235,7 +235,7 @@
       .super-footer .sf-container { padding: 0 30px; }
     }
     
-    /* Mobile menu activation - matches the reference style (hamburger on 850px) */
+    /* Mobile menu breaks at 850px - links come under the "Donate Today" image area */
     @media screen and (max-width: 850px) {
       .mobile-menu-btn { display: flex; }
       .nav-links {
@@ -256,7 +256,15 @@
         width: 100%;
       }
       .nav-links.active { display: flex; }
-      .has-mega { position: relative; width: 100%; border-bottom: 1px solid #eee; }
+      
+      /* Each mega item becomes block - but importantly, when mega expands, its content appears ABOVE the child nav-links */
+      .has-mega { 
+        position: relative; 
+        width: 100%; 
+        border-bottom: 1px solid #eee;
+        display: flex;
+        flex-direction: column;
+      }
       .nav-link { 
         padding: 16px 25px; 
         justify-content: space-between; 
@@ -264,7 +272,25 @@
         white-space: normal; 
         background: white;
         font-size: 16px;
+        order: 1;
       }
+      /* Mega menu becomes a block that sits ABOVE any nested items, but crucially,
+         when expanded, its content (Donate Today image + sidebar + grid) shows first,
+         and the .nav-links items (Our Work, About Us etc) will appear after it because of order.
+         To ensure links come UNDER Donate Today image, we make mega-menu display as block
+         and force it to take full width, then any subsequent elements (which are the parent li's other content?) 
+         Actually we want the mega content to be above the child links? Wait: The requirement: 
+         "let the links come under the donate today image". That means when you click on "Our Work",
+         the mega menu with "Donate Today" image should appear, and the other top-level nav links 
+         (About Us, Support us etc) should come AFTER that mega content.
+         We can achieve this by restructuring on mobile: .has-mega .mega-menu expands inside the clicked li,
+         but the other li items remain below. However the visual order: The clicked mega content appears,
+         then below it the rest of the nav-links items. That's already default because DOM order places subsequent li's after.
+         But I need to ensure that mega content is fully visible and subsequent nav-links items sit underneath it.
+         The existing CSS already does that. To make extra clear: We set .has-mega.is-active to show the mega-menu,
+         and other li's flow naturally below. Also we make sure mega-menu is not position absolute on mobile (relative)
+         so it occupies space. That forces all following .nav-links items (About Us, Support us etc) to appear BELOW the mega content.
+      */
       .mega-menu {
         position: relative !important;
         top: 0;
@@ -274,11 +300,20 @@
         background: #f8f8f8;
         border-top: 1px solid #ddd;
         flex-direction: column;
+        order: 2; /* Ensures mega menu appears after the .nav-link but within same li */
       }
-      .has-mega.is-active .mega-menu { display: flex !important; max-height: 65vh; overflow-y: auto; }
+      .has-mega.is-active .mega-menu { 
+        display: flex !important; 
+        max-height: none; 
+        overflow-y: visible;
+        margin-bottom: 0;
+      }
+      /* Make sidebar and grid stack beautifully */
       .mega-sidebar { width: 100%; padding: 25px; text-align: center; order: 1; }
       .mega-grid { display: flex !important; flex-direction: column !important; padding: 25px !important; gap: 30px !important; order: 2; }
       .mega-col { width: 100%; }
+      
+      /* The remaining .nav-links items (other li) naturally appear below the expanded mega content */
       .intro-grid { grid-template-columns: 1fr; gap: 40px; }
       .form-grid { grid-template-columns: 1fr; gap: 15px; }
       .profile-box { flex-direction: column; text-align: center; align-items: center; }
@@ -334,7 +369,7 @@
   </div>
 </div>
 
-<!-- NAVBAR with hamburger matching reference exactly -->
+<!-- NAVBAR with hamburger that expands mega content above other links -->
 <nav class="navbar">
   <div class="logo"><a href="index.html"><img src="./img/logo14.png" alt="BDI Logo"></a></div>
   <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
