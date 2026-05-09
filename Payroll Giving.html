@@ -2,784 +2,456 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Payroll Giving - BASA Development Initiatives</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-  :root {
-            --brand-red: #990033;
-            --brand-green: #005e4d;
-            --sidebar-tan: #e9e6d1;
-            --text-dark: #333;
-            --white: #ffffff;
-            --transition: all 0.3s ease;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; } 
-
-        /* --- TOPBAR --- */
-        .topbar {
-            background-color: var(--brand-red);
-            padding: 17px 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--white);
-        }
-        .topbar-info { display: flex; gap: 20px; font-size: 19px; }
-        .topbar-info a { color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; }
-        .topbar-socials { display: flex; gap: 10px; }
-        .social-btn {
-            width: 38px; height: 28px; border: 1px solid rgba(255,255,255,0.3);
-            display: flex; align-items: center; justify-content: center;
-            color: white; text-decoration: none; border-radius: 3px; font-size: 15px;
-        }
-
-        /* --- NAVBAR --- */
-        .navbar {
-            background: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10 60px;
-            height: 100px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .logo img { height: 90px; display: block; }
-
-        .nav-links { display: flex; list-style: none; height: 100%; gap: 85px; }
-        .has-mega { position: static; }
-
-         .nav-link {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 700;
-            padding: 0 -10px;
-            display: flex;
-            align-items: center;
-            height: 100%;
-            font-size: 20px;
-            cursor: pointer; /* Indicates it is clickable */
-            transition: var(--transition);
-        }
-
-        .nav-link i { font-size: 14px; margin-left: 6px; color: #888; transition: transform 0.3s; }
-
-        /* --- MEGA MENU BASE --- */
-        .mega-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background: white;
-            display: none; /* Hidden until is-active class is added */
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border-top: 1px solid #eee;
-        }
-
-        /* Toggled Active State */
-        .has-mega.is-active .mega-menu { display: flex; }
-        .has-mega.is-active .nav-link { color: var(--brand-green); background: #f9f9f9; }
-        .has-mega.is-active .nav-link i { transform: rotate(180deg); }
-
-        .mega-sidebar { background-color: var(--sidebar-tan); width: 320px; padding: 40px; flex-shrink: 0; }
-        .sidebar-img { width: 100%; border-radius: 5px; margin-bottom: 20px; }
-        .sidebar-title { font-weight: 700; font-size: 18px; margin-bottom: 10px; }
-        .sidebar-text { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.5; }
-        
-        .btn-green-sm {
-            background-color: var(--brand-green);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 700;
-            display: inline-block;
-        }
-
-        .mega-grid { flex-grow: 1; padding: 40px 60px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-        .mega-col h4 { color: var(--brand-green); font-size: 16px; font-weight: 700; margin-bottom: 20px; }
-        .mega-col h4 span { color: #666; margin-right: 8px; font-weight: 400; }
-        .mega-col ul { list-style: none; }
-        .mega-col ul li { margin-bottom: 12px; }
-        .mega-col ul li a { text-decoration: none; color: var(--brand-green); font-size: 14px; font-weight: 600; }
-        .mega-col ul li a:hover { color: var(--brand-red); padding-left: 5px; transition: 0.2s; }
-
-        /* --- RIGHT UTILS --- */
-        .nav-right { display: flex; align-items: center; gap: 20px; }
-        .search-btn { background: #f1f1f1; border: 1px solid #333; padding: 10px 14px; cursor: pointer; }
-        .donate-main {
-            background: var(--brand-red); color: white; padding: 12px 28px;
-            border-radius: 30px; text-decoration: none; font-weight: 700;
-        }
-		
-		
-		
-		
-		
-		
-		
-		
     :root {
-        --brand-red: #990033;
-        --brand-green: #005e4d;
-        --brand-green-light: #007a65;
-        --soft-gray: #f4f7f6;    
-        --text-dark: #2d3436;
-        --text-light: #636e72;
-        --white: #ffffff;
+      --brand-red: #990033;
+      --brand-green: #005e4d;
+      --sidebar-tan: #e9e6d1;
+      --text-dark: #333;
+      --white: #ffffff;
+      --transition: all 0.3s ease;
+      --brand-green-light: #007a65;
+      --soft-gray: #f4f7f6;
+      --text-light: #636e72;
+      --border: #E5E7EB;
+      --text-muted: #6B7280;
     }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'DM Sans', sans-serif; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; font-size: 16px; color: var(--text-dark); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; }
 
     /* --- TOPBAR --- */
     .topbar {
-        background-color: var(--brand-red);
-        padding: 12px 60px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: var(--white);
-        font-size: 14px;
+      background-color: var(--brand-red);
+      padding: 12px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--white);
+      flex-wrap: wrap;
+      gap: 15px;
     }
-    .topbar a { color: white; text-decoration: none; margin-right: 20px; }
+    .topbar-info { display: flex; gap: 25px; font-size: 14px; flex-wrap: wrap; }
+    .topbar-info a { color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: opacity 0.3s; }
+    .topbar-info a:hover { opacity: 0.8; }
+    .topbar-socials { display: flex; gap: 12px; }
+    .social-btn {
+      width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.3);
+      display: flex; align-items: center; justify-content: center;
+      color: white; text-decoration: none; border-radius: 50%;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+    .social-btn:hover { background: white; color: var(--brand-red); border-color: white; transform: translateY(-2px); }
 
-    /* --- NAVIGATION --- */
+    /* --- NAVBAR --- */
     .navbar {
-        background: var(--white);
-        display: flex; align-items: center; justify-content: space-between;
-        padding: 0 60px; height: 90px;
-        position: sticky; top: 0; z-index: 1000;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      min-height: 90px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+      flex-wrap: wrap;
     }
-    .logo img { height: 70px; }
-    .nav-links { display: flex; list-style: none; gap: 30px; }
-    .nav-link { text-decoration: none; color: var(--text-dark); font-weight: 700; font-size: 15px; }
-    .donate-btn {
-        background: var(--brand-red); color: white; padding: 10px 24px;
-        border-radius: 4px; text-decoration: none; font-weight: 700;
+    .logo img { height: 75px; display: block; }
+    .mobile-menu-btn {
+      display: none;
+      background: var(--brand-red);
+      border: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 8px;
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
     }
+    .mobile-menu-btn:hover { background: var(--brand-green); }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      margin: 0;
+      padding: 0;
+    }
+    .has-mega { position: static; }
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      cursor: pointer;
+      padding: 10px 0;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .nav-link:hover { color: var(--brand-red); }
+    .nav-link i { font-size: 12px; transition: transform 0.3s; }
+    .mega-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: white;
+      display: none;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      border-top: 1px solid #eee;
+      z-index: 1001;
+    }
+    .has-mega.is-active .mega-menu { display: flex; }
+    .has-mega.is-active .nav-link { color: var(--brand-green); }
+    .has-mega.is-active .nav-link i { transform: rotate(180deg); }
+    .mega-sidebar {
+      background-color: var(--sidebar-tan);
+      width: 300px;
+      padding: 35px;
+      flex-shrink: 0;
+    }
+    .sidebar-img { width: 100%; border-radius: 10px; margin-bottom: 20px; }
+    .sidebar-title { font-weight: 700; font-size: 18px; margin-bottom: 10px; }
+    .sidebar-text { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+    .btn-green-sm {
+      background-color: var(--brand-green);
+      color: white;
+      padding: 8px 22px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+    .btn-green-sm:hover { background-color: var(--brand-red); transform: translateY(-2px); }
+    .mega-grid {
+      flex-grow: 1;
+      padding: 35px 50px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .mega-col h4 { color: var(--brand-green); font-size: 15px; font-weight: 700; margin-bottom: 18px; }
+    .mega-col ul { list-style: none; }
+    .mega-col ul li { margin-bottom: 12px; }
+    .mega-col ul li a { text-decoration: none; color: var(--brand-green); font-size: 14px; font-weight: 500; transition: 0.2s; }
+    .mega-col ul li a:hover { color: var(--brand-red); padding-left: 5px; }
+    .nav-right { display: flex; align-items: center; gap: 18px; }
+    .search-btn { background: #f5f5f5; border: 1px solid #e0e0e0; padding: 8px 12px; cursor: pointer; border-radius: 8px; transition: all 0.3s; }
+    .search-btn:hover { background: #e8e8e8; }
+    .donate-main { background: var(--brand-red); color: white; padding: 10px 26px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; }
+    .donate-main:hover { background: var(--brand-green); transform: translateY(-2px); }
 
-    /* --- HERO --- */
+    /* HERO */
     .hero {
-      background: linear-gradient(rgba(0, 94, 77, 0.9), rgba(0, 94, 77, 0.8)), 
+      background: linear-gradient(rgba(0,94,77,0.92), rgba(0,94,77,0.85)),
                   url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1920&q=80') center/cover;
-      padding: 100px 80px;
+      min-height: 400px;
+      padding: 80px 80px;
       color: white;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
-    .hero h1 { font-family: 'Playfair Display', serif; font-size: 52px; margin-bottom: 20px; }
-    .hero p { font-size: 20px; max-width: 800px; margin: 0 auto; opacity: 0.9; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 48px); margin-bottom: 20px; max-width: 800px; }
+    .hero p { font-size: 17px; max-width: 700px; margin: 0 auto; opacity: 0.9; }
 
-    /* --- PROCESS STEPS --- */
-    .process-section { padding: 80px 60px; background: var(--white); text-align: center; }
-    .section-tag { color: var(--brand-red); font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 2px; margin-bottom: 10px; display: block; }
-    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 50px; position: relative; }
-    .process-item { position: relative; z-index: 1; }
-    .step-num { width: 40px; height: 40px; background: var(--brand-green); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: 700; }
-    .process-item h4 { font-size: 16px; margin-bottom: 10px; color: var(--brand-green); }
-    .process-item p { font-size: 14px; color: var(--text-light); }
+    /* PROCESS SECTION */
+    .process-section { padding: 70px 60px; background: var(--white); text-align: center; }
+    .section-tag { color: var(--brand-red); font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; margin-bottom: 10px; display: block; }
+    .process-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 2.8vw, 34px); color: var(--brand-green); margin-bottom: 20px; }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 50px; }
+    .step-num { width: 40px; height: 40px; background: var(--brand-green); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-weight: 700; }
+    .process-item h4 { font-size: 15px; margin-bottom: 8px; color: var(--brand-green); font-weight: 700; }
+    .process-item p { font-size: 13px; color: var(--text-light); }
 
-    /* --- CONTENT SPLIT --- */
-    .main-content { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; padding: 80px 60px; background: var(--soft-gray); }
-    .content-title { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--brand-green); margin-bottom: 25px; }
-    
+    /* MAIN CONTENT */
+    .main-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 70px 60px; background: var(--soft-gray); }
+    .content-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 2.8vw, 30px); color: var(--brand-green); margin-bottom: 25px; }
     .impact-list { list-style: none; }
-    .impact-list li { background: white; margin-bottom: 15px; padding: 20px; border-radius: 8px; display: flex; align-items: center; gap: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-    .impact-list i { color: var(--brand-red); font-size: 20px; }
-
+    .impact-list li { background: white; margin-bottom: 14px; padding: 18px; border-radius: 10px; display: flex; align-items: center; gap: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: 0.3s; }
+    .impact-list li:hover { transform: translateX(5px); }
+    .impact-list i { color: var(--brand-red); font-size: 18px; width: 24px; }
     .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .feature-card { background: white; padding: 25px; border-top: 3px solid var(--brand-red); border-radius: 4px; }
-    .feature-card h5 { margin-bottom: 10px; font-size: 16px; color: var(--brand-green); }
-    .feature-card p { font-size: 13px; color: var(--text-light); }
+    .feature-card { background: white; padding: 22px; border-top: 3px solid var(--brand-red); border-radius: 8px; transition: 0.3s; }
+    .feature-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
+    .feature-card h5 { margin-bottom: 8px; font-size: 15px; color: var(--brand-green); font-weight: 700; }
+    .feature-card p { font-size: 12px; color: var(--text-light); }
 
-    /* --- SUPPORT CARD --- */
-    .support-banner { background: var(--brand-green); color: white; margin: 0 60px 80px; padding: 50px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; }
-    .support-banner h3 { font-family: 'Playfair Display', serif; font-size: 28px; }
-    .support-banner ul { list-style: none; margin-top: 20px; font-size: 15px; opacity: 0.9; }
-    .support-banner li { margin-bottom: 8px; }
-    .email-link { background: var(--white); color: var(--brand-green); padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: 700; transition: 0.3s; }
-    .email-link:hover { transform: scale(1.05); }
+    /* SUPPORT BANNER */
+    .support-banner { background: var(--brand-green); color: white; margin: 0 60px 70px; padding: 48px; border-radius: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
+    .support-banner h3 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 2.5vw, 26px); margin-bottom: 15px; }
+    .support-banner ul { list-style: none; margin-top: 12px; font-size: 14px; opacity: 0.9; }
+    .support-banner li { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .support-banner li i { font-size: 12px; }
+    .email-link { background: var(--white); color: var(--brand-green); padding: 14px 32px; border-radius: 40px; text-decoration: none; font-weight: 700; transition: 0.3s; display: inline-block; }
+    .email-link:hover { background: var(--brand-red); color: white; transform: scale(1.02); }
 
-    /* --- FOOTER --- */
-    .footer { background: #111; color: white; padding: 80px 60px 30px; }
-    .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 50px; }
-    .footer-col h4 { color: var(--brand-red); margin-bottom: 20px; font-size: 14px; text-transform: uppercase; }
-    .footer-col p, .footer-col a { font-size: 14px; color: #999; text-decoration: none; }
-    .footer-bottom { text-align: center; border-top: 1px solid #222; padding-top: 30px; font-size: 12px; color: #666; }
+    /* FOOTER */
+    .super-footer { background-color: #064d3b; color: white; padding: 60px 0 20px; }
+    .super-footer .sf-container { max-width: 1400px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 50px; gap: 30px; }
+    .super-footer .sf-col { flex: 1; min-width: 220px; }
+    .super-footer .sf-title { color: #22c4a9; font-size: 16px; font-weight: 700; margin-bottom: 25px; letter-spacing: 1px; }
+    .super-footer .sf-links { list-style: none; }
+    .super-footer .sf-links li { margin-bottom: 12px; }
+    .super-footer .sf-links a { color: white; text-decoration: none; font-size: 14px; transition: 0.3s; }
+    .super-footer .sf-links a:hover { color: #22c4a9; padding-left: 5px; }
+    .super-footer .sf-socials { display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+    .super-footer .sf-socials a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; transition: all 0.3s; }
+    .super-footer .sf-socials a:hover { background: var(--brand-red); transform: translateY(-3px); }
+    .sf-subscribe input { width: 100%; padding: 12px; margin-bottom: 12px; border-radius: 8px; border: none; background: rgba(255,255,255,0.1); color: white; }
+    .sf-subscribe button { background: #bd0000; color: white; border: none; padding: 12px; width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+    .sf-subscribe button:hover { background: #e60000; }
 
-    @media (max-width: 900px) {
-        .process-grid, .main-content, .footer-grid { grid-template-columns: 1fr; }
-        .support-banner { flex-direction: column; text-align: center; gap: 30px; }
-        .hero h1 { font-size: 32px; }
+    /* RESPONSIVE */
+    @media screen and (max-width: 1100px) {
+      .navbar { padding: 0 30px; }
+      .topbar { padding: 10px 30px; }
+      .hero { padding: 60px 50px; }
+      .process-section, .main-content { padding-left: 40px; padding-right: 40px; }
+      .support-banner { margin-left: 40px; margin-right: 40px; padding: 40px; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
+    }
+    @media screen and (max-width: 850px) {
+      .mobile-menu-btn { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        max-height: 85vh;
+        overflow-y: auto;
+        z-index: 9999;
+        box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+        border-top: 3px solid var(--brand-red);
+        padding: 0;
+        gap: 0;
+        width: 100%;
+      }
+      .nav-links.active { display: flex; }
+      .has-mega { position: relative; width: 100%; border-bottom: 1px solid #eee; }
+      .nav-link { padding: 16px 20px; justify-content: space-between; width: 100%; white-space: normal; background: white; }
+      .mega-menu {
+        position: relative !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: none;
+        background: #f8f8f8;
+        border-top: 1px solid #ddd;
+        flex-direction: column;
+      }
+      .has-mega.is-active .mega-menu { display: flex !important; max-height: 60vh; overflow-y: auto; }
+      .mega-sidebar { width: 100%; padding: 20px; order: 1; }
+      .mega-grid { display: flex !important; flex-direction: column !important; padding: 20px !important; gap: 25px !important; order: 2; }
+      .mega-col { width: 100%; }
+      .topbar { flex-direction: column; text-align: center; }
+      .topbar-info { justify-content: center; }
+      .main-content { grid-template-columns: 1fr; gap: 40px; }
+      .process-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .support-banner { flex-direction: column; text-align: center; }
+      .support-banner ul { text-align: left; }
+      .hero h1 { font-size: 36px; }
+    }
+    @media screen and (max-width: 600px) {
+      .navbar { padding: 0 15px; }
+      .logo img { height: 50px; }
+      .donate-main { padding: 6px 16px; font-size: 12px; }
+      .hero { padding: 50px 20px; min-height: 350px; }
+      .hero h1 { font-size: 28px; }
+      .hero p { font-size: 14px; }
+      .process-section, .main-content { padding: 40px 20px; }
+      .support-banner { margin: 40px 20px; padding: 30px; }
+      .support-banner h3 { font-size: 20px; }
+      .impact-list li { padding: 14px; font-size: 13px; }
+      .super-footer .sf-container { flex-direction: column; padding: 0 25px; text-align: center; }
+      .super-footer .sf-socials { justify-content: center; }
     }
   </style>
 </head>
 <body>
 
-<!-- ── NAVIGATION ── -->
+<!-- TOPBAR -->
 <div class="topbar">
-        <div class="topbar-info">
-            <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
-            <a href="tel:+231779205152"><i class="fa-solid fa-phone"></i> +231 779 205 152</a>
-        </div>
-        <div class="topbar-socials">
-            <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="social-btn"><i class="fa-brands fa-pinterest-p"></i></a>
-            <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
-        </div>
-    </div>
-
-    <nav class="navbar">
-        <div class="logo">
-            <a href="index.html"> <img src="./img/logo14.png" alt="BDI Logo"></a>
-        </div>
-
-        <ul class="nav-links">
-            <li class="has-mega">
-                <a class="nav-link" style="font-size: 16px;"><b>Our Work </b><i class="fa-solid fa-caret-down"></i></a>
-                <div class="mega-menu">
-                    <div class="mega-sidebar">
-                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
-                        <h3 class="sidebar-title">Donate Today</h3>
-                        <p class="sidebar-text">Give your support where it's needed most</p>
-                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
-                    </div>
-                    <div class="mega-grid">
-                        <div class="mega-col">
-                            <h4><span>></span> <u>What We Do</u></h4>
-                            <ul>
-                                <li><a href="agriculture.html">Agriculture & Agribusiness</a></li>
-                                <li><a href="health.html">Health & Nutrition</a></li>
-                                <li><a href="education.html">Education</a></li>
-                                <li><a href="environment.html">Environment & Climate</a></li>
-                            </ul>
-                            <h4 style="margin-top:30px;"><span>></span> <u>Where We Work</u></h4>
-                            <ul><li><a href="#">View all countries</a></li></ul>
-                        </div>
-                        <div class="mega-col">
-                            <h4><span>></span> <u>Development & Inclusion</u></h4>
-                            <ul>
-                                <li><a href="gender-youth.html">Gender & Youth Empowerment</a></li>
-                                <li><a href="fisheries.html">Fisheries & Aquaculture</a></li>
-                                <li><a href="disability.html">Disability Inclusion</a></li>
-                                <li><a href="partnership.html">Research & Partnership</a></li>
-                            </ul>
-                        </div>
-                        <div class="mega-col">
-                            <h4><span>></span> <u>Latest News & Updates</u></h4>
-                            <ul><li><a href="#">View All Our News</a></li></ul>
-                        </div>
-                    </div>
-                </div>
-            </li>
-
-            <li class="has-mega">
-                <a class="nav-link" style="font-size: 16px;"><b>About Us </b><i class="fa-solid fa-caret-down"></i></a>
-                <div class="mega-menu">
-                    <div class="mega-sidebar">
-                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
-                        <h3 class="sidebar-title">Donate Today</h3>
-                        <p class="sidebar-text">Give your support where it's needed most</p>
-                       <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
-                    </div>
-                    <div class="mega-grid">
-                        <div class="mega-col">
-                            <h4><span>></span> <u>Who we are</u></h4>
-                            <ul>
-                                <li><a href="our-values.html">Our Values</a></li>
-                                <li><a href="founding-story.html">Our founding Story</a></li>
-                                <li><a href="testimonials.html">Testimonials</a></li>
-                            </ul>
-                            <h4 style="margin-top:30px;"><span>></span> <u>Governance</u></h4>
-                            <ul>
-                                <li><a href="governance-structure.html">Our Governance Structure</a></li>
-                                <li><a href="board.html">Our Board of Directors</a></li>
-                                <li><a href="our-ceo.html">Our CEO</a></li>
-                                <li><a href="our-team.html">Our Team</a></li>
-                            </ul>
-                        </div>
-                        <div class="mega-col">
-                            <h4><span>></span> <u>How We Raise Money</u></h4>
-                            <ul>
-                                <li><a href="iinstitutional-donors.html">Institutional Donors</a></li>
-                                <li><a href="partners.html">Partners</a></li>
-                                <li><a href="individual-donations.html">Individual Donations</a></li>
-                            </ul>
-                        </div>
-                        <div class="mega-col">
-                            <h4><span>></span> <u>Transparency and accountability</u></h4>
-                            <ul>
-                                <li><a href="annual-reports.html">Annual Reports</a></li>
-                                <li><a href="how-donations-are-spent.html">How donations are spent</a></li>
-								<li><a href="audited-financials.html">Audited Financial Statements</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </li>
-
-            <li class="has-mega">
-                <a class="nav-link" style="font-size: 16px;"><b>Support us</b> <i class="fa-solid fa-caret-down"></i></a>
-                <div class="mega-menu">
-                    <div class="mega-sidebar">
-                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
-                        <h3 class="sidebar-title">Donate Today</h3>
-                        <p class="sidebar-text">Give your support where it's needed most</p>
-                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
-                    </div>
-                    <div class="mega-grid">
-                        <div class="mega-col">
-                            <h4><span>></span> <u>Donate Now</u></h4>
-                            <ul>
-                                <li><a href="safe drug victims.html">Donate to safe drug victims</a></li>
-                                <li><a href="End Period Poverty.html">End Period Poverty</a></li>
-                                <li><a href="Women and Youth in Agribusiness.html">Support Women in Agribusiness</a></li>
-                            </ul>
-                            <h4 style="margin-top:30px;"><span>></span> <u>Corporate support</u></h4>
-                            <ul>
-                                <li><a href="Become a Corporate Partner.html">Become a corporate supporter</a></li>
-                                <li><a href="Partner With Us.html">Partner with us</a></li>
-                                <li><a href="Staff Fundraising.html">Staff fundraising</a></li>
-                                <li><a href="Payroll Giving.html">Payroll Giving</a></li>
-                                <li><a href="Corporate Donations.html">Make a corporate donation</a></li>
-                            </ul>
-                        </div>
-                        <div class="mega-col">
-                            <h4><span>></span> <u>Fundraise for BDI</u></h4>
-                            <ul>
-                                <li><a href="Start your own fundraiser.html">Start your own fundraiser</a></li>
-                                <li><a href="Find a Friend to Sponsor.html">Find a friend to sponsor</a></li>
-                            </ul>
-                            <h4 style="margin-top:30px;"><span>></span> <u>Volunteer Remotely</u></h4>
-                            <ul><li><a href="Volunteer Remotely.html">You can Volunteer with us</a></li></ul>
-                        </div>
-                        <div class="mega-col">
-                            <h4><span>></span> <u>Other ways to give</u></h4>
-                            <ul>
-                                <li><a href="Donate in Memory.html">Donate in memory</a></li>
-                                <li><a href="Leave a Gift in Your Will.html">Leave a gift in your Will</a></li>
-                                <li><a href="Donate Your Tax Refund.html">Your donation and tax back</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </li>
-
-            <li class="has-mega">
-                <a class="nav-link" style="font-size: 16px;"><b>Resource Centre</b> <i class="fa-solid fa-caret-down"></i></a>
-                <div class="mega-menu">
-                    <div class="mega-sidebar">
-                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img">
-                        <h3 class="sidebar-title">Donate Today</h3>
-                        <p class="sidebar-text">Give your support where it's needed most</p>
-                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm"; style="color:white";>Donate now</a>
-                    </div>
-                    <div class="mega-grid">
-                        <div class="mega-col">
-                            <h4><span>></span> <u>Knowledge Hub Resources</u></h4>
-                            <ul>
-                                <li><a href="#">Research</a></li>
-                                <li><a href="#">Evaluations</a></li>
-                                <li><a href="#">Newsletters</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-
-        <div class="nav-right">
-            <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="donate-main">Donate Now</a>
-        </div>
-    </nav>
-
-<!-- ── NAVIGATION END ── -->
-
-<section class="hero">
-    <h1>Payroll Giving — Simple, Consistent, High Impact</h1>
-    <p>Empower your workforce to sustain life-changing programs in Liberia through small, regular contributions directly from their salary.</p>
-</section>
-
-<section class="process-section">
-    <span class="section-tag">Easy Integration</span>
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 36px; color: var(--brand-green);">How It Works</h2>
-    <div class="process-grid">
-        <div class="process-item">
-            <div class="step-num">1</div>
-            <h4>Choose Amount</h4>
-            <p>Employees select a fixed monthly amount to contribute.</p>
-        </div>
-        <div class="process-item">
-            <div class="step-num">2</div>
-            <h4>Direct Deduction</h4>
-            <p>Contributions are deducted directly through your payroll system.</p>
-        </div>
-        <div class="process-item">
-            <div class="step-num">3</div>
-            <h4>Pooled Funding</h4>
-            <p>Funds are pooled and directed to high-impact BDI programs.</p>
-        </div>
-        <div class="process-item">
-            <div class="step-num">4</div>
-            <h4>Optional Matching</h4>
-            <p>Companies can match donations to double the collective impact.</p>
-        </div>
-    </div>
-</section>
-
-<section class="main-content">
-    <div>
-        <h2 class="content-title">Where Your Contributions Go</h2>
-        <ul class="impact-list">
-            <li><i class="fa-solid fa-pills"></i> Recovery and reintegration support for youth affected by drug use.</li>
-            <li><i class="fa-solid fa-person-dress"></i> Ensuring girls have access to menstrual products to stay in school.</li>
-            <li><i class="fa-solid fa-seedling"></i> Supporting women and youth building income via agribusiness.</li>
-            <li><i class="fa-solid fa-heart-pulse"></i> Delivering community health and resilience solutions.</li>
-        </ul>
-    </div>
-    <div>
-        <h2 class="content-title">Why Choose Payroll Giving?</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <h5>Simple</h5>
-                <p>No need for repeated giving decisions or manual transactions.</p>
-            </div>
-            <div class="feature-card">
-                <h5>Consistent</h5>
-                <p>Steady funding allows BDI to plan long-term community impact.</p>
-            </div>
-            <div class="feature-card">
-                <h5>Inclusive</h5>
-                <p>Enables every staff member to contribute, regardless of income level.</p>
-            </div>
-            <div class="feature-card">
-                <h5>High Impact</h5>
-                <p>Small individual amounts add up to major social change.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="support-banner">
-    <div>
-        <h3>What BDI Provides for Organizations</h3>
-        <ul>
-            <li><i class="fa-solid fa-check"></i> Clear structure for internal setup</li>
-            <li><i class="fa-solid fa-check"></i> Transparent financial reporting</li>
-            <li><i class="fa-solid fa-check"></i> Communication materials for staff engagement</li>
-            <li><i class="fa-solid fa-check"></i> Regular program result updates</li>
-        </ul>
-    </div>
-    <a href="mailto:partnerships@basadev.org" class="email-link">Get Started Today</a>
+  <div class="topbar-info">
+    <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
+    <a href="tel:+231779205152"><i class="fa-solid fa-phone"></i> +231 779 205 152</a>
+  </div>
+  <div class="topbar-socials">
+    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+  </div>
 </div>
 
-<!-- Footer Start -->
-<style>
-    .super-footer {
-        background-color: #064d3b;
-        color: #ffffff;
-        padding: 80px 0 30px 0; /* Increased top padding for a larger feel */
-        font-family: 'Poppins', sans-serif;
-        line-height: 1.6;
-        width: 100%;
-    }
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo"><a href="index.html"><img src="./img/logo14.png" alt="BDI Logo"></a></div>
+  <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
+  <ul class="nav-links" id="navLinks">
+    <li class="has-mega"><a class="nav-link"><b>Our Work</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>What We Do</u></h4><ul><li><a href="agriculture.html">Agriculture & Agribusiness</a></li><li><a href="health.html">Health & Nutrition</a></li><li><a href="education.html">Education</a></li><li><a href="environment.html">Environment & Climate</a></li></ul><h4 style="margin-top:20px;"><u>Where We Work</u></h4><ul><li><a href="#">View all countries</a></li></ul></div><div class="mega-col"><h4><u>Development & Inclusion</u></h4><ul><li><a href="gender-youth.html">Gender & Youth Empowerment</a></li><li><a href="fisheries.html">Fisheries & Aquaculture</a></li><li><a href="disability.html">Disability Inclusion</a></li><li><a href="partnership.html">Research & Partnership</a></li></ul></div><div class="mega-col"><h4><u>Latest News & Updates</u></h4><ul><li><a href="all-news.html">View All Our News</a></li></ul></div></div></div>
+    </li>
+    <li class="has-mega"><a class="nav-link"><b>About Us</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Who we are</u></h4><ul><li><a href="our-values.html">Our Values</a></li><li><a href="founding-story.html">Our founding Story</a></li><li><a href="testimonials.html">Testimonials</a></li></ul><h4 style="margin-top:20px;"><u>Governance</u></h4><ul><li><a href="governance-structure.html">Governance Structure</a></li><li><a href="board.html">Board of Directors</a></li><li><a href="our-ceo.html">Our CEO</a></li><li><a href="our-team.html">Our Team</a></li></ul></div><div class="mega-col"><h4><u>How We Raise Money</u></h4><ul><li><a href="institutional-donors.html">Institutional Donors</a></li><li><a href="partners.html">Partners</a></li><li><a href="individual-donations.html">Individual Donations</a></li></ul></div><div class="mega-col"><h4><u>Transparency & accountability</u></h4><ul><li><a href="annual-reports.html">Annual Reports</a></li><li><a href="how-donations-are-spent.html">How donations are spent</a></li><li><a href="audited-financials.html">Audited Financials</a></li></ul></div></div></div>
+    </li>
+    <li class="has-mega"><a class="nav-link"><b>Support us</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Donate Now</u></h4><ul><li><a href="safe drug victims.html">Donate to safe drug victims</a></li><li><a href="End Period Poverty.html">End Period Poverty</a></li><li><a href="Women and Youth in Agribusiness.html">Support Women in Agribusiness</a></li></ul><h4 style="margin-top:20px;"><u>Corporate support</u></h4><ul><li><a href="Become a Corporate Partner.html">Become a corporate supporter</a></li><li><a href="Partner With Us.html">Partner with us</a></li><li><a href="Staff Fundraising.html">Staff Fundraising</a></li><li><a href="Payroll Giving.html">Payroll Giving</a></li><li><a href="Corporate Donations.html">Make a Corperate Donation</a></li></ul></div><div class="mega-col"><h4><u>Fundraise for BDI</u></h4><ul><li><a href="Start your own fundraiser.html">Start your own fundraiser</a></li><li><a href="Find a Friend to Sponsor.html">Find a friend to sponsor</a></li></ul><h4 style="margin-top:20px;"><u>Volunteer Remotely</u></h4><ul><li><a href="Volunteer Remotely.html">You can volunteer with us</a></li></ul></div><div class="mega-col"><h4><u>Other ways to give</u></h4><ul><li><a href="Donate in Memory.html">Donate in memory</a></li><li><a href="Leave a Gift in Your Will.html">Leave a gift in your Will</a></li><li><a href="Donate Your Tax Refund.html">Donate Your Tax Refund</a></li></ul></div></div></div>
+    </li>
+    <li class="has-mega"><a class="nav-link"><b>Resource Centre</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Knowledge Hub Resources</u></h4><ul><li><a href="#">Research</a></li><li><a href="#">Evaluations</a></li><li><a href="newsletter.html">Newsletters</a></li></ul></div></div></div>
+    </li>
+  </ul>
+  <div class="nav-right"><button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="donate-main">Donate Now</a></div>
+</nav>
 
-    .super-footer .sf-container {
-        /* Increased max-width and significantly larger side padding */
-        max-width: 1600px; 
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 0 60px; /* Hit larger from left to right */
-    }
+<!-- HERO -->
+<section class="hero">
+  <h1>Payroll Giving — Simple, Consistent, High Impact</h1>
+  <p>Empower your workforce to sustain life-changing programs in Liberia through small, regular contributions directly from their salary.</p>
+</section>
 
-    .super-footer .sf-col {
-        flex: 1;
-        min-width: 250px;
-        margin-bottom: 40px;
-        /* Increased gutter between columns */
-        padding: 0 30px; 
-    }
+<!-- PROCESS SECTION -->
+<section class="process-section">
+  <span class="section-tag">Easy Integration</span>
+  <h2>How It Works</h2>
+  <div class="process-grid">
+    <div class="process-item"><div class="step-num">1</div><h4>Choose Amount</h4><p>Employees select a fixed monthly amount to contribute.</p></div>
+    <div class="process-item"><div class="step-num">2</div><h4>Direct Deduction</h4><p>Contributions are deducted directly through your payroll system.</p></div>
+    <div class="process-item"><div class="step-num">3</div><h4>Pooled Funding</h4><p>Funds are pooled and directed to high-impact BDI programs.</p></div>
+    <div class="process-item"><div class="step-num">4</div><h4>Optional Matching</h4><p>Companies can match donations to double the collective impact.</p></div>
+  </div>
+</section>
 
-    /* Brand Section */
-    .super-footer .sf-logo img {
-        max-width: 220px;
-        height: auto;
-        margin-bottom: 25px;
-    }
-
-    .super-footer .sf-description {
-        font-size: 18px;
-        opacity: 0.85;
-        margin-bottom: 30px;
-        max-width: 320px;
-    }
-
-    .super-footer .sf-socials {
-        display: flex;
-        gap: 15px;
-    }
-
-    .super-footer .sf-socials a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 42px;
-        height: 42px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        border-radius: 8px;
-        color: #fff;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-
-    .super-footer .sf-socials a:hover {
-        background: #ffffff;
-        color: #064d3b;
-        border-color: #ffffff;
-        transform: translateY(-3px);
-    }
-
-    /* Headlines & Links */
-    .super-footer .sf-title {
-        color: #22c4a9;
-        font-size: 17px;
-        font-weight: 700;
-        margin-bottom: 35px;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-    }
-
-    .super-footer .sf-links {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-		font-size: 17px;
-        font-weight: 700;
-    }
-
-    .super-footer .sf-links li {
-        margin-bottom: 15px;
-    }
-
-    .super-footer .sf-links a {
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 15px;
-        opacity: 0.9;
-        transition: 0.2s;
-    }
-
-    .super-footer .sf-links a:hover {
-        color: #22c4a9;
-        opacity: 1;
-        padding-left: 8px;
-    }
-
-    /* Locations */
-    .super-footer .sf-loc-item {
-        margin-bottom: 25px;
-    }
-
-    .super-footer .sf-loc-item h5 {
-        margin: 0 0 8px 0;
-        font-size: 18px;
-        font-weight: 700;
-		color:white;
-    }
-
-    .super-footer .sf-loc-item p {
-        margin: 0;
-        font-size: 16px;
-        opacity: 0.8;
-    }
-
-    /* Newsletter Form */
-    .super-footer .sf-newsletter-text {
-        font-size: 17px;
-        margin-bottom: 25px;
-        opacity: 0.9;
-    }
-
-    .super-footer .sf-subscribe input {
-        width: 100%;
-        padding: 18px;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(34, 196, 169, 0.5);
-        border-radius: 6px;
-        color: #b40000;
-        margin-bottom: 15px;
-        outline: none;
-        transition: border 0.3s;
-    }
-
-    .super-footer .sf-subscribe input:focus {
-        border-color: #b40000;
-    }
-
-    .super-footer .sf-subscribe button {
-        width: 100%;
-        padding: 15px;
-        background: #bd0000;
-        color: #fff;
-        border: none;
-        border-radius: 6px;
-        font-weight: 700;
-        text-transform: uppercase;
-        cursor: pointer;
-        letter-spacing: 1px;
-        transition: background 0.3s;
-    }
-
-    .super-footer .sf-subscribe button:hover {
-        background: #e60000;
-    }
-
-    /* Bottom Copyright Bar */
-    .super-footer .sf-bottom-bar {
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        margin-top: 40px;
-        padding: 30px 60px 0 60px; /* Aligned with container padding */
-        max-width: 1400px;
-        margin-left: auto;
-        margin-right: auto;
-        font-size: 13px;
-        opacity: 0.6;
-    }
-
-    /* Responsive Logic */
-    @media (max-width: 1024px) {
-        .super-footer .sf-container, 
-        .super-footer .sf-bottom-bar { padding: 0 30px; }
-    }
-
-    @media (max-width: 768px) {
-        .super-footer .sf-col { flex: 1 1 45%; }
-    }
-
-    @media (max-width: 600px) {
-        .super-footer .sf-col { flex: 1 1 100%; padding: 0 15px; }
-        .super-footer { text-align: center; }
-        .super-footer .sf-socials { justify-content: center; }
-        .super-footer .sf-description { margin: 0 auto 30px auto; }
-    }
-</style>
-
-
-<footer class="super-footer">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <div class="sf-container">
-        <div class="sf-col">
-            <div class="sf-logo">
-        <img src="./img/logo14-1.png" alt="BASA Development Initiatives">
-      </div>
-            <p class="sf-description">
-                BASA Development Initiatives (BDI) is an NGO dedicated to building a more inclusive, resilient, and sustainable Liberia.
-            </p>
-            <div class="sf-socials">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
-
-        <div class="sf-col">
-            <h4 class="sf-title">Quick Links</h4>
-            <ul class="sf-links">
-                <li><a href="our-values.html">Our Values</a></li>
-                <li><a href="our-team">Our Team</a></li>
-                <li><a href="partners">Partner With Us</a></li>
-                <li><a href="testimonials">Testimonials</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-
-        <div class="sf-col">
-            <h4 class="sf-title">Locations</h4>
-            <div class="sf-loc-item">
-                <h5 class="white-bold">HEADQUARTER: Monrovia, Liberia</h5>
-                <p>Morris Villa, ELWA Community,
-				Email: info@basadev.org<br>Tel 1: +231 886 349 962 <br> +231 88 675 7435</p>
-				
-            </div>
-            <div class="sf-loc-item">
-                <h5>State of Minnesota, USA</h5>
-                <p>Regional Coordination Office</p>
-                <p>Tel: +1 (651) 235-9896 <br>Email: info@basadev.org </p>
-            </div>
-        </div>
-
-        <div class="sf-col">
-            <h4 class="sf-title">Stay Updated</h4>
-            <p class="sf-newsletter-text">Join our newsletter for the latest impact updates.</p>
-            <form class="sf-subscribe" onsubmit="return false;">
-                <input type="email" placeholder="Your email address" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
+<!-- MAIN CONTENT -->
+<section class="main-content">
+  <div>
+    <h2 class="content-title">Where Your Contributions Go</h2>
+    <ul class="impact-list">
+      <li><i class="fa-solid fa-pills"></i> Recovery and reintegration support for youth affected by drug use.</li>
+      <li><i class="fa-solid fa-person-dress"></i> Ensuring girls have access to menstrual products to stay in school.</li>
+      <li><i class="fa-solid fa-seedling"></i> Supporting women and youth building income via agribusiness.</li>
+      <li><i class="fa-solid fa-heart-pulse"></i> Delivering community health and resilience solutions.</li>
+    </ul>
+  </div>
+  <div>
+    <h2 class="content-title">Why Choose Payroll Giving?</h2>
+    <div class="feature-grid">
+      <div class="feature-card"><h5>Simple</h5><p>No need for repeated giving decisions or manual transactions.</p></div>
+      <div class="feature-card"><h5>Consistent</h5><p>Steady funding allows BDI to plan long-term community impact.</p></div>
+      <div class="feature-card"><h5>Inclusive</h5><p>Enables every staff member to contribute, regardless of income level.</p></div>
+      <div class="feature-card"><h5>High Impact</h5><p>Small individual amounts add up to major social change.</p></div>
     </div>
+  </div>
+</section>
 
-    <div class="sf-bottom-bar">
-        <p>&copy; 2026 BASA Development Initiatives (BDI). Registered NGO in Liberia</p>
-    </div>
-</footer>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <!-- Footer End -->
+<!-- SUPPORT BANNER -->
+<div class="support-banner">
+  <div>
+    <h3>What BDI Provides for Organizations</h3>
+    <ul>
+      <li><i class="fa-solid fa-check"></i> Clear structure for internal setup</li>
+      <li><i class="fa-solid fa-check"></i> Transparent financial reporting</li>
+      <li><i class="fa-solid fa-check"></i> Communication materials for staff engagement</li>
+      <li><i class="fa-solid fa-check"></i> Regular program result updates</li>
+    </ul>
+  </div>
+  <a href="mailto:partnerships@basadev.org" class="email-link">Get Started Today</a>
+</div>
 
-</body>
+<!-- FOOTER -->
+<footer class="super-footer"><div class="sf-container"><div class="sf-col"><div class="sf-logo"><img src="./img/logo14-1.png" alt="BDI" style="max-width:170px;"></div><p style="margin:15px 0; font-size:14px;">BDI is an NGO dedicated to building a more inclusive, resilient Liberia.</p><div class="sf-socials"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div><div class="sf-col"><h4 class="sf-title">Quick Links</h4><ul class="sf-links"><li><a href="our-values.html">Our Values</a></li><li><a href="our-team.html">Our Team</a></li><li><a href="partners.html">Partner With Us</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="sf-col"><h4 class="sf-title">Locations</h4><div><strong style="color:#22c4a9;">Monrovia, Liberia</strong><br><p style="font-size:13px;">Morris Villa, ELWA Community<br>info@basadev.org<br>+231 886 349 962</p></div><div style="margin-top:15px;"><strong style="color:#22c4a9;">Minnesota, USA</strong><br><p style="font-size:13px;">Regional Coordination Office<br>+1 (651) 235-9896</p></div></div><div class="sf-col"><h4 class="sf-title">Stay Updated</h4><p style="font-size:14px; margin-bottom:15px;">Join our newsletter for updates.</p><form class="sf-subscribe" onsubmit="return false;"><input type="email" placeholder="Your email address"><button type="submit">Subscribe</button></form></div></div><div style="text-align:center; padding:25px 20px 10px; border-top:1px solid rgba(255,255,255,0.1); margin-top:30px;">&copy; 2026 BASA Development Initiatives (BDI). Registered NGO in Liberia</div></footer>
+
 <script>
-  // Hamburger toggle
-  const hamburger = document.getElementById('hamburgerBtn');
-  const navLinks = document.getElementById('navLinks');
-  if (hamburger) {
-    hamburger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      navLinks.classList.toggle('show');
-    });
-  }
+  (function() {
+    const megaItems = document.querySelectorAll('.has-mega');
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const isMobileView = () => window.innerWidth <= 850;
 
-  // Mega menu toggles for both desktop & mobile (close on outside)
-  const megaItems = document.querySelectorAll('.has-mega');
-  megaItems.forEach(item => {
-    const link = item.querySelector('.nav-link');
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      // close others
-      megaItems.forEach(i => {
-        if (i !== item) i.classList.remove('is-active');
+    function closeAllMegas() { megaItems.forEach(item => item.classList.remove('is-active')); }
+
+    megaItems.forEach(item => {
+      const link = item.querySelector('.nav-link');
+      if (link) {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (isMobileView()) {
+            const wasActive = item.classList.contains('is-active');
+            closeAllMegas();
+            if (!wasActive) item.classList.add('is-active');
+          } else {
+            const wasActive = item.classList.contains('is-active');
+            closeAllMegas();
+            if (!wasActive) item.classList.add('is-active');
+          }
+        });
+      }
+    });
+
+    if (mobileBtn && navLinks) {
+      mobileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle('active');
+        const icon = mobileBtn.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+          closeAllMegas();
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
       });
-      item.classList.toggle('is-active');
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.navbar')) {
+        closeAllMegas();
+        if (navLinks && navLinks.classList.contains('active') && isMobileView()) {
+          navLinks.classList.remove('active');
+          const icon = mobileBtn?.querySelector('i');
+          if (icon) {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        }
+      }
     });
-  });
 
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.has-mega') && !e.target.closest('.hamburger')) {
-      megaItems.forEach(i => i.classList.remove('is-active'));
-      if (navLinks && window.innerWidth < 992) navLinks.classList.remove('show');
-    }
-  });
-
-  // Responsive: close mega on window resize if open
-  window.addEventListener('resize', () => {
-    if (window.innerWidth >= 992) {
-      if (navLinks) navLinks.classList.remove('show');
-    } else {
-      // ensure mobiles don't have leftover mega expansions weird
-    }
-  });
+    window.addEventListener('resize', () => {
+      if (!isMobileView() && navLinks) {
+        navLinks.classList.remove('active');
+        if (mobileBtn) {
+          const icon = mobileBtn.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+        closeAllMegas();
+      }
+    });
+  })();
 </script>
+</body>
 </html>
