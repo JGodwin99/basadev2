@@ -34,25 +34,7 @@
       overflow-x: hidden;
     }
 
-    /* --- MODERN RESPONSIVE MOBILE MENU --- */
-    .mobile-menu-btn {
-      display: none;
-      background: var(--brand-red);
-      border: none;
-      width: 48px;
-      height: 48px;
-      border-radius: 8px;
-      color: white;
-      font-size: 24px;
-      cursor: pointer;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s;
-      z-index: 1001;
-    }
-    .mobile-menu-btn:hover { background: var(--brand-green); }
-
-    /* --- TOPBAR --- */
+    /* --- TOPBAR (fully responsive) --- */
     .topbar {
       background-color: var(--brand-red);
       padding: 12px 60px;
@@ -75,7 +57,7 @@
     }
     .social-btn:hover { background: white; color: var(--brand-red); border-color: white; transform: translateY(-2px); }
 
-    /* --- NAVBAR --- */
+    /* --- NAVBAR (standard desktop + mobile hamburger matching your reference) --- */
     .navbar {
       background: var(--white);
       display: flex;
@@ -88,9 +70,27 @@
       z-index: 1000;
       box-shadow: 0 2px 15px rgba(0,0,0,0.08);
       flex-wrap: wrap;
-      gap: 15px;
     }
     .logo img { height: 75px; display: block; max-width: 100%; }
+    
+    /* Hamburger button - matches reference style */
+    .mobile-menu-btn {
+      display: none;
+      background: var(--brand-red);
+      border: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      z-index: 1001;
+    }
+    .mobile-menu-btn:hover { background: var(--brand-green); }
+
     .nav-links {
       display: flex;
       list-style: none;
@@ -114,6 +114,8 @@
     }
     .nav-link:hover { color: var(--brand-red); }
     .nav-link i { font-size: 12px; transition: transform 0.3s; }
+
+    /* --- MEGA MENU --- */
     .mega-menu {
       position: absolute;
       top: 100%;
@@ -187,7 +189,6 @@
     .role-card { background: white; padding: 35px 25px; border-radius: 16px; transition: 0.3s; border-bottom: 4px solid transparent; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
     .role-card:hover { transform: translateY(-8px); border-bottom-color: var(--brand-red); box-shadow: 0 20px 30px rgba(0,0,0,0.08); }
     .role-card i { font-size: 38px; color: var(--brand-green); margin-bottom: 20px; }
-    .role-card h4 { font-size: 18px; margin-bottom: 12px; }
     .profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
     .profile-box { background: #fff; border: 1px solid #e2e8f0; padding: 28px; border-radius: 16px; display: flex; gap: 20px; align-items: flex-start; transition: 0.3s; }
     .profile-box:hover { border-color: var(--brand-red); box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
@@ -225,7 +226,7 @@
     .super-footer .sf-subscribe button:hover { background: #e60000; transform: translateY(-2px); }
     .super-footer .sf-bottom-bar { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; padding: 30px 60px 0 60px; text-align: center; font-size: 13px; opacity: 0.7; }
 
-    /* --- RESPONSIVE BREAKPOINTS (PRESERVING ALL CONTENT) --- */
+    /* --- RESPONSIVE BREAKPOINTS (EXACTLY MATCHING YOUR REFERENCE BEHAVIOR) --- */
     @media screen and (max-width: 1100px) {
       .topbar { padding: 10px 30px; }
       .navbar { padding: 0 30px; }
@@ -233,7 +234,9 @@
       .section-padding { padding: 60px 40px; }
       .super-footer .sf-container { padding: 0 30px; }
     }
-    @media screen and (max-width: 900px) {
+    
+    /* Mobile menu activation - matches the reference style (hamburger on 850px) */
+    @media screen and (max-width: 850px) {
       .mobile-menu-btn { display: flex; }
       .nav-links {
         display: none;
@@ -243,7 +246,7 @@
         right: 0;
         background: white;
         flex-direction: column;
-        max-height: 80vh;
+        max-height: 85vh;
         overflow-y: auto;
         z-index: 9999;
         box-shadow: 0 20px 30px rgba(0,0,0,0.2);
@@ -254,7 +257,14 @@
       }
       .nav-links.active { display: flex; }
       .has-mega { position: relative; width: 100%; border-bottom: 1px solid #eee; }
-      .nav-link { padding: 16px 25px; justify-content: space-between; width: 100%; white-space: normal; background: white; }
+      .nav-link { 
+        padding: 16px 25px; 
+        justify-content: space-between; 
+        width: 100%; 
+        white-space: normal; 
+        background: white;
+        font-size: 16px;
+      }
       .mega-menu {
         position: relative !important;
         top: 0;
@@ -276,13 +286,13 @@
       .step-item { max-width: 280px; width: 100%; }
       .hero { padding: 60px 30px; }
     }
+    
     @media screen and (max-width: 768px) {
       .topbar { flex-direction: column; text-align: center; padding: 12px 20px; }
       .topbar-info { justify-content: center; }
       .topbar-socials { justify-content: center; }
-      .navbar { padding: 12px 20px; flex-direction: row; flex-wrap: wrap; }
+      .navbar { padding: 12px 20px; }
       .logo img { height: 55px; }
-      .nav-right { margin-top: 0; }
       .section-padding { padding: 50px 20px; }
       .form-container { padding: 30px 20px; margin-top: -30px; }
       .role-card { padding: 25px 20px; }
@@ -293,6 +303,7 @@
       .super-footer .sf-socials { justify-content: center; }
       .super-footer .sf-bottom-bar { padding: 25px 20px 0 20px; }
     }
+    
     @media screen and (max-width: 480px) {
       .nav-link { font-size: 14px; }
       .donate-main { padding: 6px 16px; font-size: 12px; }
@@ -323,7 +334,7 @@
   </div>
 </div>
 
-<!-- NAVBAR with mobile toggling -->
+<!-- NAVBAR with hamburger matching reference exactly -->
 <nav class="navbar">
   <div class="logo"><a href="index.html"><img src="./img/logo14.png" alt="BDI Logo"></a></div>
   <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
@@ -376,7 +387,7 @@
     const megaItems = document.querySelectorAll('.has-mega');
     const mobileBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
-    const isMobile = () => window.innerWidth <= 900;
+    const isMobile = () => window.innerWidth <= 850;
     
     function closeAllMegas() { megaItems.forEach(i => i.classList.remove('is-active')); }
     
@@ -435,8 +446,6 @@
           icon.classList.add('fa-bars');
         }
         closeAllMegas();
-      } else if (isMobile() && navLinks && navLinks.classList.contains('active')) {
-        // keep as is for mobile
       }
     });
   })();
