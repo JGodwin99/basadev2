@@ -222,7 +222,7 @@
     .super-footer .sf-subscribe button:hover { background: #e60000; transform: translateY(-2px); }
     .super-footer .sf-bottom-bar { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; padding: 30px 60px 0 60px; text-align: center; font-size: 13px; opacity: 0.7; }
 
-    /* --- RESPONSIVE BREAKPOINTS --- */
+    /* --- RESPONSIVE BREAKPOINTS (Mobile: Mega content Expanded pushes other nav items below) --- */
     @media screen and (max-width: 1100px) {
       .topbar { padding: 10px 30px; }
       .navbar { padding: 0 30px; }
@@ -251,8 +251,24 @@
         width: 100%;
       }
       .nav-links.active { display: flex; }
-      .has-mega { position: relative; width: 100%; border-bottom: 1px solid #eee; }
-      .nav-link { padding: 16px 25px; justify-content: space-between; width: 100%; white-space: normal; background: white; font-size: 16px; }
+      .has-mega { 
+        position: relative; 
+        width: 100%; 
+        border-bottom: 1px solid #eee;
+        display: flex;
+        flex-direction: column;
+      }
+      .nav-link { 
+        padding: 16px 25px; 
+        justify-content: space-between; 
+        width: 100%; 
+        white-space: normal; 
+        background: white;
+        font-size: 16px;
+        order: 1;
+      }
+      /* Mega menu becomes a block that appears BELOW the clicked nav-link,
+         and pushes the subsequent sibling navigation items (other li) down */
       .mega-menu {
         position: relative !important;
         top: 0;
@@ -262,11 +278,21 @@
         background: #f8f8f8;
         border-top: 1px solid #ddd;
         flex-direction: column;
+        order: 2;
       }
-      .has-mega.is-active .mega-menu { display: flex !important; max-height: 65vh; overflow-y: auto; }
+      .has-mega.is-active .mega-menu { 
+        display: flex !important; 
+        max-height: none; 
+        overflow-y: visible;
+        margin-bottom: 0;
+      }
+      /* Ensure Donate Today image area appears first, then grid links */
       .mega-sidebar { width: 100%; padding: 25px; text-align: center; order: 1; }
       .mega-grid { display: flex !important; flex-direction: column !important; padding: 25px !important; gap: 30px !important; order: 2; }
       .mega-col { width: 100%; }
+      
+      /* The remaining .nav-links items (other li) naturally appear below the expanded mega content
+         because they are DOM siblings after the current .has-mega li */
       .main-grid { grid-template-columns: 1fr; }
       .impact-grid { grid-template-columns: repeat(2, 1fr); }
       .process-grid { grid-template-columns: 1fr; gap: 30px; }
@@ -319,7 +345,7 @@
   </div>
 </div>
 
-<!-- NAVBAR -->
+<!-- NAVBAR with mobile menu ordering (expanded mega pushes other links down) -->
 <nav class="navbar">
   <div class="logo"><a href="index.html"><img src="./img/logo14.png" alt="BDI Logo"></a></div>
   <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
@@ -405,6 +431,7 @@
           e.preventDefault();
           e.stopPropagation();
           if (isMobile()) {
+            // On mobile: toggle this mega, close others, and expanded content will push subsequent nav items down
             const wasActive = item.classList.contains('is-active');
             closeAllMegas();
             if (!wasActive) item.classList.add('is-active');
