@@ -12,7 +12,6 @@
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     
     <!-- Owl Carousel -->
@@ -54,7 +53,7 @@
         .mt-5 { margin-top: 3rem !important; }
         .mt-4 { margin-top: 1.5rem !important; }
         
-        /* ========== NAVBAR & TOPBAR STYLES (matching contact page exactly) ========== */
+        /* ========== NAVBAR & TOPBAR STYLES ========== */
         :root {
             --brand-red: #990033;
             --brand-green: #005e4d;
@@ -275,7 +274,7 @@
         .help-item { display: flex; align-items: flex-start; gap: 20px; padding: 25px; text-decoration: none; color: #ffffff; border-radius: 16px; transition: all 0.3s ease; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); }
         .help-item:hover, .help-item.active-item { background-color: rgba(0, 0, 0, 0.3); transform: translateY(-3px); border-color: rgba(255,255,255,0.3); }
         .icon-box { flex-shrink: 0; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.15); border-radius: 16px; transition: all 0.3s ease; }
-        .help-item:hover .icon-box { background: var(--brand-pink, #ae0b49); }
+        .help-item:hover .icon-box { background: #ae0b49; }
         .icon-box img { width: 32px; height: 32px; object-fit: contain; filter: brightness(0) invert(1); }
         .text-box h3 { font-size: 1.2rem; margin: 0 0 8px 0; font-weight: 700; letter-spacing: -0.3px; }
         .text-box h3 span { font-size: 1rem; }
@@ -283,20 +282,120 @@
         @media (max-width: 1024px) { .help-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } .how-help { padding: 50px 30px; } }
         @media (max-width: 768px) { .help-grid { grid-template-columns: 1fr; gap: 15px; } .how-help { padding: 40px 20px; } .help-item { padding: 18px; } .icon-box { width: 50px; height: 50px; } .icon-box img { width: 28px; height: 28px; } }
         
-        /* Footer */
+        /* ========== UPDATED FOOTER - More Visible Social Icons & Quick Links ========== */
         .super-footer { background-color: #064d3b; color: #ffffff; padding: 60px 0 30px 0; }
         .super-footer .sf-container { max-width: 1300px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 40px; gap: 30px; }
         .super-footer .sf-col { flex: 1; min-width: 220px; }
         .super-footer .sf-logo img { max-width: 160px; margin-bottom: 20px; }
-        .super-footer .sf-title { color: #22c4a9; font-size: 16px; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; }
-        .super-footer .sf-links { list-style: none; }
-        .super-footer .sf-links li a { color: #fff; text-decoration: none; opacity: 0.8; font-size: 13px; transition: 0.2s; }
-        .super-footer .sf-links li a:hover { opacity: 1; color: #22c4a9; }
-        .super-footer .sf-subscribe input { width: 100%; padding: 12px; margin-bottom: 12px; background: rgba(255,255,255,0.08); border: 1px solid rgba(34,196,169,0.4); border-radius: 8px; color: white; }
-        .super-footer .sf-subscribe button { background: #bd0000; border: none; padding: 12px; border-radius: 8px; color: white; font-weight: 700; cursor: pointer; width: 100%; }
-        .super-footer .sf-bottom-bar { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; margin-top: 35px; font-size: 12px; opacity: 0.7; }
+        .super-footer .sf-description { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 20px; max-width: 280px; }
+        
+        /* Social Icons - More Visible */
+        .super-footer .sf-socials { display: flex; gap: 12px; margin-top: 5px; }
+        .super-footer .sf-socials a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 50%;
+            color: #ffffff;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .super-footer .sf-socials a:hover {
+            background: #bd0000;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+        }
+        
+        /* Quick Links - More Visible like contact info */
+        .super-footer .sf-title { 
+            color: #22c4a9; 
+            font-size: 18px; 
+            font-weight: 700; 
+            margin-bottom: 20px; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .super-footer .sf-links { list-style: none; padding: 0; margin: 0; }
+        .super-footer .sf-links li { margin-bottom: 12px; }
+        .super-footer .sf-links a { 
+            color: rgba(255,255,255,0.9); 
+            text-decoration: none; 
+            font-size: 14px; 
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+        .super-footer .sf-links a:hover { 
+            color: #22c4a9; 
+            padding-left: 6px; 
+            opacity: 1;
+        }
+        
+        /* Locations - Contact Info Styling (More Visible) */
+        .super-footer .sf-loc-item { margin-bottom: 20px; }
+        .super-footer .sf-loc-item h5 { 
+            font-size: 15px; 
+            font-weight: 700; 
+            margin-bottom: 8px; 
+            color: #22c4a9;
+        }
+        .super-footer .sf-loc-item p { 
+            margin: 0; 
+            font-size: 13px; 
+            color: rgba(255,255,255,0.85); 
+            line-height: 1.5;
+        }
+        
+        /* Newsletter */
+        .super-footer .sf-newsletter-text { 
+            font-size: 14px; 
+            margin-bottom: 15px; 
+            color: rgba(255,255,255,0.85);
+        }
+        .super-footer .sf-subscribe input { 
+            width: 100%; 
+            padding: 12px; 
+            margin-bottom: 12px; 
+            background: rgba(255,255,255,0.1); 
+            border: 1px solid rgba(34,196,169,0.4); 
+            border-radius: 8px; 
+            color: white; 
+            font-size: 14px;
+        }
+        .super-footer .sf-subscribe input::placeholder { color: rgba(255,255,255,0.5); }
+        .super-footer .sf-subscribe button { 
+            background: #bd0000; 
+            border: none; 
+            padding: 12px; 
+            border-radius: 8px; 
+            color: white; 
+            font-weight: 700; 
+            cursor: pointer; 
+            width: 100%; 
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        .super-footer .sf-subscribe button:hover { background: #e60000; transform: translateY(-2px); }
+        
+        /* Bottom Bar */
+        .super-footer .sf-bottom-bar { 
+            text-align: center; 
+            border-top: 1px solid rgba(255,255,255,0.15); 
+            padding-top: 25px; 
+            margin-top: 35px; 
+            font-size: 12px; 
+            color: rgba(255,255,255,0.6);
+        }
         @media (max-width: 992px) { .super-footer .sf-container { padding: 0 30px; } }
-        @media (max-width: 768px) { .super-footer .sf-container { flex-direction: column; text-align: center; padding: 0 20px; } .super-footer .sf-socials { justify-content: center; } }
+        @media (max-width: 768px) { 
+            .super-footer .sf-container { flex-direction: column; text-align: center; padding: 0 20px; } 
+            .super-footer .sf-socials { justify-content: center; }
+            .super-footer .sf-description { margin: 0 auto 20px auto; text-align: center; }
+        }
         
         /* Partners Carousel */
         .event { padding: 50px 0; background: #f5f5f5; }
@@ -308,7 +407,7 @@
         #spinner { opacity: 0; visibility: hidden; transition: opacity .8s ease-out; z-index: 99999; }
         #spinner.show { visibility: visible; opacity: 1; }
         
-        /* Responsive Navbar (exactly matching contact page) */
+        /* Responsive Navbar */
         @media screen and (max-width: 850px) {
             .mobile-menu-btn { display: flex; }
             .nav-links {
@@ -388,7 +487,7 @@
         </div>
     </div>
     
-    <!-- Navbar (exactly matching contact page structure) -->
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo"><a href="index.html"><img src="./img/logo14.png" alt="BDI Logo"></a></div>
         <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
@@ -453,8 +552,54 @@
     <!-- Partners -->
     <div class="container-fluid event"><div class="container"><div class="text-center mx-auto mb-4"><h5 class="text-uppercase" style="font-size: 2rem; color: #005e4d;">Our Partners</h5><h2 class="mb-3" style="font-size: 1.5rem;">“Together with our partners, we create lasting solutions that change lives.”</h2></div><div class="owl-carousel event-carousel"><div class="event-item"><img src="img/p1.jpg" alt="Partner"></div><div class="event-item"><img src="img/p2.jpg" alt="Partner"></div><div class="event-item"><img src="img/p3.jpg" alt="Partner"></div><div class="event-item"><img src="img/p4.jpg" alt="Partner"></div><div class="event-item"><img src="img/p5.jpg" alt="Partner"></div><div class="event-item"><img src="img/p6.jpg" alt="Partner"></div><div class="event-item"><img src="img/p7.jpg" alt="Partner"></div></div></div></div>
     
-    <!-- Footer -->
-    <footer class="super-footer"><div class="sf-container"><div class="sf-col"><div class="sf-logo"><img src="./img/logo14-1.png" alt="BDI"></div><p class="sf-description">BASA Development Initiatives (BDI) is an NGO dedicated to building a more inclusive, resilient, and sustainable Liberia.</p><div class="sf-socials"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></div></div><div class="sf-col"><h4 class="sf-title">Quick Links</h4><ul class="sf-links"><li><a href="our-values.html">Our Values</a></li><li><a href="our-team">Our Team</a></li><li><a href="partners">Partner With Us</a></li><li><a href="testimonials">Testimonials</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="sf-col"><h4 class="sf-title">Locations</h4><div class="sf-loc-item"><h5>HEADQUARTER: Monrovia, Liberia</h5><p>Morris Villa, ELWA Community<br>Email: info@basadev.org<br>Tel: +231 886 349 962 / +231 88 675 7435</p></div><div class="sf-loc-item"><h5>State of Minnesota, USA</h5><p>Regional Coordination Office<br>Tel: +1 (651) 235-9896<br>Email: info@basadev.org</p></div></div><div class="sf-col"><h4 class="sf-title">Stay Updated</h4><p class="sf-newsletter-text">Join our newsletter for the latest impact updates.</p><form class="sf-subscribe" onsubmit="return false;"><input type="email" placeholder="Your email address" required><button type="submit">Subscribe</button></form></div></div><div class="sf-bottom-bar"><p>&copy; 2026 BASA Development Initiatives (BDI). Registered NGO in Liberia</p></div></footer>
+    <!-- Footer - Enhanced Visibility -->
+    <footer class="super-footer">
+        <div class="sf-container">
+            <div class="sf-col">
+                <div class="sf-logo"><img src="./img/logo14-1.png" alt="BDI"></div>
+                <p class="sf-description">BASA Development Initiatives (BDI) is an NGO dedicated to building a more inclusive, resilient, and sustainable Liberia.</p>
+                <div class="sf-socials">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="sf-col">
+                <h4 class="sf-title">Quick Links</h4>
+                <ul class="sf-links">
+                    <li><a href="our-values.html">Our Values</a></li>
+                    <li><a href="our-team">Our Team</a></li>
+                    <li><a href="partners">Partner With Us</a></li>
+                    <li><a href="testimonials">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="sf-col">
+                <h4 class="sf-title">Locations</h4>
+                <div class="sf-loc-item">
+                    <h5>HEADQUARTER: Monrovia, Liberia</h5>
+                    <p>Morris Villa, ELWA Community<br>Email: info@basadev.org<br>Tel: +231 886 349 962 / +231 88 675 7435</p>
+                </div>
+                <div class="sf-loc-item">
+                    <h5>State of Minnesota, USA</h5>
+                    <p>Regional Coordination Office<br>Tel: +1 (651) 235-9896<br>Email: info@basadev.org</p>
+                </div>
+            </div>
+            <div class="sf-col">
+                <h4 class="sf-title">Stay Updated</h4>
+                <p class="sf-newsletter-text">Join our newsletter for the latest impact updates.</p>
+                <form class="sf-subscribe" onsubmit="return false;">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="sf-bottom-bar">
+            <p>&copy; 2026 BASA Development Initiatives (BDI). Registered NGO in Liberia</p>
+        </div>
+    </footer>
     
     <a href="#" class="btn btn-primary btn-md-square back-to-top" style="position: fixed; bottom: 30px; right: 20px;"><i class="fa fa-arrow-up"></i></a>
     
@@ -486,15 +631,13 @@
         // Spinner
         setTimeout(() => document.getElementById('spinner')?.classList.remove('show'), 500);
         
-        // Mobile menu - matches contact page exactly
+        // Mobile menu
         (function() {
             const megaItems = document.querySelectorAll('.has-mega');
             const mobileBtn = document.getElementById('mobileMenuBtn');
             const navLinks = document.getElementById('navLinks');
             const isMobile = () => window.innerWidth <= 850;
-            
             function closeAllMegas() { megaItems.forEach(i => i.classList.remove('is-active')); }
-            
             megaItems.forEach(item => {
                 const link = item.querySelector('.nav-link');
                 if (link) {
@@ -513,7 +656,6 @@
                     });
                 }
             });
-            
             if (mobileBtn && navLinks) {
                 mobileBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
@@ -529,7 +671,6 @@
                     }
                 });
             }
-            
             document.addEventListener('click', (e) => {
                 if (!e.target.closest('.navbar')) {
                     closeAllMegas();
@@ -540,7 +681,6 @@
                     }
                 }
             });
-            
             window.addEventListener('resize', () => {
                 if (!isMobile() && navLinks) {
                     navLinks.classList.remove('active');
