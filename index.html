@@ -44,7 +44,6 @@
         .align-items-center { align-items: center !important; }
         .justify-content-center { justify-content: center !important; }
         .justify-content-end { justify-content: flex-end !important; }
-        .justify-content-between { justify-content: space-between !important; }
         .flex-wrap { flex-wrap: wrap !important; }
         .py-5 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
         .px-5 { padding-left: 3rem !important; padding-right: 3rem !important; }
@@ -55,55 +54,147 @@
         .mt-5 { margin-top: 3rem !important; }
         .mt-4 { margin-top: 1.5rem !important; }
         
-        /* ========== ORIGINAL STYLE.CSS ========== */
+        /* ========== NAVBAR & TOPBAR STYLES (matching contact page exactly) ========== */
         :root {
-            --primary-green: #005e4d;
-            --hover-green: #004a3d;
-            --brand-pink: #ae0b49;
-            --bg-tan: #e9e6d1;
+            --brand-red: #990033;
+            --brand-green: #005e4d;
+            --sidebar-tan: #e9e6d1;
             --text-dark: #333;
-            --border-gray: #ddd;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
         }
         
         /* Topbar */
-        .topbar { background: var(--primary-green) !important; padding: 8px 40px; }
-        .topbar-info i { font-family: "Font Awesome 6 Free" !important; font-weight: 900; color: #ffffff; }
-        .topbar-icon a { color: #ffffff; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.3); transition: 0.3s ease; border-radius: 8px; }
-        .topbar-icon a:hover { background-color: #ffffff; color: #005e4d; }
-        .topbar-icon a:hover i { color: #005e4d; }
-        @media (max-width: 992px) { .topbar { padding: 8px 20px; } }
+        .topbar {
+            background-color: var(--brand-red);
+            padding: 12px 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--white);
+            gap: 15px;
+        }
+        .topbar-info { display: flex; flex-wrap: wrap; gap: 25px; font-size: 14px; }
+        .topbar-info a { color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: opacity 0.3s; }
+        .topbar-info a:hover { opacity: 0.85; }
+        .topbar-socials { display: flex; flex-wrap: wrap; gap: 12px; }
+        .social-btn {
+            width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.3);
+            display: flex; align-items: center; justify-content: center;
+            color: white; text-decoration: none; border-radius: 50%;
+            font-size: 14px; transition: all 0.3s;
+        }
+        .social-btn:hover { background: white; color: var(--brand-red); border-color: white; transform: translateY(-2px); }
         
         /* Navbar */
-        .navbar { background: #fff; border-bottom: 1px solid var(--border-gray); position: relative; }
-        .nav-container { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 80px; padding: 0 40px; }
-        .nav-links { display: flex; list-style: none; margin: 0; padding: 0; height: 100%; gap: 28px; }
-        .has-megamenu { position: static; }
-        .nav-item { text-decoration: none; color: var(--text-dark); font-weight: 600; padding: 0 25px; display: flex; align-items: center; height: 100%; transition: background 0.3s ease; cursor: pointer; }
-        .nav-item:hover { background-color: #f1f1f1; }
-        .arrow { font-size: 10px; margin-left: 8px; }
-        .megamenu { position: absolute; top: 80px; left: 0; width: 100%; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: none; z-index: 1000; border-top: 1px solid var(--border-gray); }
-        .has-megamenu:hover .megamenu { display: block; animation: fadeIn 0.2s ease-out; }
-        .megamenu-wrapper { display: flex; max-width: 1400px; margin: 0 auto; }
-        .mega-sidebar { background-color: var(--bg-tan); padding: 40px; width: 320px; flex-shrink: 0; }
-        .promo-img { width: 100%; border-radius: 4px; margin-bottom: 20px; }
-        .promo-title { margin: 0 0 10px; font-size: 1.4rem; font-weight: 700; }
-        .promo-text { font-size: 1rem; color: #555; margin-bottom: 20px; }
-        .btn-donate-green { display: inline-block; background: var(--primary-green); color: white; padding: 12px 28px; text-decoration: none; border-radius: 30px; font-weight: bold; }
-        .btn-donate-green:hover { background: var(--hover-green); }
-        .mega-content { display: flex; flex: 1; padding: 30px 50px; justify-content: space-between; }
-        .mega-column { flex: 1; padding-right: 20px; }
-        .column-title { color: var(--primary-green); font-size: 1.2rem; font-weight: 700; margin: 0 0 15px; padding-left: 15px; position: relative; }
-        .column-title::before { content: ">"; position: absolute; left: 0; font-size: 0.9rem; top: 0px; }
-        .mega-column ul { list-style: none; padding: 0; margin: 0; }
-        .mega-column ul li { margin-bottom: 10px; }
-        .mega-column ul li a { text-decoration: none; color: #444; font-size: 0.9rem; font-weight: 600; transition: color 0.2s; }
-        .mega-column ul li a:hover { color: var(--primary-green); text-decoration: underline; }
-        .margin-top { margin-top: 25px; }
-        .nav-utils { display: flex; align-items: center; gap: 20px; }
-        .btn-donate-header { background-color: var(--brand-pink); color: white; padding: 10px 28px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 14px; }
-        .btn-donate-header:hover { background-color: #8e0038; }
-        .search-btn { background: #f5f5f5; border: 1px solid #e0e0e0; padding: 8px 12px; cursor: pointer; border-radius: 8px; }
-        @media (max-width: 992px) { .nav-container { padding: 0 20px; } .nav-links { gap: 15px; } }
+        .navbar {
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            min-height: 90px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            flex-wrap: wrap;
+        }
+        .logo img { height: 75px; display: block; max-width: 100%; }
+        .mobile-menu-btn {
+            display: none;
+            background: var(--brand-red);
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 1001;
+        }
+        .mobile-menu-btn:hover { background: var(--brand-green); }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+            margin: 0;
+            padding: 0;
+        }
+        .has-mega { position: static; }
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 10px 0;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        .nav-link:hover { color: var(--brand-red); }
+        .nav-link i { font-size: 12px; transition: transform 0.3s; }
+        
+        /* Mega Menu */
+        .mega-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            display: none;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            border-top: 1px solid #eee;
+            z-index: 1001;
+        }
+        .has-mega.is-active .mega-menu { display: flex; flex-wrap: wrap; }
+        .has-mega.is-active .nav-link { color: var(--brand-green); }
+        .has-mega.is-active .nav-link i { transform: rotate(180deg); }
+        .mega-sidebar {
+            background-color: var(--sidebar-tan);
+            width: 300px;
+            padding: 35px;
+            flex-shrink: 0;
+        }
+        .sidebar-img { width: 100%; border-radius: 10px; margin-bottom: 20px; }
+        .sidebar-title { font-weight: 700; font-size: 18px; margin-bottom: 10px; }
+        .sidebar-text { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+        .btn-green-sm {
+            background-color: var(--brand-green);
+            color: white;
+            padding: 8px 22px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .btn-green-sm:hover { background-color: var(--brand-red); transform: translateY(-2px); }
+        .mega-grid {
+            flex-grow: 1;
+            padding: 35px 50px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        .mega-col h4 { color: var(--brand-green); font-size: 15px; font-weight: 700; margin-bottom: 18px; }
+        .mega-col ul { list-style: none; }
+        .mega-col ul li { margin-bottom: 12px; }
+        .mega-col ul li a { text-decoration: none; color: var(--brand-green); font-size: 14px; font-weight: 500; transition: 0.2s; }
+        .mega-col ul li a:hover { color: var(--brand-red); padding-left: 5px; }
+        .nav-right { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+        .search-btn { background: #f5f5f5; border: 1px solid #e0e0e0; padding: 8px 12px; cursor: pointer; border-radius: 8px; transition: all 0.3s; }
+        .search-btn:hover { background: #e8e8e8; }
+        .donate-main { background: var(--brand-red); color: white; padding: 10px 26px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; }
+        .donate-main:hover { background: var(--brand-green); transform: translateY(-2px); }
         
         /* Hero Banner */
         .hero-banner {
@@ -184,13 +275,13 @@
         .help-item { display: flex; align-items: flex-start; gap: 20px; padding: 25px; text-decoration: none; color: #ffffff; border-radius: 16px; transition: all 0.3s ease; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); }
         .help-item:hover, .help-item.active-item { background-color: rgba(0, 0, 0, 0.3); transform: translateY(-3px); border-color: rgba(255,255,255,0.3); }
         .icon-box { flex-shrink: 0; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.15); border-radius: 16px; transition: all 0.3s ease; }
-        .help-item:hover .icon-box { background: var(--brand-pink); }
+        .help-item:hover .icon-box { background: var(--brand-pink, #ae0b49); }
         .icon-box img { width: 32px; height: 32px; object-fit: contain; filter: brightness(0) invert(1); }
         .text-box h3 { font-size: 1.2rem; margin: 0 0 8px 0; font-weight: 700; letter-spacing: -0.3px; }
         .text-box h3 span { font-size: 1rem; }
         .text-box p { font-size: 0.85rem; line-height: 1.5; margin: 0; opacity: 0.85; }
         @media (max-width: 1024px) { .help-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } .how-help { padding: 50px 30px; } }
-        @media (max-width: 768px) { .help-grid { grid-template-columns: 1fr; gap: 15px; } .how-help { padding: 40px 20px; } .help-item { padding: 18px; } .icon-box { width: 50px; height: 50px; } .icon-box img { width: 28px; height: 28px; } .text-box h3 { font-size: 1rem; } .text-box p { font-size: 0.75rem; } }
+        @media (max-width: 768px) { .help-grid { grid-template-columns: 1fr; gap: 15px; } .how-help { padding: 40px 20px; } .help-item { padding: 18px; } .icon-box { width: 50px; height: 50px; } .icon-box img { width: 28px; height: 28px; } }
         
         /* Footer */
         .super-footer { background-color: #064d3b; color: #ffffff; padding: 60px 0 30px 0; }
@@ -213,47 +304,48 @@
         .event-item img { width: 100%; border-radius: 12px; height: 100px; object-fit: contain; background: white; padding: 10px; }
         @media (max-width: 768px) { .event .container { padding: 0 20px; } }
         
-        /* Mobile Menu Button */
-        .mobile-menu-btn { display: none; background: #990033; border: none; width: 48px; height: 48px; border-radius: 8px; color: white; font-size: 24px; cursor: pointer; align-items: center; justify-content: center; z-index: 1001; }
-        .mobile-menu-btn:hover { background: #005e4d; }
+        /* Spinner */
+        #spinner { opacity: 0; visibility: hidden; transition: opacity .8s ease-out; z-index: 99999; }
+        #spinner.show { visibility: visible; opacity: 1; }
         
-        /* Responsive Navbar - Matches contact.html exactly */
+        /* Responsive Navbar (exactly matching contact page) */
         @media screen and (max-width: 850px) {
             .mobile-menu-btn { display: flex; }
-            .nav-container { flex-wrap: wrap; padding: 0 15px; }
-            .nav-links { 
-                display: none; 
-                position: absolute; 
-                top: 100%; 
-                left: 0; 
-                right: 0; 
-                background: white; 
-                flex-direction: column; 
-                max-height: 85vh; 
-                overflow-y: auto; 
-                z-index: 9999; 
-                box-shadow: 0 20px 30px rgba(0,0,0,0.2); 
-                border-top: 3px solid #990033; 
-                width: 100%; 
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                max-height: 85vh;
+                overflow-y: auto;
+                z-index: 9999;
+                box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+                border-top: 3px solid var(--brand-red);
+                padding: 0;
                 gap: 0;
+                width: 100%;
             }
             .nav-links.active { display: flex; }
-            .has-megamenu { 
+            .has-mega { 
                 position: relative; 
                 width: 100%; 
-                border-bottom: 1px solid #eee; 
-                display: flex; 
-                flex-direction: column; 
+                border-bottom: 1px solid #eee;
+                display: flex;
+                flex-direction: column;
             }
-            .nav-item { 
+            .nav-link { 
                 padding: 16px 25px; 
                 justify-content: space-between; 
                 width: 100%; 
-                background: white; 
-                order: 1; 
-                height: auto;
+                white-space: normal; 
+                background: white;
+                font-size: 16px;
+                order: 1;
             }
-            .megamenu { 
+            .mega-menu { 
                 position: relative !important; 
                 top: 0; 
                 left: 0; 
@@ -263,22 +355,19 @@
                 border-top: 1px solid #ddd; 
                 flex-direction: column; 
                 order: 2; 
-                box-shadow: none; 
-                margin-top: 0;
+                box-shadow: none;
             }
-            .has-megamenu:hover .megamenu { display: none; }
-            .has-megamenu.is-active .megamenu { display: flex !important; max-height: none; overflow-y: visible; margin-bottom: 0; }
-            .megamenu-wrapper { flex-direction: column; }
+            .has-mega.is-active .mega-menu { 
+                display: flex !important; 
+                max-height: none; 
+                overflow-y: visible; 
+                margin-bottom: 0;
+            }
             .mega-sidebar { width: 100%; padding: 25px; text-align: center; order: 1; }
-            .mega-content { flex-direction: column !important; padding: 25px !important; gap: 30px !important; order: 2; }
-            .mega-column { width: 100%; }
+            .mega-grid { display: flex !important; flex-direction: column !important; padding: 25px !important; gap: 30px !important; order: 2; }
+            .mega-col { width: 100%; }
             .topbar { display: none; }
-            .hero-banner { margin-top: 0; }
         }
-        
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        #spinner { opacity: 0; visibility: hidden; transition: opacity .8s ease-out; z-index: 99999; }
-        #spinner.show { visibility: visible; opacity: 1; }
     </style>
 </head>
 <body>
@@ -286,25 +375,38 @@
     
     <!-- Topbar -->
     <div class="topbar">
-        <div class="row align-items-center">
-            <div class="col-md-8"><div class="topbar-info d-flex flex-wrap" style="font-size: 14px;"><a href="#" class="text-light me-3 d-flex align-items-center"><i class="fa-solid fa-envelope me-2"></i><span>info@basadev.org</span></a><a href="#" class="text-light d-flex align-items-center"><i class="fa-solid fa-phone me-2"></i><span>+231 779 205 152</span></a></div></div>
-            <div class="col-md-4"><div class="topbar-icon d-flex justify-content-end"><a href="#" class="btn-square me-1"><i class="fa-brands fa-facebook-f"></i></a><a href="#" class="btn-square me-1"><i class="fa-brands fa-twitter"></i></a><a href="#" class="btn-square me-1"><i class="fa-brands fa-instagram"></i></a><a href="#" class="btn-square me-1"><i class="fa-brands fa-pinterest"></i></a><a href="#" class="btn-square"><i class="fa-brands fa-linkedin-in"></i></a></div></div>
+        <div class="topbar-info">
+            <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
+            <a href="tel:+231779205152"><i class="fa-solid fa-phone"></i> +231 779 205 152</a>
+        </div>
+        <div class="topbar-socials">
+            <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
     </div>
     
-    <!-- Navbar -->
+    <!-- Navbar (exactly matching contact page structure) -->
     <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="navbar-brand"><img src="./img/logo14.png" alt="Logo" style="height: 75px;"></a>
-            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
-            <ul class="nav-links" id="navLinks">
-                <li class="has-megamenu"><a href="#" class="nav-item trigger"><b>Our Work</b><span class="arrow">▼</span></a><div class="megamenu"><div class="megamenu-wrapper"><div class="mega-sidebar"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="promo-img"><h3 class="promo-title">Donate Today</h3><p class="promo-text">Give your support where it's needed most</p><a href="all donate.html" class="btn-donate-green">Donate now</a></div><div class="mega-content"><div class="mega-column"><h3 class="column-title"><u>What We Do</u></h3><ul><li><a href="agriculture.html">Agriculture & Agribusiness</a></li><li><a href="health.html">Health & Nutrition</a></li><li><a href="education.html">Education</a></li><li><a href="environment.html">Environment & Climate</a></li></ul><h3 class="column-title margin-top"><u>Where We Work</u></h3><ul><li><a href="#">View all countries</a></li></ul></div><div class="mega-column"><h3 class="column-title"><u>Development & Inclusion</u></h3><ul><li><a href="gender-youth.html">Gender & Youth Empowerment</a></li><li><a href="fisheries.html">Fisheries & Aquaculture</a></li><li><a href="disability.html">Disability Inclusion</a></li><li><a href="partnership.html">Research & Partnership</a></li></ul></div><div class="mega-column"><h3 class="column-title"><u>Latest News & Updates</u></h3><ul><li><a href="all-news.html">View All Our News</a></li></ul></div></div></div></div></li>
-                <li class="has-megamenu"><a href="#" class="nav-item trigger"><b>About Us</b><span class="arrow">▼</span></a><div class="megamenu"><div class="megamenu-wrapper"><div class="mega-sidebar"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="promo-img"><h3 class="promo-title">Donate Today</h3><p class="promo-text">Give your support where it's needed most</p><a href="#" class="btn-donate-green">Donate now</a></div><div class="mega-content"><div class="mega-column"><h3 class="column-title"><u>Who we are</u></h3><ul><li><a href="our-values.html">Our Values</a></li><li><a href="founding-story.html">Our founding Story</a></li><li><a href="testimonials.html">Testimonials</a></li></ul><h3 class="column-title"><u>Governance</u></h3><ul><li><a href="governance-structure.html">Our Governance Structure</a></li><li><a href="board.html">Our Board of Directors</a></li><li><a href="our-ceo.html">Our CEO</a></li><li><a href="our-team.html">Our Team</a></li></ul></div><div class="mega-column"><h3 class="column-title"><u>How We Raise Money</u></h3><ul><li><a href="iinstitutional-donors.hmtl">Institutional Donors</a></li><li><a href="partners.html">Partners</a></li><li><a href="individual-donations.html">Individual Donations</a></li></ul></div><div class="mega-column"><h3 class="column-title"><u>Transparency and accountability</u></h3><ul><li><a href="annual-reports.html">Annual Reports</a></li><li><a href="how-donations-are-spent.html">How donations are spent</a></li><li><a href="audited-financials.html">Audited Financial Statements</a></li></ul></div></div></div></div></li>
-                <li class="has-megamenu"><a href="#" class="nav-item trigger"><b>Support Us</b><span class="arrow">▼</span></a><div class="megamenu"><div class="megamenu-wrapper"><div class="mega-sidebar"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="promo-img"><h3 class="promo-title">Donate Today</h3><p class="promo-text">Give your support where it's needed most</p><a href="all donate.html" class="btn-donate-green">Donate now</a></div><div class="mega-content"><div class="mega-column"><h3 class="column-title"><u>Donate Now</u></h3><ul><li><a href="safe drug victims.html">Donate to safe drug victims</a></li><li><a href="End Period Poverty.html">End Period Poverty</a></li><li><a href="Women and Youth in Agribusiness.html">Support Women in Agribusiness</a></li></ul><h3 class="column-title"><u>Corporate support</u></h3><ul><li><a href="Become a Corporate Partner.html">Become a corporate supporter</a></li><li><a href="Partner With Us.html">Partner with us</a></li><li><a href="Staff Fundraising.html">Staff fundraising</a></li><li><a href="Payroll Giving.html">Payroll Giving</a></li><li><a href="Corporate Donations.html">Make a corporate donation</a></li></ul></div><div class="mega-column"><h3 class="column-title"><u>Fundraise for BDI</u></h3><ul><li><a href="Start your own fundraiser.html">Start your own fundraiser</a></li><li><a href="Find a Friend to Sponsor.html">Find a friend to sponsor</a></li></ul><h3 class="column-title"><u>Volunteer Remotely</u></h3><ul><li><a href="Volunteer Remotely.html">You can Volunteer with us</a></li></ul></div><div class="mega-column"><h3 class="column-title"><u>Other ways to give</u></h3><ul><li><a href="Donate in Memory.html">Donate in memory</a></li><li><a href="Leave a Gift in Your Will.html">Leave a gift in your Will</a></li><li><a href="Donate Your Tax Refund.html">Your donation and tax back</a></li></ul></div></div></div></div></li>
-                <li class="has-megamenu"><a href="#" class="nav-item trigger"><b>Resource Centre</b><span class="arrow">▼</span></a><div class="megamenu"><div class="megamenu-wrapper"><div class="mega-sidebar"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="promo-img"><h3 class="promo-title">Donate Today</h3><p class="promo-text">Give your support where it's needed most</p><a href="#" class="btn-donate-green">Donate now</a></div><div class="mega-content"><div class="mega-column"><h3 class="column-title"><u>Knowledge Hub Resources</u></h3><ul><li><a href="#">Research</a></li><li><a href="#">Evaluations</a></li><li><a href="newsletter.html">Newsletters</a></li></ul></div></div></div></div></li>
-            </ul>
-            <div class="nav-utils"><button class="search-btn">🔍</button><a href="all donate.html" class="btn-donate-header">Donate Now</a></div>
-        </div>
+        <div class="logo"><a href="index.html"><img src="./img/logo14.png" alt="BDI Logo"></a></div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li class="has-mega"><a class="nav-link"><b>Our Work</b> <i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu"><div class="mega-sidebar"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>What We Do</u></h4><ul><li><a href="agriculture.html">Agriculture & Agribusiness</a></li><li><a href="health.html">Health & Nutrition</a></li><li><a href="education.html">Education</a></li><li><a href="environment.html">Environment & Climate</a></li></ul><h4 style="margin-top:20px;"><u>Where We Work</u></h4><ul><li><a href="#">View all countries</a></li></ul></div><div class="mega-col"><h4><u>Development & Inclusion</u></h4><ul><li><a href="gender-youth.html">Gender & Youth Empowerment</a></li><li><a href="fisheries.html">Fisheries & Aquaculture</a></li><li><a href="disability.html">Disability Inclusion</a></li><li><a href="partnership.html">Research & Partnership</a></li></ul></div><div class="mega-col"><h4><u>Latest News & Updates</u></h4><ul><li><a href="all-news.html">View All Our News</a></li></ul></div></div></div>
+            </li>
+            <li class="has-mega"><a class="nav-link"><b>About Us</b> <i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu"><div class="mega-sidebar"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Who we are</u></h4><ul><li><a href="our-values.html">Our Values</a></li><li><a href="founding-story.html">Our founding Story</a></li><li><a href="testimonials.html">Testimonials</a></li></ul><h4 style="margin-top:20px;"><u>Governance</u></h4><ul><li><a href="governance-structure.html">Governance Structure</a></li><li><a href="board.html">Board of Directors</a></li><li><a href="our-ceo.html">Our CEO</a></li><li><a href="our-team.html">Our Team</a></li></ul></div><div class="mega-col"><h4><u>How We Raise Money</u></h4><ul><li><a href="institutional-donors.html">Institutional Donors</a></li><li><a href="partners.html">Partners</a></li><li><a href="individual-donations.html">Individual Donations</a></li></ul></div><div class="mega-col"><h4><u>Transparency & accountability</u></h4><ul><li><a href="annual-reports.html">Annual Reports</a></li><li><a href="how-donations-are-spent.html">How donations are spent</a></li><li><a href="audited-financials.html">Audited Financials</a></li></ul></div></div></div>
+            </li>
+            <li class="has-mega"><a class="nav-link"><b>Support us</b> <i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu"><div class="mega-sidebar"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Donate Now</u></h4><ul><li><a href="safe drug victims.html">Donate to safe drug victims</a></li><li><a href="End Period Poverty.html">End Period Poverty</a></li><li><a href="Women and Youth in Agribusiness.html">Support Women in Agribusiness</a></li></ul><h4 style="margin-top:20px;"><u>Corporate support</u></h4><ul><li><a href="Become a Corporate Partner.html">Become a corporate supporter</a></li><li><a href="Partner With Us.html">Partner with us</a></li><li><a href="Staff Fundraising.html">Staff Fundraising</a></li><li><a href="Payroll Giving.html">Payroll Giving</a></li><li><a href="Corporate Donations.html">Make a Corperate Donation</a></li></ul></div><div class="mega-col"><h4><u>Fundraise for BDI</u></h4><ul><li><a href="Start your own fundraiser.html">Start your own fundraiser</a></li><li><a href="Find a Friend to Sponsor.html">Find a friend to sponsor</a></li></ul><h4 style="margin-top:20px;"><u>Volunteer Remotely</u></h4><ul><li><a href="Volunteer Remotely.html">You can volunteer with us</a></li></ul></div><div class="mega-col"><h4><u>Other ways to give</u></h4><ul><li><a href="Donate in Memory.html">Donate in memory</a></li><li><a href="Leave a Gift in Your Will.html">Leave a gift in your Will</a></li><li><a href="Donate Your Tax Refund.html">Donate Your Tax Refund</a></li></ul></div></div></div>
+            </li>
+            <li class="has-mega"><a class="nav-link"><b>Resource Centre</b> <i class="fa-solid fa-caret-down"></i></a>
+                <div class="mega-menu"><div class="mega-sidebar"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Knowledge Hub Resources</u></h4><ul><li><a href="#">Research</a></li><li><a href="#">Evaluations</a></li><li><a href="newsletter.html">Newsletters</a></li></ul></div></div></div>
+            </li>
+        </ul>
+        <div class="nav-right"><button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="donate-main">Donate Now</a></div>
     </nav>
     
     <!-- Hero Banner -->
@@ -336,7 +438,7 @@
     <!-- Our Impact -->
     <div class="bdi-impa"><div class="bdi-impa-container"><h1 class="bdi-impa-title">Our Impact</h1><div class="bdi-impa-grid"><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-tree"></i></div><h3 class="bdi-impa-number">5,000+</h3><p class="bdi-impa-label">Trees Planted</p></div><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-seedling"></i></div><h3 class="bdi-impa-number">1,200</h3><p class="bdi-impa-label">Farmers Supported</p></div><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-school"></i></div><h3 class="bdi-impa-number">15</h3><p class="bdi-impa-label">Schools Partnered</p></div><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-user-friends"></i></div><h3 class="bdi-impa-number">20</h3><p class="bdi-impa-label">Youth & Women-led Agribusinesses</p></div></div></div></div>
     
-    <!-- How You Can Help - 6 items with proper icons -->
+    <!-- How You Can Help -->
     <div class="how-help">
         <div class="help-grid">
             <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/4213/4213645.png" alt="Gift"></div><div class="text-box"><h3>Buy a gift <span>›</span></h3><p>With an extensive range of alternative gifts, we have something to suit everybody.</p></div></a>
@@ -384,9 +486,9 @@
         // Spinner
         setTimeout(() => document.getElementById('spinner')?.classList.remove('show'), 500);
         
-        // Mobile menu - matches contact.html exactly (uses .is-active class)
+        // Mobile menu - matches contact page exactly
         (function() {
-            const megaItems = document.querySelectorAll('.has-megamenu');
+            const megaItems = document.querySelectorAll('.has-mega');
             const mobileBtn = document.getElementById('mobileMenuBtn');
             const navLinks = document.getElementById('navLinks');
             const isMobile = () => window.innerWidth <= 850;
@@ -394,7 +496,7 @@
             function closeAllMegas() { megaItems.forEach(i => i.classList.remove('is-active')); }
             
             megaItems.forEach(item => {
-                const link = item.querySelector('.trigger');
+                const link = item.querySelector('.nav-link');
                 if (link) {
                     link.addEventListener('click', (e) => {
                         e.preventDefault();
