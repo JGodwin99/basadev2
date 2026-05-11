@@ -105,7 +105,7 @@
         .search-btn { background: #f5f5f5; border: 1px solid #e0e0e0; padding: 8px 12px; cursor: pointer; border-radius: 8px; }
         @media (max-width: 992px) { .nav-container { padding: 0 20px; } }
         
-        /* Hero Banner - Full width with text left and donation right - Reduced margins */
+        /* Hero Banner */
         .hero-banner {
             background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('img/BDI-african-child.jpg') center/cover no-repeat;
             min-height: 85vh;
@@ -114,52 +114,17 @@
             padding: 0 60px;
             position: relative;
         }
-        .hero-banner .container-fluid {
-            width: 100%;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-        .hero-flex {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-        .hero-left {
-            flex: 1.2;
-            color: white;
-        }
-        .hero-left h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 900;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            color: white;
-        }
-        .hero-right {
-            flex: 0.8;
-            min-width: 380px;
-        }
+        .hero-banner .container-fluid { width: 100%; max-width: 1300px; margin: 0 auto; }
+        .hero-flex { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
+        .hero-left { flex: 1.2; color: white; }
+        .hero-left h1 { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; line-height: 1.2; margin-bottom: 20px; color: white; }
+        .hero-right { flex: 0.8; min-width: 380px; }
         @media (max-width: 1200px) { .hero-banner { padding: 0 40px; } .hero-left h1 { font-size: 2.5rem; } }
-        @media (max-width: 992px) {
-            .hero-banner { padding: 60px 30px; min-height: auto; }
-            .hero-flex { flex-direction: column; }
-            .hero-left { text-align: center; }
-            .hero-left h1 { font-size: 2rem; }
-            .hero-right { width: 100%; min-width: auto; }
-        }
+        @media (max-width: 992px) { .hero-banner { padding: 60px 30px; min-height: auto; } .hero-flex { flex-direction: column; } .hero-left { text-align: center; } .hero-left h1 { font-size: 2rem; } .hero-right { width: 100%; min-width: auto; } }
         @media (max-width: 576px) { .hero-banner { padding: 40px 20px; } .hero-left h1 { font-size: 1.6rem; } }
         
         /* Donation Card */
-        .donation-card {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-            color: #333;
-        }
+        .donation-card { background: #ffffff; border-radius: 20px; padding: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.25); color: #333; }
         .donation-header { font-weight: bold; text-align: center; margin-bottom: 16px; font-size: 1.1rem; color: #000; }
         .donation-type { display: flex; border-radius: 8px; overflow: hidden; margin-bottom: 16px; border: 1px solid #ddd; }
         .donation-type button { flex: 1; padding: 12px; border: none; cursor: pointer; background: #f0f0f0; font-weight: 600; }
@@ -172,7 +137,7 @@
         .donate-btn-main:hover { background: #8e0038; }
         .security { font-size: 11px; color: #777; text-align: center; margin-top: 12px; }
         
-        /* Other Ways to Help Slider - Reduced margins */
+        /* Other Ways to Help Slider */
         .give-hand { background-color: #e8f5e9; padding: 80px 0; overflow: hidden; }
         .give-hand .container { max-width: 1300px; margin: 0 auto; padding: 0 40px; }
         .give-hand .section-header { text-align: center; margin-bottom: 50px; }
@@ -194,7 +159,7 @@
         @media (max-width: 1100px) { .give-hand .container { padding: 0 30px; } .give-hand .card { flex: 0 0 calc((100% - 30px) / 2); } .give-hand .image-box img { height: 320px; } }
         @media (max-width: 768px) { .give-hand .container { padding: 0 20px; } .give-hand .card { flex: 0 0 100%; } .give-hand .navigation { display: none; } .give-hand .main-title { font-size: 2rem; } }
         
-        /* What We Do Grid - Reduced margins */
+        /* What We Do Grid */
         .concern-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px 40px; max-width: 1300px; margin: 0 auto; }
         .grid-card { display: flex; flex-direction: column; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
         .grid-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
@@ -213,19 +178,21 @@
         .bdi-impa-number { font-size: 2.2rem; font-weight: 800; color: #333; margin: 0; }
         .bdi-impa-label { font-size: 0.85rem; color: #666; font-weight: 600; margin-top: 10px; }
         
-        /* How Help Section - Fixed Icons */
-        .how-help { background-color: #005e4d; padding: 70px 0; color: #ffffff; }
-        .help-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; max-width: 1300px; margin: 0 auto; padding: 0 40px; }
-        .help-item { display: flex; align-items: flex-start; gap: 20px; padding: 20px; text-decoration: none; color: #ffffff; border-radius: 12px; transition: background-color 0.3s ease; background: rgba(255,255,255,0.05); }
-        .help-item:hover, .help-item.active-item { background-color: rgba(0, 0, 0, 0.25); }
-        .icon-box { flex-shrink: 0; width: 55px; height: 55px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.15); border-radius: 12px; }
+        /* How Help Section - 6 items with proper icons */
+        .how-help { background-color: #005e4d; padding: 70px 40px; color: #ffffff; }
+        .help-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1300px; margin: 0 auto; }
+        .help-item { display: flex; align-items: flex-start; gap: 20px; padding: 25px; text-decoration: none; color: #ffffff; border-radius: 16px; transition: all 0.3s ease; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); }
+        .help-item:hover, .help-item.active-item { background-color: rgba(0, 0, 0, 0.3); transform: translateY(-3px); border-color: rgba(255,255,255,0.3); }
+        .icon-box { flex-shrink: 0; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.15); border-radius: 16px; transition: all 0.3s ease; }
+        .help-item:hover .icon-box { background: var(--brand-pink); }
         .icon-box img { width: 32px; height: 32px; object-fit: contain; filter: brightness(0) invert(1); }
-        .text-box h3 { font-size: 1.1rem; margin: 0 0 6px 0; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
-        .text-box p { font-size: 0.8rem; line-height: 1.4; margin: 0; opacity: 0.9; }
-        @media (max-width: 1024px) { .help-grid { grid-template-columns: repeat(2, 1fr); padding: 0 30px; } }
-        @media (max-width: 768px) { .help-grid { grid-template-columns: 1fr; padding: 0 20px; } .help-item { padding: 15px; } .icon-box { width: 48px; height: 48px; } }
+        .text-box h3 { font-size: 1.2rem; margin: 0 0 8px 0; font-weight: 700; letter-spacing: -0.3px; }
+        .text-box h3 span { font-size: 1rem; }
+        .text-box p { font-size: 0.85rem; line-height: 1.5; margin: 0; opacity: 0.85; }
+        @media (max-width: 1024px) { .help-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } .how-help { padding: 50px 30px; } }
+        @media (max-width: 768px) { .help-grid { grid-template-columns: 1fr; gap: 15px; } .how-help { padding: 40px 20px; } .help-item { padding: 18px; } .icon-box { width: 50px; height: 50px; } .icon-box img { width: 28px; height: 28px; } .text-box h3 { font-size: 1rem; } .text-box p { font-size: 0.75rem; } }
         
-        /* Footer - Reduced margins */
+        /* Footer */
         .super-footer { background-color: #064d3b; color: #ffffff; padding: 60px 0 30px 0; }
         .super-footer .sf-container { max-width: 1300px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 40px; gap: 30px; }
         .super-footer .sf-col { flex: 1; min-width: 220px; }
@@ -299,13 +266,11 @@
         </div>
     </nav>
     
-    <!-- Hero Banner with Text Left and Donation Right - Reduced margins -->
+    <!-- Hero Banner -->
     <div class="hero-banner">
         <div class="container-fluid">
             <div class="hero-flex">
-                <div class="hero-left">
-                    <h1>We Are Dedicated to Transforming Lives and Cultivating Change.</h1>
-                </div>
+                <div class="hero-left"><h1>We Are Dedicated to Transforming Lives and Cultivating Change.</h1></div>
                 <div class="hero-right">
                     <div class="donation-card">
                         <div class="donation-header">🤝 Make a Difference All Year Long</div>
@@ -331,14 +296,16 @@
     <div class="bdi-impa"><div class="bdi-impa-container"><h1 class="bdi-impa-title">Our Impact</h1><div class="bdi-impa-grid"><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-tree"></i></div><h3 class="bdi-impa-number">5,000+</h3><p class="bdi-impa-label">Trees Planted</p></div><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-seedling"></i></div><h3 class="bdi-impa-number">1,200</h3><p class="bdi-impa-label">Farmers Supported</p></div><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-school"></i></div><h3 class="bdi-impa-number">15</h3><p class="bdi-impa-label">Schools Partnered</p></div><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-user-friends"></i></div><h3 class="bdi-impa-number">20</h3><p class="bdi-impa-label">Youth & Women-led Agribusinesses</p></div></div></div></div>
     
     <!-- How You Can Help - 6 items with proper icons -->
-    <div class="how-help"><div class="help-grid">
-        <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/4213/4213645.png" alt="Gift"></div><div class="text-box"><h3>Buy a gift ›</h3><p>With an extensive range of alternative gifts, we have something to suit everybody.</p></div></a>
-        <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/2921/2921226.png" alt="Will"></div><div class="text-box"><h3>Leave a gift in your will ›</h3><p>Leave the world a better place with a life-changing legacy.</p></div></a>
-        <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/3209/3209990.png" alt="Corporate"></div><div class="text-box"><h3>Become a corporate supporter ›</h3><p>We partner with organisations that share our passion.</p></div></a>
-        <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/3209/3209139.png" alt="Volunteer"></div><div class="text-box"><h3>Volunteer with BDI ›</h3><p>There are lots of opportunities for you to get involved as a volunteer.</p></div></a>
-        <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/609/609803.png" alt="Fundraise"></div><div class="text-box"><h3>Fundraise for BDI ›</h3><p>From marathons to cake sales, there are many ways to support our work.</p></div></a>
-        <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/10095/10095349.png" alt="Donate"></div><div class="text-box"><h3>Donate now ›</h3><p>Give a once-off or monthly donation today.</p></div></a>
-    </div></div>
+    <div class="how-help">
+        <div class="help-grid">
+            <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/4213/4213645.png" alt="Gift"></div><div class="text-box"><h3>Buy a gift <span>›</span></h3><p>With an extensive range of alternative gifts, we have something to suit everybody.</p></div></a>
+            <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/2921/2921226.png" alt="Will"></div><div class="text-box"><h3>Leave a gift in your will <span>›</span></h3><p>Leave the world a better place with a life-changing legacy.</p></div></a>
+            <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/3209/3209990.png" alt="Corporate"></div><div class="text-box"><h3>Become a corporate supporter <span>›</span></h3><p>We partner with organisations that share our passion.</p></div></a>
+            <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/3209/3209139.png" alt="Volunteer"></div><div class="text-box"><h3>Volunteer with BDI <span>›</span></h3><p>There are lots of opportunities for you to get involved as a volunteer.</p></div></a>
+            <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/609/609803.png" alt="Fundraise"></div><div class="text-box"><h3>Fundraise for BDI <span>›</span></h3><p>From marathons to cake sales, there are many ways to support our work.</p></div></a>
+            <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/10095/10095349.png" alt="Donate"></div><div class="text-box"><h3>Donate now <span>›</span></h3><p>Give a once-off or monthly donation today.</p></div></a>
+        </div>
+    </div>
     
     <!-- Partners -->
     <div class="container-fluid event"><div class="container"><div class="text-center mx-auto mb-4"><h5 class="text-uppercase" style="font-size: 2rem; color: #005e4d;">Our Partners</h5><h2 class="mb-3" style="font-size: 1.5rem;">“Together with our partners, we create lasting solutions that change lives.”</h2></div><div class="owl-carousel event-carousel"><div class="event-item"><img src="img/p1.jpg" alt="Partner"></div><div class="event-item"><img src="img/p2.jpg" alt="Partner"></div><div class="event-item"><img src="img/p3.jpg" alt="Partner"></div><div class="event-item"><img src="img/p4.jpg" alt="Partner"></div><div class="event-item"><img src="img/p5.jpg" alt="Partner"></div><div class="event-item"><img src="img/p6.jpg" alt="Partner"></div><div class="event-item"><img src="img/p7.jpg" alt="Partner"></div></div></div></div>
@@ -376,7 +343,7 @@
         // Spinner
         setTimeout(() => document.getElementById('spinner')?.classList.remove('show'), 500);
         
-        // Mobile menu navigation
+        // Mobile menu
         (function() {
             const megaItems = document.querySelectorAll('.has-megamenu');
             const mobileBtn = document.getElementById('mobileMenuBtn');
