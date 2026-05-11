@@ -53,7 +53,7 @@
         .mt-5 { margin-top: 3rem !important; }
         .mt-4 { margin-top: 1.5rem !important; }
         
-        /* ========== NAVBAR & TOPBAR STYLES (matching education.html) ========== */
+        /* ========== NAVBAR & TOPBAR STYLES ========== */
         :root {
             --brand-red: #990033;
             --brand-green: #005e4d;
@@ -274,7 +274,7 @@
         .help-item { display: flex; align-items: flex-start; gap: 20px; padding: 25px; text-decoration: none; color: #ffffff; border-radius: 16px; transition: all 0.3s ease; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); }
         .help-item:hover, .help-item.active-item { background-color: rgba(0, 0, 0, 0.3); transform: translateY(-3px); border-color: rgba(255,255,255,0.3); }
         .icon-box { flex-shrink: 0; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.15); border-radius: 16px; transition: all 0.3s ease; }
-        .help-item:hover .icon-box { background: var(--brand-pink, #ae0b49); }
+        .help-item:hover .icon-box { background: #ae0b49; }
         .icon-box img { width: 32px; height: 32px; object-fit: contain; filter: brightness(0) invert(1); }
         .text-box h3 { font-size: 1.2rem; margin: 0 0 8px 0; font-weight: 700; letter-spacing: -0.3px; }
         .text-box h3 span { font-size: 1rem; }
@@ -282,7 +282,7 @@
         @media (max-width: 1024px) { .help-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } .how-help { padding: 50px 30px; } }
         @media (max-width: 768px) { .help-grid { grid-template-columns: 1fr; gap: 15px; } .how-help { padding: 40px 20px; } .help-item { padding: 18px; } .icon-box { width: 50px; height: 50px; } .icon-box img { width: 28px; height: 28px; } }
         
-        /* Footer */
+        /* ========== UPDATED FOOTER ========== */
         .super-footer { background-color: #064d3b; color: #ffffff; padding: 60px 0 30px 0; }
         .super-footer .sf-container { max-width: 1300px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 40px; gap: 30px; }
         .super-footer .sf-col { flex: 1; min-width: 220px; }
@@ -318,8 +318,8 @@
         #spinner { opacity: 0; visibility: hidden; transition: opacity .8s ease-out; z-index: 99999; }
         #spinner.show { visibility: visible; opacity: 1; }
         
-        /* Responsive Navbar (matching education.html) */
-        @media screen and (max-width: 1024px) {
+        /* ========== RESPONSIVE NAVBAR - Links drop under Donate Today content ========== */
+        @media screen and (max-width: 850px) {
             .mobile-menu-btn { display: flex; }
             .nav-links {
                 display: none;
@@ -355,6 +355,8 @@
                 font-size: 16px;
                 order: 1;
             }
+            /* Mega menu becomes a block that appears BELOW the clicked nav-link,
+               and pushes subsequent sibling navigation items (other li) down */
             .mega-menu { 
                 position: relative !important; 
                 top: 0; 
@@ -369,10 +371,11 @@
             }
             .has-mega.is-active .mega-menu { 
                 display: flex !important; 
-                max-height: 70vh; 
-                overflow-y: auto; 
+                max-height: none; 
+                overflow-y: visible; 
                 margin-bottom: 0;
             }
+            /* Ensure Donate Today image area appears first, then grid links */
             .mega-sidebar { width: 100%; padding: 25px; text-align: center; order: 1; }
             .mega-grid { display: flex !important; flex-direction: column !important; padding: 25px !important; gap: 30px !important; order: 2; }
             .mega-col { width: 100%; }
@@ -398,7 +401,7 @@
         </div>
     </div>
     
-    <!-- Navbar -->
+    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="logo"><a href="index.html"><img src="./img/logo14.png" alt="BDI Logo"></a></div>
         <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
@@ -466,40 +469,10 @@
     <!-- Footer -->
     <footer class="super-footer">
         <div class="sf-container">
-            <div class="sf-col">
-                <div class="sf-logo"><img src="./img/logo14-1.png" alt="BDI"></div>
-                <p class="sf-description">BASA Development Initiatives (BDI) is an NGO dedicated to building a more inclusive, resilient, and sustainable Liberia.</p>
-                <div class="sf-socials">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="sf-col">
-                <h4 class="sf-title">Quick Links</h4>
-                <ul class="sf-links">
-                    <li><a href="our-values.html">Our Values</a></li>
-                    <li><a href="our-team">Our Team</a></li>
-                    <li><a href="partners">Partner With Us</a></li>
-                    <li><a href="testimonials">Testimonials</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="sf-col">
-                <h4 class="sf-title">Locations</h4>
-                <div class="sf-loc-item"><h5>HEADQUARTER: Monrovia, Liberia</h5><p>Morris Villa, ELWA Community<br>Email: info@basadev.org<br>Tel: +231 886 349 962 / +231 88 675 7435</p></div>
-                <div class="sf-loc-item"><h5>State of Minnesota, USA</h5><p>Regional Coordination Office<br>Tel: +1 (651) 235-9896<br>Email: info@basadev.org</p></div>
-            </div>
-            <div class="sf-col">
-                <h4 class="sf-title">Stay Updated</h4>
-                <p class="sf-newsletter-text">Join our newsletter for the latest impact updates.</p>
-                <form class="sf-subscribe" onsubmit="return false;">
-                    <input type="email" placeholder="Your email address" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
+            <div class="sf-col"><div class="sf-logo"><img src="./img/logo14-1.png" alt="BDI"></div><p class="sf-description">BASA Development Initiatives (BDI) is an NGO dedicated to building a more inclusive, resilient, and sustainable Liberia.</p><div class="sf-socials"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-pinterest-p"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div>
+            <div class="sf-col"><h4 class="sf-title">Quick Links</h4><ul class="sf-links"><li><a href="our-values.html">Our Values</a></li><li><a href="our-team">Our Team</a></li><li><a href="partners">Partner With Us</a></li><li><a href="testimonials">Testimonials</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+            <div class="sf-col"><h4 class="sf-title">Locations</h4><div class="sf-loc-item"><h5>HEADQUARTER: Monrovia, Liberia</h5><p>Morris Villa, ELWA Community<br>Email: info@basadev.org<br>Tel: +231 886 349 962 / +231 88 675 7435</p></div><div class="sf-loc-item"><h5>State of Minnesota, USA</h5><p>Regional Coordination Office<br>Tel: +1 (651) 235-9896<br>Email: info@basadev.org</p></div></div>
+            <div class="sf-col"><h4 class="sf-title">Stay Updated</h4><p class="sf-newsletter-text">Join our newsletter for the latest impact updates.</p><form class="sf-subscribe" onsubmit="return false;"><input type="email" placeholder="Your email address" required><button type="submit">Subscribe</button></form></div>
         </div>
         <div class="sf-bottom-bar"><p>&copy; 2026 BASA Development Initiatives (BDI). Registered NGO in Liberia</p></div>
     </footer>
@@ -534,15 +507,13 @@
         // Spinner
         setTimeout(() => document.getElementById('spinner')?.classList.remove('show'), 500);
         
-        // Mobile menu (matches education.html)
+        // Mobile menu - ensures other links drop under the Donate Today content
         (function() {
             const megaItems = document.querySelectorAll('.has-mega');
             const mobileBtn = document.getElementById('mobileMenuBtn');
             const navLinks = document.getElementById('navLinks');
-            const isMobile = () => window.innerWidth <= 1024;
-            
+            const isMobile = () => window.innerWidth <= 850;
             function closeAllMegas() { megaItems.forEach(i => i.classList.remove('is-active')); }
-            
             megaItems.forEach(item => {
                 const link = item.querySelector('.nav-link');
                 if (link) {
@@ -561,7 +532,6 @@
                     });
                 }
             });
-            
             if (mobileBtn && navLinks) {
                 mobileBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
@@ -577,7 +547,6 @@
                     }
                 });
             }
-            
             document.addEventListener('click', (e) => {
                 if (!e.target.closest('.navbar')) {
                     closeAllMegas();
@@ -588,7 +557,6 @@
                     }
                 }
             });
-            
             window.addEventListener('resize', () => {
                 if (!isMobile() && navLinks) {
                     navLinks.classList.remove('active');
