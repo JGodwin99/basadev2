@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Our Board of Directors - BASA Development Initiatives</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --brand-red: #990033;
+      --brand-green: #005e4d;
+      --brand-teal: #22c4a9;
+      --sidebar-tan: #e9e6d1;
+      --text-dark: #333;
+      --white: #ffffff;
+      --navy: #1a1a2e;
+      --bg-light: #fcfbf8;
+      --transition: all 0.3s ease;
+      --red: #B40205;
+      --red-dark: #8C0204;
+      --teal: #0E7C7B;
+      --teal-dark: #0A5C5B;
+      --teal-light: #17BEBB;
+      --teal-pale: #E8F8F8;
+      --teal-border: #B2E4E4;
+      --text: #1A1A1A;
+      --text-mid: #374151;
+      --text-muted: #6B7280;
+      --border: #E5E7EB;
+      --border-warm: #DDD6CC;
+      --warm-bg: #F8F6F2;
+      --warm-mid: #EDE9E2;
+      --red-pale: #FFF0F0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; font-size: 16px; color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; }
+
+    /* --- TOPBAR --- */
+    .topbar {
+      background-color: var(--brand-red);
+      padding: 12px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--white);
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .topbar-info { display: flex; gap: 25px; font-size: 14px; flex-wrap: wrap; }
+    .topbar-info a { color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: opacity 0.3s; }
+    .topbar-info a:hover { opacity: 0.8; }
+    .topbar-socials { display: flex; gap: 12px; }
+    .social-btn {
+      width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.3);
+      display: flex; align-items: center; justify-content: center;
+      color: white; text-decoration: none; border-radius: 50%;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+    .social-btn:hover { background: white; color: var(--brand-red); border-color: white; transform: translateY(-2px); }
+
+    /* --- NAVBAR --- */
+    .navbar {
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      min-height: 90px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+      flex-wrap: wrap;
+    }
+    .logo img { height: 75px; display: block; }
+    .mobile-menu-btn {
+      display: none;
+      background: var(--brand-red);
+      border: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 8px;
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    .mobile-menu-btn:hover { background: var(--brand-green); }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      margin: 0;
+      padding: 0;
+    }
+    .has-mega { position: static; }
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      cursor: pointer;
+      padding: 10px 0;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .nav-link:hover { color: var(--brand-red); }
+    .nav-link i { font-size: 12px; transition: transform 0.3s; }
+    .mega-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: white;
+      display: none;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      border-top: 1px solid #eee;
+      z-index: 1001;
+    }
+    .has-mega.is-active .mega-menu { display: flex; }
+    .has-mega.is-active .nav-link { color: var(--brand-green); }
+    .has-mega.is-active .nav-link i { transform: rotate(180deg); }
+    .mega-sidebar {
+      background-color: var(--sidebar-tan);
+      width: 300px;
+      padding: 35px;
+      flex-shrink: 0;
+    }
+    .sidebar-img { width: 100%; border-radius: 10px; margin-bottom: 20px; }
+    .sidebar-title { font-weight: 700; font-size: 18px; margin-bottom: 10px; }
+    .sidebar-text { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+    .btn-green-sm {
+      background-color: var(--brand-green);
+      color: white;
+      padding: 8px 22px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+    .btn-green-sm:hover { background-color: var(--brand-red); transform: translateY(-2px); }
+    .mega-grid {
+      flex-grow: 1;
+      padding: 35px 50px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .mega-col h4 { color: var(--brand-green); font-size: 15px; font-weight: 700; margin-bottom: 18px; }
+    .mega-col ul { list-style: none; }
+    .mega-col ul li { margin-bottom: 12px; }
+    .mega-col ul li a { text-decoration: none; color: var(--brand-green); font-size: 14px; font-weight: 500; transition: 0.2s; }
+    .mega-col ul li a:hover { color: var(--brand-red); padding-left: 5px; }
+    .nav-right { display: flex; align-items: center; gap: 18px; }
+    .search-btn { background: #f5f5f5; border: 1px solid #e0e0e0; padding: 8px 12px; cursor: pointer; border-radius: 8px; transition: all 0.3s; }
+    .search-btn:hover { background: #e8e8e8; }
+    .donate-main { background: var(--brand-red); color: white; padding: 10px 26px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; }
+    .donate-main:hover { background: var(--brand-green); transform: translateY(-2px); }
+
+    /* HERO */
+    .hero { background: var(--navy); padding: 70px 80px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 520px; height: 520px; border-radius: 50%; border: 1px solid rgba(23,190,187,.10); }
+    .hero-inner { display: grid; grid-template-columns: 1fr 360px; gap: 60px; align-items: center; position: relative; z-index: 2; }
+    .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 18px; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4.2vw, 52px); font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 24px; }
+    .hero h1 em { font-style: italic; color: var(--teal-light); }
+    .hero-desc { font-size: 15px; color: rgba(255,255,255,.68); line-height: 1.7; margin-bottom: 30px; }
+    .hero-stat-row { display: flex; gap: 15px; flex-wrap: wrap; }
+    .hero-stat { background: rgba(255,255,255,.06); border: 1px solid rgba(23,190,187,.2); border-radius: 12px; padding: 14px 18px; min-width: 100px; }
+    .hero-stat-val { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 900; color: var(--teal-light); line-height: 1; }
+    .hero-stat-label { font-size: 10px; color: rgba(255,255,255,.5); margin-top: 4px; }
+    .hero-roles { display: flex; flex-direction: column; gap: 10px; }
+    .hero-role-row { background: rgba(255,255,255,.05); border: 1px solid rgba(23,190,187,.18); border-radius: 10px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; }
+    .hero-role-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .hero-role-dot.chair { background: var(--red); }
+    .hero-role-dot.vice { background: var(--teal-light); }
+    .hero-role-dot.sec { background: #F59E0B; }
+    .hero-role-dot.member { background: rgba(255,255,255,.4); }
+    .hero-role-title { font-size: 12px; font-weight: 700; color: var(--white); }
+    .hero-role-desc { font-size: 10px; color: rgba(255,255,255,.5); }
+
+    /* ROLE STRIP */
+    .role-strip { background: var(--teal); padding: 30px 60px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+    .role-item { padding: 16px 20px; text-align: center; border-right: 1px solid rgba(255,255,255,.15); }
+    .role-item:last-child { border-right: none; }
+    .role-icon { width: 36px; height: 36px; border-radius: 9px; background: rgba(255,255,255,.15); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; }
+    .role-name { font-size: 12px; font-weight: 700; color: var(--white); margin-bottom: 3px; }
+    .role-desc { font-size: 10px; color: rgba(255,255,255,.6); line-height: 1.3; }
+
+    /* INTRO SECTION */
+    .intro-section { padding: 60px 80px; }
+    .section-overline { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; }
+    .section-heading { font-family: 'Playfair Display', serif; font-size: clamp(26px, 2.8vw, 36px); font-weight: 900; color: var(--navy); line-height: 1.2; margin-bottom: 18px; }
+    .section-subtext { font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 700px; }
+
+    /* BOARD SECTION */
+    .board-section { padding: 0 80px 80px; background: var(--white); }
+    .chair-card-full { background: var(--navy); border-radius: 20px; overflow: hidden; margin-bottom: 28px; display: grid; grid-template-columns: 280px 1fr; transition: all 0.3s; }
+    .chair-card-full:hover { box-shadow: 0 10px 40px rgba(26,26,46,.25); transform: translateY(-3px); }
+    .chair-photo { background: linear-gradient(160deg, #22243A 0%, #0A1428 100%); min-height: 320px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; position: relative; }
+    .chair-badge { position: absolute; top: 16px; left: 16px; font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; background: var(--red); color: white; padding: 5px 12px; border-radius: 20px; }
+    .chair-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .chair-body { padding: 32px; display: flex; flex-direction: column; justify-content: center; }
+    .chair-overline { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 8px; }
+    .chair-name { font-family: 'Playfair Display', serif; font-size: clamp(22px, 2.5vw, 30px); font-weight: 900; color: var(--white); margin-bottom: 6px; }
+    .chair-title { font-size: 12px; color: var(--teal-light); font-weight: 600; margin-bottom: 16px; }
+    .chair-bio { font-size: 14px; color: rgba(255,255,255,.7); line-height: 1.7; margin-bottom: 18px; }
+    .chair-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chair-tag { font-size: 9px; font-weight: 700; background: rgba(23,190,187,.15); border: 1px solid rgba(23,190,187,.25); color: var(--teal-light); padding: 4px 10px; border-radius: 12px; }
+
+    /* BOARD GRID */
+    .board-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .board-card { background: var(--white); border: 1px solid var(--border-warm); border-radius: 18px; overflow: hidden; transition: all 0.3s; }
+    .board-card:hover { box-shadow: 0 10px 40px rgba(14,124,123,.12); transform: translateY(-4px); border-color: var(--teal-border); }
+    .board-photo { height: 220px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; position: relative; }
+    .board-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .board-photo.ph-teal { background: linear-gradient(145deg, var(--teal-pale) 0%, #A8D8D8 100%); }
+    .board-photo.ph-warm { background: linear-gradient(145deg, var(--warm-bg) 0%, var(--warm-mid) 100%); }
+    .board-photo.ph-navy { background: linear-gradient(145deg, #22223A 0%, var(--navy) 100%); }
+    .role-badge { position: absolute; top: 12px; left: 12px; font-size: 8px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; }
+    .role-badge.vice { background: var(--teal); color: white; }
+    .role-badge.sec { background: #D97706; color: white; }
+    .role-badge.member { background: rgba(26,26,46,.85); color: rgba(255,255,255,.85); }
+    .board-body { padding: 20px; }
+    .board-name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+    .board-title { font-size: 11px; font-weight: 700; color: var(--teal); margin-bottom: 10px; text-transform: uppercase; letter-spacing: .06em; }
+    .board-bio { font-size: 13px; color: var(--text-mid); line-height: 1.7; margin-bottom: 14px; }
+    .board-expertise { display: flex; flex-wrap: wrap; gap: 6px; }
+    .expertise-tag { font-size: 9px; font-weight: 600; background: var(--teal-pale); border: 1px solid var(--teal-border); color: var(--teal); padding: 3px 8px; border-radius: 12px; }
+
+    /* RESPONSIBILITIES */
+    .responsibilities-section { padding: 60px 80px; background: var(--warm-bg); }
+    .resp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
+    .resp-card { background: var(--white); border: 1px solid var(--border-warm); border-radius: 16px; padding: 24px; transition: all 0.3s; }
+    .resp-card:hover { box-shadow: 0 6px 24px rgba(14,124,123,.10); transform: translateY(-2px); border-color: var(--teal-border); }
+    .resp-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--teal-pale); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .resp-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .resp-body { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    /* PRINCIPLES */
+    .principles-section { background: var(--navy); padding: 60px 80px; position: relative; }
+    .principles-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .principles-overline { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 14px; }
+    .principles-heading { font-family: 'Playfair Display', serif; font-size: clamp(26px, 2.8vw, 36px); font-weight: 900; color: var(--white); line-height: 1.2; margin-bottom: 20px; }
+    .principles-body { font-size: 15px; color: rgba(255,255,255,.65); line-height: 1.7; }
+    .principles-list { display: flex; flex-direction: column; gap: 12px; }
+    .principle-item { background: rgba(255,255,255,.05); border: 1px solid rgba(23,190,187,.15); border-radius: 12px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 14px; transition: all 0.3s; }
+    .principle-item:hover { background: rgba(23,190,187,.08); }
+    .principle-icon { width: 34px; height: 34px; border-radius: 9px; background: rgba(23,190,187,.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .principle-title { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 2px; }
+    .principle-desc { font-size: 11px; color: rgba(255,255,255,.55); line-height: 1.4; }
+
+    /* GOV NAV */
+    .gov-nav-section { padding: 60px 80px; background: var(--warm-bg); }
+    .gov-nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
+    .gov-nav-card { background: var(--white); border: 1px solid var(--border-warm); border-radius: 18px; overflow: hidden; text-decoration: none; transition: all 0.3s; }
+    .gov-nav-card:hover { box-shadow: 0 8px 32px rgba(14,124,123,.12); transform: translateY(-4px); border-color: var(--teal-border); }
+    .gov-nav-card-top { height: 90px; display: flex; align-items: center; justify-content: center; }
+    .gov-nav-card-top.navy-top { background: var(--navy); }
+    .gov-nav-card-top.red-top { background: var(--red-pale); }
+    .gov-nav-card-top.teal-top { background: var(--teal-pale); }
+    .gov-nav-card-body { padding: 20px; }
+    .gov-nav-tag { font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
+    .gov-nav-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--navy); line-height: 1.3; margin-bottom: 6px; }
+    .gov-nav-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 10px; }
+    .gov-nav-arrow { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: var(--teal); }
+
+    /* CTA */
+    .cta-section { background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%); padding: 70px 40px; text-align: center; }
+    .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 42px); font-weight: 900; color: white; max-width: 680px; margin: 0 auto 30px; line-height: 1.2; }
+    .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .btn-white, .btn-outline-white { padding: 14px 32px; border-radius: 40px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: 0.3s; }
+    .btn-white { background: white; color: var(--red); }
+    .btn-white:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+    .btn-outline-white { border: 2px solid rgba(255,255,255,0.4); color: white; }
+    .btn-outline-white:hover { border-color: rgba(255,255,255,0.85); transform: translateY(-3px); }
+
+    /* FOOTER */
+    .super-footer { background-color: #064d3b; color: white; padding: 60px 0 20px; }
+    .super-footer .sf-container { max-width: 1400px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 50px; gap: 30px; }
+    .super-footer .sf-col { flex: 1; min-width: 220px; }
+    .super-footer .sf-title { color: #22c4a9; font-size: 16px; font-weight: 700; margin-bottom: 25px; letter-spacing: 1px; }
+    .super-footer .sf-links { list-style: none; }
+    .super-footer .sf-links li { margin-bottom: 12px; }
+    .super-footer .sf-links a { color: white; text-decoration: none; font-size: 14px; transition: 0.3s; }
+    .super-footer .sf-links a:hover { color: #22c4a9; padding-left: 5px; }
+    .super-footer .sf-socials { display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+    .super-footer .sf-socials a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; transition: all 0.3s; }
+    .super-footer .sf-socials a:hover { background: var(--brand-red); transform: translateY(-3px); }
+    .sf-subscribe input { width: 100%; padding: 12px; margin-bottom: 12px; border-radius: 8px; border: none; background: rgba(255,255,255,0.1); color: white; }
+    .sf-subscribe button { background: #bd0000; color: white; border: none; padding: 12px; width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+    .sf-subscribe button:hover { background: #e60000; }
+
+    /* RESPONSIVE */
+    @media screen and (max-width: 1100px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero, .role-strip, .intro-section, .board-section, .responsibilities-section, .principles-section, .gov-nav-section { padding-left: 40px; padding-right: 40px; }
+      .role-strip { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .role-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.15); }
+      .chair-card-full { grid-template-columns: 1fr; }
+      .board-grid { grid-template-columns: 1fr; }
+      .resp-grid { grid-template-columns: 1fr; }
+      .principles-inner { grid-template-columns: 1fr; gap: 40px; }
+      .gov-nav-grid { grid-template-columns: 1fr; }
+      .navbar { padding: 0 30px; }
+      .topbar { padding: 10px 30px; }
+    }
+    @media screen and (max-width: 850px) {
+      .mobile-menu-btn { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        max-height: 85vh;
+        overflow-y: auto;
+        z-index: 9999;
+        box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+        border-top: 3px solid var(--brand-red);
+        padding: 0;
+        gap: 0;
+        width: 100%;
+      }
+      .nav-links.active { display: flex; }
+      .has-mega { position: relative; width: 100%; border-bottom: 1px solid #eee; }
+      .nav-link { padding: 16px 20px; justify-content: space-between; width: 100%; white-space: normal; background: white; }
+      .mega-menu {
+        position: relative !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: none;
+        background: #f8f8f8;
+        border-top: 1px solid #ddd;
+        flex-direction: column;
+      }
+      .has-mega.is-active .mega-menu { display: flex !important; max-height: 60vh; overflow-y: auto; }
+      .mega-sidebar { width: 100%; padding: 20px; order: 1; }
+      .mega-grid { display: flex !important; flex-direction: column !important; padding: 20px !important; gap: 25px !important; order: 2; }
+      .mega-col { width: 100%; }
+      .topbar { flex-direction: column; text-align: center; }
+      .topbar-info { justify-content: center; }
+      .role-strip { grid-template-columns: 1fr; }
+      .hero-stat-row { justify-content: center; }
+    }
+    @media screen and (max-width: 600px) {
+      .navbar { padding: 0 15px; }
+      .logo img { height: 50px; }
+      .donate-main { padding: 6px 16px; font-size: 12px; }
+      .hero { padding: 50px 20px; }
+      .hero h1 { font-size: 32px; }
+      .intro-section, .board-section, .responsibilities-section, .principles-section, .gov-nav-section { padding: 40px 20px; }
+      .chair-body { padding: 20px; }
+      .board-photo { height: 180px; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .btn-white, .btn-outline-white { width: 100%; max-width: 250px; text-align: center; }
+      .super-footer .sf-container { flex-direction: column; padding: 0 25px; text-align: center; }
+      .super-footer .sf-socials { justify-content: center; }
+      .chair-tags { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-info">
+    <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
+    <a href="tel:+231779205152"><i class="fa-solid fa-phone"></i> +231 779 205 152</a>
+  </div>
+  <div class="topbar-socials">
+    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo"><a href="index.html"><img src="./img/logo14.png" alt="BDI Logo"></a></div>
+  <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
+  <ul class="nav-links" id="navLinks">
+    <li class="has-mega"><a class="nav-link"><b>Our Work</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>What We Do</u></h4><ul><li><a href="agriculture.html">Agriculture & Agribusiness</a></li><li><a href="health.html">Health & Nutrition</a></li><li><a href="education.html">Education</a></li><li><a href="environment.html">Environment & Climate</a></li></ul><h4 style="margin-top:20px;"><u>Where We Work</u></h4><ul><li><a href="#">View all countries</a></li></ul></div><div class="mega-col"><h4><u>Development & Inclusion</u></h4><ul><li><a href="gender-youth.html">Gender & Youth Empowerment</a></li><li><a href="fisheries.html">Fisheries & Aquaculture</a></li><li><a href="disability.html">Disability Inclusion</a></li><li><a href="partnership.html">Research & Partnership</a></li></ul></div><div class="mega-col"><h4><u>Latest News & Updates</u></h4><ul><li><a href="all-news.html">View All Our News</a></li></ul></div></div></div>
+    </li>
+    <li class="has-mega"><a class="nav-link"><b>About Us</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Who we are</u></h4><ul><li><a href="our-values.html">Our Values</a></li><li><a href="founding-story.html">Our founding Story</a></li><li><a href="testimonials.html">Testimonials</a></li></ul><h4 style="margin-top:20px;"><u>Governance</u></h4><ul><li><a href="governance-structure.html">Governance Structure</a></li><li><a href="board.html">Board of Directors</a></li><li><a href="our-ceo.html">Our CEO</a></li><li><a href="our-team.html">Our Team</a></li></ul></div><div class="mega-col"><h4><u>How We Raise Money</u></h4><ul><li><a href="institutional-donors.html">Institutional Donors</a></li><li><a href="partners.html">Partners</a></li><li><a href="individual-donations.html">Individual Donations</a></li></ul></div><div class="mega-col"><h4><u>Transparency & accountability</u></h4><ul><li><a href="annual-reports.html">Annual Reports</a></li><li><a href="how-donations-are-spent.html">How donations are spent</a></li><li><a href="audited-financials.html">Audited Financials</a></li></ul></div></div></div>
+    </li>
+    <li class="has-mega"><a class="nav-link"><b>Support us</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Donate Now</u></h4><ul><li><a href="safe drug victims.html">Donate to safe drug victims</a></li><li><a href="End Period Poverty.html">End Period Poverty</a></li><li><a href="Women and Youth in Agribusiness.html">Support Women in Agribusiness</a></li></ul><h4 style="margin-top:20px;"><u>Corporate support</u></h4><ul><li><a href="Become a Corporate Partner.html">Become a corporate supporter</a></li><li><a href="Partner With Us.html">Partner with us</a></li><li><a href="Staff Fundraising.html">Staff Fundraising</a></li><li><a href="Payroll Giving.html">Payroll Giving</a></li><li><a href="Corporate Donations.html">Make a Corperate Donation</a></li></ul></div><div class="mega-col"><h4><u>Fundraise for BDI</u></h4><ul><li><a href="Start your own fundraiser.html">Start your own fundraiser</a></li><li><a href="Find a Friend to Sponsor.html">Find a friend to sponsor</a></li></ul><h4 style="margin-top:20px;"><u>Volunteer Remotely</u></h4><ul><li><a href="Volunteer Remotely.html">You can volunteer with us</a></li></ul></div><div class="mega-col"><h4><u>Other ways to give</u></h4><ul><li><a href="Donate in Memory.html">Donate in memory</a></li><li><a href="Leave a Gift in Your Will.html">Leave a gift in your Will</a></li><li><a href="Donate Your Tax Refund.html">Donate Your Tax Refund</a></li></ul></div></div></div>
+    </li>
+    <li class="has-mega"><a class="nav-link"><b>Resource Centre</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Knowledge Hub Resources</u></h4><ul><li><a href="#">Research</a></li><li><a href="#">Evaluations</a></li><li><a href="newsletter.html">Newsletters</a></li></ul></div></div></div>
+    </li>
+  </ul>
+  <div class="nav-right"><button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="donate-main">Donate Now</a></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div><p class="hero-eyebrow">Governance &amp; Oversight</p><h1>The Board that keeps<br>BDI <em>accountable</em><br>to its mission.</h1><p class="hero-desc">BDI's Board of Directors provides independent strategic oversight and fiduciary accountability, ensuring that the organization stays true to its mission, values, and commitment to the communities it serves.</p><div class="hero-stat-row"><div class="hero-stat"><div class="hero-stat-val">4</div><div class="hero-stat-label">Board Members</div></div><div class="hero-stat"><div class="hero-stat-val">4</div><div class="hero-stat-label">Board Roles</div></div><div class="hero-stat"><div class="hero-stat-val">2022</div><div class="hero-stat-label">Board Established</div></div></div></div>
+    <div class="hero-roles"><div class="hero-role-row"><div class="hero-role-dot chair"></div><div><p class="hero-role-title">Chairperson</p><p class="hero-role-desc">Leads the Board, ensures strategic direction, chairs all board meetings</p></div></div><div class="hero-role-row"><div class="hero-role-dot vice"></div><div><p class="hero-role-title">Vice Chairperson</p><p class="hero-role-desc">Supports the Chair and assumes duties in the Chair's absence</p></div></div><div class="hero-role-row"><div class="hero-role-dot sec"></div><div><p class="hero-role-title">Secretary</p><p class="hero-role-desc">Manages board records, meeting minutes, and compliance documentation</p></div></div><div class="hero-role-row"><div class="hero-role-dot member"></div><div><p class="hero-role-title">Board Member</p><p class="hero-role-desc">Provides independent strategic guidance and holds management accountable</p></div></div></div>
+  </div>
+</section>
+
+<!-- ROLE STRIP -->
+<div class="role-strip">
+  <div class="role-item"><div class="role-icon"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="white"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><p class="role-name">Strategic Oversight</p><p class="role-desc">Setting BDI's strategic direction and ensuring alignment with mission and values</p></div>
+  <div class="role-item"><div class="role-icon"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="white"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><p class="role-name">Fiduciary Accountability</p><p class="role-desc">Overseeing financial integrity, audit processes, and responsible use of donor funds</p></div>
+  <div class="role-item"><div class="role-icon"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="white"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg></div><p class="role-name">Leadership Accountability</p><p class="role-desc">Holding the CEO and management team accountable against goals, indicators, and values</p></div>
+  <div class="role-item"><div class="role-icon"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="white"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><p class="role-name">Stakeholder Trust</p><p class="role-desc">Serving as trusted representatives of BDI's mission to donors, partners, and communities</p></div>
+</div>
+
+<!-- INTRO SECTION -->
+<section class="intro-section"><p class="section-overline">Our Board</p><h2 class="section-heading">Independent leaders committed to BDI's mission.</h2><p class="section-subtext">BDI's Board of Directors brings together experienced professionals with deep expertise across development, finance, governance, and community leadership. Board members serve in a voluntary capacity, providing independent oversight that keeps BDI accountable to its mission, its donors, and above all, the communities it was created to serve.</p></section>
+
+<!-- BOARD MEMBERS -->
+<section class="board-section">
+  <div class="chair-card-full">
+    <div class="chair-photo"><div class="chair-badge">Chairperson</div><img src="img/causes-04.jpg" alt="Chairperson"></div>
+    <div class="chair-body"><p class="chair-overline">Board Chairperson</p><h2 class="chair-name">[Chairperson Full Name]</h2><p class="chair-title">[Professional Title, Organization]</p><p class="chair-bio">A seasoned development professional with extensive experience in organizational governance, community-led development, and institutional capacity building in Liberia and West Africa. As Chairperson, [Name] leads the Board in setting BDI's strategic direction, ensures governance integrity, and champions the organization's mission of community-owned development.</p><div class="chair-tags"><span class="chair-tag">Organizational Governance</span><span class="chair-tag">Community Development</span><span class="chair-tag">Strategic Leadership</span></div></div>
+  </div>
+  <div class="board-grid">
+    <div class="board-card"><div class="board-photo ph-teal"><span class="role-badge vice">Vice Chairperson</span><img src="img/causes-04.jpg" alt="Vice Chairperson"></div><div class="board-body"><p class="board-name">[Vice Chairperson Name]</p><p class="board-title">Vice Chairperson</p><p class="board-bio">[Professional Title, Organization]. A [field] professional with [X] years of experience in [relevant area]. Provides strategic support to the Chairperson and leads the Board's work on partnerships and governance.</p><div class="board-expertise"><span class="expertise-tag">Finance</span><span class="expertise-tag">Partnerships</span><span class="expertise-tag">Governance</span></div></div></div>
+    <div class="board-card"><div class="board-photo ph-warm"><span class="role-badge sec">Secretary</span><img src="img/causes-04.jpg" alt="Secretary"></div><div class="board-body"><p class="board-name">[Secretary Name]</p><p class="board-title">Secretary</p><p class="board-bio">[Professional Title, Organization]. Responsible for the accurate maintenance of board records, meeting minutes, and governance documentation. Brings expertise in legal and nonprofit compliance.</p><div class="board-expertise"><span class="expertise-tag">Legal / Compliance</span><span class="expertise-tag">Administration</span></div></div></div>
+    <div class="board-card"><div class="board-photo ph-navy"><span class="role-badge member">Board Member</span><img src="img/causes-04.jpg" alt="Board Member"></div><div class="board-body"><p class="board-name">[Board Member Name]</p><p class="board-title">Board Member</p><p class="board-bio">[Professional Title, Organization]. An experienced leader in development who provides independent strategic guidance on BDI's programmatic and financial direction.</p><div class="board-expertise"><span class="expertise-tag">Program Strategy</span><span class="expertise-tag">Fundraising</span><span class="expertise-tag">Community Engagement</span></div></div></div>
+  </div>
+</section>
+
+<!-- RESPONSIBILITIES -->
+<section class="responsibilities-section"><p class="section-overline">What the Board Does</p><h2 class="section-heading">The three core responsibilities of BDI's Board.</h2><p style="font-size:15px;color:var(--text-muted);max-width:600px;margin-bottom:0">BDI's Board is not an honorary title. Each member actively fulfills three interconnected governance responsibilities that protect the organization's integrity and amplify its impact.</p>
+<div class="resp-grid">
+  <div class="resp-card"><div class="resp-icon"><svg width="20" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><path d="M2 20h20M6 20V10M12 20V4M18 20v-8"/></svg></div><p class="resp-title">Set Strategic Direction</p><p class="resp-body">The Board approves BDI's strategic plans, reviews performance against strategic goals, and ensures the organization's programmatic priorities remain aligned with its mission and the needs of the communities it serves.</p></div>
+  <div class="resp-card"><div class="resp-icon"><svg width="20" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><p class="resp-title">Ensure Financial Integrity</p><p class="resp-body">Board members hold full fiduciary responsibility for BDI's finances. They review and approve annual budgets, oversee independent financial audits, monitor expenditure against approved plans, and ensure that donor funds are managed with complete transparency.</p></div>
+  <div class="resp-card"><div class="resp-icon"><svg width="20" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><p class="resp-title">Hold Leadership Accountable</p><p class="resp-body">The Board recruits, supports, and evaluates the CEO, and holds the management team accountable for performance against key goals and indicators through quarterly reviews and annual performance assessments.</p></div>
+</div></section>
+
+<!-- PRINCIPLES -->
+<section class="principles-section"><div class="principles-inner"><div><p class="principles-overline">How the Board Operates</p><h2 class="principles-heading">A Board that governs with purpose, not just presence.</h2><p class="principles-body">BDI's Board operates under a set of governance principles that ensure every meeting, every decision, and every oversight action adds genuine value to the organization's mission and credibility.</p></div>
+<div class="principles-list"><div class="principle-item"><div class="principle-icon"><svg width="16" viewBox="0 0 24 24" fill="none" stroke="#17BEBB"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div><p class="principle-title">Regular Scheduled Meetings</p><p class="principle-desc">Formal board meetings held on a regular schedule with documented agendas, minutes, and action items tracked to completion.</p></div></div><div class="principle-item"><div class="principle-icon"><svg width="16" viewBox="0 0 24 24" fill="none" stroke="#17BEBB"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><p class="principle-title">Annual Governance Reviews</p><p class="principle-desc">Board effectiveness is reviewed annually, with governance training provided to strengthen capacity and ensure best practices are upheld.</p></div></div><div class="principle-item"><div class="principle-icon"><svg width="16" viewBox="0 0 24 24" fill="none" stroke="#17BEBB"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><p class="principle-title">Conflict of Interest Policy</p><p class="principle-desc">All board members are required to declare and manage conflicts of interest, ensuring decisions are made in the best interest of BDI.</p></div></div><div class="principle-item"><div class="principle-icon"><svg width="16" viewBox="0 0 24 24" fill="none" stroke="#17BEBB"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><p class="principle-title">Succession Planning</p><p class="principle-desc">Leadership continuity plans are maintained to protect institutional knowledge and ensure organizational stability through board transitions.</p></div></div></div></div></section>
+
+<!-- GOV NAV -->
+<section class="gov-nav-section"><p class="section-overline">More in Governance</p><h2 class="section-heading">Explore BDI's full governance structure.</h2>
+<div class="gov-nav-grid">
+  <a href="governance-structure.html" class="gov-nav-card"><div class="gov-nav-card-top navy-top"><svg width="32" viewBox="0 0 24 24" fill="none" stroke="rgba(23,190,187,.6)"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><div class="gov-nav-card-body"><p class="gov-nav-tag">Structure</p><p class="gov-nav-title">Governance Structure</p><p class="gov-nav-desc">See the full high-level structure of BDI, from the Board of Directors through to program and operations teams.</p><div class="gov-nav-arrow">View Structure →</div></div></a>
+  <a href="our-ceo.html" class="gov-nav-card"><div class="gov-nav-card-top red-top"><svg width="32" viewBox="0 0 24 24" fill="none" stroke="rgba(180,2,5,.5)"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="gov-nav-card-body"><p class="gov-nav-tag">Executive Leadership</p><p class="gov-nav-title">Our CEO</p><p class="gov-nav-desc">Meet Katherina M. Hopkins, Founder and CEO, who leads BDI's day-to-day operations and long-term strategy.</p><div class="gov-nav-arrow">Meet Katherina →</div></div></a>
+  <a href="our-team.html" class="gov-nav-card"><div class="gov-nav-card-top teal-top"><svg width="32" viewBox="0 0 24 24" fill="none" stroke="rgba(14,124,123,.6)"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg></div><div class="gov-nav-card-body"><p class="gov-nav-tag">Program and Operations</p><p class="gov-nav-title">Our Team</p><p class="gov-nav-desc">Meet the dedicated professionals delivering BDI's eight program areas across Liberia's communities.</p><div class="gov-nav-arrow">Meet the Team →</div></div></a>
+</div></section>
+
+<!-- CTA -->
+<section class="cta-section"><h2>Confident in our governance? So are our partners and donors. Join them.</h2><div class="cta-buttons"><a href="#" class="btn-white">Partner With BDI</a><a href="transparency.html" class="btn-outline-white">View Our Transparency Policy</a></div></section>
+
+<!-- FOOTER -->
+<footer class="super-footer"><div class="sf-container"><div class="sf-col"><div class="sf-logo"><img src="./img/logo14-1.png" alt="BDI" style="max-width:170px;"></div><p style="margin:15px 0; font-size:14px;">BDI is an NGO dedicated to building a more inclusive, resilient Liberia.</p><div class="sf-socials"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div><div class="sf-col"><h4 class="sf-title">Quick Links</h4><ul class="sf-links"><li><a href="our-values.html">Our Values</a></li><li><a href="our-team.html">Our Team</a></li><li><a href="partners.html">Partner With Us</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="sf-col"><h4 class="sf-title">Locations</h4><div><strong style="color:#22c4a9;">Monrovia, Liberia</strong><br><p style="font-size:13px;">Morris Villa, ELWA Community<br>info@basadev.org<br>+231 886 349 962</p></div><div style="margin-top:15px;"><strong style="color:#22c4a9;">Minnesota, USA</strong><br><p style="font-size:13px;">Regional Coordination Office<br>+1 (651) 235-9896</p></div></div><div class="sf-col"><h4 class="sf-title">Stay Updated</h4><p style="font-size:14px; margin-bottom:15px;">Join our newsletter for updates.</p><form class="sf-subscribe" onsubmit="return false;"><input type="email" placeholder="Your email address"><button type="submit">Subscribe</button></form></div></div><div style="text-align:center; padding:25px 20px 10px; border-top:1px solid rgba(255,255,255,0.1); margin-top:30px;">&copy; 2026 BASA Development Initiatives (BDI). Registered NGO in Liberia</div></footer>
+
+<script>
+  (function() {
+    const megaItems = document.querySelectorAll('.has-mega');
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const isMobileView = () => window.innerWidth <= 850;
+
+    function closeAllMegas() { megaItems.forEach(item => item.classList.remove('is-active')); }
+
+    megaItems.forEach(item => {
+      const link = item.querySelector('.nav-link');
+      if (link) {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (isMobileView()) {
+            const wasActive = item.classList.contains('is-active');
+            closeAllMegas();
+            if (!wasActive) item.classList.add('is-active');
+          } else {
+            const wasActive = item.classList.contains('is-active');
+            closeAllMegas();
+            if (!wasActive) item.classList.add('is-active');
+          }
+        });
+      }
+    });
+
+    if (mobileBtn && navLinks) {
+      mobileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle('active');
+        const icon = mobileBtn.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+          closeAllMegas();
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.navbar')) {
+        closeAllMegas();
+        if (navLinks && navLinks.classList.contains('active') && isMobileView()) {
+          navLinks.classList.remove('active');
+          const icon = mobileBtn?.querySelector('i');
+          if (icon) {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        }
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (!isMobileView() && navLinks) {
+        navLinks.classList.remove('active');
+        if (mobileBtn) {
+          const icon = mobileBtn.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+        closeAllMegas();
+      }
+    });
+  })();
+</script>
+</body>
+</html>
