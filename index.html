@@ -63,7 +63,7 @@
             --transition: all 0.3s ease;
         }
         
-        /* Topbar */
+        /* Topbar - Hidden on mobile as per reference */
         .topbar {
             background-color: var(--brand-red);
             padding: 12px 40px;
@@ -86,37 +86,42 @@
         }
         .social-btn:hover { background: white; color: var(--brand-red); border-color: white; transform: translateY(-2px); }
         
-        /* Navbar */
+        /* Navbar - Redesigned for mobile like reference image (MENU + logo + search + DONATE) */
         .navbar {
             background: var(--white);
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 40px;
-            min-height: 90px;
+            min-height: 80px;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 15px rgba(0,0,0,0.08);
             flex-wrap: wrap;
         }
-        .logo img { height: 75px; display: block; max-width: 100%; }
+        .logo img { height: 65px; display: block; max-width: 100%; }
+        
+        /* Mobile menu button - styled like reference: "MENU" text + icon */
         .mobile-menu-btn {
             display: none;
-            background: var(--brand-red);
+            background: transparent;
             border: none;
-            width: 48px;
-            height: 48px;
-            border-radius: 8px;
-            color: white;
-            font-size: 24px;
+            padding: 10px 12px;
             cursor: pointer;
             align-items: center;
             justify-content: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--brand-red);
             transition: all 0.3s;
-            z-index: 1001;
+            font-family: 'Poppins', sans-serif;
         }
-        .mobile-menu-btn:hover { background: var(--brand-green); }
+        .mobile-menu-btn i { font-size: 20px; }
+        .mobile-menu-btn:hover { opacity: 0.7; }
+        
+        /* Desktop nav links */
         .nav-links {
             display: flex;
             list-style: none;
@@ -141,7 +146,7 @@
         .nav-link:hover { color: var(--brand-red); }
         .nav-link i { font-size: 12px; transition: transform 0.3s; }
         
-        /* Mega Menu */
+        /* Mega Menu - unchanged */
         .mega-menu {
             position: absolute;
             top: 100%;
@@ -189,13 +194,15 @@
         .mega-col ul li { margin-bottom: 12px; }
         .mega-col ul li a { text-decoration: none; color: var(--brand-green); font-size: 14px; font-weight: 500; transition: 0.2s; }
         .mega-col ul li a:hover { color: var(--brand-red); padding-left: 5px; }
+        
+        /* Right side (search + donate) */
         .nav-right { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
         .search-btn { background: #f5f5f5; border: 1px solid #e0e0e0; padding: 8px 12px; cursor: pointer; border-radius: 8px; transition: all 0.3s; }
         .search-btn:hover { background: #e8e8e8; }
         .donate-main { background: var(--brand-red); color: white; padding: 10px 26px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; }
         .donate-main:hover { background: var(--brand-green); transform: translateY(-2px); }
         
-        /* Hero Banner */
+        /* Hero Banner, Donation Card, etc - all unchanged */
         .hero-banner {
             background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('img/BDI-african-child.jpg') center/cover no-repeat;
             min-height: 85vh;
@@ -213,7 +220,6 @@
         @media (max-width: 992px) { .hero-banner { padding: 60px 30px; min-height: auto; } .hero-flex { flex-direction: column; } .hero-left { text-align: center; } .hero-left h1 { font-size: 2rem; } .hero-right { width: 100%; min-width: auto; } }
         @media (max-width: 576px) { .hero-banner { padding: 40px 20px; } .hero-left h1 { font-size: 1.6rem; } }
         
-        /* Donation Card */
         .donation-card { background: #ffffff; border-radius: 20px; padding: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.25); color: #333; }
         .donation-header { font-weight: bold; text-align: center; margin-bottom: 16px; font-size: 1.1rem; color: #000; }
         .donation-type { display: flex; border-radius: 8px; overflow: hidden; margin-bottom: 16px; border: 1px solid #ddd; }
@@ -227,7 +233,7 @@
         .donate-btn-main:hover { background: #8e0038; }
         .security { font-size: 11px; color: #777; text-align: center; margin-top: 12px; }
         
-        /* Other Ways to Help Slider */
+        /* Other Ways to Help Slider - unchanged */
         .give-hand { background-color: #e8f5e9; padding: 80px 0; overflow: hidden; }
         .give-hand .container { max-width: 1300px; margin: 0 auto; padding: 0 40px; }
         .give-hand .section-header { text-align: center; margin-bottom: 50px; }
@@ -249,14 +255,12 @@
         @media (max-width: 1100px) { .give-hand .container { padding: 0 30px; } .give-hand .card { flex: 0 0 calc((100% - 30px) / 2); } .give-hand .image-box img { height: 320px; } }
         @media (max-width: 768px) { .give-hand .container { padding: 0 20px; } .give-hand .card { flex: 0 0 100%; } .give-hand .navigation { display: none; } .give-hand .main-title { font-size: 2rem; } }
         
-        /* What We Do Grid */
         .concern-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px 40px; max-width: 1300px; margin: 0 auto; }
         .grid-card { display: flex; flex-direction: column; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
         .grid-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
         .card-label { background-color: #2d5a50; color: white; padding: 15px 20px; font-weight: bold; font-size: 1rem; text-align: center; }
         @media (max-width: 768px) { .concern-grid { padding: 20px; } }
         
-        /* Impact Section */
         .bdi-impa { background-color: #d1d1d1; padding: 70px 20px; text-align: center; }
         .bdi-impa-container { max-width: 1300px; margin: 0 auto; }
         .bdi-impa-title { font-size: 3rem; color: #005e4d; font-weight: 800; margin-bottom: 40px; position: relative; }
@@ -268,7 +272,6 @@
         .bdi-impa-number { font-size: 2.2rem; font-weight: 800; color: #333; margin: 0; }
         .bdi-impa-label { font-size: 0.85rem; color: #666; font-weight: 600; margin-top: 10px; }
         
-        /* How Help Section */
         .how-help { background-color: #005e4d; padding: 70px 40px; color: #ffffff; }
         .help-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1300px; margin: 0 auto; }
         .help-item { display: flex; align-items: flex-start; gap: 20px; padding: 25px; text-decoration: none; color: #ffffff; border-radius: 16px; transition: all 0.3s ease; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); }
@@ -282,7 +285,6 @@
         @media (max-width: 1024px) { .help-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } .how-help { padding: 50px 30px; } }
         @media (max-width: 768px) { .help-grid { grid-template-columns: 1fr; gap: 15px; } .how-help { padding: 40px 20px; } .help-item { padding: 18px; } .icon-box { width: 50px; height: 50px; } .icon-box img { width: 28px; height: 28px; } }
         
-        /* Footer */
         .super-footer { background-color: #064d3b; color: #ffffff; padding: 60px 0 30px 0; }
         .super-footer .sf-container { max-width: 1300px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 40px; gap: 30px; }
         .super-footer .sf-col { flex: 1; min-width: 220px; }
@@ -308,37 +310,47 @@
         @media (max-width: 992px) { .super-footer .sf-container { padding: 0 30px; } }
         @media (max-width: 768px) { .super-footer .sf-container { flex-direction: column; text-align: center; padding: 0 20px; } .super-footer .sf-socials { justify-content: center; } .super-footer .sf-description { margin: 0 auto 20px auto; text-align: center; } }
         
-        /* Partners Carousel */
         .event { padding: 50px 0; background: #f5f5f5; }
         .event .container { max-width: 1300px; padding: 0 40px; }
         .event-item img { width: 100%; border-radius: 12px; height: 100px; object-fit: contain; background: white; padding: 10px; }
         @media (max-width: 768px) { .event .container { padding: 0 20px; } }
         
-        /* Spinner */
         #spinner { opacity: 0; visibility: hidden; transition: opacity .8s ease-out; z-index: 99999; }
         #spinner.show { visibility: visible; opacity: 1; }
         
-        /* ========== RESPONSIVE NAVBAR - Links drop under Donate Today content (matches Latest News page) ========== */
+        /* ========== MOBILE NAVBAR - Redesigned like reference image (MENU + logo + Q + DONATE) ========== */
         @media screen and (max-width: 850px) {
+            /* Hide topbar on mobile */
+            .topbar { display: none; }
+            
+            /* Show mobile menu button with "MENU" text + icon */
             .mobile-menu-btn { display: flex; }
+            
+            /* Adjust navbar padding */
+            .navbar { padding: 0 20px; min-height: 70px; }
+            .logo img { height: 50px; }
+            
+            /* Hide desktop nav-links initially, show as overlay panel when active */
             .nav-links {
                 display: none;
-                position: absolute;
-                top: 100%;
+                position: fixed;
+                top: 70px;
                 left: 0;
                 right: 0;
+                bottom: 0;
                 background: white;
                 flex-direction: column;
-                max-height: 85vh;
                 overflow-y: auto;
                 z-index: 9999;
                 box-shadow: 0 20px 30px rgba(0,0,0,0.2);
-                border-top: 3px solid var(--brand-red);
-                padding: 0;
+                border-top: 2px solid var(--brand-red);
+                padding: 20px 0;
                 gap: 0;
                 width: 100%;
+                max-height: calc(100vh - 70px);
             }
             .nav-links.active { display: flex; }
+            
             .has-mega { 
                 position: relative; 
                 width: 100%; 
@@ -376,14 +388,27 @@
             .mega-sidebar { width: 100%; padding: 25px; text-align: center; order: 1; }
             .mega-grid { display: flex !important; flex-direction: column !important; padding: 25px !important; gap: 30px !important; order: 2; }
             .mega-col { width: 100%; }
-            .topbar { display: none; }
+            
+            /* Right side (search and donate) remain visible */
+            .nav-right { margin-left: auto; gap: 12px; }
+            .search-btn { padding: 6px 10px; }
+            .donate-main { padding: 6px 18px; font-size: 13px; }
+        }
+        
+        /* Small screen adjustments */
+        @media screen and (max-width: 480px) {
+            .navbar { padding: 0 15px; }
+            .donate-main { padding: 6px 14px; font-size: 12px; }
+            .search-btn { padding: 6px 8px; }
+            .mobile-menu-btn { font-size: 14px; }
+            .mobile-menu-btn i { font-size: 18px; }
         }
     </style>
 </head>
 <body>
     <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center"><div class="spinner-grow text-primary" role="status"></div></div>
     
-    <!-- Topbar -->
+    <!-- Topbar (desktop only) -->
     <div class="topbar">
         <div class="topbar-info">
             <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
@@ -398,10 +423,12 @@
         </div>
     </div>
     
-    <!-- NAVBAR -->
+    <!-- NAVBAR - Redesigned mobile menu button: "MENU" text + icon like reference -->
     <nav class="navbar">
         <div class="logo"><a href="index.html"><img src="./img/logo14.png" alt="BDI Logo"></a></div>
-        <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fa-solid fa-bars"></i> MENU
+        </button>
         <ul class="nav-links" id="navLinks">
             <li class="has-mega"><a class="nav-link"><b>Our Work</b> <i class="fa-solid fa-caret-down"></i></a>
                 <div class="mega-menu"><div class="mega-sidebar"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>What We Do</u></h4><ul><li><a href="agriculture.html">Agriculture & Agribusiness</a></li><li><a href="health.html">Health & Nutrition</a></li><li><a href="education.html">Education</a></li><li><a href="environment.html">Environment & Climate</a></li></ul><h4 style="margin-top:20px;"><u>Where We Work</u></h4><ul><li><a href="#">View all countries</a></li></ul></div><div class="mega-col"><h4><u>Development & Inclusion</u></h4><ul><li><a href="gender-youth.html">Gender & Youth Empowerment</a></li><li><a href="fisheries.html">Fisheries & Aquaculture</a></li><li><a href="disability.html">Disability Inclusion</a></li><li><a href="partnership.html">Research & Partnership</a></li></ul></div><div class="mega-col"><h4><u>Latest News & Updates</u></h4><ul><li><a href="all-news.html">View All Our News</a></li></ul></div></div></div>
@@ -416,10 +443,13 @@
                 <div class="mega-menu"><div class="mega-sidebar"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=400&q=80" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Knowledge Hub Resources</u></h4><ul><li><a href="#">Research</a></li><li><a href="#">Evaluations</a></li><li><a href="newsletter.html">Newsletters</a></li></ul></div></div></div>
             </li>
         </ul>
-        <div class="nav-right"><button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="donate-main">Donate Now</a></div>
+        <div class="nav-right">
+            <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="donate-main">Donate</a>
+        </div>
     </nav>
     
-    <!-- Hero Banner -->
+    <!-- Rest of your content remains exactly the same -->
     <div class="hero-banner">
         <div class="container-fluid">
             <div class="hero-flex">
@@ -439,16 +469,12 @@
         </div>
     </div>
     
-    <!-- Other Ways To Help Slider -->
     <div class="give-hand"><div class="container"><div class="section-header"><div class="header-main-row"><h1 class="main-title">Other Ways To Help</h1><div class="navigation"><span class="nav-arrow prev" id="slidePrev">&#10094;</span><span class="nav-arrow next" id="slideNext">&#10095;</span></div></div><p class="description">"Your contribution helps us reach more people, create lasting change, and continue the work that truly matters."</p></div><div class="cards-row" id="sliderContainer"><div class="card"><div class="image-box"><img src="./img/BDI-feeding-program-outreach.jpg" alt="Feeding"></div><div class="content-overlay"><h3 class="card-title">Education & Feeding Program</h3><p class="card-text">Supporting children's growth through learning and nutrition.</p><a href="all donate.html" class="donate-btn">Donate Now</a></div></div><div class="card"><div class="image-box"><img src="./img/BDI-Eniveronmental-Climate.jpg" alt="Climate"></div><div class="content-overlay"><h3 class="card-title">Environmental Sustainability</h3><p class="card-text">Protecting natural resources and responding to climate change.</p><a href="all donate.html" class="donate-btn">Donate Now</a></div></div><div class="card"><div class="image-box"><img src="./img/BDI-Agricultural-Program.jpg" alt="Agriculture"></div><div class="content-overlay"><h3 class="card-title">Agricultural Development</h3><p class="card-text">Strengthening agriculture as a driver of economic growth.</p><a href="all donate.html" class="donate-btn">Donate Now</a></div></div><div class="card"><div class="image-box"><img src="./img/BDI-Disability.jpg" alt="Disability"></div><div class="content-overlay"><h3 class="card-title">Disability Inclusion</h3><p class="card-text">Empowering communities through leadership and resources.</p><a href="all donate.html" class="donate-btn">Donate Now</a></div></div><div class="card"><div class="image-box"><img src="./img/BDI-health-education-1.jpg" alt="Health"></div><div class="content-overlay"><h3 class="card-title">Health & Nutrition</h3><p class="card-text">Promoting healthy lifestyles and balanced diets.</p><a href="all donate.html" class="donate-btn">Donate Now</a></div></div><div class="card"><div class="image-box"><img src="./img/BDI-menstrual-hyegies-outreach.jpg" alt="Menstrual"></div><div class="content-overlay"><h3 class="card-title">Menstrual Hygiene</h3><p class="card-text">Providing access to safe and affordable menstrual products.</p><a href="all donate.html" class="donate-btn">Donate Now</a></div></div></div><div class="text-center"><a href="all donate.html" class="view-all-link"><span class="icon-box">➤</span> View All Donation</a></div></div></div>
     
-    <!-- What We Do -->
     <div class="concern-grid"><div class="grid-card"><a href="agriculture.html"><img src="img/BDI-Agricultural-Program.jpg" alt="Agriculture"><div class="card-label">Agriculture & Agribusiness</div></a></div><div class="grid-card"><a href="health.html"><img src="img/BDI-health-education-1.jpg" alt="Health"><div class="card-label">Health & Nutrition</div></a></div><div class="grid-card"><a href="environment.html"><img src="img/BDI-Eniveronmental-Climate.jpg" alt="Environment"><div class="card-label">Environment & Climate</div></a></div><div class="grid-card"><a href="gender-youth.html"><img src="img/BDI-woman empowerment-1.jpg" alt="Gender"><div class="card-label">Gender & Youth Empowerment</div></a></div><div class="grid-card"><a href="fisheries.html"><img src="img/BDI-fishers-111.jpg" alt="Fisheries"><div class="card-label">Fisheries & Aquaculture</div></a></div><div class="grid-card"><a href="partnership.html"><img src="img/BDI-partnership-1.jpg" alt="Partnership"><div class="card-label">Research & Partnership</div></a></div></div>
     
-    <!-- Our Impact -->
     <div class="bdi-impa"><div class="bdi-impa-container"><h1 class="bdi-impa-title">Our Impact</h1><div class="bdi-impa-grid"><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-tree"></i></div><h3 class="bdi-impa-number">5,000+</h3><p class="bdi-impa-label">Trees Planted</p></div><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-seedling"></i></div><h3 class="bdi-impa-number">1,200</h3><p class="bdi-impa-label">Farmers Supported</p></div><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-school"></i></div><h3 class="bdi-impa-number">15</h3><p class="bdi-impa-label">Schools Partnered</p></div><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-user-friends"></i></div><h3 class="bdi-impa-number">20</h3><p class="bdi-impa-label">Youth & Women-led Agribusinesses</p></div></div></div></div>
     
-    <!-- How You Can Help -->
     <div class="how-help">
         <div class="help-grid">
             <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/4213/4213645.png" alt="Gift"></div><div class="text-box"><h3>Buy a gift <span>›</span></h3><p>With an extensive range of alternative gifts, we have something to suit everybody.</p></div></a>
@@ -460,10 +486,8 @@
         </div>
     </div>
     
-    <!-- Partners -->
     <div class="container-fluid event"><div class="container"><div class="text-center mx-auto mb-4"><h5 class="text-uppercase" style="font-size: 2rem; color: #005e4d;">Our Partners</h5><h2 class="mb-3" style="font-size: 1.5rem;">“Together with our partners, we create lasting solutions that change lives.”</h2></div><div class="owl-carousel event-carousel"><div class="event-item"><img src="img/p1.jpg" alt="Partner"></div><div class="event-item"><img src="img/p2.jpg" alt="Partner"></div><div class="event-item"><img src="img/p3.jpg" alt="Partner"></div><div class="event-item"><img src="img/p4.jpg" alt="Partner"></div><div class="event-item"><img src="img/p5.jpg" alt="Partner"></div><div class="event-item"><img src="img/p6.jpg" alt="Partner"></div><div class="event-item"><img src="img/p7.jpg" alt="Partner"></div></div></div></div>
     
-    <!-- Footer -->
     <footer class="super-footer">
         <div class="sf-container">
             <div class="sf-col"><div class="sf-logo"><img src="./img/logo14-1.png" alt="BDI"></div><p class="sf-description">BASA Development Initiatives (BDI) is an NGO dedicated to building a more inclusive, resilient, and sustainable Liberia.</p><div class="sf-socials"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-pinterest-p"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div>
@@ -504,66 +528,74 @@
         // Spinner
         setTimeout(() => document.getElementById('spinner')?.classList.remove('show'), 500);
         
-        // Mobile menu - ensures other links drop under the Donate Today content
+        // Mobile menu - redesigned for new button with "MENU" text
         (function() {
             const megaItems = document.querySelectorAll('.has-mega');
             const mobileBtn = document.getElementById('mobileMenuBtn');
             const navLinks = document.getElementById('navLinks');
             const isMobile = () => window.innerWidth <= 850;
+            
             function closeAllMegas() { megaItems.forEach(i => i.classList.remove('is-active')); }
+            function closeMenu() {
+                if(navLinks) navLinks.classList.remove('active');
+                if(mobileBtn) {
+                    const icon = mobileBtn.querySelector('i');
+                    if(icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+                closeAllMegas();
+            }
+            
             megaItems.forEach(item => {
                 const link = item.querySelector('.nav-link');
-                if (link) {
+                if(link) {
                     link.addEventListener('click', (e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        if (isMobile()) {
+                        if(isMobile()) {
                             const wasActive = item.classList.contains('is-active');
                             closeAllMegas();
-                            if (!wasActive) item.classList.add('is-active');
+                            if(!wasActive) item.classList.add('is-active');
                         } else {
                             const wasActive = item.classList.contains('is-active');
                             closeAllMegas();
-                            if (!wasActive) item.classList.add('is-active');
+                            if(!wasActive) item.classList.add('is-active');
                         }
                     });
                 }
             });
-            if (mobileBtn && navLinks) {
+            
+            if(mobileBtn && navLinks) {
                 mobileBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    navLinks.classList.toggle('active');
-                    const icon = mobileBtn.querySelector('i');
-                    if (navLinks.classList.contains('active')) {
-                        icon.classList.remove('fa-bars');
-                        icon.classList.add('fa-times');
-                        closeAllMegas();
+                    const isOpen = navLinks.classList.contains('active');
+                    if(isOpen) {
+                        closeMenu();
                     } else {
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
+                        navLinks.classList.add('active');
+                        const icon = mobileBtn.querySelector('i');
+                        if(icon) {
+                            icon.classList.remove('fa-bars');
+                            icon.classList.add('fa-times');
+                        }
+                        closeAllMegas();
                     }
                 });
             }
+            
             document.addEventListener('click', (e) => {
-                if (!e.target.closest('.navbar')) {
-                    closeAllMegas();
-                    if (navLinks && navLinks.classList.contains('active') && isMobile()) {
-                        navLinks.classList.remove('active');
-                        const icon = mobileBtn?.querySelector('i');
-                        if (icon) { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); }
-                    }
+                if(!e.target.closest('.navbar')) {
+                    closeMenu();
                 }
             });
+            
             window.addEventListener('resize', () => {
-                if (!isMobile() && navLinks) {
-                    navLinks.classList.remove('active');
-                    if (mobileBtn) {
-                        const icon = mobileBtn.querySelector('i');
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
-                    closeAllMegas();
+                if(!isMobile() && navLinks && navLinks.classList.contains('active')) {
+                    closeMenu();
                 }
+                if(!isMobile()) closeAllMegas();
             });
         })();
     </script>
