@@ -63,7 +63,7 @@
             --transition: all 0.3s ease;
         }
         
-        /* Topbar - Hidden on mobile as per reference */
+        /* Topbar - Now visible on mobile as well */
         .topbar {
             background-color: var(--brand-red);
             padding: 12px 40px;
@@ -444,9 +444,14 @@
         @media (max-width: 992px) { .super-footer .sf-container { padding: 0 30px; } }
         @media (max-width: 768px) { .super-footer .sf-container { flex-direction: column; text-align: center; padding: 0 20px; } .super-footer .sf-socials { justify-content: center; } .super-footer .sf-description { margin: 0 auto 20px auto; text-align: center; } }
         
-        /* Mobile Responsive */
+        /* Mobile Responsive - Topbar now remains visible */
         @media screen and (max-width: 850px) {
-            .topbar { display: none; }
+            /* Topbar stays visible - removed display: none */
+            .topbar { padding: 10px 20px; }
+            .topbar-info { gap: 15px; font-size: 12px; }
+            .topbar-socials { gap: 8px; }
+            .social-btn { width: 30px; height: 30px; font-size: 12px; }
+            
             .mobile-menu-btn { display: flex; }
             .navbar { padding: 0 20px; min-height: 70px; }
             .logo img { height: 50px; }
@@ -485,12 +490,19 @@
             .application-note { margin: 0 20px 40px; }
         }
         
+        @media screen and (max-width: 650px) {
+            .topbar { flex-direction: column; text-align: center; padding: 10px 15px; }
+            .topbar-info { justify-content: center; }
+            .topbar-socials { justify-content: center; }
+        }
+        
         @media screen and (max-width: 480px) {
             .navbar { padding: 0 15px; }
             .donate-main { padding: 6px 14px; font-size: 12px; }
             .mobile-menu-btn { font-size: 14px; }
             .page-hero { padding: 60px 20px; }
             .page-hero h1 { font-size: 1.8rem; }
+            .topbar-info { gap: 12px; font-size: 11px; }
         }
         
         .back-to-top {
@@ -515,7 +527,7 @@
     </style>
 </head>
 <body>
-    <!-- Topbar (desktop only) -->
+    <!-- Topbar (visible on all devices including mobile) -->
     <div class="topbar">
         <div class="topbar-info">
             <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
@@ -587,7 +599,7 @@
                     <div class="job-description">
                         Lead and oversee the implementation of BDI's core programs including agriculture, health, and education initiatives. Manage team performance and donor reporting.
                     </div>
-                    <a href="docs/BASA-Development-Initiatives-latest-Newsletter.pdf" class="btn-download" download>
+                    <a href="job_program_manager.pdf" class="btn-download" download>
                         <i class="fa-solid fa-file-pdf"></i> Download Job Description (PDF)
                     </a>
                 </div>
@@ -607,7 +619,7 @@
                     <div class="job-description">
                         Design and implement monitoring frameworks, data collection tools, and impact evaluation for all BDI projects. Ensure data-driven decision making.
                     </div>
-                    <a href="docs/BASA-Development-Initiatives-latest-Newsletter.pdf" class="btn-download" download>
+                    <a href="job_me_officer.pdf" class="btn-download" download>
                         <i class="fa-solid fa-file-pdf"></i> Download Job Description (PDF)
                     </a>
                 </div>
@@ -627,7 +639,7 @@
                     <div class="job-description">
                         Provide technical support to smallholder farmers, facilitate training on climate-smart agriculture, and strengthen agribusiness value chains.
                     </div>
-                    <a href="docs/BASA-Development-Initiatives-latest-Newsletter.pdf" class="btn-download" download>
+                    <a href="job_agriculture_specialist.pdf" class="btn-download" download>
                         <i class="fa-solid fa-file-pdf"></i> Download Job Description (PDF)
                     </a>
                 </div>
@@ -647,7 +659,7 @@
                     <div class="job-description">
                         Develop and lead programs focused on women's economic empowerment, youth leadership, and disability inclusion across our operational areas.
                     </div>
-                    <a href="docs/BASA-Development-Initiatives-latest-Newsletter.pdf" class="btn-download" download>
+                    <a href="job_gender_youth_coordinator.pdf" class="btn-download" download>
                         <i class="fa-solid fa-file-pdf"></i> Download Job Description (PDF)
                     </a>
                 </div>
