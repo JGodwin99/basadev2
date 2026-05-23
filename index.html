@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Basa Development Initiative - Transforming Lives</title>
+    <title>Career Portal | Basa Development Initiative</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
     <!-- Google Fonts -->
@@ -63,7 +63,7 @@
             --transition: all 0.3s ease;
         }
         
-        /* Topbar - Hidden on mobile as per reference */
+        /* Topbar - Now visible on mobile as well */
         .topbar {
             background-color: var(--brand-red);
             padding: 12px 40px;
@@ -202,91 +202,225 @@
         .donate-main { background: var(--brand-red); color: white; padding: 10px 26px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; }
         .donate-main:hover { background: var(--brand-green); transform: translateY(-2px); }
         
-        /* Hero Banner, Donation Card, etc - all unchanged */
-        .hero-banner {
-            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('img/BDI-african-child.jpg') center/cover no-repeat;
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            padding: 0 60px;
+        /* Career Page Specific Styles */
+        .page-hero {
+            background: linear-gradient(rgba(0, 45, 35, 0.85), rgba(0, 45, 35, 0.85)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+        .page-hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .job-section {
+            padding: 70px 0;
+            background: #f9f9f9;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--brand-green);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background: var(--brand-red);
+        }
+        .section-title p {
+            color: #666;
+            margin-top: 15px;
+        }
+        
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .job-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .job-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        .job-card-header {
+            background: var(--brand-green);
+            padding: 25px 25px 20px;
+            color: white;
             position: relative;
         }
-        .hero-banner .container-fluid { width: 100%; max-width: 1300px; margin: 0 auto; }
-        .hero-flex { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
-        .hero-left { flex: 1.2; color: white; }
-        .hero-left h1 { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; line-height: 1.2; margin-bottom: 20px; color: white; }
-        .hero-right { flex: 0.8; min-width: 380px; }
-        @media (max-width: 1200px) { .hero-banner { padding: 0 40px; } .hero-left h1 { font-size: 2.5rem; } }
-        @media (max-width: 992px) { .hero-banner { padding: 60px 30px; min-height: auto; } .hero-flex { flex-direction: column; } .hero-left { text-align: center; } .hero-left h1 { font-size: 2rem; } .hero-right { width: 100%; min-width: auto; } }
-        @media (max-width: 576px) { .hero-banner { padding: 40px 20px; } .hero-left h1 { font-size: 1.6rem; } }
+        .job-card-header h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .job-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .job-card-body {
+            padding: 25px;
+        }
+        .job-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .job-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .job-meta-item i {
+            color: var(--brand-green);
+            width: 16px;
+        }
+        .job-description {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--brand-red);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            justify-content: center;
+            text-decoration: none;
+        }
+        .btn-download:hover {
+            background: var(--brand-green);
+            color: white;
+            transform: translateY(-2px);
+        }
         
-        .donation-card { background: #ffffff; border-radius: 20px; padding: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.25); color: #333; }
-        .donation-header { font-weight: bold; text-align: center; margin-bottom: 16px; font-size: 1.1rem; color: #000; }
-        .donation-type { display: flex; border-radius: 8px; overflow: hidden; margin-bottom: 16px; border: 1px solid #ddd; }
-        .donation-type button { flex: 1; padding: 12px; border: none; cursor: pointer; background: #f0f0f0; font-weight: 600; }
-        .donation-type button.active { background: #0b5f57; color: #fff; }
-        .amount-options { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
-        .amount-options button { flex: 1; padding: 12px; border-radius: 10px; border: 2px solid #ddd; background: #fff; cursor: pointer; font-weight: 600; }
-        .amount-options button.active { background: #0b5f57; color: #fff; border-color: #0b5f57; }
-        .custom-amount { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ccc; margin-bottom: 16px; }
-        .donate-btn-main { width: 100%; padding: 14px; border-radius: 30px; background: #b1004b; color: #fff; border: none; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .donate-btn-main:hover { background: #8e0038; }
-        .security { font-size: 11px; color: #777; text-align: center; margin-top: 12px; }
+        .why-work {
+            padding: 70px 0;
+            background: white;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .benefit-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: #f5f5f5;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        .benefit-card:hover {
+            background: var(--brand-green);
+            color: white;
+        }
+        .benefit-card:hover .benefit-icon,
+        .benefit-card:hover h3,
+        .benefit-card:hover p {
+            color: white;
+        }
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--brand-red);
+            margin-bottom: 20px;
+        }
+        .benefit-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .benefit-card p {
+            font-size: 0.85rem;
+            color: #666;
+        }
         
-        /* Other Ways to Help Slider - unchanged */
-        .give-hand { background-color: #e8f5e9; padding: 80px 0; overflow: hidden; }
-        .give-hand .container { max-width: 1300px; margin: 0 auto; padding: 0 40px; }
-        .give-hand .section-header { text-align: center; margin-bottom: 50px; }
-        .give-hand .header-main-row { display: flex; justify-content: center; align-items: center; gap: 25px; margin-bottom: 15px; flex-wrap: wrap; }
-        .give-hand .main-title { color: #00796b; font-size: 2.8rem; font-weight: 800; margin: 0; text-decoration: underline; text-underline-offset: 12px; }
-        .give-hand .description { color: #444; font-size: 1.2rem; max-width: 750px; margin: 15px auto 0; font-style: italic; }
-        .give-hand .navigation { display: flex; gap: 12px; }
-        .give-hand .nav-arrow { width: 42px; height: 42px; background-color: #00796b; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s; }
-        .give-hand .cards-row { display: flex; gap: 30px; overflow-x: auto; scroll-behavior: smooth; padding: 20px 0; scrollbar-width: none; }
-        .give-hand .cards-row::-webkit-scrollbar { display: none; }
-        .give-hand .card { flex: 0 0 calc((100% - 60px) / 3); position: relative; border-radius: 30px; overflow: hidden; background: #fff; box-shadow: 0 15px 35px rgba(0,0,0,0.08); transition: transform 0.3s; }
-        .give-hand .card:hover { transform: translateY(-8px); }
-        .give-hand .image-box img { width: 100%; height: 380px; object-fit: cover; display: block; }
-        .give-hand .content-overlay { position: absolute; bottom: 20px; left: 20px; right: 20px; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 20px; border-radius: 20px; text-align: center; }
-        .give-hand .card-title { color: #00796b; font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
-        .give-hand .card-text { font-size: 0.8rem; color: #555; margin-bottom: 12px; }
-        .give-hand .donate-btn { background-color: #b40205; color: #fff; text-decoration: none; padding: 8px 20px; border-radius: 30px; font-weight: 700; font-size: 0.75rem; display: inline-block; transition: all 0.3s; }
-        .give-hand .view-all-link { background-color: #00796b; color: #fff; text-decoration: none; padding: 14px 28px; border-radius: 14px; display: inline-flex; align-items: center; gap: 10px; font-weight: 700; margin-top: 40px; }
-        @media (max-width: 1100px) { .give-hand .container { padding: 0 30px; } .give-hand .card { flex: 0 0 calc((100% - 30px) / 2); } .give-hand .image-box img { height: 320px; } }
-        @media (max-width: 768px) { .give-hand .container { padding: 0 20px; } .give-hand .card { flex: 0 0 100%; } .give-hand .navigation { display: none; } .give-hand .main-title { font-size: 2rem; } }
+        .application-note {
+            background: #e8f5e9;
+            padding: 40px;
+            text-align: center;
+            margin: 0 40px 60px;
+            border-radius: 20px;
+        }
+        .application-note i {
+            font-size: 2rem;
+            color: var(--brand-green);
+            margin-bottom: 15px;
+        }
+        .application-note h3 {
+            color: var(--brand-green);
+            margin-bottom: 10px;
+        }
+        .application-note p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #555;
+        }
         
-        .concern-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px 40px; max-width: 1300px; margin: 0 auto; }
-        .grid-card { display: flex; flex-direction: column; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-        .grid-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
-        .card-label { background-color: #2d5a50; color: white; padding: 15px 20px; font-weight: bold; font-size: 1rem; text-align: center; }
-        @media (max-width: 768px) { .concern-grid { padding: 20px; } }
-        
-        .bdi-impa { background-color: #d1d1d1; padding: 70px 20px; text-align: center; }
-        .bdi-impa-container { max-width: 1300px; margin: 0 auto; }
-        .bdi-impa-title { font-size: 3rem; color: #005e4d; font-weight: 800; margin-bottom: 40px; position: relative; }
-        .bdi-impa-title::after { content: ''; display: block; width: 60px; height: 4px; background: #ae0b49; margin: 15px auto 0; border-radius: 2px; }
-        .bdi-impa-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
-        .bdi-impa-card { background: #ffffff; padding: 35px 20px; border-radius: 15px; transition: transform 0.3s ease; border-bottom: 4px solid transparent; }
-        .bdi-impa-card:hover { transform: translateY(-8px); border-bottom: 4px solid #005e4d; }
-        .bdi-impa-icon { font-size: 2.2rem; color: #ae0b49; margin-bottom: 15px; }
-        .bdi-impa-number { font-size: 2.2rem; font-weight: 800; color: #333; margin: 0; }
-        .bdi-impa-label { font-size: 0.85rem; color: #666; font-weight: 600; margin-top: 10px; }
-        
-        .how-help { background-color: #005e4d; padding: 70px 40px; color: #ffffff; }
-        .help-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1300px; margin: 0 auto; }
-        .help-item { display: flex; align-items: flex-start; gap: 20px; padding: 25px; text-decoration: none; color: #ffffff; border-radius: 16px; transition: all 0.3s ease; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); }
-        .help-item:hover, .help-item.active-item { background-color: rgba(0, 0, 0, 0.3); transform: translateY(-3px); border-color: rgba(255,255,255,0.3); }
-        .icon-box { flex-shrink: 0; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.15); border-radius: 16px; transition: all 0.3s ease; }
-        .help-item:hover .icon-box { background: #ae0b49; }
-        .icon-box img { width: 32px; height: 32px; object-fit: contain; filter: brightness(0) invert(1); }
-        .text-box h3 { font-size: 1.2rem; margin: 0 0 8px 0; font-weight: 700; letter-spacing: -0.3px; }
-        .text-box h3 span { font-size: 1rem; }
-        .text-box p { font-size: 0.85rem; line-height: 1.5; margin: 0; opacity: 0.85; }
-        @media (max-width: 1024px) { .help-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } .how-help { padding: 50px 30px; } }
-        @media (max-width: 768px) { .help-grid { grid-template-columns: 1fr; gap: 15px; } .how-help { padding: 40px 20px; } .help-item { padding: 18px; } .icon-box { width: 50px; height: 50px; } .icon-box img { width: 28px; height: 28px; } }
-        
-        .super-footer { background-color: #064d3b; color: #ffffff; padding: 60px 0 30px 0; }
-        .super-footer .sf-container { max-width: 1300px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 40px; gap: 30px; }
+        /* ========== SUPER FOOTER - EXACTLY AS INDEX PAGE ========== */
+        .super-footer {
+            background-color: #064d3b;
+            color: #ffffff;
+            padding: 60px 0 30px 0;
+        }
+        .super-footer .sf-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0 40px;
+            gap: 30px;
+        }
         .super-footer .sf-col { flex: 1; min-width: 220px; }
         .super-footer .sf-logo img { max-width: 160px; margin-bottom: 20px; }
         .super-footer .sf-description { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 20px; max-width: 280px; }
@@ -310,27 +444,17 @@
         @media (max-width: 992px) { .super-footer .sf-container { padding: 0 30px; } }
         @media (max-width: 768px) { .super-footer .sf-container { flex-direction: column; text-align: center; padding: 0 20px; } .super-footer .sf-socials { justify-content: center; } .super-footer .sf-description { margin: 0 auto 20px auto; text-align: center; } }
         
-        .event { padding: 50px 0; background: #f5f5f5; }
-        .event .container { max-width: 1300px; padding: 0 40px; }
-        .event-item img { width: 100%; border-radius: 12px; height: 100px; object-fit: contain; background: white; padding: 10px; }
-        @media (max-width: 768px) { .event .container { padding: 0 20px; } }
-        
-        #spinner { opacity: 0; visibility: hidden; transition: opacity .8s ease-out; z-index: 99999; }
-        #spinner.show { visibility: visible; opacity: 1; }
-        
-        /* ========== MOBILE NAVBAR - Redesigned like reference image (MENU + logo + Q + DONATE) ========== */
+        /* Mobile Responsive - Topbar now remains visible (no display: none) */
         @media screen and (max-width: 850px) {
-            /* Hide topbar on mobile */
-            .topbar { display: none; }
+            /* Topbar stays visible - adjusted padding for mobile */
+            .topbar { padding: 10px 20px; }
+            .topbar-info { gap: 15px; font-size: 12px; }
+            .topbar-socials { gap: 8px; }
+            .social-btn { width: 30px; height: 30px; font-size: 12px; }
             
-            /* Show mobile menu button with "MENU" text + icon */
             .mobile-menu-btn { display: flex; }
-            
-            /* Adjust navbar padding */
             .navbar { padding: 0 20px; min-height: 70px; }
             .logo img { height: 50px; }
-            
-            /* Hide desktop nav-links initially, show as overlay panel when active */
             .nav-links {
                 display: none;
                 position: fixed;
@@ -350,71 +474,66 @@
                 max-height: calc(100vh - 70px);
             }
             .nav-links.active { display: flex; }
-            
-            .has-mega { 
-                position: relative; 
-                width: 100%; 
-                border-bottom: 1px solid #eee;
-                display: flex;
-                flex-direction: column;
-            }
-            .nav-link { 
-                padding: 16px 25px; 
-                justify-content: space-between; 
-                width: 100%; 
-                white-space: normal; 
-                background: white;
-                font-size: 16px;
-                order: 1;
-            }
-            .mega-menu { 
-                position: relative !important; 
-                top: 0; 
-                left: 0; 
-                width: 100%; 
-                display: none; 
-                background: #f8f8f8; 
-                border-top: 1px solid #ddd; 
-                flex-direction: column; 
-                order: 2; 
-                box-shadow: none;
-            }
-            .has-mega.is-active .mega-menu { 
-                display: flex !important; 
-                max-height: none; 
-                overflow-y: visible; 
-                margin-bottom: 0;
-            }
+            .has-mega { position: relative; width: 100%; border-bottom: 1px solid #eee; display: flex; flex-direction: column; }
+            .nav-link { padding: 16px 25px; justify-content: space-between; width: 100%; white-space: normal; background: white; font-size: 16px; order: 1; }
+            .mega-menu { position: relative !important; top: 0; left: 0; width: 100%; display: none; background: #f8f8f8; border-top: 1px solid #ddd; flex-direction: column; order: 2; box-shadow: none; }
+            .has-mega.is-active .mega-menu { display: flex !important; }
             .mega-sidebar { width: 100%; padding: 25px; text-align: center; order: 1; }
             .mega-grid { display: flex !important; flex-direction: column !important; padding: 25px !important; gap: 30px !important; order: 2; }
             .mega-col { width: 100%; }
-            
-            /* Right side (search and donate) remain visible */
             .nav-right { margin-left: auto; gap: 12px; }
             .search-btn { padding: 6px 10px; }
             .donate-main { padding: 6px 18px; font-size: 13px; }
+            .page-hero h1 { font-size: 2rem; }
+            .job-grid { padding: 0 20px; grid-template-columns: 1fr; }
+            .benefits-grid { padding: 0 20px; }
+            .application-note { margin: 0 20px 40px; }
         }
         
-        /* Small screen adjustments */
+        /* Additional breakpoint for very small screens - topbar stacks vertically */
+        @media screen and (max-width: 650px) {
+            .topbar { flex-direction: column; text-align: center; padding: 10px 15px; }
+            .topbar-info { justify-content: center; }
+            .topbar-socials { justify-content: center; }
+        }
+        
         @media screen and (max-width: 480px) {
             .navbar { padding: 0 15px; }
             .donate-main { padding: 6px 14px; font-size: 12px; }
-            .search-btn { padding: 6px 8px; }
             .mobile-menu-btn { font-size: 14px; }
-            .mobile-menu-btn i { font-size: 18px; }
+            .page-hero { padding: 60px 20px; }
+            .page-hero h1 { font-size: 1.8rem; }
+            .topbar-info { gap: 12px; font-size: 11px; }
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            background: var(--brand-red);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 99;
+        }
+        .back-to-top:hover {
+            background: var(--brand-green);
+            transform: translateY(-3px);
         }
     </style>
 </head>
 <body>
-    <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center"><div class="spinner-grow text-primary" role="status"></div></div>
-    
-    <!-- Topbar (desktop only) -->
+    <!-- Topbar (visible on all devices including mobile) -->
     <div class="topbar">
         <div class="topbar-info">
             <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
             <a href="tel:+231779205152"><i class="fa-solid fa-phone"></i> +231 779 205 152</a>
-            <!-- Career Portal link added near phone icon -->
-            <a href="career-portal.html" class="career-link"><i class="fa-solid fa-briefcase"></i> Career Portal</a>
+            <a href="career-portal.html"><i class="fa-solid fa-briefcase"></i> Career Portal</a>
         </div>
         <div class="topbar-socials">
             <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
@@ -425,7 +544,7 @@
         </div>
     </div>
     
-    <!-- NAVBAR - Redesigned mobile menu button: "MENU" text + icon like reference -->
+    <!-- NAVBAR - Identical to index page -->
     <nav class="navbar">
         <div class="logo"><a href="index.html"><img src="./img/logo14.png" alt="BDI Logo"></a></div>
         <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -451,120 +570,172 @@
         </div>
     </nav>
     
-    <!-- Rest of your content remains exactly the same -->
-    <div class="hero-banner">
-        <div class="container-fluid">
-            <div class="hero-flex">
-                <div class="hero-left"><h1>We Are Dedicated to Transforming Lives and Cultivating Change.</h1></div>
-                <div class="hero-right">
-                    <div class="donation-card">
-                        <div class="donation-header">🤝 Make a Difference All Year Long</div>
-                        <div class="donation-type"><button class="freq-btn active">One-off</button><button class="freq-btn">Give Monthly</button></div>
-                        <h3 style="font-size:1rem; margin-bottom:12px; color:#333;">Choose an amount today to transform a life</h3>
-                        <div class="amount-options"><button class="amt-btn">$40</button><button class="amt-btn active">$104</button><button class="amt-btn">$250</button></div>
-                        <input type="number" class="custom-amount" placeholder="$ Other amount">
-                        <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6"><button class="donate-btn-main">Donate Now</button></a>
-                        <p class="security">🔒 Secure payment: SSL encrypted & reCAPTCHA protected</p>
+    <!-- Hero Section -->
+    <div class="page-hero">
+        <div class="container">
+            <h1>Join Our Mission</h1>
+            <p>Be part of a team dedicated to transforming lives, building resilient communities, and creating lasting change across Liberia and beyond.</p>
+        </div>
+    </div>
+    
+    <!-- Job Vacancies Section -->
+    <div class="job-section">
+        <div class="section-title">
+            <h2>Current Openings</h2>
+            <p>Explore opportunities to make a meaningful impact. Click on any position to download the full job description (PDF).</p>
+        </div>
+        
+        <div class="job-grid">
+            <!-- Job 1: Program Manager -->
+            <div class="job-card">
+                <div class="job-card-header">
+                    <h3>Program Manager</h3>
+                    <span class="job-badge">Full-time</span>
+                </div>
+                <div class="job-card-body">
+                    <div class="job-meta">
+                        <span class="job-meta-item"><i class="fa-solid fa-location-dot"></i> Monrovia, Liberia</span>
+                        <span class="job-meta-item"><i class="fa-regular fa-calendar"></i> Deadline: June 30, 2026</span>
                     </div>
+                    <div class="job-description">
+                        Lead and oversee the implementation of BDI's core programs including agriculture, health, and education initiatives. Manage team performance and donor reporting.
+                    </div>
+                    <a href="job_program_manager.pdf" class="btn-download" download>
+                        <i class="fa-solid fa-file-pdf"></i> Download Job Description (PDF)
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Job 2: Monitoring & Evaluation Officer -->
+            <div class="job-card">
+                <div class="job-card-header">
+                    <h3>Monitoring & Evaluation Officer</h3>
+                    <span class="job-badge">Full-time</span>
+                </div>
+                <div class="job-card-body">
+                    <div class="job-meta">
+                        <span class="job-meta-item"><i class="fa-solid fa-location-dot"></i> Monrovia with field travel</span>
+                        <span class="job-meta-item"><i class="fa-regular fa-calendar"></i> Deadline: July 15, 2026</span>
+                    </div>
+                    <div class="job-description">
+                        Design and implement monitoring frameworks, data collection tools, and impact evaluation for all BDI projects. Ensure data-driven decision making.
+                    </div>
+                    <a href="job_me_officer.pdf" class="btn-download" download>
+                        <i class="fa-solid fa-file-pdf"></i> Download Job Description (PDF)
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Job 3: Agriculture & Agribusiness Specialist -->
+            <div class="job-card">
+                <div class="job-card-header">
+                    <h3>Agriculture & Agribusiness Specialist</h3>
+                    <span class="job-badge">Full-time</span>
+                </div>
+                <div class="job-card-body">
+                    <div class="job-meta">
+                        <span class="job-meta-item"><i class="fa-solid fa-location-dot"></i> Rural Liberia (multiple locations)</span>
+                        <span class="job-meta-item"><i class="fa-regular fa-calendar"></i> Deadline: July 30, 2026</span>
+                    </div>
+                    <div class="job-description">
+                        Provide technical support to smallholder farmers, facilitate training on climate-smart agriculture, and strengthen agribusiness value chains.
+                    </div>
+                    <a href="job_agriculture_specialist.pdf" class="btn-download" download>
+                        <i class="fa-solid fa-file-pdf"></i> Download Job Description (PDF)
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Job 4: Gender & Youth Empowerment Coordinator -->
+            <div class="job-card">
+                <div class="job-card-header">
+                    <h3>Gender & Youth Empowerment Coordinator</h3>
+                    <span class="job-badge">Full-time</span>
+                </div>
+                <div class="job-card-body">
+                    <div class="job-meta">
+                        <span class="job-meta-item"><i class="fa-solid fa-location-dot"></i> Monrovia / Field-based</span>
+                        <span class="job-meta-item"><i class="fa-regular fa-calendar"></i> Deadline: August 10, 2026</span>
+                    </div>
+                    <div class="job-description">
+                        Develop and lead programs focused on women's economic empowerment, youth leadership, and disability inclusion across our operational areas.
+                    </div>
+                    <a href="job_gender_youth_coordinator.pdf" class="btn-download" download>
+                        <i class="fa-solid fa-file-pdf"></i> Download Job Description (PDF)
+                    </a>
                 </div>
             </div>
         </div>
     </div>
     
-    <div class="give-hand"><div class="container"><div class="section-header"><div class="header-main-row"><h1 class="main-title">Other Ways To Help</h1><div class="navigation"><span class="nav-arrow prev" id="slidePrev">&#10094;</span><span class="nav-arrow next" id="slideNext">&#10095;</span></div></div><p class="description">"Your contribution helps us reach more people, create lasting change, and continue the work that truly matters."</p></div><div class="cards-row" id="sliderContainer"><div class="card"><div class="image-box"><img src="./img/BDI-feeding-program-outreach.jpg" alt="Feeding"></div><div class="content-overlay"><h3 class="card-title">Education & Feeding Program</h3><p class="card-text">Supporting children's growth through learning and nutrition.</p><a href="all donate.html" class="donate-btn">Donate Now</a></div></div><div class="card"><div class="image-box"><img src="./img/BDI-Eniveronmental-Climate.jpg" alt="Climate"></div><div class="content-overlay"><h3 class="card-title">Environmental Sustainability</h3><p class="card-text">Protecting natural resources and responding to climate change.</p><a href="all donate.html" class="donate-btn">Donate Now</a></div></div><div class="card"><div class="image-box"><img src="./img/BDI-Agricultural-Program.jpg" alt="Agriculture"></div><div class="content-overlay"><h3 class="card-title">Agricultural Development</h3><p class="card-text">Strengthening agriculture as a driver of economic growth.</p><a href="all donate.html" class="donate-btn">Donate Now</a></div></div><div class="card"><div class="image-box"><img src="./img/BDI-Disability.jpg" alt="Disability"></div><div class="content-overlay"><h3 class="card-title">Disability Inclusion</h3><p class="card-text">Empowering communities through leadership and resources.</p><a href="all donate.html" class="donate-btn">Donate Now</a></div></div><div class="card"><div class="image-box"><img src="./img/BDI-health-education-1.jpg" alt="Health"></div><div class="content-overlay"><h3 class="card-title">Health & Nutrition</h3><p class="card-text">Promoting healthy lifestyles and balanced diets.</p><a href="all donate.html" class="donate-btn">Donate Now</a></div></div><div class="card"><div class="image-box"><img src="./img/BDI-menstrual-hyegies-outreach.jpg" alt="Menstrual"></div><div class="content-overlay"><h3 class="card-title">Menstrual Hygiene</h3><p class="card-text">Providing access to safe and affordable menstrual products.</p><a href="all donate.html" class="donate-btn">Donate Now</a></div></div></div><div class="text-center"><a href="all donate.html" class="view-all-link"><span class="icon-box">➤</span> View All Donation</a></div></div></div>
+    <!-- How to Apply Note -->
+    <div class="application-note">
+        <i class="fa-solid fa-envelope-open-text"></i>
+        <h3>How to Apply</h3>
+        <p>Download the full job description PDF for the position you're interested in. Follow the application instructions provided in the PDF. All applications should be sent to <strong>hr@basadev.org</strong> with the job title as the subject line.</p>
+        <p style="margin-top: 15px; font-size: 0.85rem;"><i class="fa-solid fa-clock"></i> Only shortlisted candidates will be contacted.</p>
+    </div>
     
-    <div class="concern-grid"><div class="grid-card"><a href="agriculture.html"><img src="img/BDI-Agricultural-Program.jpg" alt="Agriculture"><div class="card-label">Agriculture & Agribusiness</div></a></div><div class="grid-card"><a href="health.html"><img src="img/BDI-health-education-1.jpg" alt="Health"><div class="card-label">Health & Nutrition</div></a></div><div class="grid-card"><a href="environment.html"><img src="img/BDI-Eniveronmental-Climate.jpg" alt="Environment"><div class="card-label">Environment & Climate</div></a></div><div class="grid-card"><a href="gender-youth.html"><img src="img/BDI-woman empowerment-1.jpg" alt="Gender"><div class="card-label">Gender & Youth Empowerment</div></a></div><div class="grid-card"><a href="fisheries.html"><img src="img/BDI-fishers-111.jpg" alt="Fisheries"><div class="card-label">Fisheries & Aquaculture</div></a></div><div class="grid-card"><a href="partnership.html"><img src="img/BDI-partnership-1.jpg" alt="Partnership"><div class="card-label">Research & Partnership</div></a></div></div>
-    
-    <div class="bdi-impa"><div class="bdi-impa-container"><h1 class="bdi-impa-title">Our Impact</h1><div class="bdi-impa-grid"><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-tree"></i></div><h3 class="bdi-impa-number">5,000+</h3><p class="bdi-impa-label">Trees Planted</p></div><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-seedling"></i></div><h3 class="bdi-impa-number">1,200</h3><p class="bdi-impa-label">Farmers Supported</p></div><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-school"></i></div><h3 class="bdi-impa-number">15</h3><p class="bdi-impa-label">Schools Partnered</p></div><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-user-friends"></i></div><h3 class="bdi-impa-number">20</h3><p class="bdi-impa-label">Youth & Women-led Agribusinesses</p></div></div></div></div>
-    
-    <div class="how-help">
-        <div class="help-grid">
-            <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/4213/4213645.png" alt="Gift"></div><div class="text-box"><h3>Buy a gift <span>›</span></h3><p>With an extensive range of alternative gifts, we have something to suit everybody.</p></div></a>
-            <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/2921/2921226.png" alt="Will"></div><div class="text-box"><h3>Leave a gift in your will <span>›</span></h3><p>Leave the world a better place with a life-changing legacy.</p></div></a>
-            <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/3209/3209990.png" alt="Corporate"></div><div class="text-box"><h3>Become a corporate supporter <span>›</span></h3><p>We partner with organisations that share our passion.</p></div></a>
-            <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/3209/3209139.png" alt="Volunteer"></div><div class="text-box"><h3>Volunteer with BDI <span>›</span></h3><p>There are lots of opportunities for you to get involved as a volunteer.</p></div></a>
-            <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/609/609803.png" alt="Fundraise"></div><div class="text-box"><h3>Fundraise for BDI <span>›</span></h3><p>From marathons to cake sales, there are many ways to support our work.</p></div></a>
-            <a href="#" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/10095/10095349.png" alt="Donate"></div><div class="text-box"><h3>Donate now <span>›</span></h3><p>Give a once-off or monthly donation today.</p></div></a>
+    <!-- Why Work With Us -->
+    <div class="why-work">
+        <div class="section-title">
+            <h2>Why Work With BDI?</h2>
+            <p>We believe in empowering our team to create the greatest impact.</p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                <h3>Meaningful Mission</h3>
+                <p>Work that directly transforms communities and changes lives across Liberia.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <h3>Professional Growth</h3>
+                <p>Continuous learning opportunities, training, and career development pathways.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fa-solid fa-users"></i></div>
+                <h3>Inclusive Culture</h3>
+                <p>A diverse, respectful workplace that values every team member's contribution.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fa-solid fa-globe"></i></div>
+                <h3>Global Network</h3>
+                <p>Collaborate with international partners and donors driving sustainable change.</p>
+            </div>
         </div>
     </div>
     
-    <div class="container-fluid event"><div class="container"><div class="text-center mx-auto mb-4"><h5 class="text-uppercase" style="font-size: 2rem; color: #005e4d;">Our Partners</h5><h2 class="mb-3" style="font-size: 1.5rem;">“Together with our partners, we create lasting solutions that change lives.”</h2></div><div class="owl-carousel event-carousel"><div class="event-item"><img src="img/p1.jpg" alt="Partner"></div><div class="event-item"><img src="img/p2.jpg" alt="Partner"></div><div class="event-item"><img src="img/p3.jpg" alt="Partner"></div><div class="event-item"><img src="img/p4.jpg" alt="Partner"></div><div class="event-item"><img src="img/p5.jpg" alt="Partner"></div><div class="event-item"><img src="img/p6.jpg" alt="Partner"></div><div class="event-item"><img src="img/p7.jpg" alt="Partner"></div></div></div></div>
-    
+    <!-- SUPER FOOTER - EXACTLY AS INDEX PAGE (with all locations and content) -->
     <footer class="super-footer">
         <div class="sf-container">
             <div class="sf-col"><div class="sf-logo"><img src="./img/logo14-1.png" alt="BDI"></div><p class="sf-description">BASA Development Initiatives (BDI) is an NGO dedicated to building a more inclusive, resilient, and sustainable Liberia.</p><div class="sf-socials"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-pinterest-p"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div>
             <div class="sf-col"><h4 class="sf-title">Quick Links</h4><ul class="sf-links"><li><a href="our-values.html">Our Values</a></li><li><a href="our-team">Our Team</a></li><li><a href="partners">Partner With Us</a></li><li><a href="testimonials">Testimonials</a></li><li><a href="contact.html">Contact</a></li></ul></div>
             <div class="sf-col">
-    <h4 class="sf-title">Locations</h4>
-
-    <div class="sf-loc-item">
-        <h5>HEADQUARTER: Monrovia, Liberia</h5>
-        <p>
-            Morris Villa, ELWA Community<br>
-            Email: info@basadev.org<br>
-            Tel: +231 886 349 962 / +231 88 675 7435
-        </p>
-    </div>
-
-    <div class="sf-loc-item">
-        <h5>State of Minnesota, USA</h5>
-        <p>
-            Regional Coordination Office<br>
-            Tel: +1 (651) 235-9896<br>
-            Email: info@basadev.org
-        </p>
-    </div>
-
-    <!-- NEW GHANA OFFICE -->
-    <div class="sf-loc-item">
-        <h5>Accra, Ghana Office</h5>
-        <p>
-            GE-350-4105, House Number 7, Westland Haasto,
-            2nd Boulevard Road, Accra, Ghana<br>
-            Mobile: +233 244 930 623<br>
-            Email: info@basadev.org
-        </p>
-    </div>
-</div>
-			
-			
-			
+                <h4 class="sf-title">Locations</h4>
+                <div class="sf-loc-item">
+                    <h5>HEADQUARTER: Monrovia, Liberia</h5>
+                    <p>Morris Villa, ELWA Community<br>Email: info@basadev.org<br>Tel: +231 886 349 962 / +231 88 675 7435</p>
+                </div>
+                <div class="sf-loc-item">
+                    <h5>State of Minnesota, USA</h5>
+                    <p>Regional Coordination Office<br>Tel: +1 (651) 235-9896<br>Email: info@basadev.org</p>
+                </div>
+                <div class="sf-loc-item">
+                    <h5>Accra, Ghana Office</h5>
+                    <p>GE-350-4105, House Number 7, Westland Haasto, 2nd Boulevard Road, Accra, Ghana<br>Mobile: +233 244 930 623<br>Email: info@basadev.org</p>
+                </div>
+            </div>
             <div class="sf-col"><h4 class="sf-title">Stay Updated</h4><p class="sf-newsletter-text">Join our newsletter for the latest impact updates.</p><form class="sf-subscribe" onsubmit="return false;"><input type="email" placeholder="Your email address" required><button type="submit">Subscribe</button></form></div>
         </div>
         <div class="sf-bottom-bar"><p>&copy; 2026 BASA Development Initiatives (BDI). Registered NGO in Liberia</p></div>
     </footer>
     
-    <a href="#" class="btn btn-primary btn-md-square back-to-top" style="position: fixed; bottom: 30px; right: 20px;"><i class="fa fa-arrow-up"></i></a>
+    <a href="#" class="back-to-top"><i class="fa fa-arrow-up"></i></a>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script>
-        // Donation buttons
-        document.querySelectorAll('.freq-btn').forEach(btn => btn.addEventListener('click', function() { document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active')); this.classList.add('active'); }));
-        document.querySelectorAll('.amt-btn').forEach(btn => btn.addEventListener('click', function() { document.querySelectorAll('.amt-btn').forEach(b => b.classList.remove('active')); this.classList.add('active'); const custom = document.querySelector('.custom-amount'); if(custom) custom.value = ''; }));
-        const customAmt = document.querySelector('.custom-amount');
-        if(customAmt) customAmt.addEventListener('input', () => document.querySelectorAll('.amt-btn').forEach(b => b.classList.remove('active')));
-        
-        // Slider
-        const slider = document.getElementById('sliderContainer');
-        const nextBtn = document.getElementById('slideNext');
-        const prevBtn = document.getElementById('slidePrev');
-        if(slider && nextBtn && prevBtn) {
-            nextBtn.addEventListener('click', () => slider.scrollBy({ left: slider.clientWidth + 30, behavior: 'smooth' }));
-            prevBtn.addEventListener('click', () => slider.scrollBy({ left: -(slider.clientWidth + 30), behavior: 'smooth' }));
-        }
-        
-        // Owl Carousel
-        $('.event-carousel').owlCarousel({ loop: true, margin: 20, nav: false, dots: true, autoplay: true, autoplayTimeout: 3000, responsive: { 0: { items: 2 }, 768: { items: 3 }, 992: { items: 5 } } });
-        
-        // Spinner
-        setTimeout(() => document.getElementById('spinner')?.classList.remove('show'), 500);
-        
-        // Mobile menu - redesigned for new button with "MENU" text
+        // Mobile menu toggle (identical to index)
         (function() {
             const megaItems = document.querySelectorAll('.has-mega');
             const mobileBtn = document.getElementById('mobileMenuBtn');
@@ -634,6 +805,12 @@
                 if(!isMobile()) closeAllMegas();
             });
         })();
+        
+        // Back to top
+        document.querySelector('.back-to-top')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
 </body>
 </html>
