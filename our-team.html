@@ -170,7 +170,6 @@
 
     /* HERO */
     .hero { background: var(--navy); padding: 70px 80px; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 520px; height: 520px; border-radius: 50%; border: 1px solid rgba(23,190,187,.10); }
     .hero-inner { display: grid; grid-template-columns: 1fr 360px; gap: 60px; align-items: center; position: relative; z-index: 2; }
     .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 18px; }
     .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4.2vw, 52px); font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 24px; }
@@ -189,7 +188,7 @@
     .dept-name { font-size: 11px; font-weight: 700; color: var(--white); margin-bottom: 2px; }
     .dept-count { font-size: 10px; color: rgba(255,255,255,.6); }
 
-    /* TEAM PAGE */
+    /* TEAM PAGE - CLEAN IMAGES, ONLY NAME & POSITION */
     .team-page { padding: 0 80px 80px; }
     .dept-section { padding-top: 50px; }
     .dept-header { display: flex; align-items: center; gap: 16px; margin-bottom: 30px; padding-bottom: 12px; border-bottom: 2px solid var(--teal-border); flex-wrap: wrap; }
@@ -200,30 +199,28 @@
     .team-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
     .team-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
     .team-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
-    .team-card { background: white; border: 1px solid var(--border-warm); border-radius: 18px; overflow: hidden; transition: all 0.3s; }
+    .team-card { background: white; border: 1px solid var(--border-warm); border-radius: 18px; overflow: hidden; transition: all 0.3s; text-align: center; }
     .team-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(14,124,123,.12); border-color: var(--teal-border); }
-    .team-photo { aspect-ratio: 1/1; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; }
+    .team-photo { aspect-ratio: 1/1; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f0f0f0; }
     .team-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .team-photo.ph-navy { background: linear-gradient(145deg, #22223A 0%, var(--navy) 100%); }
-    .team-photo.ph-teal { background: linear-gradient(145deg, var(--teal-pale) 0%, #A8D8D8 100%); }
-    .team-photo.ph-red { background: linear-gradient(145deg, var(--red-pale) 0%, #F5C8C8 100%); }
-    .team-photo.ph-warm { background: linear-gradient(145deg, var(--warm-bg) 0%, var(--warm-mid) 100%); }
-    .team-photo.ph-deep { background: linear-gradient(145deg, #1A3A5C 0%, #0A2040 100%); }
-    .team-photo.ph-green { background: linear-gradient(145deg, #E8F5EE 0%, #B8DFC8 100%); }
-    .team-photo.ph-amber { background: linear-gradient(145deg, #FFFBEB 0%, #FDE68A 100%); }
-    .team-photo.ph-plum { background: linear-gradient(145deg, #F5F0FF 0%, #DDD5FF 100%); }
+    /* Fallback background colors for missing images */
+    .team-photo.ph-navy { background: linear-gradient(145deg, #2c2c44, #1a1a2e); }
+    .team-photo.ph-teal { background: linear-gradient(145deg, #c8e8e8, #a8d8d8); }
+    .team-photo.ph-red { background: linear-gradient(145deg, #f5c8c8, #e8a0a0); }
+    .team-photo.ph-warm { background: linear-gradient(145deg, #f0ece4, #e5dfd5); }
+    .team-photo.ph-deep { background: linear-gradient(145deg, #1e405e, #0a2040); }
+    .team-photo.ph-green { background: linear-gradient(145deg, #d4ecd4, #b8dfc8); }
+    .team-photo.ph-amber { background: linear-gradient(145deg, #fff0d4, #fde68a); }
+    .team-photo.ph-plum { background: linear-gradient(145deg, #e8e0ff, #c8b8ff); }
     .sinoe-badge { position: absolute; top: 10px; right: 10px; background: var(--teal); color: white; font-size: 8px; font-weight: 700; padding: 2px 8px; border-radius: 6px; letter-spacing: .06em; text-transform: uppercase; }
     .team-body { padding: 16px; }
-    .team-name { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 3px; line-height: 1.25; }
-    .team-role { font-size: 10px; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 8px; }
-    .team-bio { font-size: 12px; color: var(--text-mid); line-height: 1.55; margin-bottom: 10px; }
-    .team-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
-    .team-tag { font-size: 8px; font-weight: 700; background: var(--teal-pale); border: 1px solid var(--teal-border); color: var(--teal); padding: 2px 6px; border-radius: 10px; }
-    .team-county { display: flex; align-items: center; gap: 4px; font-size: 10px; color: var(--text-muted); }
-    .team-card.featured { grid-column: span 2; display: grid; grid-template-columns: 200px 1fr; }
-    .team-card.featured .team-photo { aspect-ratio: auto; min-height: 100%; border-radius: 0; }
+    .team-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 5px; line-height: 1.3; }
+    .team-role { font-size: 11px; font-weight: 600; color: var(--teal); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 0; }
+    .team-card.featured { grid-column: span 2; display: grid; grid-template-columns: 200px 1fr; text-align: left; }
+    .team-card.featured .team-photo { aspect-ratio: auto; min-height: 200px; height: 100%; }
     .team-card.featured .team-name { font-size: 18px; }
     .team-card.featured .team-role { font-size: 11px; }
+    .team-card.featured .team-body { padding: 20px; display: flex; flex-direction: column; justify-content: center; }
 
     /* CULTURE */
     .culture-section { background: var(--navy); padding: 70px 60px; position: relative; }
@@ -298,8 +295,8 @@
       .dept-strip { grid-template-columns: repeat(3, 1fr); gap: 10px; }
       .dept-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.15); }
       .team-grid.cols-4, .team-grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
-      .team-card.featured { grid-template-columns: 1fr; grid-column: span 1; }
-      .team-card.featured .team-photo { min-height: 180px; }
+      .team-card.featured { grid-template-columns: 1fr; grid-column: span 1; text-align: center; }
+      .team-card.featured .team-photo { min-height: 220px; }
       .culture-inner { grid-template-columns: 1fr; gap: 40px; }
       .join-inner { grid-template-columns: 1fr; text-align: center; gap: 30px; }
       .gov-nav-grid { grid-template-columns: 1fr; }
@@ -361,6 +358,7 @@
       .btn-white, .btn-outline-white { width: 100%; max-width: 250px; text-align: center; }
       .super-footer .sf-container { flex-direction: column; padding: 0 25px; text-align: center; }
       .super-footer .sf-socials { justify-content: center; }
+      .team-card.featured { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -371,6 +369,7 @@
   <div class="topbar-info">
     <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
     <a href="tel:+231779205152"><i class="fa-solid fa-phone"></i> +231 779 205 152</a>
+	<a href="career-portal.html"><i class="fa-solid fa-briefcase"></i> Career Portal</a>
   </div>
   <div class="topbar-socials">
     <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
@@ -412,41 +411,41 @@
 <!-- DEPT STRIP -->
 <div class="dept-strip"><div class="dept-item"><p class="dept-name">Executive</p><p class="dept-count">2 members</p></div><div class="dept-item"><p class="dept-name">Programs</p><p class="dept-count">8 members</p></div><div class="dept-item"><p class="dept-name">Tech Backstopping</p><p class="dept-count">3 members</p></div><div class="dept-item"><p class="dept-name">Partnership &amp; M&amp;E</p><p class="dept-count">3 members</p></div><div class="dept-item"><p class="dept-name">Finance &amp; Ops</p><p class="dept-count">2 members</p></div><div class="dept-item"><p class="dept-name">Communications</p><p class="dept-count">2 members</p></div></div>
 
-<!-- TEAM SECTIONS -->
+<!-- TEAM SECTIONS - Only Name and Position, Images fit neatly -->
 <div class="team-page">
   <!-- Executive Leadership -->
   <div class="dept-section"><div class="dept-header"><div class="dept-header-icon"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div><p class="dept-header-title">Executive Leadership</p><p class="dept-header-desc">Setting strategy, managing operations, and leading BDI toward its 2029 vision</p></div></div>
     <div class="team-grid cols-2">
-      <div class="team-card featured"><div class="team-photo ph-navy"><img src="img/CRS-BDI-CEO Katherine.jpg" alt="Katherina M. Hopkins"></div><div class="team-body"><p class="team-name">Katherina M. Hopkins</p><p class="team-role">Founder &amp; Chief Executive Officer</p><p class="team-bio">Founder of BASA Development Initiatives and the visionary behind BDI's growth from a concept in 2019 to an eight-program NGO operating across Liberia.</p><div class="team-tags"><span class="team-tag">Community Development</span><span class="team-tag">Strategy</span><span class="team-tag">Women Empowerment</span></div><div class="team-county"><svg width="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Monrovia, Montserrado County</div></div></div>
-      <div class="team-card featured"><div class="team-photo ph-deep"><img src="img/causes-04.jpg" alt="COO"></div><div class="team-body"><p class="team-name">Chief Operating Officer</p><p class="team-role">Chief Operating Officer</p><p class="team-bio">Oversees BDI's day-to-day operational functions, ensuring that programs, systems, and teams are aligned and working efficiently toward the organization's strategic objectives.</p><div class="team-tags"><span class="team-tag">Operations</span><span class="team-tag">Management</span><span class="team-tag">Systems</span></div><div class="team-county"><svg width="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Monrovia, Montserrado County</div></div></div>
+      <div class="team-card featured"><div class="team-photo ph-navy"><img src="img/CRS-BDI-CEO Katherine.jpg" alt="Katherina M. Hopkins"></div><div class="team-body"><p class="team-name">Katherina M. Hopkins</p><p class="team-role">Founder &amp; Chief Executive Officer</p></div></div>
+      <div class="team-card featured"><div class="team-photo ph-deep"><img src="img/causes-04.jpg" alt="Chief Operating Officer"></div><div class="team-body"><p class="team-name">Chief Operating Officer</p><p class="team-role">Chief Operating Officer</p></div></div>
     </div>
   </div>
 
   <!-- Technical Backstopping -->
   <div class="dept-section"><div class="dept-header"><div class="dept-header-icon"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3M6.343 6.343l-.707-.707M10.121 20.364l.707-.707M13.879 20.364l-.707-.707M17.657 6.343l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg></div><div><p class="dept-header-title">Technical Backstopping</p><p class="dept-header-desc">Providing technical quality assurance and field presence across all program areas</p></div></div>
-    <div class="team-grid cols-3"><div class="team-card"><div class="team-photo ph-navy"><img src="img/causes-04.jpg" alt="Isaac F. Donkor"></div><div class="team-body"><p class="team-name">Isaac F. Donkor</p><p class="team-role">Technical Backstopping Lead</p><p class="team-bio">Provides technical oversight and quality assurance across BDI's program portfolio.</p><div class="team-tags"><span class="team-tag">Technical Quality</span><span class="team-tag">Program Oversight</span></div><div class="team-county"><svg width="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Monrovia</div></div></div><div class="team-card"><div class="team-photo ph-teal"><img src="img/BDI-James-Jasay.jpg" alt="James Jasay"></div><div class="team-body"><p class="team-name">James Jasay</p><p class="team-role">Program Associate</p><p class="team-bio">Supports program coordination and field-level implementation across BDI's active program areas.</p><div class="team-tags"><span class="team-tag">Program Coordination</span><span class="team-tag">Field Operations</span></div><div class="team-county"><svg width="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Monrovia</div></div></div><div class="team-card"><div class="team-photo ph-green" style="position:relative"><span class="sinoe-badge">Sinoe Office</span><img src="img/causes-04.jpg" alt="Alvin Swen T."></div><div class="team-body"><p class="team-name">Alvin Swen T.</p><p class="team-role">Sinoe County Field Officer</p><p class="team-bio">Leads BDI's on-the-ground presence in Sinoe County.</p><div class="team-tags"><span class="team-tag">Field Operations</span><span class="team-tag">Community Engagement</span></div><div class="team-county"><svg width="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Greenville, Sinoe County</div></div></div></div>
+    <div class="team-grid cols-3"><div class="team-card"><div class="team-photo ph-navy"><img src="img/causes-04.jpg" alt="Isaac F. Donkor"></div><div class="team-body"><p class="team-name">Isaac F. Donkor</p><p class="team-role">Technical Backstopping Lead</p></div></div><div class="team-card"><div class="team-photo ph-teal"><img src="img/BDI-James-Jasay.jpg" alt="James Jasay"></div><div class="team-body"><p class="team-name">James Jasay</p><p class="team-role">Program Associate</p></div></div><div class="team-card"><div class="team-photo ph-green" style="position:relative"><span class="sinoe-badge">Sinoe Office</span><img src="img/causes-04.jpg" alt="Alvin Swen T."></div><div class="team-body"><p class="team-name">Alvin Swen T.</p><p class="team-role">Sinoe County Field Officer</p></div></div></div>
   </div>
 
   <!-- Programs -->
   <div class="dept-section"><div class="dept-header"><div class="dept-header-icon"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg></div><div><p class="dept-header-title">Programs</p><p class="dept-header-desc">Designing and delivering BDI's eight thematic program areas across Liberia</p></div></div>
-    <div class="team-grid cols-4"><div class="team-card featured" style="grid-column:span 2"><div class="team-photo ph-deep"><img src="img/BDI-Charles-Brewer.jpg" alt="Charles Brewer"></div><div class="team-body"><p class="team-name">Charles Brewer</p><p class="team-role">Director of Programs</p><p class="team-bio">Oversees BDI's full portfolio of eight program areas, managing Program Leads, M&amp;E, and ensuring that program design, delivery, and reporting meet the highest standards of quality and accountability.</p><div class="team-tags"><span class="team-tag">Program Management</span><span class="team-tag">M&amp;E</span><span class="team-tag">Agriculture</span></div><div class="team-county"><svg width="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Monrovia</div></div></div>
-    <div class="team-card"><div class="team-photo ph-plum"><img src="img/BDI-Famata-Keita.jpg" alt="Famata Brown"></div><div class="team-body"><p class="team-name">Famata Brown</p><p class="team-role">GESI &amp; Health Lead</p><p class="team-bio">Leads BDI's Gender, Equality, Social Inclusion and Health programs.</p><div class="team-tags"><span class="team-tag">GESI</span><span class="team-tag">Health</span></div><div class="team-county"><svg width="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Monrovia</div></div></div>
-    <div class="team-card"><div class="team-photo ph-amber"><img src="img/causes-04.jpg" alt="Krubo D. K. Solomon"></div><div class="team-body"><p class="team-name">Krubo D. K. Solomon</p><p class="team-role">Education Lead</p><p class="team-bio">Manages BDI's Education program, driving initiatives that improve school enrollment and digital literacy.</p><div class="team-tags"><span class="team-tag">Education</span><span class="team-tag">Vocational Training</span></div><div class="team-county"><svg width="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Monrovia</div></div></div></div>
+    <div class="team-grid cols-4"><div class="team-card featured" style="grid-column:span 2"><div class="team-photo ph-deep"><img src="img/BDI-Charles-Brewer.jpg" alt="Charles Brewer"></div><div class="team-body"><p class="team-name">Charles Brewer</p><p class="team-role">Director of Programs</p></div></div>
+    <div class="team-card"><div class="team-photo ph-plum"><img src="img/BDI-Famata-Keita.jpg" alt="Famata Brown"></div><div class="team-body"><p class="team-name">Famata Brown</p><p class="team-role">GESI &amp; Health Lead</p></div></div>
+    <div class="team-card"><div class="team-photo ph-amber"><img src="img/causes-04.jpg" alt="Krubo D. K. Solomon"></div><div class="team-body"><p class="team-name">Krubo D. K. Solomon</p><p class="team-role">Education Lead</p></div></div></div>
   </div>
 
   <!-- Partnership, Fundraising & M&E -->
   <div class="dept-section"><div class="dept-header"><div class="dept-header-icon"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg></div><div><p class="dept-header-title">Partnership, Fundraising &amp; M&amp;E</p><p class="dept-header-desc">Building partnerships, mobilizing resources, and tracking BDI's impact</p></div></div>
-    <div class="team-grid cols-3"><div class="team-card"><div class="team-photo ph-deep"><img src="img/causes-04.jpg" alt="Nuwoe Naileh"></div><div class="team-body"><p class="team-name">Nuwoe Naileh</p><p class="team-role">Head, Partnership &amp; Fundraising</p><p class="team-bio">Manages BDI's partnerships pipeline and leads proposal development.</p><div class="team-tags"><span class="team-tag">Partnerships</span><span class="team-tag">Fundraising</span></div></div></div><div class="team-card"><div class="team-photo ph-navy"><img src="img/causes-04.jpg" alt="Siotepoh Broh"></div><div class="team-body"><p class="team-name">Siotepoh Broh</p><p class="team-role">Head of Business Development</p><p class="team-bio">Drives BDI's business development and social enterprise strategy.</p><div class="team-tags"><span class="team-tag">Business Development</span><span class="team-tag">Strategy</span></div></div></div><div class="team-card"><div class="team-photo ph-teal"><img src="img/causes-04.jpg" alt="Lee Barduae"></div><div class="team-body"><p class="team-name">Lee Barduae</p><p class="team-role">M&amp;E Lead</p><p class="team-bio">Leads BDI's monitoring, evaluation, accountability, and learning functions.</p><div class="team-tags"><span class="team-tag">M&amp;E</span><span class="team-tag">Impact Reporting</span></div></div></div></div>
+    <div class="team-grid cols-3"><div class="team-card"><div class="team-photo ph-deep"><img src="img/causes-04.jpg" alt="Nuwoe Naileh"></div><div class="team-body"><p class="team-name">Nuwoe Naileh</p><p class="team-role">Head, Partnership &amp; Fundraising</p></div></div><div class="team-card"><div class="team-photo ph-navy"><img src="img/causes-04.jpg" alt="Siotepoh Broh"></div><div class="team-body"><p class="team-name">Siotepoh Broh</p><p class="team-role">Head of Business Development</p></div></div><div class="team-card"><div class="team-photo ph-teal"><img src="img/causes-04.jpg" alt="Lee Barduae"></div><div class="team-body"><p class="team-name">Lee Barduae</p><p class="team-role">M&amp;E Lead</p></div></div></div>
   </div>
 
   <!-- Finance & Operations -->
   <div class="dept-section"><div class="dept-header"><div class="dept-header-icon"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><div><p class="dept-header-title">Finance &amp; Operations</p><p class="dept-header-desc">Ensuring financial integrity, compliance, and operational efficiency</p></div></div>
-    <div class="team-grid cols-2"><div class="team-card"><div class="team-photo ph-deep"><img src="img/BDI-Ishmael-Tuner.jpg" alt="Ishmael Turner"></div><div class="team-body"><p class="team-name">Ishmael Turner</p><p class="team-role">Director of Finance &amp; Operations</p><p class="team-bio">Oversees BDI's financial management, budget controls, audit readiness, and operational systems.</p><div class="team-tags"><span class="team-tag">Finance</span><span class="team-tag">Operations</span></div></div></div><div class="team-card"><div class="team-photo ph-teal"><img src="img/BDI-Ishmael-Tuner.jpg" alt="Finance Officer"></div><div class="team-body"><p class="team-name">Finance Officer</p><p class="team-role">Finance Officer</p><p class="team-bio">Manages day-to-day financial transactions, expenditure tracking, and financial reporting.</p><div class="team-tags"><span class="team-tag">Accounting</span><span class="team-tag">Reporting</span></div></div></div></div>
+    <div class="team-grid cols-2"><div class="team-card"><div class="team-photo ph-deep"><img src="img/BDI-Ishmael-Tuner.jpg" alt="Ishmael Turner"></div><div class="team-body"><p class="team-name">Ishmael Turner</p><p class="team-role">Director of Finance &amp; Operations</p></div></div><div class="team-card"><div class="team-photo ph-teal"><img src="img/BDI-Ishmael-Tuner.jpg" alt="Finance Officer"></div><div class="team-body"><p class="team-name">Finance Officer</p><p class="team-role">Finance Officer</p></div></div></div>
   </div>
 
   <!-- Communications -->
   <div class="dept-section"><div class="dept-header"><div class="dept-header-icon"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div><p class="dept-header-title">Communications</p><p class="dept-header-desc">Amplifying BDI's story, impact, and brand to donors, partners, and the world</p></div></div>
-    <div class="team-grid cols-2"><div class="team-card"><div class="team-photo ph-navy"><img src="img/causes-04.jpg" alt="Alphonso Kofi"></div><div class="team-body"><p class="team-name">Alphonso Kofi</p><p class="team-role">Head of Communications</p><p class="team-bio">Leads BDI's communications strategy, managing the organization's brand and digital presence.</p><div class="team-tags"><span class="team-tag">Communications</span><span class="team-tag">Digital Strategy</span></div></div></div><div class="team-card"><div class="team-photo ph-warm"><img src="img/BDI-Jenkins-G-Wilson.jpg" alt="Jenkins G. Wilson"></div><div class="team-body"><p class="team-name">Jenkins G. Wilson</p><p class="team-role">Visibility Specialist</p><p class="team-bio">Manages BDI's visual communications, ensuring BDI's work is seen, understood, and celebrated.</p><div class="team-tags"><span class="team-tag">Visual Design</span><span class="team-tag">Social Media</span></div></div></div></div>
+    <div class="team-grid cols-2"><div class="team-card"><div class="team-photo ph-navy"><img src="img/causes-04.jpg" alt="Alphonso Kofi"></div><div class="team-body"><p class="team-name">Alphonso Kofi</p><p class="team-role">Head of Communications</p></div></div><div class="team-card"><div class="team-photo ph-warm"><img src="img/BDI-Jenkins-G-Wilson.jpg" alt="Jenkins G. Wilson"></div><div class="team-body"><p class="team-name">Jenkins G. Wilson</p><p class="team-role">Visibility Specialist</p></div></div></div>
   </div>
 </div>
 
