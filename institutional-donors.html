@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Institutional Donors - How We Raise Money - BASA Development Initiatives</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --brand-red: #990033;
+      --brand-green: #005e4d;
+      --brand-teal: #22c4a9;
+      --sidebar-tan: #e9e6d1;
+      --text-dark: #333;
+      --white: #ffffff;
+      --navy: #1a1a2e;
+      --bg-light: #fcfbf8;
+      --transition: all 0.3s ease;
+      --red: #B40205;
+      --red-dark: #8C0204;
+      --teal: #0E7C7B;
+      --teal-dark: #0A5C5B;
+      --teal-light: #17BEBB;
+      --teal-pale: #E8F8F8;
+      --teal-border: #B2E4E4;
+      --text: #1A1A1A;
+      --text-mid: #374151;
+      --text-muted: #6B7280;
+      --border: #E5E7EB;
+      --border-warm: #DDD6CC;
+      --warm-bg: #F8F6F2;
+      --warm-mid: #EDE9E2;
+      --red-pale: #FFF0F0;
+      --gold: #D4A017;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; font-size: 16px; color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; }
+
+    /* --- TOPBAR --- */
+    .topbar {
+      background-color: var(--brand-red);
+      padding: 12px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--white);
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .topbar-info { display: flex; gap: 25px; font-size: 14px; flex-wrap: wrap; }
+    .topbar-info a { color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: opacity 0.3s; }
+    .topbar-info a:hover { opacity: 0.8; }
+    .topbar-socials { display: flex; gap: 12px; }
+    .social-btn {
+      width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.3);
+      display: flex; align-items: center; justify-content: center;
+      color: white; text-decoration: none; border-radius: 50%;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+    .social-btn:hover { background: white; color: var(--brand-red); border-color: white; transform: translateY(-2px); }
+
+    /* --- NAVBAR --- */
+    .navbar {
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      min-height: 90px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+      flex-wrap: wrap;
+    }
+    .logo img { height: 75px; display: block; }
+    .mobile-menu-btn {
+      display: none;
+      background: var(--brand-red);
+      border: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 8px;
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    .mobile-menu-btn:hover { background: var(--brand-green); }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      margin: 0;
+      padding: 0;
+    }
+    .has-mega { position: static; }
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      cursor: pointer;
+      padding: 10px 0;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .nav-link:hover { color: var(--brand-red); }
+    .nav-link i { font-size: 12px; transition: transform 0.3s; }
+    .mega-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: white;
+      display: none;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      border-top: 1px solid #eee;
+      z-index: 1001;
+    }
+    .has-mega.is-active .mega-menu { display: flex; }
+    .has-mega.is-active .nav-link { color: var(--brand-green); }
+    .has-mega.is-active .nav-link i { transform: rotate(180deg); }
+    .mega-sidebar {
+      background-color: var(--sidebar-tan);
+      width: 300px;
+      padding: 35px;
+      flex-shrink: 0;
+    }
+    .sidebar-img { width: 100%; border-radius: 10px; margin-bottom: 20px; }
+    .sidebar-title { font-weight: 700; font-size: 18px; margin-bottom: 10px; }
+    .sidebar-text { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+    .btn-green-sm {
+      background-color: var(--brand-green);
+      color: white;
+      padding: 8px 22px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+    .btn-green-sm:hover { background-color: var(--brand-red); transform: translateY(-2px); }
+    .mega-grid {
+      flex-grow: 1;
+      padding: 35px 50px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .mega-col h4 { color: var(--brand-green); font-size: 15px; font-weight: 700; margin-bottom: 18px; }
+    .mega-col ul { list-style: none; }
+    .mega-col ul li { margin-bottom: 12px; }
+    .mega-col ul li a { text-decoration: none; color: var(--brand-green); font-size: 14px; font-weight: 500; transition: 0.2s; }
+    .mega-col ul li a:hover { color: var(--brand-red); padding-left: 5px; }
+    .nav-right { display: flex; align-items: center; gap: 18px; }
+    .search-btn { background: #f5f5f5; border: 1px solid #e0e0e0; padding: 8px 12px; cursor: pointer; border-radius: 8px; transition: all 0.3s; }
+    .search-btn:hover { background: #e8e8e8; }
+    .donate-main { background: var(--brand-red); color: white; padding: 10px 26px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; }
+    .donate-main:hover { background: var(--brand-green); transform: translateY(-2px); }
+
+    /* HERO */
+    .hero { background: var(--navy); padding: 70px 80px 0; display: grid; grid-template-columns: 1fr 400px; gap: 60px; align-items: end; }
+    .hero-left { padding-bottom: 70px; }
+    .section-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 35px; }
+    .section-tab { font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; text-decoration: none; transition: all .2s; }
+    .section-tab.active { background: var(--teal-light); color: var(--navy); }
+    .section-tab:not(.active) { background: rgba(255,255,255,.07); color: rgba(255,255,255,.55); border: 1px solid rgba(255,255,255,.1); }
+    .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 16px; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 52px); font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 24px; }
+    .hero h1 em { font-style: italic; color: var(--teal-light); }
+    .hero-desc { font-size: 15px; color: rgba(255,255,255,.68); line-height: 1.7; max-width: 500px; }
+    .hero-right { align-self: end; }
+    .funding-visual { background: rgba(255,255,255,.04); border: 1px solid rgba(23,190,187,.18); border-radius: 20px 20px 0 0; padding: 24px 24px 0; }
+    .fv-label { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 16px; }
+    .fv-bar-wrap { background: rgba(255,255,255,.06); border-radius: 10px; overflow: hidden; height: 12px; margin-bottom: 14px; display: flex; }
+    .fv-bar-seg.institutional { background: var(--teal-light); }
+    .fv-bar-seg.partners { background: var(--gold); }
+    .fv-bar-seg.individual { background: var(--red); }
+    .fv-legend { display: flex; flex-direction: column; gap: 8px; padding-bottom: 24px; }
+    .fv-leg-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .fv-leg-left { display: flex; align-items: center; gap: 8px; }
+    .fv-leg-dot { width: 9px; height: 9px; border-radius: 50%; }
+    .fv-leg-name { font-size: 12px; color: rgba(255,255,255,.7); }
+    .fv-leg-pct { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 900; color: var(--white); }
+
+    /* NUMBERS STRIP */
+    .numbers-strip { background: var(--teal); padding: 40px 60px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; flex-wrap: wrap; }
+    .num-col { padding: 16px 20px; text-align: center; border-right: 1px solid rgba(255,255,255,.15); }
+    .num-col:last-child { border-right: none; }
+    .num-val { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 900; color: var(--white); line-height: 1; }
+    .num-label { font-size: 11px; color: rgba(255,255,255,.65); margin-top: 6px; line-height: 1.3; }
+
+    /* SECTIONS */
+    .section-pad { padding: 70px 60px; }
+    .section-pad-warm { padding: 70px 60px; background: var(--warm-bg); }
+    .overline { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; }
+    .section-heading { font-family: 'Playfair Display', serif; font-size: clamp(26px, 2.8vw, 36px); font-weight: 900; color: var(--navy); line-height: 1.2; margin-bottom: 16px; }
+    .section-sub { font-size: 15px; color: var(--text-muted); line-height: 1.7; max-width: 680px; margin-bottom: 40px; }
+    .body-text { font-size: 15px; color: var(--text-mid); line-height: 1.75; margin-bottom: 18px; text-align: justify; }
+
+    /* STRATEGY */
+    .strategy-section { padding: 70px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .strategy-list { display: flex; flex-direction: column; gap: 20px; }
+    .strategy-item { background: white; border: 1px solid var(--border-warm); border-radius: 16px; padding: 20px; display: grid; grid-template-columns: 44px 1fr; gap: 16px; transition: all 0.3s; }
+    .strategy-item:hover { box-shadow: 0 6px 24px rgba(14,124,123,.09); transform: translateY(-2px); border-color: var(--teal-border); }
+    .strategy-num { width: 44px; height: 44px; border-radius: 12px; background: var(--teal-pale); border: 1px solid var(--teal-border); display: flex; align-items: center; justify-content: center; }
+    .strategy-num-text { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 900; color: var(--teal); }
+    .strategy-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+    .strategy-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+
+    /* FUNDING SHARE */
+    .funding-share-section { background: var(--navy); padding: 70px 60px; position: relative; }
+    .fss-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .fss-overline { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 14px; }
+    .fss-heading { font-family: 'Playfair Display', serif; font-size: clamp(26px, 2.8vw, 36px); font-weight: 900; color: var(--white); line-height: 1.2; margin-bottom: 20px; }
+    .fss-body { font-size: 14px; color: rgba(255,255,255,.65); line-height: 1.7; margin-bottom: 15px; }
+    .donut-wrap { display: flex; flex-direction: column; gap: 24px; }
+    .donut-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .donut-card { background: rgba(255,255,255,.05); border: 1px solid rgba(23,190,187,.15); border-radius: 16px; padding: 20px; text-align: center; }
+    .donut-title { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 14px; }
+    .donut { width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 14px; position: relative; }
+    .donut-val { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 2; font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--white); }
+    .donut::after { content: ''; position: absolute; inset: 18px; border-radius: 50%; background: rgba(26,26,46,.95); }
+    .donut-label { font-size: 11px; color: rgba(255,255,255,.6); line-height: 1.3; }
+
+    /* DONORS GRID */
+    .donors-section { padding: 70px 60px; background: var(--warm-bg); }
+    .donors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .donor-card { background: white; border: 1px solid var(--border-warm); border-radius: 18px; overflow: hidden; transition: all 0.3s; }
+    .donor-card:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(14,124,123,.11); border-color: var(--teal-border); }
+    .donor-top { height: 90px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 4px; }
+    .donor-top.unicef { background: linear-gradient(145deg,#E6F2FF 0%,#C0D8F8 100%); }
+    .donor-top.gef { background: linear-gradient(145deg,#E8F5EE 0%,#B8DFC8 100%); }
+    .donor-top.nafaa { background: linear-gradient(145deg,#FFFBEB 0%,#FDE68A 100%); }
+    .donor-top.iki { background: linear-gradient(145deg,var(--teal-pale) 0%,#A8D8D8 100%); }
+    .donor-top.bmz { background: linear-gradient(145deg,#F5F0FF 0%,#DDD5FF 100%); }
+    .donor-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: rgba(0,0,0,.2); }
+    .donor-body { padding: 18px; }
+    .donor-name { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+    .donor-type { font-size: 9px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+    .donor-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px; }
+    .donor-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+    .donor-tag { font-size: 8px; font-weight: 700; background: var(--teal-pale); border: 1px solid var(--teal-border); color: var(--teal); padding: 2px 7px; border-radius: 10px; }
+    .status-pill { display: inline-flex; align-items: center; gap: 5px; font-size: 9px; font-weight: 700; padding: 3px 9px; border-radius: 14px; }
+    .status-pill.submitted { background: #EFF6FF; color: #1D4ED8; }
+    .status-pill.shortlisted { background: #FEF3C7; color: #92400E; }
+    .status-pill.completed { background: rgba(14,124,123,.1); color: var(--teal-dark); }
+    .status-pill.pipeline { background: var(--red-pale); color: var(--red-dark); }
+    .status-dot { width: 5px; height: 5px; border-radius: 50%; }
+
+    /* ROLE SECTION */
+    .role-section { padding: 70px 60px; }
+    .role-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 44px; }
+    .role-card { background: white; border: 1px solid var(--border-warm); border-radius: 16px; padding: 24px; display: grid; grid-template-columns: 50px 1fr; gap: 18px; transition: all 0.3s; }
+    .role-card:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(14,124,123,.10); border-color: var(--teal-border); }
+    .role-icon-box { width: 50px; height: 50px; border-radius: 14px; background: var(--teal-pale); border: 1px solid var(--teal-border); display: flex; align-items: center; justify-content: center; }
+    .role-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .role-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+
+    /* TARGETS TABLE */
+    .targets-section { padding: 70px 60px; background: var(--warm-bg); overflow-x: auto; }
+    .targets-table { width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid var(--border-warm); border-radius: 16px; overflow: hidden; min-width: 700px; }
+    .targets-table th { background: var(--navy); color: white; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 14px 16px; text-align: left; }
+    .targets-table td { padding: 14px 16px; font-size: 13px; color: var(--text-mid); border-bottom: 1px solid var(--border-warm); background: white; }
+    .targets-table tr:last-child td { border-bottom: none; }
+    .targets-table td.bold-col { font-weight: 700; color: var(--navy); }
+    .targets-table td.teal-col { font-weight: 700; color: var(--teal); }
+    .progress-cell { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .prog-bar-bg { width: 80px; height: 6px; background: var(--border-warm); border-radius: 3px; overflow: hidden; }
+    .prog-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--teal) 0%, var(--teal-light) 100%); }
+
+    /* CRITERIA */
+    .criteria-section { padding: 70px 60px; }
+    .criteria-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
+    .crit-card { background: white; border: 1px solid var(--border-warm); border-radius: 14px; padding: 22px; transition: all 0.3s; }
+    .crit-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(14,124,123,.09); border-color: var(--teal-border); }
+    .crit-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--teal-pale); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+    .crit-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .crit-body { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+
+    /* APPLY */
+    .apply-section { padding: 70px 60px; background: var(--warm-bg); }
+    .apply-inner { background: var(--navy); border-radius: 24px; padding: 48px; display: grid; grid-template-columns: 1fr 260px; gap: 50px; align-items: center; }
+    .apply-overline { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 12px; }
+    .apply-heading { font-family: 'Playfair Display', serif; font-size: clamp(22px, 2.5vw, 30px); font-weight: 900; color: var(--white); line-height: 1.2; margin-bottom: 16px; }
+    .apply-body { font-size: 14px; color: rgba(255,255,255,.65); line-height: 1.7; margin-bottom: 18px; }
+    .apply-email { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--teal-light); font-weight: 600; text-decoration: none; }
+    .btn-teal, .btn-ghost { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 10px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: 0.3s; margin-bottom: 12px; }
+    .btn-teal { background: var(--teal-light); color: var(--navy); }
+    .btn-teal:hover { opacity: .88; transform: translateY(-2px); }
+    .btn-ghost { border: 2px solid rgba(255,255,255,.25); color: rgba(255,255,255,.8); }
+    .btn-ghost:hover { border-color: rgba(255,255,255,.65); color: white; transform: translateY(-2px); }
+
+    /* SIBLING NAV */
+    .sibling-nav { padding: 60px 60px; border-top: 1px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .sib-card { background: white; border: 1px solid var(--border-warm); border-radius: 16px; padding: 22px; text-decoration: none; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s; }
+    .sib-card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(14,124,123,.09); border-color: var(--teal-border); }
+    .sib-label { font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: 4px; }
+    .sib-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--navy); }
+    .sib-arrow { width: 36px; height: 36px; border-radius: 50%; background: var(--teal-pale); border: 1px solid var(--teal-border); display: flex; align-items: center; justify-content: center; }
+
+    /* CTA */
+    .cta-section { background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%); padding: 70px 40px; text-align: center; }
+    .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 42px); font-weight: 900; color: white; max-width: 680px; margin: 0 auto 30px; line-height: 1.2; }
+    .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .btn-white, .btn-outline-white { padding: 14px 32px; border-radius: 40px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: 0.3s; }
+    .btn-white { background: white; color: var(--red); }
+    .btn-white:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+    .btn-outline-white { border: 2px solid rgba(255,255,255,0.4); color: white; }
+    .btn-outline-white:hover { border-color: rgba(255,255,255,0.85); transform: translateY(-3px); }
+
+    /* FOOTER */
+    .super-footer { background-color: #064d3b; color: white; padding: 60px 0 20px; }
+    .super-footer .sf-container { max-width: 1400px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 50px; gap: 30px; }
+    .super-footer .sf-col { flex: 1; min-width: 220px; }
+    .super-footer .sf-title { color: #22c4a9; font-size: 16px; font-weight: 700; margin-bottom: 25px; letter-spacing: 1px; }
+    .super-footer .sf-links { list-style: none; }
+    .super-footer .sf-links li { margin-bottom: 12px; }
+    .super-footer .sf-links a { color: white; text-decoration: none; font-size: 14px; transition: 0.3s; }
+    .super-footer .sf-links a:hover { color: #22c4a9; padding-left: 5px; }
+    .super-footer .sf-socials { display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+    .super-footer .sf-socials a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; transition: all 0.3s; }
+    .super-footer .sf-socials a:hover { background: var(--brand-red); transform: translateY(-3px); }
+    .sf-subscribe input { width: 100%; padding: 12px; margin-bottom: 12px; border-radius: 8px; border: none; background: rgba(255,255,255,0.1); color: white; }
+    .sf-subscribe button { background: #bd0000; color: white; border: none; padding: 12px; width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+    .sf-subscribe button:hover { background: #e60000; }
+
+    /* RESPONSIVE */
+    @media screen and (max-width: 1100px) {
+      .hero { grid-template-columns: 1fr; gap: 40px; padding: 60px 40px 0; }
+      .hero-left { padding-bottom: 40px; }
+      .hero-right { display: none; }
+      .numbers-strip, .section-pad, .section-pad-warm, .strategy-section, .funding-share-section, .donors-section, .role-section, .targets-section, .criteria-section, .apply-section, .sibling-nav { padding-left: 40px; padding-right: 40px; }
+      .numbers-strip { grid-template-columns: 1fr 1fr; }
+      .strategy-section { grid-template-columns: 1fr; gap: 40px; }
+      .fss-inner { grid-template-columns: 1fr; gap: 40px; }
+      .donors-grid { grid-template-columns: 1fr 1fr; }
+      .role-grid { grid-template-columns: 1fr; }
+      .criteria-grid { grid-template-columns: 1fr 1fr; }
+      .apply-inner { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+      .sibling-nav { grid-template-columns: 1fr; }
+      .navbar { padding: 0 30px; }
+      .topbar { padding: 10px 30px; }
+    }
+    @media screen and (max-width: 850px) {
+      .mobile-menu-btn { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        max-height: 85vh;
+        overflow-y: auto;
+        z-index: 9999;
+        box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+        border-top: 3px solid var(--brand-red);
+        padding: 0;
+        gap: 0;
+        width: 100%;
+      }
+      .nav-links.active { display: flex; }
+      .has-mega { position: relative; width: 100%; border-bottom: 1px solid #eee; }
+      .nav-link { padding: 16px 20px; justify-content: space-between; width: 100%; white-space: normal; background: white; }
+      .mega-menu {
+        position: relative !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: none;
+        background: #f8f8f8;
+        border-top: 1px solid #ddd;
+        flex-direction: column;
+      }
+      .has-mega.is-active .mega-menu { display: flex !important; max-height: 60vh; overflow-y: auto; }
+      .mega-sidebar { width: 100%; padding: 20px; order: 1; }
+      .mega-grid { display: flex !important; flex-direction: column !important; padding: 20px !important; gap: 25px !important; order: 2; }
+      .mega-col { width: 100%; }
+      .topbar { flex-direction: column; text-align: center; }
+      .topbar-info { justify-content: center; }
+      .numbers-strip { grid-template-columns: 1fr; }
+      .num-col { border-right: none; border-bottom: 1px solid rgba(255,255,255,.15); }
+      .donors-grid { grid-template-columns: 1fr; }
+      .criteria-grid { grid-template-columns: 1fr; }
+    }
+    @media screen and (max-width: 600px) {
+      .navbar { padding: 0 15px; }
+      .logo img { height: 50px; }
+      .donate-main { padding: 6px 16px; font-size: 12px; }
+      .hero { padding: 50px 20px 0; }
+      .hero h1 { font-size: 32px; }
+      .section-pad, .section-pad-warm, .strategy-section, .funding-share-section, .donors-section, .role-section, .targets-section, .criteria-section, .apply-section { padding: 40px 20px; }
+      .apply-inner { padding: 30px; }
+      .sibling-nav { padding: 30px 20px; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .btn-white, .btn-outline-white { width: 100%; max-width: 250px; text-align: center; }
+      .super-footer .sf-container { flex-direction: column; padding: 0 25px; text-align: center; }
+      .super-footer .sf-socials { justify-content: center; }
+      .targets-table { font-size: 12px; }
+      .targets-table th, .targets-table td { padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-info">
+    <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
+    <a href="tel:+231779205152"><i class="fa-solid fa-phone"></i> +231 779 205 152</a>
+	<a href="career-portal.html"><i class="fa-solid fa-briefcase"></i> Careers</a>
+  </div>
+  <div class="topbar-socials">
+            <a href="https://web.facebook.com/basadevelopmentinitiatives" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.instagram.com/basadevelopment/" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="https://www.linkedin.com/company/basa-development-initiatives" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo"><a href="index.html"><img src="./img/logo14.png" alt="BDI Logo"></a></div>
+  <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
+  <ul class="nav-links" id="navLinks">
+    <li class="has-mega"><a class="nav-link"><b>Our Work</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>What We Do</u></h4><ul><li><a href="agriculture.html">Agriculture & Agribusiness</a></li><li><a href="health.html">Health & Nutrition</a></li><li><a href="education.html">Education</a></li><li><a href="environment.html">Environment & Climate</a></li></ul><h4 style="margin-top:20px;"><u>Where We Work</u></h4><ul><li><a href="#">View all countries</a></li></ul></div><div class="mega-col"><h4><u>Development & Inclusion</u></h4><ul><li><a href="gender-youth.html">Gender & Youth Empowerment</a></li><li><a href="fisheries.html">Fisheries & Aquaculture</a></li><li><a href="disability.html">Disability Inclusion</a></li><li><a href="partnership.html">Research & Partnership</a></li></ul></div><div class="mega-col"><h4><u>Latest News & Updates</u></h4><ul><li><a href="all-news.html">View All Our News</a></li></ul></div></div></div>
+    </li>
+    <li class="has-mega"><a class="nav-link"><b>About Us</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Who we are</u></h4><ul><li><a href="our-values.html">Our Values</a></li><li><a href="founding-story.html">Our founding Story</a></li><li>  </li></ul><h4 style="margin-top:20px;"><u>Governance</u></h4><ul><li><a href="governance-structure.html">Governance Structure</a></li><li><a href="board.html">Board of Directors</a></li><li><a href="our-ceo.html">Our CEO</a></li><li><a href="our-team.html">Our Team</a></li></ul></div><div class="mega-col"><h4><u>How We Raise Money</u></h4><ul><li><a href="institutional-donors.html">Institutional Donors</a></li><li><a href="partners.html">Partners</a></li><li><a href="individual-donations.html">Individual Donations</a></li></ul></div><div class="mega-col"><h4><u>Transparency & accountability</u></h4><ul><li><a href="annual-reports.html">Annual Reports</a></li><li><a href="how-donations-are-spent.html">How donations are spent</a></li><li><a href="audited-financials.html">Audited Financials</a></li></ul></div></div></div>
+    </li>
+    <li class="has-mega"><a class="nav-link"><b>Support us</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Donate Now</u></h4><ul><li><a href="safe drug victims.html">Donate to safe drug victims</a></li><li><a href="End Period Poverty.html">End Period Poverty</a></li><li><a href="Women and Youth in Agribusiness.html">Support Women in Agribusiness</a></li></ul><h4 style="margin-top:20px;"><u>Corporate support</u></h4><ul><li><a href="Become a Corporate Partner.html">Become a corporate supporter</a></li><li><a href="Partner With Us.html">Partner with us</a></li><li><a href="Staff Fundraising.html">Staff Fundraising</a></li><li><a href="Payroll Giving.html">Payroll Giving</a></li><li><a href="Corporate Donations.html">Make a Corperate Donation</a></li></ul></div><div class="mega-col"><h4><u>Fundraise for BDI</u></h4><ul><li><a href="Start your own fundraiser.html">Start your own fundraiser</a></li><li><a href="Find a Friend to Sponsor.html">Find a friend to sponsor</a></li></ul><h4 style="margin-top:20px;"><u>Volunteer Remotely</u></h4><ul><li><a href="Volunteer Remotely.html">You can volunteer with us</a></li></ul></div><div class="mega-col"><h4><u>Other ways to give</u></h4><ul><li><a href="Donate in Memory.html">Donate in memory</a></li><li><a href="Leave a Gift in Your Will.html">Leave a gift in your Will</a></li><li><a href="Donate Your Tax Refund.html">Donate Your Tax Refund</a></li></ul></div></div></div>
+    </li>
+    <li class="has-mega"><a class="nav-link"><b>Resource Centre</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Knowledge Hub Resources</u></h4><ul><li><a href="#">Research</a></li><li><a href="#">Evaluations</a></li><li><a href="newsletter.html">Newsletters</a></li></ul></div></div></div>
+    </li>
+  </ul>
+  <div class="nav-right"><button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="donate-main">Donate Now</a></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="section-tabs"><a href="iinstitutional-donors.html" class="section-tab active">Institutional Donors</a><a href="partners.html" class="section-tab">Partners</a><a href="individual-donations.html" class="section-tab">Individual Donations</a></div>
+    <p class="hero-eyebrow">How We Raise Money — 01 of 03</p>
+    <h1>Institutional donors<br>are the <em>engine</em> of<br>BDI's growth.</h1>
+    <p class="hero-desc">Institutional funding — from UN agencies, climate funds, development banks, and international NGOs — forms the largest pillar of BDI's resource mobilization strategy. It is the mechanism through which we can scale from a $60,000 organization to a $2 million institution by 2029.</p>
+  </div>
+  <div class="hero-right"><div class="funding-visual"><p class="fv-label">BDI Funding Mix — Historical vs. 2029 Target</p><p style="font-size:9px;color:rgba(255,255,255,.4);margin-bottom:8px">Historical (2022-2024)</p><div class="fv-bar-wrap"><div class="fv-bar-seg institutional" style="width:70%"></div><div class="fv-bar-seg partners" style="width:20%"></div><div class="fv-bar-seg individual" style="width:10%"></div></div><p style="font-size:9px;color:rgba(255,255,255,.4);margin-bottom:8px">2029 Strategic Target</p><div class="fv-bar-wrap"><div class="fv-bar-seg institutional" style="width:65%"></div><div class="fv-bar-seg partners" style="width:25%"></div><div class="fv-bar-seg individual" style="width:10%"></div></div><div class="fv-legend"><div class="fv-leg-row"><div class="fv-leg-left"><div class="fv-leg-dot" style="background:var(--teal-light)"></div><span class="fv-leg-name">Institutional Donors</span></div><span class="fv-leg-pct">65-70%</span></div><div class="fv-leg-row"><div class="fv-leg-left"><div class="fv-leg-dot" style="background:var(--gold)"></div><span class="fv-leg-name">Partners</span></div><span class="fv-leg-pct">20-25%</span></div><div class="fv-leg-row"><div class="fv-leg-left"><div class="fv-leg-dot" style="background:var(--red)"></div><span class="fv-leg-name">Individual Donations</span></div><span class="fv-leg-pct">10%</span></div></div></div></div>
+</section>
+
+<!-- NUMBERS STRIP -->
+<div class="numbers-strip"><div class="num-col"><div class="num-val">70%</div><div class="num-label">Share of BDI's funding from institutional sources since 2022</div></div><div class="num-col"><div class="num-val">65%</div><div class="num-label">Target institutional share of BDI's $2M annual budget by 2029</div></div><div class="num-col"><div class="num-val">$1.3M</div><div class="num-label">Institutional funding target annually by 2029</div></div><div class="num-col"><div class="num-val">5</div><div class="num-label">Active institutional donor relationships and proposals in pipeline</div></div></div>
+
+<!-- STRATEGY -->
+<section class="strategy-section"><div><p class="overline">Our Approach</p><h2 class="section-heading">How BDI raises money from institutional donors.</h2><p class="body-text">Institutional funding requires more than a good project idea. It requires a credible organization, a proven track record, compliance-ready systems, and the ability to co-design programs that meet a donor's strategic priorities without losing sight of community needs. BDI has spent its first three years building exactly that foundation.</p><p class="body-text">Our strategy is not to chase every grant available. It is to build deep, multi-year relationships with a focused group of institutions whose funding priorities align with BDI's thematic areas - and to demonstrate, through every project we implement, that BDI delivers what it promises.</p></div><div class="strategy-list"><div class="strategy-item"><div class="strategy-num"><span class="strategy-num-text">1</span></div><div><p class="strategy-title">Targeted Donor Mapping and Relationship Building</p><p class="strategy-desc">BDI maintains an active donor landscape analysis across all eight program areas, identifying which UN agencies, bilateral funds, foundations, and INGOs are funding work in Liberia and West Africa.</p></div></div><div class="strategy-item"><div class="strategy-num"><span class="strategy-num-text">2</span></div><div><p class="strategy-title">Consortium and Co-Implementation Models</p><p class="strategy-desc">BDI actively pursues consortium arrangements with larger INGOs and national institutions - as demonstrated by our partnership with Elitrust Finecon on the NaFAA/OPEC Fund fisheries program.</p></div></div><div class="strategy-item"><div class="strategy-num"><span class="strategy-num-text">3</span></div><div><p class="strategy-title">A Fundable Concept Note Bank</p><p class="strategy-desc">BDI maintains a bank of 32 ready-to-deploy concept notes across all eight program areas. When donor calls open, we are not starting from scratch.</p></div></div><div class="strategy-item"><div class="strategy-num"><span class="strategy-num-text">4</span></div><div><p class="strategy-title">Compliance and Governance Investment</p><p class="strategy-desc">BDI has proactively invested in the systems that donors demand: PSEA policies, Financial Management Policies, a MEAL Framework, audit readiness, and a five-year Strategic Plan.</p></div></div></div></section>
+
+<!-- FUNDING SHARE -->
+<section class="funding-share-section"><div class="fss-inner"><div><p class="fss-overline">Funding Share Analysis</p><h2 class="fss-heading">Institutional donors are BDI's primary engine — now and through 2029.</h2><p class="fss-body">Since BDI was formally established in 2022, approximately <strong style="color:var(--white)">70% of all funds raised</strong> have come from institutional sources — including the completed GEF/Conservation International SBCRP project, which established BDI's environmental track record in Sinoe County.</p><p class="fss-body">By 2029, BDI projects that institutional funding will represent approximately <strong style="color:var(--teal-light)">65% of our $2 million annual budget</strong>, equivalent to $1.3 million per year. This slight reduction from 70% reflects a deliberate strategy to diversify our income base.</p></div><div class="donut-wrap"><div class="donut-compare"><div class="donut-card"><p class="donut-title">Historical Share<br>2022 - 2024</p><div class="donut" style="background:conic-gradient(var(--teal-light) 0% 70%, rgba(255,255,255,.1) 70% 100%)"><div class="donut-val">70%</div></div><p class="donut-label">of total BDI funding raised</p></div><div class="donut-card"><p class="donut-title">2029 Target<br>Strategic Plan</p><div style="width:100px;height:100px;border-radius:50%;margin:0 auto 14px;position:relative;background:conic-gradient(var(--teal-light) 0% 65%, rgba(255,255,255,.1) 65% 100%)"><div class="donut-val">65%</div></div><p class="donut-label">of $2M annual target = $1.3M</p></div></div><div style="background:rgba(255,255,255,.05);border-radius:12px;padding:16px"><p style="font-size:10px;font-weight:700;color:var(--teal-light);margin-bottom:10px">Why 65%, not higher?</p><p style="font-size:12px;color:rgba(255,255,255,.6)">Deliberately maintaining institutional funding below 70% by 2029 protects BDI from donor dependency. A diversified funding base is a governance responsibility, not just a financial one.</p></div></div></div></section>
+
+<!-- DONORS -->
+<section class="donors-section"><p class="overline">Our Institutional Donor Portfolio</p><h2 class="section-heading">The institutions that have trusted BDI with their investment.</h2><p class="section-sub">BDI's institutional portfolio spans UN agencies, climate finance mechanisms, national institutions, and bilateral donors — spanning five active relationships and proposals across six of BDI's eight program areas.</p><div class="donors-grid"><div class="donor-card"><div class="donor-top unicef"><p class="donor-logo">UNICEF</p></div><div class="donor-body"><p class="donor-name">UNICEF Liberia</p><p class="donor-type">UN Agency — Active Proposal</p><p class="donor-desc">"Female-Led Business Acceleration for Community Health" — a 12-month, 15-county program targeting women-led health enterprise and community nutrition, with a ceiling of USD 100,000.</p><div class="donor-tags"><span class="donor-tag">Health</span><span class="donor-tag">Gender</span><span class="donor-tag">$100K</span></div><span class="status-pill submitted"><span class="status-dot"></span>Proposal Submitted</span></div></div><div class="donor-card"><div class="donor-top gef"><p class="donor-logo">GEF / CI</p></div><div class="donor-body"><p class="donor-name">GEF / Conservation International</p><p class="donor-type">Climate Finance — Completed</p><p class="donor-desc">The Sustainable Biodiversity and Community Resilience Project (SBCRP) — BDI's first major institutional grant, completed successfully.</p><div class="donor-tags"><span class="donor-tag">Environment</span><span class="donor-tag">Sinoe County</span></div><span class="status-pill completed"><span class="status-dot"></span>Completed</span></div></div><div class="donor-card"><div class="donor-top nafaa"><p class="donor-logo">NaFAA</p></div><div class="donor-body"><p class="donor-name">NaFAA / OPEC Fund</p><p class="donor-type">National Institution — Shortlisted</p><p class="donor-desc">Liberian Women's Sustainable Fisheries and Livelihoods Incubator Program (LWSFILI) — BDI shortlisted in consortium with Elitrust Finecon Limited.</p><div class="donor-tags"><span class="donor-tag">Fisheries</span><span class="donor-tag">Consortium</span></div><span class="status-pill shortlisted"><span class="status-dot"></span>Shortlisted</span></div></div><div class="donor-card"><div class="donor-top iki"><p class="donor-logo">IKI</p></div><div class="donor-body"><p class="donor-name">IKI Small Grants (Germany)</p><p class="donor-type">Climate Finance — Submitted</p><p class="donor-desc">A biodiversity and climate resilience proposal submitted to the International Climate Initiative Small Grants program.</p><div class="donor-tags"><span class="donor-tag">Biodiversity</span><span class="donor-tag">Climate Resilience</span></div><span class="status-pill submitted"><span class="status-dot"></span>Proposal Submitted</span></div></div><div class="donor-card"><div class="donor-top bmz"><p class="donor-logo">BMZ</p></div><div class="donor-body"><p class="donor-name">BMZ / Welthungerhilfe</p><p class="donor-type">Bilateral Donor — Pipeline</p><p class="donor-desc">Active relationship development underway with BMZ through Welthungerhilfe. Identified pipeline interest in BDI's agriculture and food security programming.</p><div class="donor-tags"><span class="donor-tag">Food Security</span><span class="donor-tag">Agriculture</span></div><span class="status-pill pipeline"><span class="status-dot"></span>Pipeline Interest</span></div></div><div class="donor-card" style="background:linear-gradient(145deg,var(--teal-pale) 0%,var(--warm-bg) 100%);border:2px dashed var(--teal-border);text-align:center;padding:28px;display:flex;flex-direction:column;align-items:center;gap:12px"><div style="width:44px;height:44px;background:var(--teal-pale);border-radius:12px;display:flex;align-items:center;justify-content:center"><svg width="20" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div><p style="font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--navy)">Your Institution Here</p><p style="font-size:12px;color:var(--text-muted)">BDI is actively building new institutional relationships across health, education, fisheries, disability, and gender program areas.</p><a href="mailto:info@basadev.org" style="font-size:12px;font-weight:700;color:var(--teal);text-decoration:none;display:flex;align-items:center;gap:5px">Start the Conversation →</a></div></div></section>
+
+<!-- ROLE -->
+<section class="role-section"><p class="overline">The Role Institutional Donors Play</p><h2 class="section-heading">What institutional funding makes possible that nothing else can.</h2><p class="section-sub">Institutional donors are not just funders. They are co-creators of scale. The financial volume, multi-year structure, and technical requirements they bring enable BDI to build the kind of organizational infrastructure and programmatic depth that truly changes communities.</p><div class="role-grid"><div class="role-card"><div class="role-icon-box"><svg width="22" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div><div><p class="role-title">Funding at the Scale Liberia Needs</p><p class="role-desc">Community problems in Liberia are not $5,000 problems. They require multi-year, multi-county programs with consistent staffing, infrastructure, and evidence systems.</p></div></div><div class="role-card"><div class="role-icon-box"><svg width="22" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><p class="role-title">Legitimacy and Credibility Building</p><p class="role-desc">When UNICEF, GEF, or the OPEC Fund trusts BDI with their resources, it signals to every other donor that BDI is an organization worth betting on.</p></div></div><div class="role-card"><div class="role-icon-box"><svg width="22" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3M6.343 6.343l-.707-.707M10.121 20.364l.707-.707M13.879 20.364l-.707-.707M17.657 6.343l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg></div><div><p class="role-title">Driving Organizational Quality and Systems</p><p class="role-desc">Institutional donors require PSEA compliance, financial audits, logical frameworks, MEAL systems, and transparent reporting — pushing BDI to build institutional quality.</p></div></div><div class="role-card"><div class="role-icon-box"><svg width="22" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><div><p class="role-title">Opening Doors to the Global Development Architecture</p><p class="role-desc">Institutional relationships connect BDI to the wider global development system — to other implementing partners, government ministries, and policy conversations.</p></div></div></div></section>
+
+<!-- TARGETS TABLE -->
+<section class="targets-section"><p class="overline">Strategic Plan 2025-2029 Targets</p><h2 class="section-heading">What BDI is targeting from institutional donors, year by year.</h2><p class="section-sub">The table below shows BDI's institutional funding targets across the five years of the Strategic Plan 2025-2029. These targets are ambitious but grounded in BDI's existing pipeline.</p>
+<table class="targets-table"><thead><tr><th>Year</th><th>Annual Budget</th><th>Inst. Share</th><th>Target from Inst.</th><th>Progress</th><th>Key Focus</th></tr></thead><tbody><tr><td class="bold-col">2025</td><td>USD 200,000</td><td>70%</td><td class="teal-col">USD 140,000</td><td><div class="progress-cell"><div class="prog-bar-bg"><div class="prog-bar-fill" style="width:35%"></div></div><span style="font-size:11px;color:var(--text-muted)">35%</span></div></td><td style="font-size:11px">UNICEF, NaFAA, IKI</td></tr><tr><td class="bold-col">2026</td><td>USD 500,000</td><td>68%</td><td class="teal-col">USD 340,000</td><td><div class="progress-cell"><div class="prog-bar-bg"><div class="prog-bar-fill" style="width:18%"></div></div><span style="font-size:11px">18%</span></div></td><td style="font-size:11px">Welthungerhilfe/BMZ</td></tr><tr><td class="bold-col">2027</td><td>USD 900,000</td><td>66%</td><td class="teal-col">USD 594,000</td><td><div class="progress-cell"><div class="prog-bar-bg"><div class="prog-bar-fill" style="width:8%"></div></div><span style="font-size:11px">8%</span></div></td><td style="font-size:11px">Fisheries, Disability</td></tr><tr><td class="bold-col">2028</td><td>USD 1,500,000</td><td>65%</td><td class="teal-col">USD 975,000</td><td><div class="progress-cell"><div class="prog-bar-bg"><div class="prog-bar-fill" style="width:4%"></div></div><span style="font-size:11px">4%</span></div></td><td style="font-size:11px">Multi-sector program</td></tr><tr><td class="bold-col">2029</td><td>USD 2,000,000</td><td>65%</td><td class="teal-col">USD 1,300,000</td><td><div class="progress-cell"><div class="prog-bar-bg"><div class="prog-bar-fill" style="width:2%"></div></div><span style="font-size:11px">Target</span></div></td><td style="font-size:11px">15-county coverage</td></tr></tbody></table><p style="font-size:11px;color:var(--text-muted);margin-top:12px">Progress percentages reflect indicative fundraising status as of early 2025.</p></section>
+
+<!-- CRITERIA -->
+<section class="criteria-section"><p class="overline">What We Look for in Institutional Partners</p><h2 class="section-heading">BDI is selective — and proud of it.</h2><p class="section-sub">Not every grant is the right grant. BDI evaluates institutional funding opportunities against six criteria to ensure that the partnerships we pursue strengthen, rather than distort, our mission.</p><div class="criteria-grid"><div class="crit-card"><div class="crit-icon"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><p class="crit-title">Thematic Alignment</p><p class="crit-body">The funding must address one of BDI's eight program areas and be grounded in an evidence-based understanding of Liberia's needs.</p></div><div class="crit-card"><div class="crit-icon"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><p class="crit-title">Community Ownership</p><p class="crit-body">The program design must allow genuine community consultation and co-design. BDI will not implement top-down programs.</p></div><div class="crit-card"><div class="crit-icon"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><p class="crit-title">Reasonable Compliance</p><p class="crit-body">Compliance requirements must be proportionate to the grant size and realistic for a mid-sized Liberian NGO.</p></div><div class="crit-card"><div class="crit-icon"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><path d="M12 22V12M12 12C12 7 7 3 3 3c0 5 3 9 9 9zM12 12c0-5 5-9 9-9 0 5-3 9-9 9"/></svg></div><p class="crit-title">Long-Term Relationship</p><p class="crit-body">BDI prioritizes institutional relationships with long-term potential over one-off grants.</p></div><div class="crit-card"><div class="crit-icon"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><p class="crit-title">Flexible Reporting</p><p class="crit-body">BDI values partners who understand that adaptive management is a sign of a good program, not a weak one.</p></div><div class="crit-card"><div class="crit-icon"><svg width="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><p class="crit-title">Predictable Disbursement</p><p class="crit-body">BDI prioritizes donors with predictable disbursement schedules and efficient contracting processes.</p></div></div></section>
+
+<!-- APPLY -->
+<section class="apply-section"><div class="apply-inner"><div><p class="apply-overline">Ready to Fund With BDI?</p><h2 class="apply-heading">If your institution funds development in West Africa, let's talk.</h2><p class="apply-body">BDI welcomes conversations with institutional donors across all eight of our program areas. Whether you are exploring a new program in Liberia, looking for a credible local implementing partner, or have a grant call that aligns with our work, our Head of Partnership and Fundraising is ready to explore how we can work together.</p><a href="mailto:info@basadev.org" class="apply-email"><svg width="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@basadev.org</a></div><div class="apply-actions"><a href="mailto:info@basadev.org" class="btn-teal">Start a Conversation →</a><a href="governance-structure.html" class="btn-ghost">View Our Governance Docs →</a><a href="founding-story.html" class="btn-ghost">Read Our Story →</a></div></div></section>
+
+<!-- SIBLING NAV -->
+<div class="sibling-nav"><a href="partners.html" class="sib-card"><div><p class="sib-label">Next in How We Raise Money</p><p class="sib-title">Partners</p></div><div class="sib-arrow"><svg width="14" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a href="individual-donations.html" class="sib-card"><div><p class="sib-label">Also in How We Raise Money</p><p class="sib-title">Individual Donations</p></div><div class="sib-arrow"><svg width="14" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a></div>
+
+<!-- CTA -->
+<section class="cta-section"><h2>BDI is building a Liberia without poverty. Institutions that believe in that are the partners we want.</h2><div class="cta-buttons"><a href="mailto:info@basadev.org" class="btn-white">Partner With BDI</a><a href="governance-structure.html" class="btn-outline-white">View Our Documents</a></div></section>
+
+<!-- FOOTER -->
+<footer class="super-footer"><div class="sf-container"><div class="sf-col"><div class="sf-logo"><img src="./img/logo14-1.png" alt="BDI" style="max-width:170px;"></div><p style="margin:15px 0; font-size:14px;">BDI is an NGO dedicated to building a more inclusive, resilient Liberia.</p><div class="sf-socials"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div><div class="sf-col"><h4 class="sf-title">Quick Links</h4><ul class="sf-links"><li><a href="our-values.html">Our Values</a></li><li><a href="our-team.html">Our Team</a></li><li><a href="partners.html">Partner With Us</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="sf-col"><h4 class="sf-title">Locations</h4>
+
+    <div class="sf-loc-item">
+        <h5>HEADQUARTER: Monrovia, Liberia</h5>
+        <p>
+            Morris Villa, ELWA Community<br>
+            Email: info@basadev.org<br>
+            Tel: +231 886 349 962 / +231 88 675 7435
+        </p>
+    </div><br>
+
+    <div class="sf-loc-item">
+        <h5>The United States Fundraising Office </h5>
+        <p>
+            984 Kettle Creek Road, Eagan,<br>
+			State of Minnesota, 55123<br>
+            Tel: +1 (651) 235-9896<br>
+            Email: info@basadev.org
+        </p>
+    </div><br>
+
+    <!-- NEW GHANA OFFICE -->
+    <div class="sf-loc-item">
+        <h5>Accra, Ghana Office</h5>
+        <p>
+            GE-350-4105, House Number 7, Westland Haasto,
+            2nd Boulevard Road, Accra, Ghana<br>
+            Mobile: +233 244 930 623<br>
+            Email: info@basadev.org
+        </p>
+    </div>
+</div>
+
+<div class="sf-col"><h4 class="sf-title">Stay Updated</h4><p class="sf-newsletter-text">Join our newsletter for the latest impact updates.</p><form class="sf-subscribe" action="https://formspree.io/f/mpqnkwdv" method="POST">
+  <input type="email" name="email" placeholder="Your email address" required>
+  <button type="submit">Subscribe</button>
+</form></div><div style="text-align:center; padding:25px 20px 10px; border-top:1px solid rgba(255,255,255,0.1); margin-top:30px;">&copy; 2026 BASA Development Initiatives (BDI). Registered NGO in Liberia</div></footer>
+
+<script>
+  (function() {
+    const megaItems = document.querySelectorAll('.has-mega');
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const isMobileView = () => window.innerWidth <= 850;
+
+    function closeAllMegas() { megaItems.forEach(item => item.classList.remove('is-active')); }
+
+    megaItems.forEach(item => {
+      const link = item.querySelector('.nav-link');
+      if (link) {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (isMobileView()) {
+            const wasActive = item.classList.contains('is-active');
+            closeAllMegas();
+            if (!wasActive) item.classList.add('is-active');
+          } else {
+            const wasActive = item.classList.contains('is-active');
+            closeAllMegas();
+            if (!wasActive) item.classList.add('is-active');
+          }
+        });
+      }
+    });
+
+    if (mobileBtn && navLinks) {
+      mobileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle('active');
+        const icon = mobileBtn.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+          closeAllMegas();
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.navbar')) {
+        closeAllMegas();
+        if (navLinks && navLinks.classList.contains('active') && isMobileView()) {
+          navLinks.classList.remove('active');
+          const icon = mobileBtn?.querySelector('i');
+          if (icon) {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        }
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (!isMobileView() && navLinks) {
+        navLinks.classList.remove('active');
+        if (mobileBtn) {
+          const icon = mobileBtn.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+        closeAllMegas();
+      }
+    });
+  })();
+</script>
+</body>
+</html>

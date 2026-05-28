@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Donate in Memory - BASA Development Initiatives</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --brand-red: #990033;
+      --brand-green: #005e4d;
+      --sidebar-tan: #e9e6d1;
+      --soft-gold: #b40000;
+      --memorial-bg: #fdfdfb;
+      --text-dark: #2c3e50;
+      --text-muted: #6b7280;
+      --white: #ffffff;
+      --transition: all 0.3s ease;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background-color: var(--memorial-bg); color: var(--text-dark); line-height: 1.7; overflow-x: hidden; }
+
+    /* --- TOPBAR --- */
+    .topbar {
+      background-color: var(--brand-red);
+      padding: 12px 60px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--white);
+      gap: 15px;
+    }
+    .topbar-info { display: flex; flex-wrap: wrap; gap: 25px; font-size: 14px; }
+    .topbar-info a { color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: opacity 0.3s; }
+    .topbar-info a:hover { opacity: 0.85; }
+    .topbar-socials { display: flex; flex-wrap: wrap; gap: 12px; }
+    .social-btn {
+      width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.3);
+      display: flex; align-items: center; justify-content: center;
+      color: white; text-decoration: none; border-radius: 50%;
+      font-size: 14px; transition: all 0.3s;
+    }
+    .social-btn:hover { background: white; color: var(--brand-red); border-color: white; transform: translateY(-2px); }
+
+    /* --- NAVBAR --- */
+    .navbar {
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      min-height: 90px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+      flex-wrap: wrap;
+    }
+    .logo img { height: 75px; display: block; max-width: 100%; }
+    .mobile-menu-btn {
+      display: none;
+      background: var(--brand-red);
+      border: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      z-index: 1001;
+    }
+    .mobile-menu-btn:hover { background: var(--brand-green); }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      margin: 0;
+      padding: 0;
+    }
+    .has-mega { position: static; }
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      cursor: pointer;
+      padding: 10px 0;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .nav-link:hover { color: var(--brand-red); }
+    .nav-link i { font-size: 12px; transition: transform 0.3s; }
+
+    /* --- MEGA MENU --- */
+    .mega-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: white;
+      display: none;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      border-top: 1px solid #eee;
+      z-index: 1001;
+    }
+    .has-mega.is-active .mega-menu { display: flex; flex-wrap: wrap; }
+    .has-mega.is-active .nav-link { color: var(--brand-green); }
+    .has-mega.is-active .nav-link i { transform: rotate(180deg); }
+    .mega-sidebar {
+      background-color: var(--sidebar-tan);
+      width: 300px;
+      padding: 35px;
+      flex-shrink: 0;
+    }
+    .sidebar-img { width: 100%; border-radius: 10px; margin-bottom: 20px; }
+    .sidebar-title { font-weight: 700; font-size: 18px; margin-bottom: 10px; }
+    .sidebar-text { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+    .btn-green-sm {
+      background-color: var(--brand-green);
+      color: white;
+      padding: 8px 22px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+    .btn-green-sm:hover { background-color: var(--brand-red); transform: translateY(-2px); }
+    .mega-grid {
+      flex-grow: 1;
+      padding: 35px 50px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .mega-col h4 { color: var(--brand-green); font-size: 15px; font-weight: 700; margin-bottom: 18px; }
+    .mega-col ul { list-style: none; }
+    .mega-col ul li { margin-bottom: 12px; }
+    .mega-col ul li a { text-decoration: none; color: var(--brand-green); font-size: 14px; font-weight: 500; transition: 0.2s; }
+    .mega-col ul li a:hover { color: var(--brand-red); padding-left: 5px; }
+    .nav-right { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .search-btn { background: #f5f5f5; border: 1px solid #e0e0e0; padding: 8px 12px; cursor: pointer; border-radius: 8px; transition: all 0.3s; }
+    .search-btn:hover { background: #e8e8e8; }
+    .donate-main { background: var(--brand-red); color: white; padding: 10px 26px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; }
+    .donate-main:hover { background: var(--brand-green); transform: translateY(-2px); }
+
+    /* --- HERO --- */
+    .hero {
+      background: linear-gradient(rgba(0, 94, 77, 0.85), rgba(0, 94, 77, 0.7)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80') center/cover;
+      padding: 120px 60px;
+      color: white;
+      text-align: center;
+    }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 52px); font-weight: 900; margin-bottom: 20px; }
+    .hero p { font-size: clamp(18px, 3vw, 22px); font-family: 'Playfair Display', serif; font-style: italic; opacity: 0.9; max-width: 800px; margin: 0 auto; }
+
+    /* --- MAIN CONTENT --- */
+    .main-grid { padding: 80px 60px; display: grid; grid-template-columns: 1fr 400px; gap: 80px; max-width: 1400px; margin: 0 auto; }
+    .section-label { color: var(--brand-green); font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 2px; margin-bottom: 20px; display: block; }
+    .heading { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 34px); color: var(--brand-green); margin-bottom: 30px; line-height: 1.3; }
+    .content-p { font-size: 17px; color: #444; margin-bottom: 25px; }
+    .legacy-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-top: 40px; }
+    .legacy-card { background: white; padding: 30px; border-radius: 12px; border-top: 3px solid var(--soft-gold); box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: 0.3s; }
+    .legacy-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+    .legacy-card i { color: var(--soft-gold); font-size: 28px; margin-bottom: 15px; display: block; }
+    .legacy-card h4 { font-size: 16px; margin-bottom: 10px; color: var(--brand-green); }
+    .legacy-card p { font-size: 13px; color: var(--text-muted); }
+
+    /* --- SIDEBAR --- */
+    .sidebar-card { background: #fff; border: 1px solid #eef0f2; padding: 40px; border-radius: 16px; position: sticky; top: 120px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); }
+    .sidebar-card h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 25px; color: var(--brand-red); }
+    .contact-info { margin-top: 30px; padding-top: 30px; border-top: 1px solid #eee; }
+    .contact-item { display: flex; gap: 15px; margin-bottom: 15px; font-size: 14px; align-items: flex-start; }
+    .contact-item i { color: var(--brand-green); font-size: 18px; margin-top: 4px; width: 24px; }
+    .give-btn { display: block; text-align: center; background: var(--brand-red); color: white; padding: 16px; border-radius: 10px; text-decoration: none; font-weight: 700; margin-top: 30px; transition: 0.3s; }
+    .give-btn:hover { background: #7a0029; transform: translateY(-2px); }
+
+    /* --- QUOTE SECTION --- */
+    .quote-section { background: var(--brand-green); color: white; padding: 80px 40px; text-align: center; }
+    .quote-section blockquote { font-family: 'Playfair Display', serif; font-size: clamp(22px, 4vw, 28px); font-style: italic; max-width: 900px; margin: 0 auto; }
+
+    /* --- SUPER FOOTER --- */
+    .super-footer { background-color: #064d3b; color: #ffffff; padding: 70px 0 30px 0; width: 100%; }
+    .super-footer .sf-container { max-width: 1400px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 60px; gap: 40px; }
+    .super-footer .sf-col { flex: 1; min-width: 220px; }
+    .super-footer .sf-logo img { max-width: 190px; height: auto; margin-bottom: 20px; }
+    .super-footer .sf-description { font-size: 15px; opacity: 0.85; margin-bottom: 25px; }
+    .super-footer .sf-socials { display: flex; gap: 15px; flex-wrap: wrap; }
+    .super-footer .sf-socials a { width: 42px; height: 42px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; transition: all 0.3s; }
+    .super-footer .sf-socials a:hover { background: var(--brand-red); transform: translateY(-3px); }
+    .super-footer .sf-title { color: #22c4a9; font-size: 17px; font-weight: 700; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+    .super-footer .sf-links { list-style: none; }
+    .super-footer .sf-links li { margin-bottom: 12px; }
+    .super-footer .sf-links a { color: #ffffff; text-decoration: none; font-size: 14px; transition: 0.3s; }
+    .super-footer .sf-links a:hover { color: #22c4a9; padding-left: 5px; }
+    .super-footer .sf-loc-item { margin-bottom: 25px; }
+    .super-footer .sf-loc-item h5 { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: white; }
+    .super-footer .sf-subscribe input { width: 100%; padding: 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(34,196,169,0.4); border-radius: 10px; color: white; margin-bottom: 15px; }
+    .super-footer .sf-subscribe button { width: 100%; padding: 14px; background: #bd0000; color: white; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+    .super-footer .sf-subscribe button:hover { background: #e60000; transform: translateY(-2px); }
+    .super-footer .sf-bottom-bar { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; padding: 30px 60px 0 60px; text-align: center; font-size: 13px; opacity: 0.7; }
+
+    /* --- RESPONSIVE BREAKPOINTS WITH FIXED ORDER (mega content pushes other links down) --- */
+    @media screen and (max-width: 1100px) {
+      .topbar { padding: 10px 30px; }
+      .navbar { padding: 0 30px; }
+      .hero { padding: 80px 40px; }
+      .main-grid { padding: 60px 40px; gap: 50px; }
+      .super-footer .sf-container { padding: 0 30px; }
+    }
+    @media screen and (max-width: 850px) {
+      .mobile-menu-btn { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        max-height: 85vh;
+        overflow-y: auto;
+        z-index: 9999;
+        box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+        border-top: 3px solid var(--brand-red);
+        padding: 0;
+        gap: 0;
+        width: 100%;
+      }
+      .nav-links.active { display: flex; }
+      .has-mega { 
+        position: relative; 
+        width: 100%; 
+        border-bottom: 1px solid #eee;
+        display: flex;
+        flex-direction: column;
+      }
+      .nav-link { 
+        padding: 16px 25px; 
+        justify-content: space-between; 
+        width: 100%; 
+        white-space: normal; 
+        background: white;
+        font-size: 16px;
+        order: 1;
+      }
+      /* Mega menu becomes a block that appears BELOW the clicked nav-link,
+         and pushes subsequent sibling navigation items (other li) down */
+      .mega-menu {
+        position: relative !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: none;
+        background: #f8f8f8;
+        border-top: 1px solid #ddd;
+        flex-direction: column;
+        order: 2;
+      }
+      .has-mega.is-active .mega-menu { 
+        display: flex !important; 
+        max-height: none; 
+        overflow-y: visible;
+        margin-bottom: 0;
+      }
+      /* Ensure Donate Today image area appears first, then grid links */
+      .mega-sidebar { width: 100%; padding: 25px; text-align: center; order: 1; }
+      .mega-grid { display: flex !important; flex-direction: column !important; padding: 25px !important; gap: 30px !important; order: 2; }
+      .mega-col { width: 100%; }
+      
+      /* The remaining .nav-links items (other li) naturally appear below the expanded mega content */
+      .main-grid { grid-template-columns: 1fr; gap: 40px; }
+      .legacy-grid { grid-template-columns: 1fr; }
+      .sidebar-card { position: static; }
+      .hero h1 { font-size: 36px; }
+    }
+    @media screen and (max-width: 768px) {
+      .topbar { flex-direction: column; text-align: center; padding: 12px 20px; }
+      .topbar-info { justify-content: center; }
+      .topbar-socials { justify-content: center; }
+      .navbar { padding: 12px 20px; }
+      .logo img { height: 55px; }
+      .hero { padding: 60px 20px; }
+      .hero h1 { font-size: 32px; }
+      .main-grid { padding: 40px 20px; }
+      .heading { font-size: 26px; }
+      .content-p { font-size: 15px; }
+      .legacy-card { padding: 25px; }
+      .sidebar-card { padding: 30px; }
+      .quote-section { padding: 60px 20px; }
+      .quote-section blockquote { font-size: 20px; }
+      .super-footer .sf-container { flex-direction: column; align-items: center; text-align: center; padding: 0 25px; }
+      .super-footer .sf-col { text-align: center; width: 100%; }
+      .super-footer .sf-socials { justify-content: center; }
+      .super-footer .sf-bottom-bar { padding: 25px 20px 0 20px; }
+    }
+    @media screen and (max-width: 480px) {
+      .nav-link { font-size: 14px; }
+      .donate-main { padding: 6px 16px; font-size: 12px; }
+      .hero h1 { font-size: 28px; }
+      .hero p { font-size: 16px; }
+      .section-label { font-size: 11px; }
+      .legacy-card i { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR (fully intact) -->
+<div class="topbar">
+  <div class="topbar-info">
+    <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
+    <a href="tel:+231779205152"><i class="fa-solid fa-phone"></i> +231 779 205 152</a>
+	<a href="career-portal.html"><i class="fa-solid fa-briefcase"></i> Careers</a>
+  </div>
+  <div class="topbar-socials">
+            <a href="https://web.facebook.com/basadevelopmentinitiatives" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.instagram.com/basadevelopment/" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="https://www.linkedin.com/company/basa-development-initiatives" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo"><a href="index.html"><img src="./img/logo14.png" alt="BDI Logo"></a></div>
+  <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
+  <ul class="nav-links" id="navLinks">
+    <li class="has-mega"><a class="nav-link"><b>Our Work</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>What We Do</u></h4><ul><li><a href="agriculture.html">Agriculture & Agribusiness</a></li><li><a href="health.html">Health & Nutrition</a></li><li><a href="education.html">Education</a></li><li><a href="environment.html">Environment & Climate</a></li></ul><h4 style="margin-top:20px;"><u>Where We Work</u></h4><ul><li><a href="#">View all countries</a></li></ul></div><div class="mega-col"><h4><u>Development & Inclusion</u></h4><ul><li><a href="gender-youth.html">Gender & Youth Empowerment</a></li><li><a href="fisheries.html">Fisheries & Aquaculture</a></li><li><a href="disability.html">Disability Inclusion</a></li><li><a href="partnership.html">Research & Partnership</a></li></ul></div><div class="mega-col"><h4><u>Latest News & Updates</u></h4><ul><li><a href="all-news.html">View All Our News</a></li></ul></div></div></div>
+    </li>
+    <li class="has-mega"><a class="nav-link"><b>About Us</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Who we are</u></h4><ul><li><a href="our-values.html">Our Values</a></li><li><a href="founding-story.html">Our founding Story</a></li><li>  </li></ul><h4 style="margin-top:20px;"><u>Governance</u></h4><ul><li><a href="governance-structure.html">Governance Structure</a></li><li><a href="board.html">Board of Directors</a></li><li><a href="our-ceo.html">Our CEO</a></li><li><a href="our-team.html">Our Team</a></li></ul></div><div class="mega-col"><h4><u>How We Raise Money</u></h4><ul><li><a href="institutional-donors.html">Institutional Donors</a></li><li><a href="partners.html">Partners</a></li><li><a href="individual-donations.html">Individual Donations</a></li></ul></div><div class="mega-col"><h4><u>Transparency & accountability</u></h4><ul><li><a href="annual-reports.html">Annual Reports</a></li><li><a href="how-donations-are-spent.html">How donations are spent</a></li><li><a href="audited-financials.html">Audited Financials</a></li></ul></div></div></div>
+    </li>
+    <li class="has-mega"><a class="nav-link"><b>Support us</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Donate Now</u></h4><ul><li><a href="safe drug victims.html">Donate to safe drug victims</a></li><li><a href="End Period Poverty.html">End Period Poverty</a></li><li><a href="Women and Youth in Agribusiness.html">Support Women in Agribusiness</a></li></ul><h4 style="margin-top:20px;"><u>Corporate support</u></h4><ul><li><a href="Become a Corporate Partner.html">Become a corporate supporter</a></li><li><a href="Partner With Us.html">Partner with us</a></li><li><a href="Staff Fundraising.html">Staff Fundraising</a></li><li><a href="Payroll Giving.html">Payroll Giving</a></li><li><a href="Corporate Donations.html">Make a Corperate Donation</a></li></ul></div><div class="mega-col"><h4><u>Fundraise for BDI</u></h4><ul><li><a href="Start your own fundraiser.html">Start your own fundraiser</a></li><li><a href="Find a Friend to Sponsor.html">Find a friend to sponsor</a></li></ul><h4 style="margin-top:20px;"><u>Volunteer Remotely</u></h4><ul><li><a href="Volunteer Remotely.html">You can volunteer with us</a></li></ul></div><div class="mega-col"><h4><u>Other ways to give</u></h4><ul><li><a href="Donate in Memory.html">Donate in memory</a></li><li><a href="Leave a Gift in Your Will.html">Leave a gift in your Will</a></li><li><a href="Donate Your Tax Refund.html">Donate Your Tax Refund</a></li></ul></div></div></div>
+    </li>
+    <li class="has-mega"><a class="nav-link"><b>Resource Centre</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Knowledge Hub Resources</u></h4><ul><li><a href="#">Research</a></li><li><a href="#">Evaluations</a></li><li><a href="newsletter.html">Newsletters</a></li></ul></div></div></div>
+    </li>
+  </ul>
+  <div class="nav-right"><button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="donate-main">Donate Now</a></div>
+</nav>
+
+<!-- HERO section -->
+<section class="hero"><h1>Honor a Life Through Lasting Impact</h1><p>“Transforming loss into purpose and remembrance into impact.”</p></section>
+
+<!-- MAIN CONTENT with legacy grid -->
+<div class="main-grid">
+  <div>
+    <span class="section-label">A Living Legacy</span>
+    <h2 class="heading">Giving in memory goes beyond a symbolic gesture. It creates a living legacy.</h2>
+    <p class="content-p">A memorial gift is a meaningful way to honor the life of someone special while supporting work that continues to make a difference. It allows family, friends, colleagues, and communities to turn remembrance into action by helping others through practical, life-changing programs.</p>
+    <p class="content-p">At BASA Development Initiatives (BDI), donations made in memory support locally led work that strengthens lives and communities across Liberia and Africa. It is a thoughtful way to ensure that a loved one's memory is linked to dignity, hope, and lasting change.</p>
+
+    <h2 class="heading" style="font-size: 28px; margin-top: 50px;">How Your Tribute Supports the Future</h2>
+    <div class="legacy-grid">
+      <div class="legacy-card"><i class="fa-solid fa-dove"></i><h4>Youth Pathways</h4><p>Helping vulnerable young people find dignity and recovery from addiction.</p></div>
+      <div class="legacy-card"><i class="fa-solid fa-graduation-cap"></i><h4>Girls' Education</h4><p>Supporting girls to stay in school by providing essential menstrual health resources.</p></div>
+      <div class="legacy-card"><i class="fa-solid fa-seedling"></i><h4>Agribusiness Growth</h4><p>Creating sustainable economic opportunities for women and rural youth.</p></div>
+      <div class="legacy-card"><i class="fa-solid fa-hands-holding-circle"></i><h4>Community Resilience</h4><p>Building health and livelihood systems that sustain communities for the long term.</p></div>
+    </div>
+  </div>
+
+  <aside>
+    <div class="sidebar-card" id="give">
+      <h3>Commemorate a Loved One</h3>
+      <p style="font-size: 14px; color: #555; margin-bottom: 20px;">Individuals and families can choose to make a one-time or recurring donation. In many cases, families request memorial donations in place of flowers.</p>
+      <p style="font-size: 13px; font-weight: 700; color: var(--brand-green);">We can provide guidance to ensure your tribute is organized clearly and respectfully.</p>
+      <a href="mailto:info@basadev.org" class="give-btn">Arrange a Memorial Gift</a>
+      <div class="contact-info">
+        <h5 style="font-size: 14px; text-transform: uppercase; margin-bottom: 15px; color: var(--soft-gold);">U.S. Memorial Office</h5>
+        <div class="contact-item"><i class="fa-solid fa-location-dot"></i><span>984 Kettle Creek Road,<br>Eagan, Minnesota 55123, USA</span></div>
+        <div class="contact-item"><i class="fa-solid fa-envelope"></i><span>info@basadev.org</span></div>
+        <div class="contact-item"><i class="fa-solid fa-phone"></i><span>+1 (651) 235-9896</span></div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- QUOTE SECTION -->
+<section class="quote-section"><blockquote>“Honor a life. Preserve a legacy. Make a lasting difference.”</blockquote></section>
+
+<!-- SUPER FOOTER (fully intact) -->
+<footer class="super-footer">
+  <div class="sf-container">
+    <div class="sf-col"><div class="sf-logo"><img src="./img/logo14-1.png" alt="BASA Development Initiatives"></div><p class="sf-description">BASA Development Initiatives (BDI) is an NGO dedicated to building a more inclusive, resilient, and sustainable Liberia.</p><div class="sf-socials"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></div></div>
+    <div class="sf-col"><h4 class="sf-title">Quick Links</h4><ul class="sf-links"><li><a href="our-values.html">Our Values</a></li><li><a href="our-team">Our Team</a></li><li><a href="partners">Partner With Us</a></li><li><a href="testimonials">Testimonials</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="sf-col"><h4 class="sf-title">Locations</h4>
+
+    <div class="sf-loc-item">
+        <h5>HEADQUARTER: Monrovia, Liberia</h5>
+        <p>
+            Morris Villa, ELWA Community<br>
+            Email: info@basadev.org<br>
+            Tel: +231 886 349 962 / +231 88 675 7435
+        </p>
+    </div><br>
+
+    <div class="sf-loc-item">
+        <h5>The United States Fundraising Office </h5>
+        <p>
+            984 Kettle Creek Road, Eagan,<br>
+			State of Minnesota, 55123<br>
+            Tel: +1 (651) 235-9896<br>
+            Email: info@basadev.org
+        </p>
+    </div><br>
+
+    <!-- NEW GHANA OFFICE -->
+    <div class="sf-loc-item">
+        <h5>Accra, Ghana Office</h5>
+        <p>
+            GE-350-4105, House Number 7, Westland Haasto,
+            2nd Boulevard Road, Accra, Ghana<br>
+            Mobile: +233 244 930 623<br>
+            Email: info@basadev.org
+        </p>
+    </div>
+</div>
+    <div class="sf-col"><h4 class="sf-title">Stay Updated</h4><p class="sf-newsletter-text">Join our newsletter for the latest impact updates.</p><form class="sf-subscribe" onsubmit="return false;"><input type="email" placeholder="Your email address" required><button type="submit">Subscribe</button></form></div>
+  </div>
+  <div class="sf-bottom-bar"><p>&copy; 2026 BASA Development Initiatives (BDI). Registered NGO in Liberia</p></div>
+</footer>
+
+<script>
+  (function() {
+    const megaItems = document.querySelectorAll('.has-mega');
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const isMobile = () => window.innerWidth <= 850;
+    
+    function closeAllMegas() { megaItems.forEach(i => i.classList.remove('is-active')); }
+    
+    megaItems.forEach(item => {
+      const link = item.querySelector('.nav-link');
+      if (link) {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (isMobile()) {
+            const wasActive = item.classList.contains('is-active');
+            closeAllMegas();
+            if (!wasActive) item.classList.add('is-active');
+          } else {
+            const wasActive = item.classList.contains('is-active');
+            closeAllMegas();
+            if (!wasActive) item.classList.add('is-active');
+          }
+        });
+      }
+    });
+    
+    if (mobileBtn && navLinks) {
+      mobileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle('active');
+        const icon = mobileBtn.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+          closeAllMegas();
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+    }
+    
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.navbar')) {
+        closeAllMegas();
+        if (navLinks && navLinks.classList.contains('active') && isMobile()) {
+          navLinks.classList.remove('active');
+          const icon = mobileBtn?.querySelector('i');
+          if (icon) { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); }
+        }
+      }
+    });
+    
+    window.addEventListener('resize', () => {
+      if (!isMobile() && navLinks) {
+        navLinks.classList.remove('active');
+        if (mobileBtn) {
+          const icon = mobileBtn.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+        closeAllMegas();
+      }
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Disability Inclusion - BASA Development Initiatives</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --brand-red: #990033;
+      --brand-green: #005e4d;
+      --sidebar-tan: #e9e6d1;
+      --text-dark: #333;
+      --white: #ffffff;
+      --transition: all 0.3s ease;
+      --red: #C0392B;
+      --red-dark: #9B2D20;
+      --gold: #D4A017;
+      --navy: #1A1A2E;
+      --navy-card: #1E1E34;
+      --terra: #9A3412;
+      --terra-mid: #C2410C;
+      --terra-light: #EA580C;
+      --terra-pale: #FFF7ED;
+      --terra-border: #FED7AA;
+      --text-muted: #6B7280;
+      --border: #E5E7EB;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      color: #1A1A1A;
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img, video, iframe {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* --- TOPBAR --- */
+    .topbar {
+      background-color: var(--brand-red);
+      padding: 12px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--white);
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .topbar-info { display: flex; gap: 25px; font-size: 14px; flex-wrap: wrap; }
+    .topbar-info a { color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: opacity 0.3s; }
+    .topbar-info a:hover { opacity: 0.8; }
+    .topbar-socials { display: flex; gap: 12px; }
+    .social-btn {
+      width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.3);
+      display: flex; align-items: center; justify-content: center;
+      color: white; text-decoration: none; border-radius: 50%;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+    .social-btn:hover { background: white; color: var(--brand-red); border-color: white; transform: translateY(-2px); }
+
+    /* --- NAVBAR --- */
+    .navbar {
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      min-height: 90px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+      flex-wrap: wrap;
+    }
+
+    .logo img { height: 75px; display: block; }
+
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+      display: none;
+      background: var(--brand-red);
+      border: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 8px;
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    .mobile-menu-btn:hover { background: var(--brand-green); }
+
+    /* Navigation Links */
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      margin: 0;
+      padding: 0;
+    }
+    .has-mega { position: static; }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      cursor: pointer;
+      padding: 10px 0;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .nav-link:hover { color: var(--brand-red); }
+    .nav-link i { font-size: 12px; transition: transform 0.3s; }
+
+    /* MEGA MENU */
+    .mega-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: white;
+      display: none;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      border-top: 1px solid #eee;
+      z-index: 1001;
+    }
+    .has-mega.is-active .mega-menu { display: flex; }
+    .has-mega.is-active .nav-link { color: var(--brand-green); }
+    .has-mega.is-active .nav-link i { transform: rotate(180deg); }
+
+    .mega-sidebar {
+      background-color: var(--sidebar-tan);
+      width: 300px;
+      padding: 35px;
+      flex-shrink: 0;
+    }
+    .sidebar-img { width: 100%; border-radius: 10px; margin-bottom: 20px; }
+    .sidebar-title { font-weight: 700; font-size: 18px; margin-bottom: 10px; }
+    .sidebar-text { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+    .btn-green-sm {
+      background-color: var(--brand-green);
+      color: white;
+      padding: 8px 22px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+    .btn-green-sm:hover { background-color: var(--brand-red); transform: translateY(-2px); }
+
+    .mega-grid {
+      flex-grow: 1;
+      padding: 35px 50px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .mega-col h4 { color: var(--brand-green); font-size: 15px; font-weight: 700; margin-bottom: 18px; }
+    .mega-col ul { list-style: none; }
+    .mega-col ul li { margin-bottom: 12px; }
+    .mega-col ul li a { text-decoration: none; color: var(--brand-green); font-size: 14px; font-weight: 500; transition: 0.2s; }
+    .mega-col ul li a:hover { color: var(--brand-red); padding-left: 5px; }
+
+    .nav-right { display: flex; align-items: center; gap: 18px; }
+    .search-btn { background: #f5f5f5; border: 1px solid #e0e0e0; padding: 8px 12px; cursor: pointer; border-radius: 8px; transition: all 0.3s; }
+    .search-btn:hover { background: #e8e8e8; }
+    .donate-main { background: var(--brand-red); color: white; padding: 10px 26px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; }
+    .donate-main:hover { background: var(--brand-green); transform: translateY(-2px); }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 100px 80px 70px;
+      background: url('img/BDI-Disability.jpg') center/cover no-repeat;
+    }
+    .hero-mandate {
+      display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap;
+      background: rgba(234,88,12,0.16); border: 1px solid rgba(234,88,12,0.35);
+      border-radius: 6px; padding: 7px 14px; margin-bottom: 20px;
+    }
+    .mandate-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--terra-light); }
+    .mandate-text { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.82); }
+    .hero h1 { font-family: 'Poppins', serif; font-size: clamp(38px, 5.5vw, 68px); font-weight: 900; color: var(--white); line-height: 1.1; max-width: 700px; }
+    .hero p { margin-top: 18px; font-size: 17px; color: rgba(255,255,255,0.88); max-width: 540px; }
+
+    /* STATS */
+    .stats-strip { background: var(--navy); padding: 0 60px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .stat-card {
+      background: var(--navy-card); padding: 28px 24px;
+      display: flex; align-items: center; gap: 18px;
+      position: relative; transition: all 0.3s;
+    }
+    .stat-card:hover { background: #232340; transform: translateY(-3px); }
+    .stat-card.target-card::after {
+      content: '2029 TARGET';
+      position: absolute; top: 12px; right: 12px;
+      background: var(--red); color: var(--white);
+      font-size: 8px; font-weight: 700; padding: 3px 8px; border-radius: 4px;
+    }
+    .stat-value { font-size: 34px; font-weight: 700; color: white; line-height: 1; }
+    .stat-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; color: rgba(255,255,255,0.6); margin-top: 5px; }
+    .stat-icon { width: 48px; height: 48px; background: var(--terra); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+
+    /* MAIN CONTENT */
+    .main-content { padding: 70px 60px; display: grid; grid-template-columns: 1fr 360px; gap: 50px; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--terra-mid); margin-bottom: 16px; }
+    .overview-heading { font-size: clamp(26px, 3vw, 38px); font-weight: 700; color: var(--navy); margin-bottom: 20px; line-height: 1.2; }
+    .overview-body { font-size: 15px; color: #4B5563; line-height: 1.7; margin-bottom: 40px; text-align: justify; }
+
+    .pillars-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: var(--text-muted); margin-bottom: 16px; }
+    .pillars-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 48px; }
+    .pillar-card {
+      background: var(--terra-pale); border: 1px solid var(--terra-border);
+      border-radius: 14px; padding: 24px 20px; transition: all 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .pillar-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--terra); }
+    .pillar-card:hover { border-color: var(--terra-light); transform: translateY(-3px); }
+    .pillar-letter { width: 28px; height: 28px; background: var(--terra); color: white; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; margin-bottom: 12px; }
+    .pillar-name { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 7px; }
+    .pillar-desc { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+    .objectives-heading { font-size: 20px; font-weight: 700; color: var(--navy); margin: 30px 0 20px; }
+    .objectives-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .objective-card { background: var(--terra-pale); border: 1px solid var(--terra-border); border-radius: 14px; padding: 18px; display: flex; gap: 12px; transition: all 0.3s; }
+    .objective-card:hover { border-color: var(--terra-light); transform: translateY(-2px); }
+    .obj-check { width: 22px; height: 22px; border-radius: 50%; background: rgba(154,52,18,0.10); border: 2px solid var(--terra); display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--terra); }
+
+    .crpd-strip {
+      margin-top: 40px; background: var(--navy); border-radius: 20px;
+      padding: 30px 32px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
+    }
+    .crpd-icon { width: 48px; height: 48px; background: rgba(234,88,12,0.18); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .crpd-body h4 { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .crpd-body p { font-size: 13px; color: rgba(255,255,255,0.68); line-height: 1.65; }
+
+    .sdg-section { margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--border); }
+    .sdg-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: var(--text-muted); margin-bottom: 14px; }
+    .sdg-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .sdg-tag { background: var(--navy); color: white; font-size: 11px; padding: 5px 14px; border-radius: 30px; }
+
+    /* SIDEBAR */
+    .sidebar { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 20px; }
+    .sidebar-card { background: white; border: 1px solid #E5E7EB; border-radius: 20px; padding: 28px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); }
+    .sidebar-title { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .sidebar-subtitle { font-size: 12px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5; }
+    .founding-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; color: var(--terra); margin-bottom: 14px; }
+    .founding-ways { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+    .founding-way { background: var(--terra-pale); border: 1px solid var(--terra-border); border-radius: 12px; padding: 14px 16px; display: flex; align-items: center; gap: 12px; }
+    .founding-way-icon { width: 34px; height: 34px; background: var(--terra); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .founding-way-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .founding-way-desc { font-size: 11px; color: var(--text-muted); line-height: 1.45; }
+    .donate-btn { background: var(--red); color: white; padding: 14px; border-radius: 12px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; font-weight: 700; transition: all 0.3s; }
+    .donate-btn:hover { background: var(--red-dark); transform: translateY(-2px); }
+    .roadmap-card { background: var(--navy); border-radius: 16px; padding: 22px; }
+    .roadmap-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; color: rgba(255,255,255,0.4); margin-bottom: 18px; }
+    .roadmap-item { display: flex; gap: 14px; margin-bottom: 16px; }
+    .roadmap-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--terra-light); margin-top: 4px; flex-shrink: 0; }
+    .roadmap-line { width: 2px; flex: 1; background: rgba(255,255,255,0.10); margin-top: 4px; }
+    .roadmap-year { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--terra-light); margin-bottom: 3px; }
+    .roadmap-desc { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.5; }
+
+    /* CTA */
+    .cta-banner { background: var(--navy); padding: 70px 40px; text-align: center; }
+    .cta-banner h2 { font-size: clamp(26px, 4vw, 42px); color: white; max-width: 700px; margin: 0 auto 30px; }
+    .cta-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .btn-white, .btn-outline { padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: all 0.3s; }
+    .btn-white { background: white; color: var(--navy); }
+    .btn-white:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+    .btn-outline { border: 2px solid rgba(255,255,255,0.4); color: white; }
+    .btn-outline:hover { border-color: white; transform: translateY(-3px); }
+
+    /* FOOTER */
+    .super-footer { background-color: #064d3b; color: white; padding: 60px 0 20px; }
+    .super-footer .sf-container { max-width: 1400px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 50px; gap: 30px; }
+    .super-footer .sf-col { flex: 1; min-width: 220px; }
+    .super-footer .sf-title { color: #22c4a9; font-size: 16px; font-weight: 700; margin-bottom: 25px; letter-spacing: 1px; }
+    .super-footer .sf-links { list-style: none; }
+    .super-footer .sf-links li { margin-bottom: 12px; }
+    .super-footer .sf-links a { color: white; text-decoration: none; font-size: 14px; transition: 0.3s; }
+    .super-footer .sf-links a:hover { color: #22c4a9; padding-left: 5px; }
+    .super-footer .sf-socials { display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+    .super-footer .sf-socials a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; transition: all 0.3s; }
+    .super-footer .sf-socials a:hover { background: var(--brand-red); transform: translateY(-3px); }
+    .sf-subscribe input { width: 100%; padding: 12px; margin-bottom: 12px; border-radius: 8px; border: none; background: rgba(255,255,255,0.1); color: white; }
+    .sf-subscribe button { background: #bd0000; color: white; border: none; padding: 12px; width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+    .sf-subscribe button:hover { background: #e60000; }
+
+    /* ========== RESPONSIVE BREAKPOINTS ========== */
+    @media screen and (max-width: 1200px) {
+      .navbar { padding: 0 30px; }
+      .topbar { padding: 10px 30px; }
+      .main-content { padding: 50px 30px; gap: 35px; }
+      .stats-strip { padding: 0 30px; }
+      .hero { padding: 80px 50px 60px; }
+    }
+
+    @media screen and (max-width: 1024px) {
+      .mobile-menu-btn { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        max-height: 85vh;
+        overflow-y: auto;
+        z-index: 9999;
+        box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+        border-top: 3px solid var(--brand-red);
+        padding: 0;
+        gap: 0;
+        width: 100%;
+      }
+      .nav-links.active { display: flex; }
+      .has-mega { position: relative; width: 100%; border-bottom: 1px solid #eee; }
+      .nav-link { padding: 16px 20px; justify-content: space-between; width: 100%; white-space: normal; background: white; }
+      .mega-menu {
+        position: relative !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: none;
+        background: #f8f8f8;
+        border-top: 1px solid #ddd;
+        flex-direction: column;
+      }
+      .has-mega.is-active .mega-menu { display: flex !important; max-height: 70vh; overflow-y: auto; }
+      .mega-sidebar { width: 100%; padding: 20px; order: 1; }
+      .mega-grid { display: flex !important; flex-direction: column !important; padding: 20px !important; gap: 25px !important; order: 2; }
+      .mega-col { width: 100%; }
+      .stats-grid { grid-template-columns: 1fr; gap: 10px; }
+      .topbar { flex-direction: column; text-align: center; }
+      .topbar-info { justify-content: center; }
+      .hero { padding: 60px 30px 50px; min-height: 380px; }
+      .hero h1 { font-size: 38px; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .crpd-strip { flex-direction: column; text-align: center; }
+      .sidebar { position: static; }
+    }
+
+    @media screen and (max-width: 900px) {
+      .main-content { grid-template-columns: 1fr; }
+      .objectives-grid { grid-template-columns: 1fr; }
+    }
+
+    @media screen and (max-width: 768px) {
+      .stat-card { padding: 18px; flex-direction: column; text-align: center; gap: 12px; }
+      .stat-value { font-size: 28px; }
+      .cta-banner { padding: 50px 25px; }
+      .cta-buttons { flex-direction: column; align-items: center; gap: 15px; }
+      .btn-white, .btn-outline { width: 100%; max-width: 260px; text-align: center; padding: 12px 25px; }
+      .super-footer .sf-container { flex-direction: column; padding: 0 25px; text-align: center; }
+      .super-footer .sf-socials { justify-content: center; }
+      .hero-mandate { width: 100%; }
+    }
+
+    @media screen and (max-width: 550px) {
+      .navbar { padding: 0 15px; }
+      .logo img { height: 50px; }
+      .donate-main { padding: 6px 16px; font-size: 12px; }
+      .hero { padding: 50px 20px 40px; }
+      .hero h1 { font-size: 32px; }
+      .main-content { padding: 30px 18px; }
+      .sidebar-card { padding: 18px; }
+      .founding-way { flex-direction: column; text-align: center; }
+      .sdg-tag { font-size: 9px; padding: 4px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-info">
+    <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
+    <a href="tel:+231779205152"><i class="fa-solid fa-phone"></i> +231 779 205 152</a>
+	<a href="career-portal.html"><i class="fa-solid fa-briefcase"></i> Careers</a>
+  </div>
+  <div class="topbar-socials">
+            <a href="https://web.facebook.com/basadevelopmentinitiatives" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.instagram.com/basadevelopment/" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="https://www.linkedin.com/company/basa-development-initiatives" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo"><a href="index.html"><img src="./img/logo14.png" alt="BDI Logo"></a></div>
+  <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
+  <ul class="nav-links" id="navLinks">
+    <li class="has-mega"><a class="nav-link"><b>Our Work</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>What We Do</u></h4><ul><li><a href="agriculture.html">Agriculture & Agribusiness</a></li><li><a href="health.html">Health & Nutrition</a></li><li><a href="education.html">Education</a></li><li><a href="environment.html">Environment & Climate</a></li></ul><h4 style="margin-top:20px;"><u>Where We Work</u></h4><ul><li><a href="#">View all countries</a></li></ul></div><div class="mega-col"><h4><u>Development & Inclusion</u></h4><ul><li><a href="gender-youth.html">Gender & Youth Empowerment</a></li><li><a href="fisheries.html">Fisheries & Aquaculture</a></li><li><a href="disability.html">Disability Inclusion</a></li><li><a href="partnership.html">Research & Partnership</a></li></ul></div><div class="mega-col"><h4><u>Latest News & Updates</u></h4><ul><li><a href="all-news.html">View All Our News</a></li></ul></div></div></div>
+    </li>
+    <li class="has-mega"><a class="nav-link"><b>About Us</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Who we are</u></h4><ul><li><a href="our-values.html">Our Values</a></li><li><a href="founding-story.html">Our founding Story</a></li><li>  </li></ul><h4 style="margin-top:20px;"><u>Governance</u></h4><ul><li><a href="governance-structure.html">Governance Structure</a></li><li><a href="board.html">Board of Directors</a></li><li><a href="our-ceo.html">Our CEO</a></li><li><a href="our-team.html">Our Team</a></li></ul></div><div class="mega-col"><h4><u>How We Raise Money</u></h4><ul><li><a href="institutional-donors.html">Institutional Donors</a></li><li><a href="partners.html">Partners</a></li><li><a href="individual-donations.html">Individual Donations</a></li></ul></div><div class="mega-col"><h4><u>Transparency & accountability</u></h4><ul><li><a href="annual-reports.html">Annual Reports</a></li><li><a href="how-donations-are-spent.html">How donations are spent</a></li><li><a href="audited-financials.html">Audited Financials</a></li></ul></div></div></div>
+    </li>
+    <li class="has-mega"><a class="nav-link"><b>Support us</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Donate Now</u></h4><ul><li><a href="safe drug victims.html">Donate to safe drug victims</a></li><li><a href="End Period Poverty.html">End Period Poverty</a></li><li><a href="Women and Youth in Agribusiness.html">Support Women in Agribusiness</a></li></ul><h4 style="margin-top:20px;"><u>Corporate support</u></h4><ul><li><a href="Become a Corporate Partner.html">Become a corporate supporter</a></li><li><a href="Partner With Us.html">Partner with us</a></li><li><a href="Staff Fundraising.html">Staff Fundraising</a></li><li><a href="Payroll Giving.html">Payroll Giving</a></li><li><a href="Corporate Donations.html">Make a Corperate Donation</a></li></ul></div><div class="mega-col"><h4><u>Fundraise for BDI</u></h4><ul><li><a href="Start your own fundraiser.html">Start your own fundraiser</a></li><li><a href="Find a Friend to Sponsor.html">Find a friend to sponsor</a></li></ul><h4 style="margin-top:20px;"><u>Volunteer Remotely</u></h4><ul><li><a href="Volunteer Remotely.html">You can volunteer with us</a></li></ul></div><div class="mega-col"><h4><u>Other ways to give</u></h4><ul><li><a href="Donate in Memory.html">Donate in memory</a></li><li><a href="Leave a Gift in Your Will.html">Leave a gift in your Will</a></li><li><a href="Donate Your Tax Refund.html">Donate Your Tax Refund</a></li></ul></div></div></div>
+    </li>
+    <li class="has-mega"><a class="nav-link"><b>Resource Centre</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Knowledge Hub Resources</u></h4><ul><li><a href="#">Research</a></li><li><a href="#">Evaluations</a></li><li><a href="newsletter.html">Newsletters</a></li></ul></div></div></div>
+    </li>
+  </ul>
+  <div class="nav-right"><button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="donate-main">Donate Now</a></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="font-family: 'Poppins', sans-serif;">
+  <div class="hero-mandate" style="background: rgba(180, 30, 30, 0.3); display: inline-block; padding: 8px 16px; border-radius: 20px; color: white; margin-bottom: 15px;">
+    <span class="mandate-dot"></span>
+    <span class="mandate-text">Leaving no one behind - a commitment, not a slogan.</span>
+  </div>
+  <h1 style="background: rgba(180, 30, 30, 0.3); color: white; padding: 20px 25px; border-radius: 16px; margin: 0 0 15px 0; font-weight: 700; display: inline-block; width: auto;">Disability<br>Inclusion</h1>
+  <p style="background: rgba(180, 30, 30, 0.3); color: white; padding: 12px 20px; border-radius: 12px; font-size: 1.2rem; display: inline-block; width: auto;">Dismantling the barriers that exclude persons with disabilities from education, employment, healthcare, and community life in Liberia.</p>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip"><div class="stats-grid"><div class="stat-card target-card"><div class="stat-icon"><svg width="24" viewBox="0 0 24 24" fill="none" stroke="white"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg></div><div><div class="stat-value">300</div><div class="stat-label">PWDs to Receive Assistive Devices Annually</div></div></div><div class="stat-card target-card"><div class="stat-icon"><svg width="24" viewBox="0 0 24 24" fill="none" stroke="white"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><div><div class="stat-value">200</div><div class="stat-label">PWDs to Complete Vocational Training Annually</div></div></div><div class="stat-card target-card"><div class="stat-icon gold-icon"><svg width="24" viewBox="0 0 24 24" fill="none" stroke="#D4A017"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/></svg></div><div><div class="stat-value">+30%</div><div class="stat-label">Annual Access Increase Target for PWDs</div></div></div></div></div>
+
+<!-- MAIN CONTENT -->
+<section class="main-content"><div><p class="section-label">Overview</p><h2 class="overview-heading">Disability is not a barrier to dignity. 
+Exclusion is - and BDI is here to end it.</h2><p class="overview-body">
+      Persons with disabilities in Liberia face one of the most pervasive and least addressed forms of exclusion in the country's 
+	  development landscape. They cannot access education, health services, public buildings, or transportation on an equal basis with 
+	  others, and routinely face discrimination in employment, housing, and civic life. Years of civil war have left many Liberians with 
+	  physical and psychological disabilities, while poverty deepens the exclusion of those who cannot afford assistive devices or find 
+	  schools and employers willing to include them. Liberia has signed the United Nations Convention on the Rights of Persons with 
+	  Disabilities (CRPD) - but implementation remains slow, underfunded, and largely unmonitored. BDI's disability inclusion program is 
+	  built on a simple conviction: our commitment to "leaving no one behind" is meaningless unless it explicitly and systematically includes 
+	  persons with disabilities. This is not a peripheral concern. It is a core expression of our values.
+    </p>
+<p class="pillars-label">Our Four Delivery Pillars</p><div class="pillars-grid"><div class="pillar-card"><span class="pillar-letter">A</span><p class="pillar-name">Direct Services and Assistive Support</p><p class="pillar-desc">Connecting persons with disabilities to wheelchairs, crutches, hearing aids, and white canes, alongside rehabilitation referrals and community-based support.</p></div><div class="pillar-card"><span class="pillar-letter">B</span><p class="pillar-name">Inclusive Education</p><p class="pillar-desc">Supporting primary schools in creating genuinely inclusive learning environments - through teacher training, infrastructure advocacy, and adapted learning materials.</p></div><div class="pillar-card"><span class="pillar-letter">C</span><p class="pillar-name">Vocational Training and Economic Inclusion</p><p class="pillar-desc">Designing and delivering vocational programs adapted to the specific needs and abilities of PWDs, creating pathways into agriculture, small business, and craft-based enterprise.</p></div><div class="pillar-card"><span class="pillar-letter">D</span><p class="pillar-name">Advocacy and Policy Engagement</p><p class="pillar-desc">Engaging government and the legislature to advocate for full CRPD implementation - through policy briefs, national consultations, and amplifying the voices of persons with disabilities.</p></div></div>
+<h3 class="objectives-heading">Key Objectives</h3><div class="objectives-grid"><div class="objective-card"><div class="obj-check">✓</div><p>Provide assistive devices and rehabilitation support to PWDs in target communities.</p></div><div class="objective-card"><div class="obj-check">✓</div><p>Support 15 schools annually with inclusive education infrastructure and training.</p></div><div class="objective-card"><div class="obj-check">✓</div><p>Deliver vocational training and employment pathways tailored for PWDs.</p></div><div class="objective-card"><div class="obj-check">✓</div><p>Mainstream disability inclusion across 100% of BDI programs by 2027.</p></div></div>
+<div class="crpd-strip"><div class="crpd-icon"><svg width="24" viewBox="0 0 24 24" fill="none" stroke="white"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4 style="color: white;">Grounded in International 
+Law, Driven by Local Reality</h4><p style="color: white;>Liberia has ratified the <strong>UN Convention on the Rights of Persons with Disabilities (CRPD)</strong> and enacted domestic disability legislation. Yet implementation remains slow and largely unmonitored. BDI's role is to bridge that gap - documenting rights violations, advocating for enforcement, providing direct services, and shifting the social norms that still treat disability as a source of shame rather than a call to action.</p></div></div>
+<div class="sdg-section"><p class="sdg-label">SDG Alignment</p><div class="sdg-tags"><span class="sdg-tag">SDG 4 - Quality Education</span><span class="sdg-tag">SDG 8 - Decent Work</span><span class="sdg-tag">SDG 10 - Reduced Inequalities</span><span class="sdg-tag">SDG 16 - Peace and Justice</span></div></div></div>
+<aside class="sidebar"><div class="sidebar-card"><div class="sidebar-title"><span>🤝</span> Be a Founding Partner</div><p class="sidebar-subtitle">BDI's Disability Inclusion program is in its founding phase. No active project exists yet - which means your support now shapes what this program becomes.</p><p class="founding-label">How You Can Get Involved</p><div class="founding-ways"><div class="founding-way"><div class="founding-way-icon"><svg width="16" viewBox="0 0 24 24" fill="none" stroke="white"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div><div><p class="founding-way-title">Fund Assistive Devices</p><p class="founding-way-desc">Your donation can put a wheelchair, hearing aid, or white cane into the hands of a PWD who has never had one.</p></div></div><div class="founding-way"><div class="founding-way-icon"><svg width="16" viewBox="0 0 24 24" fill="none" stroke="white"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><div><p class="founding-way-title">Support Inclusive Schools</p><p class="founding-way-desc">Help BDI equip primary schools with inclusive infrastructure and disability-aware teachers.</p></div></div><div class="founding-way"><div class="founding-way-icon"><svg width="16" viewBox="0 0 24 24" fill="none" stroke="white"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><p class="founding-way-title">Champion CRPD Advocacy</p><p class="founding-way-desc">Support BDI's policy engagement work to push for full enforcement of disability rights under Liberian law.</p></div></div></div><div style="height:1px; background:#E5E7EB; margin:15px 0;"></div><p class="sidebar-note">Every founding contribution to this program helps BDI design, pilot, and scale services that will reach hundreds of persons with disabilities across Liberia.</p><a href="#" class="donate-btn">Donate to This Cause →</a></div>
+<div class="roadmap-card"><p class="roadmap-label">Program Roadmap</p><div class="roadmap-item"><div class="roadmap-dot"></div><div><p class="roadmap-year">2025 - 2026</p><p class="roadmap-desc">Establish partnerships with disability-focused organizations. Submit first funding proposals. Begin community scoping in Sinoe and Montserrado Counties.</p></div></div><div class="roadmap-item"><div class="roadmap-dot"></div><div><p class="roadmap-year">2026 - 2027</p><p class="roadmap-desc">Launch first assistive device distribution and vocational training pilot. Begin inclusive education support in 15 target schools.</p></div></div><div class="roadmap-item"><div class="roadmap-dot"></div><div><p class="roadmap-year">2027 - 2029</p><p class="roadmap-desc">Scale to reach 300 PWDs annually with assistive devices. Mainstream disability inclusion across all 8 BDI programs.</p></div></div></div></aside></section>
+
+<!-- CTA -->
+<section class="cta-banner"><h2>Partner with us to build a Liberia where no person with a disability is left behind.</h2><div class="cta-buttons"><a href="#" class="btn-white">Get in Touch</a><a href="#" class="btn-outline">Volunteer</a></div></section>
+
+<!-- FOOTER -->
+<footer class="super-footer"><div class="sf-container"><div class="sf-col"><div class="sf-logo"><img src="./img/logo14-1.png" alt="BDI" style="max-width:170px;"></div><p style="margin:15px 0; font-size:14px;">BDI is an NGO dedicated to building a more inclusive, resilient Liberia.</p><div class="sf-socials"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div><div class="sf-col"><h4 class="sf-title">Quick Links</h4><ul class="sf-links"><li><a href="our-values.html">Our Values</a></li><li><a href="our-team.html">Our Team</a></li><li><a href="partners.html">Partner With Us</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="sf-col"><div class="sf-loc-item">
+        <h5>HEADQUARTER: Monrovia, Liberia</h5>
+        <p>
+            Morris Villa, ELWA Community<br>
+            Email: info@basadev.org<br>
+            Tel: +231 886 349 962 / +231 88 675 7435
+        </p>
+    </div><br>
+
+    <div class="sf-loc-item">
+        <h5>The United States Fundraising Office </h5>
+        <p>
+            984 Kettle Creek Road, Eagan,<br>
+			State of Minnesota, 55123<br>
+            Tel: +1 (651) 235-9896<br>
+            Email: info@basadev.org
+        </p>
+    </div><br>
+
+    <!-- NEW GHANA OFFICE -->
+    <div class="sf-loc-item">
+        <h5>Accra, Ghana Office</h5>
+        <p>
+            GE-350-4105, House Number 7, Westland Haasto,
+            2nd Boulevard Road, Accra, Ghana<br>
+            Mobile: +233 244 930 623<br>
+            Email: info@basadev.org
+        </p>
+    </div>
+</div>
+
+<div class="sf-col"><h4 class="sf-title">Stay Updated</h4><p class="sf-newsletter-text">Join our newsletter for the latest impact updates.</p><form class="sf-subscribe" action="https://formspree.io/f/mpqnkwdv" method="POST">
+  <input type="email" name="email" placeholder="Your email address" required>
+  <button type="submit">Subscribe</button>
+</form></div><div style="text-align:center; padding:25px 20px 10px; border-top:1px solid rgba(255,255,255,0.1); margin-top:30px;">&copy; 2026 BASA Development Initiatives (BDI). Registered NGO in Liberia</div></footer>
+
+<script>
+  (function() {
+    const megaItems = document.querySelectorAll('.has-mega');
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const isMobileView = () => window.innerWidth <= 1024;
+
+    function closeAllMegas() { megaItems.forEach(item => item.classList.remove('is-active')); }
+
+    megaItems.forEach(item => {
+      const link = item.querySelector('.nav-link');
+      if (link) {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (isMobileView()) {
+            const wasActive = item.classList.contains('is-active');
+            closeAllMegas();
+            if (!wasActive) item.classList.add('is-active');
+          } else {
+            const wasActive = item.classList.contains('is-active');
+            closeAllMegas();
+            if (!wasActive) item.classList.add('is-active');
+          }
+        });
+      }
+    });
+
+    if (mobileBtn && navLinks) {
+      mobileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle('active');
+        const icon = mobileBtn.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+          closeAllMegas();
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.navbar')) {
+        closeAllMegas();
+        if (navLinks && navLinks.classList.contains('active') && isMobileView()) {
+          navLinks.classList.remove('active');
+          const icon = mobileBtn?.querySelector('i');
+          if (icon) {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        }
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (!isMobileView() && navLinks) {
+        navLinks.classList.remove('active');
+        if (mobileBtn) {
+          const icon = mobileBtn.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+        closeAllMegas();
+      }
+    });
+  })();
+</script>
+</body>
+</html>
