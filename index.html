@@ -61,6 +61,9 @@
             --text-dark: #333;
             --white: #ffffff;
             --transition: all 0.3s ease;
+            --navy: #1a1a2e;
+            --brand-teal: #22c4a9;
+            --bg-light: #fcfbf8;
         }
         
         /* Topbar - Now visible on mobile as well (removed display: none on mobile) */
@@ -272,6 +275,119 @@
         .bdi-impa-number { font-size: 2.2rem; font-weight: 800; color: #333; margin: 0; }
         .bdi-impa-label { font-size: 0.85rem; color: #666; font-weight: 600; margin-top: 10px; }
         
+        /* ===== NEW NEWS SECTION (placed between Our Impact and How to Help) ===== */
+        .latest-news-section {
+            background-color: var(--bg-light);
+            padding: 80px 0;
+        }
+        .latest-news-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .section-header-news {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-header-news h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--brand-green);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-header-news h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background: var(--brand-red);
+        }
+        .section-header-news p {
+            color: #666;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+        .news-grid-home {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 30px;
+        }
+        .news-card-home {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .news-card-home:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .card-img-home {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+        .card-content-home {
+            padding: 25px;
+            flex-grow: 1;
+        }
+        .card-tag-home {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        .tag-field-home { background: var(--brand-green); }
+        .tag-milestone-home { background: var(--brand-red); }
+        .tag-partner-home { background: var(--navy); }
+        .card-content-home h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--navy);
+            line-height: 1.4;
+        }
+        .card-content-home p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .card-footer-home {
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .read-more-home {
+            color: var(--brand-red);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+        .read-more-home:hover { color: var(--brand-green); }
+        @media (max-width: 768px) {
+            .latest-news-container { padding: 0 20px; }
+            .section-header-news h2 { font-size: 2rem; }
+            .news-grid-home { gap: 20px; }
+            .card-img-home { height: 200px; }
+        }
+        
         .how-help { background-color: #005e4d; padding: 70px 40px; color: #ffffff; }
         .help-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1300px; margin: 0 auto; }
         .help-item { display: flex; align-items: flex-start; gap: 20px; padding: 25px; text-decoration: none; color: #ffffff; border-radius: 16px; transition: all 0.3s ease; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); }
@@ -320,20 +436,13 @@
         
         /* ========== MOBILE NAVBAR - Topbar now visible on mobile (removed display: none) ========== */
         @media screen and (max-width: 850px) {
-            /* Topbar stays visible - adjusted padding for mobile */
             .topbar { padding: 10px 20px; }
             .topbar-info { gap: 15px; font-size: 12px; flex-wrap: wrap; justify-content: center; }
             .topbar-socials { gap: 8px; }
             .social-btn { width: 30px; height: 30px; font-size: 12px; }
-            
-            /* Show mobile menu button with "MENU" text + icon */
             .mobile-menu-btn { display: flex; }
-            
-            /* Adjust navbar padding */
             .navbar { padding: 0 20px; min-height: 70px; }
             .logo img { height: 50px; }
-            
-            /* Hide desktop nav-links initially, show as overlay panel when active */
             .nav-links {
                 display: none;
                 position: fixed;
@@ -353,59 +462,22 @@
                 max-height: calc(100vh - 70px);
             }
             .nav-links.active { display: flex; }
-            
-            .has-mega { 
-                position: relative; 
-                width: 100%; 
-                border-bottom: 1px solid #eee;
-                display: flex;
-                flex-direction: column;
-            }
-            .nav-link { 
-                padding: 16px 25px; 
-                justify-content: space-between; 
-                width: 100%; 
-                white-space: normal; 
-                background: white;
-                font-size: 16px;
-                order: 1;
-            }
-            .mega-menu { 
-                position: relative !important; 
-                top: 0; 
-                left: 0; 
-                width: 100%; 
-                display: none; 
-                background: #f8f8f8; 
-                border-top: 1px solid #ddd; 
-                flex-direction: column; 
-                order: 2; 
-                box-shadow: none;
-            }
-            .has-mega.is-active .mega-menu { 
-                display: flex !important; 
-                max-height: none; 
-                overflow-y: visible; 
-                margin-bottom: 0;
-            }
+            .has-mega { position: relative; width: 100%; border-bottom: 1px solid #eee; display: flex; flex-direction: column; }
+            .nav-link { padding: 16px 25px; justify-content: space-between; width: 100%; white-space: normal; background: white; font-size: 16px; order: 1; }
+            .mega-menu { position: relative !important; top: 0; left: 0; width: 100%; display: none; background: #f8f8f8; border-top: 1px solid #ddd; flex-direction: column; order: 2; box-shadow: none; }
+            .has-mega.is-active .mega-menu { display: flex !important; max-height: none; overflow-y: visible; margin-bottom: 0; }
             .mega-sidebar { width: 100%; padding: 25px; text-align: center; order: 1; }
             .mega-grid { display: flex !important; flex-direction: column !important; padding: 25px !important; gap: 30px !important; order: 2; }
             .mega-col { width: 100%; }
-            
-            /* Right side (search and donate) remain visible */
             .nav-right { margin-left: auto; gap: 12px; }
             .search-btn { padding: 6px 10px; }
             .donate-main { padding: 6px 18px; font-size: 13px; }
         }
-        
-        /* Additional breakpoint for very small screens - topbar stacks vertically */
         @media screen and (max-width: 650px) {
             .topbar { flex-direction: column; text-align: center; padding: 10px 15px; }
             .topbar-info { justify-content: center; }
             .topbar-socials { justify-content: center; }
         }
-        
-        /* Small screen adjustments */
         @media screen and (max-width: 480px) {
             .navbar { padding: 0 15px; }
             .donate-main { padding: 6px 14px; font-size: 12px; }
@@ -424,7 +496,7 @@
         <div class="topbar-info">
             <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
             <a href="tel:+231779205152"><i class="fa-solid fa-phone"></i> +231 779 205 152</a>
-	<a href="career-portal.html"><i class="fa-solid fa-briefcase"></i> Careers</a>
+            <a href="career-portal.html"><i class="fa-solid fa-briefcase"></i> Careers</a>
         </div>
         <div class="topbar-socials">
             <a href="https://web.facebook.com/basadevelopmentinitiatives" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
@@ -487,6 +559,54 @@
     
     <div class="bdi-impa"><div class="bdi-impa-container"><h1 class="bdi-impa-title">Our Impact</h1><div class="bdi-impa-grid"><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-tree"></i></div><h3 class="bdi-impa-number">5,000+</h3><p class="bdi-impa-label">Trees Planted</p></div><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-seedling"></i></div><h3 class="bdi-impa-number">1,200</h3><p class="bdi-impa-label">Farmers Supported</p></div><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-school"></i></div><h3 class="bdi-impa-number">15</h3><p class="bdi-impa-label">Schools Partnered</p></div><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-user-friends"></i></div><h3 class="bdi-impa-number">20</h3><p class="bdi-impa-label">Youth & Women-led Agribusinesses</p></div></div></div></div>
     
+    <!-- NEW SECTION: Latest News & Stories (first 3 news from all-news.html) placed right after Our Impact -->
+    <div class="latest-news-section">
+        <div class="latest-news-container">
+            <div class="section-header-news">
+                <h2>Latest News & Stories</h2>
+                <p>Stories of impact, hope, and transformation from the communities we serve.</p>
+            </div>
+            <div class="news-grid-home">
+                <!-- News Card 1: Greenville Rising -->
+                <div class="news-card-home">
+                    <img src="img/BDI-Greensville-blog-1.jpg" class="card-img-home" alt="Greenville">
+                    <div class="card-content-home">
+                        <span class="card-tag-home tag-field-home">Stories from the field</span>
+                        <h3>🌍 Greenville Rising: How Local Partnerships Are Powering a Cleaner, Resilient City</h3>
+                        <p>In the coastal city of Greenville, change is quietly unfolding through collaboration, innovation, and local leadership. For years, the city faced the growing challenge of poor waste disposal...</p>
+                        <div class="card-footer-home">
+                            <a href="BDI-Greenville-Rising-news.html" class="read-more-home">Read Stories →</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- News Card 2: From Classrooms to Climate Champions -->
+                <div class="news-card-home">
+                    <img src="img/BD-Classrom-outreach.jpg" class="card-img-home" alt="Classroom">
+                    <div class="card-content-home">
+                        <span class="card-tag-home tag-milestone-home">Project Updates</span>
+                        <h3>🚀 From Classrooms to Climate Champions: Nurturing the Next Generation of Climate Leaders in Sinoe</h3>
+                        <p>Inside classrooms across Sinoe County, a quiet but powerful movement is taking shape. Young Liberians are learning what climate change truly means for their communities...</p>
+                        <div class="card-footer-home">
+                            <a href="Climate-Champions-news.html" class="read-more-home">Read Stories →</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- News Card 3: Period Poverty -->
+                <div class="news-card-home">
+                    <img src="img/BDI-menstrual-hyegies-outreach.jpg" class="card-img-home" alt="Menstrual Hygiene">
+                    <div class="card-content-home">
+                        <span class="card-tag-home tag-partner-home">Partnerships</span>
+                        <h3>🤝 Period Poverty in Africa: Addressing Menstrual Hygiene through BDI Support</h3>
+                        <p>In many parts of Africa, a silent crisis affects millions of women and girls every month. Period poverty, a term used to describe the lack of access to affordable and hygienic menstrual products...</p>
+                        <div class="card-footer-home">
+                            <a href="Period-Poverty-in Africa-news.html" class="read-more-home">Read Stories →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div class="how-help">
         <div class="help-grid">
             <a href="Leave a Gift in Your Will.html" class="help-item"><div class="icon-box"><img src="https://cdn-icons-png.flaticon.com/512/4213/4213645.png" alt="Gift"></div><div class="text-box"><h3>Buy a gift <span>›</span></h3><p>With an extensive range of alternative gifts, we have something to suit everybody.</p></div></a>
@@ -503,7 +623,7 @@
     <footer class="super-footer">
         <div class="sf-container">
             <div class="sf-col"><div class="sf-logo"><img src="./img/logo14-1.png" alt="BDI"></div><p class="sf-description">BASA Development Initiatives (BDI) is an NGO dedicated to building a more inclusive, resilient, and sustainable Liberia.</p>
-			<div class="topbar-socials">
+            <div class="topbar-socials">
             <a href="https://web.facebook.com/basadevelopmentinitiatives" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
             <a href="https://www.instagram.com/basadevelopment/" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
@@ -527,7 +647,7 @@
         <h5>The United States Fundraising Office </h5>
         <p>
             984 Kettle Creek Road, Eagan,<br>
-			State of Minnesota, 55123<br>
+            State of Minnesota, 55123<br>
             Tel: +1 (651) 235-9896<br>
             Email: info@basadev.org
         </p>
@@ -544,13 +664,10 @@
         </p>
     </div>
 </div>
-			
-			
-			
-            <form class="sf-subscribe" action="https://formspree.io/f/https://formspree.io/f/mpqnkwdv" method="POST">
+            <div class="sf-col"><h4 class="sf-title">Stay Updated</h4><p class="sf-newsletter-text">Join our newsletter for the latest impact updates.</p><form class="sf-subscribe" action="https://formspree.io/f/mpqnkwdv" method="POST">
   <input type="email" name="email" placeholder="Your email address" required>
   <button type="submit">Subscribe</button>
-</form>
+</form></div>
         </div>
         <div class="sf-bottom-bar"><p>&copy; 2026 BASA Development Initiatives (BDI). Registered NGO in Liberia</p></div>
     </footer>
