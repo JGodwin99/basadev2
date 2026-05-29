@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Our Team - BASA Development Initiatives</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --brand-red: #990033;
+      --brand-green: #005e4d;
+      --brand-teal: #22c4a9;
+      --sidebar-tan: #e9e6d1;
+      --text-dark: #333;
+      --white: #ffffff;
+      --navy: #1a1a2e;
+      --bg-light: #fcfbf8;
+      --transition: all 0.3s ease;
+      --red: #B40205;
+      --red-dark: #8C0204;
+      --teal: #0E7C7B;
+      --teal-dark: #0A5C5B;
+      --teal-light: #17BEBB;
+      --teal-pale: #E8F8F8;
+      --teal-border: #B2E4E4;
+      --text: #1A1A1A;
+      --text-mid: #374151;
+      --text-muted: #6B7280;
+      --border: #E5E7EB;
+      --border-warm: #DDD6CC;
+      --warm-bg: #F8F6F2;
+      --warm-mid: #EDE9E2;
+      --red-pale: #FFF0F0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; font-size: 16px; color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* --- TOPBAR (EXACT SAME) --- */
+    .topbar {
+      background-color: var(--brand-red);
+      padding: 12px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--white);
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .topbar-info { display: flex; gap: 25px; font-size: 14px; flex-wrap: wrap; }
+    .topbar-info a { color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: opacity 0.3s; }
+    .topbar-info a:hover { opacity: 0.8; }
+    .topbar-socials { display: flex; gap: 12px; }
+    .social-btn {
+      width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.3);
+      display: flex; align-items: center; justify-content: center;
+      color: white; text-decoration: none; border-radius: 50%;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+    .social-btn:hover { background: white; color: var(--brand-red); border-color: white; transform: translateY(-2px); }
+
+    /* --- NAVBAR (EXACT SAME) --- */
+    .navbar {
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      min-height: 90px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+      flex-wrap: wrap;
+    }
+    .logo img { height: 75px; display: block; }
+    .mobile-menu-btn {
+      display: none;
+      background: var(--brand-red);
+      border: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 8px;
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    .mobile-menu-btn:hover { background: var(--brand-green); }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      margin: 0;
+      padding: 0;
+    }
+    .has-mega { position: static; }
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+      cursor: pointer;
+      padding: 10px 0;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .nav-link:hover { color: var(--brand-red); }
+    .nav-link i { font-size: 12px; transition: transform 0.3s; }
+    .mega-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: white;
+      display: none;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      border-top: 1px solid #eee;
+      z-index: 1001;
+    }
+    .has-mega.is-active .mega-menu { display: flex; }
+    .has-mega.is-active .nav-link { color: var(--brand-green); }
+    .has-mega.is-active .nav-link i { transform: rotate(180deg); }
+    .mega-sidebar {
+      background-color: var(--sidebar-tan);
+      width: 300px;
+      padding: 35px;
+      flex-shrink: 0;
+    }
+    .sidebar-img { width: 100%; border-radius: 10px; margin-bottom: 20px; }
+    .sidebar-title { font-weight: 700; font-size: 18px; margin-bottom: 10px; }
+    .sidebar-text { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+    .btn-green-sm {
+      background-color: var(--brand-green);
+      color: white;
+      padding: 8px 22px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+    .btn-green-sm:hover { background-color: var(--brand-red); transform: translateY(-2px); }
+    .mega-grid {
+      flex-grow: 1;
+      padding: 35px 50px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .mega-col h4 { color: var(--brand-green); font-size: 15px; font-weight: 700; margin-bottom: 18px; }
+    .mega-col ul { list-style: none; }
+    .mega-col ul li { margin-bottom: 12px; }
+    .mega-col ul li a { text-decoration: none; color: var(--brand-green); font-size: 14px; font-weight: 500; transition: 0.2s; }
+    .mega-col ul li a:hover { color: var(--brand-red); padding-left: 5px; }
+    .nav-right { display: flex; align-items: center; gap: 18px; }
+    .search-btn { background: #f5f5f5; border: 1px solid #e0e0e0; padding: 8px 12px; cursor: pointer; border-radius: 8px; transition: all 0.3s; }
+    .search-btn:hover { background: #e8e8e8; }
+    .donate-main { background: var(--brand-red); color: white; padding: 10px 26px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; }
+    .donate-main:hover { background: var(--brand-green); transform: translateY(-2px); }
+
+    /* HERO (EXACT SAME) */
+    .hero { background: var(--navy); padding: 70px 80px; position: relative; overflow: hidden; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 360px; gap: 60px; align-items: center; position: relative; z-index: 2; }
+    .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 18px; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4.2vw, 52px); font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 24px; }
+    .hero h1 em { font-style: italic; color: var(--teal-light); }
+    .hero-desc { font-size: 15px; color: rgba(255,255,255,.68); line-height: 1.7; max-width: 480px; margin-bottom: 30px; }
+    .hero-counts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .hero-count { background: rgba(255,255,255,.06); border: 1px solid rgba(23,190,187,.2); border-radius: 14px; padding: 18px 16px; }
+    .hero-count-val { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 900; color: var(--white); line-height: 1; }
+    .hero-count-val.teal { color: var(--teal-light); }
+    .hero-count-label { font-size: 10px; color: rgba(255,255,255,.5); margin-top: 4px; line-height: 1.3; }
+
+    /* DEPT STRIP (EXACT SAME) */
+    .dept-strip { background: var(--teal); padding: 24px 60px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px; }
+    .dept-item { padding: 10px 12px; text-align: center; border-right: 1px solid rgba(255,255,255,.15); }
+    .dept-item:last-child { border-right: none; }
+    .dept-name { font-size: 11px; font-weight: 700; color: var(--white); margin-bottom: 2px; }
+    .dept-count { font-size: 10px; color: rgba(255,255,255,.6); }
+
+    /* ========== NEW UNIFIED TEAM GRID (Inspired by reference image) ========== */
+    .team-page {
+      padding: 70px 80px 90px;
+      background: linear-gradient(to bottom, #fff, var(--warm-bg));
+    }
+    
+    /* Unified grid without divisions */
+    .unified-team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    /* Modern team card - similar to fintech/agency style */
+    .team-card-modern {
+      background: var(--white);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+      border: 1px solid var(--border-warm);
+      text-align: center;
+    }
+    
+    .team-card-modern:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 40px rgba(14, 124, 123, 0.12);
+      border-color: var(--teal-border);
+    }
+    
+    /* Large, prominent photo container */
+    .team-photo-modern {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #f2efe7;
+      position: relative;
+    }
+    
+    .team-photo-modern img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .team-card-modern:hover .team-photo-modern img {
+      transform: scale(1.05);
+    }
+    
+    /* Optional location badge */
+    .location-badge-modern {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(4px);
+      color: white;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 30px;
+      letter-spacing: 0.3px;
+      z-index: 2;
+    }
+    
+    /* Clean typography for name and position */
+    .team-info-modern {
+      padding: 24px 20px 28px;
+    }
+    
+    .team-name-modern {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    
+    .team-role-modern {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      .unified-team-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+      }
+    }
+    
+    @media (max-width: 900px) {
+      .unified-team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+      .team-page {
+        padding: 50px 40px 70px;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .unified-team-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+      .team-page {
+        padding: 40px 25px 60px;
+      }
+    }
+    
+    /* Culture section and below remain unchanged */
+    .culture-section { background: var(--navy); padding: 70px 60px; position: relative; }
+    .culture-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .culture-overline { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 14px; }
+    .culture-heading { font-family: 'Playfair Display', serif; font-size: clamp(26px, 2.8vw, 36px); font-weight: 900; color: var(--white); line-height: 1.2; margin-bottom: 20px; }
+    .culture-body { font-size: 15px; color: rgba(255,255,255,.65); line-height: 1.7; }
+    .culture-values { display: flex; flex-direction: column; gap: 12px; }
+    .culture-val { background: rgba(255,255,255,.05); border: 1px solid rgba(23,190,187,.15); border-radius: 12px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; transition: 0.3s; }
+    .culture-val:hover { background: rgba(23,190,187,.08); }
+    .culture-val-icon { width: 36px; height: 36px; border-radius: 9px; background: rgba(23,190,187,.15); display: flex; align-items: center; justify-content: center; }
+    .culture-val-title { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 2px; }
+    .culture-val-desc { font-size: 11px; color: rgba(255,255,255,.55); line-height: 1.4; }
+    .join-section { padding: 70px 60px; background: var(--warm-bg); }
+    .join-inner { background: white; border: 1px solid var(--border-warm); border-radius: 24px; padding: 48px; display: grid; grid-template-columns: 1fr 260px; gap: 50px; align-items: center; }
+    .join-heading { font-family: 'Playfair Display', serif; font-size: clamp(24px, 2.5vw, 32px); font-weight: 900; color: var(--navy); line-height: 1.2; margin-bottom: 14px; }
+    .join-body { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 20px; }
+    .join-email { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--teal); font-weight: 600; text-decoration: none; }
+    .btn-red, .btn-teal-outline { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; border-radius: 10px; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: 0.3s; margin-bottom: 12px; }
+    .btn-red { background: var(--red); color: white; }
+    .btn-red:hover { background: var(--red-dark); transform: translateY(-2px); }
+    .btn-teal-outline { border: 2px solid var(--teal); color: var(--teal); }
+    .btn-teal-outline:hover { background: var(--teal); color: white; transform: translateY(-2px); }
+    .gov-nav-section { padding: 70px 60px; }
+    .gov-nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
+    .gov-nav-card { background: white; border: 1px solid var(--border-warm); border-radius: 18px; overflow: hidden; text-decoration: none; transition: all 0.3s; }
+    .gov-nav-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(14,124,123,.12); border-color: var(--teal-border); }
+    .gov-nav-card-top { height: 90px; display: flex; align-items: center; justify-content: center; }
+    .gov-nav-card-top.navy-top { background: var(--navy); }
+    .gov-nav-card-top.red-top { background: var(--red-pale); }
+    .gov-nav-card-top.teal-top { background: var(--teal-pale); }
+    .gov-nav-card-body { padding: 20px; }
+    .gov-nav-tag { font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
+    .gov-nav-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--navy); line-height: 1.3; margin-bottom: 6px; }
+    .gov-nav-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 10px; }
+    .gov-nav-arrow { display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: var(--teal); }
+    .cta-section { background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%); padding: 70px 40px; text-align: center; }
+    .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 42px); font-weight: 900; color: white; max-width: 680px; margin: 0 auto 30px; line-height: 1.2; }
+    .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .btn-white, .btn-outline-white { padding: 14px 32px; border-radius: 40px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: 0.3s; }
+    .btn-white { background: white; color: var(--red); }
+    .btn-white:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+    .btn-outline-white { border: 2px solid rgba(255,255,255,0.4); color: white; }
+    .btn-outline-white:hover { border-color: rgba(255,255,255,0.85); transform: translateY(-3px); }
+    .super-footer { background-color: #064d3b; color: white; padding: 60px 0 20px; }
+    .super-footer .sf-container { max-width: 1400px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 50px; gap: 30px; }
+    .super-footer .sf-col { flex: 1; min-width: 220px; }
+    .super-footer .sf-title { color: #22c4a9; font-size: 16px; font-weight: 700; margin-bottom: 25px; letter-spacing: 1px; }
+    .super-footer .sf-links { list-style: none; }
+    .super-footer .sf-links li { margin-bottom: 12px; }
+    .super-footer .sf-links a { color: white; text-decoration: none; font-size: 14px; transition: 0.3s; }
+    .super-footer .sf-links a:hover { color: #22c4a9; padding-left: 5px; }
+    .super-footer .sf-socials { display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+    .super-footer .sf-socials a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; transition: all 0.3s; }
+    .super-footer .sf-socials a:hover { background: var(--brand-red); transform: translateY(-3px); }
+    .sf-subscribe input { width: 100%; padding: 12px; margin-bottom: 12px; border-radius: 8px; border: none; background: rgba(255,255,255,0.1); color: white; }
+    .sf-subscribe button { background: #bd0000; color: white; border: none; padding: 12px; width: 100%; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+    .sf-subscribe button:hover { background: #e60000; }
+
+    @media (max-width: 1100px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero, .dept-strip, .team-page, .culture-section, .join-section, .gov-nav-section { padding-left: 40px; padding-right: 40px; }
+      .dept-strip { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+      .dept-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.15); }
+      .culture-inner { grid-template-columns: 1fr; gap: 40px; }
+      .join-inner { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+      .gov-nav-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 850px) {
+      .mobile-menu-btn { display: flex; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; flex-direction: column; max-height: 85vh; overflow-y: auto; z-index: 9999; box-shadow: 0 20px 30px rgba(0,0,0,0.2); border-top: 3px solid var(--brand-red); padding: 0; gap: 0; width: 100%; }
+      .nav-links.active { display: flex; }
+      .has-mega { position: relative; width: 100%; border-bottom: 1px solid #eee; }
+      .nav-link { padding: 16px 20px; justify-content: space-between; width: 100%; white-space: normal; background: white; }
+      .mega-menu { position: relative !important; top: 0; left: 0; width: 100%; display: none; background: #f8f8f8; border-top: 1px solid #ddd; flex-direction: column; }
+      .has-mega.is-active .mega-menu { display: flex !important; max-height: 60vh; overflow-y: auto; }
+      .mega-sidebar { width: 100%; padding: 20px; order: 1; }
+      .mega-grid { display: flex !important; flex-direction: column !important; padding: 20px !important; gap: 25px !important; order: 2; }
+      .topbar { flex-direction: column; text-align: center; }
+      .topbar-info { justify-content: center; }
+      .dept-strip { grid-template-columns: 1fr; }
+      .hero-counts { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .navbar { padding: 0 15px; }
+      .logo img { height: 50px; }
+      .donate-main { padding: 6px 16px; font-size: 12px; }
+      .hero { padding: 50px 20px; }
+      .hero h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-info">
+    <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
+    <a href="tel:+231779205152"><i class="fa-solid fa-phone"></i> +231 779 205 152</a>
+    <a href="career-portal.html"><i class="fa-solid fa-briefcase"></i> Careers</a>
+  </div>
+  <div class="topbar-socials">
+    <a href="https://web.facebook.com/basadevelopmentinitiatives" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+    <a href="https://www.instagram.com/basadevelopment/" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" class="social-btn"><i class="fa-brands fa-pinterest-p"></i></a>
+    <a href="https://www.linkedin.com/company/basa-development-initiatives" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo"><a href="index.html"><img src="./img/logo14.png" alt="BDI Logo"></a></div>
+  <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
+  <ul class="nav-links" id="navLinks">
+    <li class="has-mega"><a class="nav-link"><b>Our Work</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>What We Do</u></h4><ul><li><a href="agriculture.html">Agriculture & Agribusiness</a></li><li><a href="health.html">Health & Nutrition</a></li><li><a href="education.html">Education</a></li><li><a href="environment.html">Environment & Climate</a></li></ul><h4 style="margin-top:20px;"><u>Where We Work</u></h4><ul><li><a href="#">View all countries</a></li></ul></div><div class="mega-col"><h4><u>Development & Inclusion</u></h4><ul><li><a href="gender-youth.html">Gender & Youth Empowerment</a></li><li><a href="fisheries.html">Fisheries & Aquaculture</a></li><li><a href="disability.html">Disability Inclusion</a></li><li><a href="partnership.html">Research & Partnership</a></li></ul></div><div class="mega-col"><h4><u>Latest News & Updates</u></h4><ul><li><a href="all-news.html">View All Our News</a></li></ul></div></div></div>
+    </li>
+    <li class="has-mega"><a class="nav-link"><b>About Us</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Who we are</u></h4><ul><li><a href="our-values.html">Our Values</a></li><li><a href="founding-story.html">Our founding Story</a></li><li>  </li></ul><h4 style="margin-top:20px;"><u>Governance</u></h4><ul><li><a href="governance-structure.html">Governance Structure</a></li><li><a href="board.html">Board of Directors</a></li><li><a href="our-ceo.html">Our CEO</a></li><li><a href="our-team.html">Our Team</a></li></ul></div><div class="mega-col"><h4><u>How We Raise Money</u></h4><ul><li><a href="institutional-donors.html">Institutional Donors</a></li><li><a href="partners.html">Partners</a></li><li><a href="individual-donations.html">Individual Donations</a></li></ul></div><div class="mega-col"><h4><u>Transparency & accountability</u></h4><ul><li><a href="annual-reports.html">Annual Reports</a></li><li><a href="how-donations-are-spent.html">How donations are spent</a></li><li><a href="audited-financials.html">Audited Financials</a></li></ul></div></div></div>
+    </li>
+    <li class="has-mega"><a class="nav-link"><b>Support us</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Donate Now</u></h4><ul><li><a href="safe-drug-victims.html">Donate to safe drug victims</a></li><li><a href="End-Period-Poverty.html">End Period Poverty</a></li><li><a href="Women-and-Youth-in-Agribusiness.html">Support Women in Agribusiness</a></li></ul><h4 style="margin-top:20px;"><u>Corporate support</u></h4><ul><li><a href="Become-a-Corporate-Partner.html">Become a corporate supporter</a></li><li><a href="Partner-With-Us.html">Partner With Us</a></li><li><a href="Staff-Fundraising.html">Staff Fundraising</a></li><li><a href="Payroll-Giving.html">Payroll Giving</a></li><li><a href="Corporate-Donations.html">Make a Corperate Donation</a></li></ul></div><div class="mega-col"><h4><u>Fundraise for BDI</u></h4><ul><li><a href="Start-your-own-fundraiser.html">Start your own fundraiser</a></li><li><a href="Find-a-Friend-to-Sponsor.html">Find a friend to sponsor</a></li></ul><h4 style="margin-top:20px;"><u>Volunteer Remotely</u></h4><ul><li><a href="Volunteer-Remotely.html">You can volunteer with us</a></li></ul></div><div class="mega-col"><h4><u>Other ways to give</u></h4><ul><li><a href="Donate-in-Memory.html">Donate in Memory</a></li><li><a href="Leave-a-Gift-in-Your-Will.html">Leave a Gift in Your Will</a></li><li><a href="Donate-Your-Tax-Refund.html">Donate Your Tax Refund</a></li></ul></div></div></div>
+    </li>
+    <li class="has-mega"><a class="nav-link"><b>Resource Centre</b> <i class="fa-solid fa-caret-down"></i></a>
+      <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Knowledge Hub Resources</u></h4><ul><li><a href="#">Research</a></li><li><a href="#">Evaluations</a></li><li><a href="newsletter.html">Newsletters</a></li></ul></div></div></div>
+    </li>
+  </ul>
+  <div class="nav-right"><button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="donate-main">Donate Now</a></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div><p class="hero-eyebrow">The People Behind the Work</p><h1>A team of Africans<br>building a <em>better</em><br>Africa.</h1><p class="hero-desc">BDI's team is its greatest asset. Each person on this page brings deep expertise, genuine passion, and an unshakeable commitment to the communities they serve. Together, they are making BDI's vision of a Liberia without poverty a measurable, daily reality.</p></div>
+    <div class="hero-counts"><div class="hero-count"><div class="hero-count-val">19</div><div class="hero-count-label">Total Team Members</div></div><div class="hero-count"><div class="hero-count-val teal">3</div><div class="hero-count-label">Office Locations</div></div><div class="hero-count"><div class="hero-count-val">8</div><div class="hero-count-label">Program Areas Led</div></div><div class="hero-count"><div class="hero-count-val teal">15</div><div class="hero-count-label">Counties We Serve</div></div></div>
+  </div>
+</section>
+
+<!-- DEPT STRIP -->
+<div class="dept-strip"><div class="dept-item"><p class="dept-name">Executive</p><p class="dept-count">2 members</p></div><div class="dept-item"><p class="dept-name">Programs</p><p class="dept-count">8 members</p></div><div class="dept-item"><p class="dept-name">Tech Backstopping</p><p class="dept-count">3 members</p></div><div class="dept-item"><p class="dept-name">Partnership &amp; M&amp;E</p><p class="dept-count">3 members</p></div><div class="dept-item"><p class="dept-name">Finance &amp; Ops</p><p class="dept-count">2 members</p></div><div class="dept-item"><p class="dept-name">Communications</p><p class="dept-count">2 members</p></div></div>
+
+<!-- ========== UNIFIED TEAM SECTION - NO DIVISIONS, JUST CARDS ========== -->
+<div class="team-page">
+  <div class="unified-team-grid">
+    
+    <!-- Katherina M. Hopkins -->
+    <div class="team-card-modern">
+      <div class="team-photo-modern"><img src="img/CRS-BDI-CEO Katherine.jpg" alt="Katherina M. Hopkins"></div>
+      <div class="team-info-modern">
+        <h3 class="team-name-modern">Katherina M. Hopkins</h3>
+        <p class="team-role-modern">Founder & Chief Executive officer </p>
+      </div>
+    </div>
+    
+    <!-- Charles Brewer -->
+    <div class="team-card-modern">
+      <div class="team-photo-modern"><img src="img/BDI-Charles-Brewer.jpg" alt="Charles Brewer"></div>
+      <div class="team-info-modern">
+        <h3 class="team-name-modern">Charles Brewer</h3>
+        <p class="team-role-modern">Chief Program Officer</p>
+      </div>
+    </div>
+    
+    <!-- Ishmael Sean Turner -->
+    <div class="team-card-modern">
+      <div class="team-photo-modern"><img src="img/BDI-Ishmael-Tuner.jpg" alt="Ishmael Sean Turner"></div>
+      <div class="team-info-modern">
+        <h3 class="team-name-modern">Ishmael Sean Turner</h3>
+        <p class="team-role-modern">Chief Finance Officer</p>
+      </div>
+    </div>
+	
+	
+	<!-- Dr. Dans K. Johnson -->
+    <div class="team-card-modern">
+      <div class="team-photo-modern"><img src="img/BDI-Dans-Johnson.jpg" alt="Dr. Dans K. Johnson"></div>
+      <div class="team-info-modern">
+        <h3 class="team-name-modern">Dr. Dans K. Johnson</h3>
+        <p class="team-role-modern">Manager, Agriculture and Agribusiness</p>
+      </div>
+    </div>
+    
+    <!-- Erica Jolene Naileh -->
+    <div class="team-card-modern">
+      <div class="team-photo-modern"><img src="img/BDI-Erica-Brouillette.jpg" alt="Erica Jolene Naileh"></div>
+      <div class="team-info-modern">
+        <h3 class="team-name-modern">Erica Brouillette</h3>
+        <p class="team-role-modern">Grants Advisor</p>
+      </div>
+    </div>
+    
+    <!-- James Y. Jasay -->
+    <div class="team-card-modern">
+      <div class="team-photo-modern"><img src="img/BDI-James-Jasay.jpg" alt="James Y. Jasay"></div>
+      <div class="team-info-modern">
+        <h3 class="team-name-modern">James W. Jasay</h3>
+        <p class="team-role-modern">Executive Assistant, CEO & COO</p>
+      </div>
+    </div>
+    
+    <!-- Dakale Gogo -Savin Momolu  -->
+    <div class="team-card-modern">
+      <div class="team-photo-modern"><img src="img/BDI-Dakale Gogo -Savin Momolu.jpg" alt="Dakale Gogo -Savin Momolu"></div>
+      <div class="team-info-modern">
+        <h3 class="team-name-modern">Dakale Gogo -Savin Momolu</h3>
+        <p class="team-role-modern">Legal Advisor </p>
+      </div>
+    </div>
+
+
+  <!-- Kamaldeen Issah -->
+    <div class="team-card-modern">
+      <div class="team-photo-modern"><img src="img/BDI-Kamaldeen-Issah.jpg" alt="Kamaldeen Issah"></div>
+      <div class="team-info-modern">
+        <h3 class="team-name-modern">Kamaldeen Issah</h3>
+        <p class="team-role-modern">Business Development Officer (Communications and Visibility)</p>
+      </div>
+    </div>
+	
+    
+    <!-- Christopher T. Lawor  -->
+    <div class="team-card-modern">
+      <div class="team-photo-modern"><img src="img/BDI-Chris-Lawor.jpg" alt="Christopher T. Lawor "></div>
+      <div class="team-info-modern">
+        <h3 class="team-name-modern">Christopher T. Lawor </h3>
+        <p class="team-role-modern">Nutrition and Public Health Officer </p>
+      </div>
+    </div>
+    
+	
+
+	<!-- Famata Beyah Brown -->
+    <div class="team-card-modern">
+      <div class="team-photo-modern"><img src="img/BDI-Famata-Browne.jpg" alt="Famata Beyah Brown "></div>
+      <div class="team-info-modern">
+        <h3 class="team-name-modern">Famata Beyah Brown </h3>
+        <p class="team-role-modern">Gender and Peacebuilding Officer</p>
+      </div>
+    </div>
+	
+
+	<!-- Harriet N. Harris -->
+    <div class="team-card-modern">
+      <div class="team-photo-modern"><img src="img/BDI-Harriet N. Harris.jpg" alt="Harriet N. Harris"></div>
+      <div class="team-info-modern">
+        <h3 class="team-name-modern">Harriet N. Harris </h3>
+        <p class="team-role-modern">Publc Health Officer</p>
+      </div>
+    </div>
+	
+	
+	<!-- Cecelia  B. Jouah -->
+    <div class="team-card-modern">
+      <div class="team-photo-modern"><img src="img/BDI-Cecelia-Jouah.jpg" alt="Cecelia  B. Jouah"></div>
+      <div class="team-info-modern">
+        <h3 class="team-name-modern">Cecelia  B. Jouah</h3>
+        <p class="team-role-modern">Monitoring Evaluation and Research Officer </p>
+      </div>
+    </div>
+    
+	
+	<!-- Blanyon  B. Himmie -->
+    <div class="team-card-modern">
+      <div class="team-photo-modern"><img src="img/BDI-Blanyon  B. Himmie.jpg" alt="Blanyon  B. Himmie"></div>
+      <div class="team-info-modern">
+        <h3 class="team-name-modern">Blanyon  B. Himmie</h3>
+        <p class="team-role-modern">Forestry and conservation Officer</p>
+      </div>
+    </div>
+	
+    <!-- Jenkins G. Wilson -->
+    <div class="team-card-modern">
+      <div class="team-photo-modern"><img src="img/BDI-Jenkins-G-Wilson.jpg" alt="Jenkins G. Wilson"></div>
+      <div class="team-info-modern">
+        <h3 class="team-name-modern">Jenkins G. Wilson</h3>
+        <p class="team-role-modern">Information Communication Technology Officer</p>
+      </div>
+    </div>
+	
+	 
+    <!-- Pitman Tiagbeh Clement -->
+    <div class="team-card-modern">
+      <div class="team-photo-modern"><img src="img/BDI-Pitman-T-Clement.jpg" alt="Pitman Tiagbeh Clement"></div>
+      <div class="team-info-modern">
+        <h3 class="team-name-modern">Pitman Tiagbeh Clement</h3>
+        <p class="team-role-modern">Public Health and WASH Officer</p>
+      </div>
+    </div>
+    
+    <!-- Tarnue Kolubah -->
+    <div class="team-card-modern">
+      <div class="team-photo-modern"><img src="img/BDI-Tarnue Kolubah.jpg" alt="Tarnue Kolubah"></div>
+      <div class="team-info-modern">
+        <h3 class="team-name-modern">Tarnue Kolubah</h3>
+        <p class="team-role-modern">Education Officer</p>
+      </div>
+    </div>
+    
+    <!-- Famata Keita --> 
+    <div class="team-card-modern">
+      <div class="team-photo-modern"><img src="img/BDI-Famata-Keita.jpg" alt="Famata Keita"></div>
+      <div class="team-info-modern">
+        <h3 class="team-name-modern">Famata Keita</h3>
+        <p class="team-role-modern">Finance Assistant</p>
+      </div>
+    </div>
+    
+   
+    
+  </div>
+</div>
+
+<!-- CULTURE SECTION -->
+<section class="culture-section"><div class="culture-inner"><div><p class="culture-overline">Our Team Culture</p><h2 class="culture-heading">A team bound by more than job descriptions.</h2><p class="culture-body">Every person on BDI's team was hired not just for their skills, but for their alignment with BDI's values and their genuine commitment to Liberia. We work hard, we learn constantly, we hold each other accountable, and we celebrate every milestone - however small - because we know what it means for the communities behind each number.</p></div><div class="culture-values"><div class="culture-val"><div class="culture-val-icon"><svg width="16" viewBox="0 0 24 24" fill="none" stroke="#17BEBB"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><p class="culture-val-title">Mission First</p><p class="culture-val-desc">Every decision is weighed against one question: does this serve the communities we exist for?</p></div></div><div class="culture-val"><div class="culture-val-icon"><svg width="16" viewBox="0 0 24 24" fill="none" stroke="#17BEBB"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div><div><p class="culture-val-title">Evidence Over Assumptions</p><p class="culture-val-desc">We collect data, study what it says, and change course when the evidence demands it.</p></div></div><div class="culture-val"><div class="culture-val-icon"><svg width="16" viewBox="0 0 24 24" fill="none" stroke="#17BEBB"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg></div><div><p class="culture-val-title">Grow Together</p><p class="culture-val-desc">BDI invests in its staff because organizational impact is only as strong as individual capacity.</p></div></div><div class="culture-val"><div class="culture-val-icon"><svg width="16" viewBox="0 0 24 24" fill="none" stroke="#17BEBB"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><div><p class="culture-val-title">Community is Why We Are Here</p><p class="culture-val-desc">The people we serve are not our target group. They are the reason every single one of us shows up.</p></div></div></div></div></section>
+
+<!-- JOIN SECTION -->
+<section class="join-section"><div class="join-inner"><div><h2 class="join-heading">Want to join a team building a Liberia without poverty?</h2><p class="join-body">BDI is a growing organization with ambitions that match Liberia's needs. We periodically recruit for program, finance, communications, and field-based roles. If you are passionate about community-led development and want to be part of something meaningful, we would love to hear from you.</p><a href="mailto:info@basadev.org" class="join-email"><svg width="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@basadev.org</a></div><div class="join-actions"><a href="#" class="btn-red">View Open Positions →</a><a href="our-ceo.html" class="btn-teal-outline">Meet Our CEO →</a></div></div></section>
+
+<!-- GOV NAV -->
+<section class="gov-nav-section"><p style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:12px">More in Governance</p><h2 style="font-family:'Playfair Display',serif;font-size:clamp(26px,2.8vw,36px);font-weight:900;color:var(--navy);margin-bottom:44px">Explore BDI's full governance and leadership.</h2>
+<div class="gov-nav-grid"><a href="governance-structure.html" class="gov-nav-card"><div class="gov-nav-card-top navy-top"><svg width="32" viewBox="0 0 24 24" fill="none" stroke="rgba(23,190,187,.6)"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><div class="gov-nav-card-body"><p class="gov-nav-tag">Structure</p><p class="gov-nav-title">Governance Structure</p><p class="gov-nav-desc">See BDI's high-level governance structure from the Board of Directors through to program and operations teams.</p><div class="gov-nav-arrow">View Structure →</div></div></a>
+<a href="board.html" class="gov-nav-card"><div class="gov-nav-card-top red-top"><svg width="32" viewBox="0 0 24 24" fill="none" stroke="rgba(180,2,5,.5)"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><div class="gov-nav-card-body"><p class="gov-nav-tag">Oversight</p><p class="gov-nav-title">Board of Directors</p><p class="gov-nav-desc">Meet the Board members who provide strategic guidance and fiduciary oversight for BASA Development Initiatives.</p><div class="gov-nav-arrow">Meet the Board →</div></div></a>
+<a href="our-ceo.html" class="gov-nav-card"><div class="gov-nav-card-top teal-top"><svg width="32" viewBox="0 0 24 24" fill="none" stroke="rgba(14,124,123,.6)"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="gov-nav-card-body"><p class="gov-nav-tag">Executive Leadership</p><p class="gov-nav-title">Our CEO</p><p class="gov-nav-desc">Meet Katherina M. Hopkins, the Founder and CEO driving BDI's mission, strategy, and community-led vision for Liberia.</p><div class="gov-nav-arrow">Meet Katherina →</div></div></a></div></section>
+
+<!-- CTA -->
+<section class="cta-section"><h2>Proud of this team. Excited about what they will build. Partner-With-Us.</h2><div class="cta-buttons"><a href="#" class="btn-white">Partner With BDI</a><a href="#" class="btn-outline-white">Support Our Work</a></div></section>
+
+<!-- FOOTER -->
+<footer class="super-footer"><div class="sf-container"><div class="sf-col"><div class="sf-logo"><img src="./img/logo14-1.png" alt="BDI" style="max-width:170px;"></div><p style="margin:15px 0; font-size:14px;">BDI is an NGO dedicated to building a more inclusive, resilient Liberia.</p><div class="sf-socials"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div><div class="sf-col"><h4 class="sf-title">Quick Links</h4><ul class="sf-links"><li><a href="our-values.html">Our Values</a></li><li><a href="our-team.html">Our Team</a></li><li><a href="partners.html">Partner-With-Us</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="sf-col"><h4 class="sf-title">Locations</h4><div class="sf-loc-item"><h5>HEADQUARTER: Monrovia, Liberia</h5><p>Morris Villa, ELWA Community<br>Email: info@basadev.org<br>Tel: +231 886 349 962 / +231 88 675 7435</p></div><br><div class="sf-loc-item"><h5>The United States Fundraising Office</h5><p>984 Kettle Creek Road, Eagan,<br>State of Minnesota, 55123<br>Tel: +1 (651) 235-9896<br>Email: info@basadev.org</p></div><br><div class="sf-loc-item"><h5>Accra, Ghana Office</h5><p>GE-350-4105, House Number 7, Westland Haasto,<br>2nd Boulevard Road, Accra, Ghana<br>Mobile: +233 244 930 623<br>Email: info@basadev.org</p></div></div>
+
+<div class="sf-col"><h4 class="sf-title">Stay Updated</h4><p class="sf-newsletter-text">Join our newsletter for the latest impact updates.</p><form class="sf-subscribe" action="https://formspree.io/f/mpqnkwdv" method="POST">
+  <input type="email" name="email" placeholder="Your email address" required>
+  <button type="submit">Subscribe</button>
+</form></div>
+
+<div style="text-align:center; padding:25px 20px 10px; border-top:1px solid rgba(255,255,255,0.1); margin-top:30px;">&copy; 2026 BASA Development Initiatives (BDI). Registered NGO in Liberia</div></footer>
+
+<script>
+  (function() {
+    const megaItems = document.querySelectorAll('.has-mega');
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const isMobileView = () => window.innerWidth <= 850;
+    function closeAllMegas() { megaItems.forEach(item => item.classList.remove('is-active')); }
+    megaItems.forEach(item => {
+      const link = item.querySelector('.nav-link');
+      if (link) {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (isMobileView()) {
+            const wasActive = item.classList.contains('is-active');
+            closeAllMegas();
+            if (!wasActive) item.classList.add('is-active');
+          } else {
+            const wasActive = item.classList.contains('is-active');
+            closeAllMegas();
+            if (!wasActive) item.classList.add('is-active');
+          }
+        });
+      }
+    });
+    if (mobileBtn && navLinks) {
+      mobileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navLinks.classList.toggle('active');
+        const icon = mobileBtn.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+          closeAllMegas();
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+    }
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.navbar')) {
+        closeAllMegas();
+        if (navLinks && navLinks.classList.contains('active') && isMobileView()) {
+          navLinks.classList.remove('active');
+          const icon = mobileBtn?.querySelector('i');
+          if (icon) {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        }
+      }
+    });
+    window.addEventListener('resize', () => {
+      if (!isMobileView() && navLinks) {
+        navLinks.classList.remove('active');
+        if (mobileBtn) {
+          const icon = mobileBtn.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+        closeAllMegas();
+      }
+    });
+  })();
+</script>
+</body>
+</html>
