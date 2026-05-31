@@ -1,0 +1,506 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Privacy Policy - BASA Development Initiatives</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --brand-red: #990033;
+      --brand-green: #005e4d;
+      --sidebar-tan: #e9e6d1;
+      --text-dark: #333;
+      --white: #ffffff;
+      --navy: #1a1a2e;
+      --teal: #0E7C7B;
+      --bg-light: #fcfbf8;
+      --transition: all 0.3s ease;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: var(--bg-light); color: var(--text-dark); line-height: 1.7; overflow-x: hidden; }
+    a { color: var(--brand-red); text-decoration: none; }
+    a:hover { color: var(--brand-green); }
+
+    /* TOPBAR */
+    .topbar { background-color: var(--brand-red); padding: 12px 60px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; color: var(--white); gap: 15px; }
+    .topbar-info { display: flex; flex-wrap: wrap; gap: 25px; font-size: 14px; }
+    .topbar-info a { color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: opacity 0.3s; }
+    .topbar-info a:hover { opacity: 0.85; }
+    .topbar-socials { display: flex; flex-wrap: wrap; gap: 12px; }
+    .social-btn { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; border-radius: 50%; font-size: 14px; transition: all 0.3s; }
+    .social-btn:hover { background: white; color: var(--brand-red); border-color: white; transform: translateY(-2px); }
+
+    /* NAVBAR */
+    .navbar { background: var(--white); display: flex; align-items: center; justify-content: space-between; padding: 0 60px; min-height: 90px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.08); flex-wrap: wrap; }
+    .logo img { height: 75px; display: block; max-width: 100%; }
+    .mobile-menu-btn { display: none; background: var(--brand-red); border: none; width: 46px; height: 46px; border-radius: 8px; color: white; font-size: 22px; cursor: pointer; align-items: center; justify-content: center; transition: all 0.3s; }
+    .mobile-menu-btn:hover { background: var(--brand-green); }
+    .nav-links { display: flex; list-style: none; gap: 28px; margin: 0; padding: 0; }
+    .has-mega { position: static; }
+    .nav-link { text-decoration: none; color: var(--text-dark); font-weight: 600; display: flex; align-items: center; gap: 6px; font-size: 15px; cursor: pointer; padding: 10px 0; transition: var(--transition); white-space: nowrap; }
+    .nav-link:hover { color: var(--brand-red); }
+    .nav-link i { font-size: 12px; transition: transform 0.3s; }
+    .mega-menu { position: absolute; top: 100%; left: 0; width: 100%; background: white; display: none; box-shadow: 0 20px 40px rgba(0,0,0,0.12); border-top: 1px solid #eee; z-index: 1001; }
+    .has-mega.is-active .mega-menu { display: flex; flex-wrap: wrap; }
+    .has-mega.is-active .nav-link { color: var(--brand-green); }
+    .has-mega.is-active .nav-link i { transform: rotate(180deg); }
+    .mega-sidebar { background-color: var(--sidebar-tan); width: 300px; padding: 35px; flex-shrink: 0; }
+    .sidebar-img { width: 100%; border-radius: 10px; margin-bottom: 20px; }
+    .sidebar-title { font-weight: 700; font-size: 18px; margin-bottom: 10px; }
+    .sidebar-text { font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.5; }
+    .btn-green-sm { background-color: var(--brand-green); color: white; padding: 8px 22px; text-decoration: none; border-radius: 30px; font-size: 13px; font-weight: 600; display: inline-block; transition: all 0.3s; }
+    .btn-green-sm:hover { background-color: var(--brand-red); transform: translateY(-2px); }
+    .mega-grid { flex-grow: 1; padding: 35px 50px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .mega-col h4 { color: var(--brand-green); font-size: 15px; font-weight: 700; margin-bottom: 18px; }
+    .mega-col ul { list-style: none; }
+    .mega-col ul li { margin-bottom: 12px; }
+    .mega-col ul li a { text-decoration: none; color: var(--brand-green); font-size: 14px; font-weight: 500; transition: 0.2s; }
+    .mega-col ul li a:hover { color: var(--brand-red); padding-left: 5px; }
+    .nav-right { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .search-btn { background: #f5f5f5; border: 1px solid #e0e0e0; padding: 8px 12px; cursor: pointer; border-radius: 8px; transition: all 0.3s; }
+    .search-btn:hover { background: #e8e8e8; }
+    .donate-main { background: var(--brand-red); color: white; padding: 10px 26px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; }
+    .donate-main:hover { background: var(--brand-green); transform: translateY(-2px); }
+
+    /* HERO */
+    .hero { background: var(--navy); padding: 70px 80px; }
+    .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #22c4a9; margin-bottom: 16px; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 52px); font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 16px; }
+    .hero-desc { font-size: 15px; color: rgba(255,255,255,0.65); max-width: 600px; }
+
+    /* CONTENT */
+    .policy-content { max-width: 860px; margin: 0 auto; padding: 70px 40px; }
+    .policy-section { margin-bottom: 50px; }
+    .policy-section h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; border-left: 4px solid var(--brand-green); padding-left: 14px; }
+    .policy-section p { font-size: 15px; color: #444; margin-bottom: 14px; }
+    .policy-section ul { padding-left: 20px; margin-bottom: 14px; }
+    .policy-section ul li { font-size: 15px; color: #444; margin-bottom: 8px; }
+    .last-updated { background: var(--sidebar-tan); border-radius: 10px; padding: 16px 20px; font-size: 13px; color: #666; margin-bottom: 40px; }
+
+    /* FOOTER */
+    .super-footer { background-color: #064d3b; color: #ffffff; padding: 60px 0 30px 0; }
+    .super-footer .sf-container { max-width: 1300px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 40px; gap: 30px; }
+    .super-footer .sf-col { flex: 1; min-width: 220px; }
+    .super-footer .sf-logo img { max-width: 160px; margin-bottom: 20px; }
+    .super-footer .sf-description { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 20px; max-width: 280px; }
+    .super-footer .sf-title { color: #22c4a9; font-size: 18px; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+    .super-footer .sf-links { list-style: none; padding: 0; margin: 0; }
+    .super-footer .sf-links li { margin-bottom: 12px; }
+    .super-footer .sf-links a { color: rgba(255,255,255,0.9); text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.2s; display: inline-block; }
+    .super-footer .sf-links a:hover { color: #22c4a9; padding-left: 6px; }
+    .super-footer .sf-loc-item { margin-bottom: 20px; }
+    .super-footer .sf-loc-item h5 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: #22c4a9; }
+    .super-footer .sf-loc-item p { margin: 0; font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.5; }
+    .super-footer .sf-subscribe input { width: 100%; padding: 12px; margin-bottom: 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(34,196,169,0.4); border-radius: 8px; color: white; font-size: 14px; }
+    .super-footer .sf-subscribe input::placeholder { color: rgba(255,255,255,0.5); }
+    .super-footer .sf-subscribe button { background: #bd0000; border: none; padding: 12px; border-radius: 8px; color: white; font-weight: 700; cursor: pointer; width: 100%; transition: all 0.3s; font-size: 14px; }
+    .super-footer .sf-subscribe button:hover { background: #e60000; transform: translateY(-2px); }
+    .super-footer .sf-bottom-bar { text-align: center; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 25px; margin-top: 35px; font-size: 12px; color: rgba(255,255,255,0.6); }
+    .super-footer .sf-socials { display: flex; gap: 12px; margin-top: 5px; }
+    .super-footer .sf-socials a { width: 42px; height: 42px; background: rgba(255,255,255,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 18px; text-decoration: none; transition: all 0.3s; }
+    .super-footer .sf-socials a:hover { background: #bd0000; transform: translateY(-3px); }
+
+    /* MOBILE */
+    @media screen and (max-width: 850px) {
+      .topbar { padding: 10px 20px; }
+      .mobile-menu-btn { display: flex; }
+      .navbar { padding: 0 20px; min-height: 70px; }
+      .logo img { height: 50px; }
+      .nav-links { display: none; position: fixed; top: 70px; left: 0; right: 0; bottom: 0; background: white; flex-direction: column; overflow-y: auto; z-index: 9999; box-shadow: 0 20px 30px rgba(0,0,0,0.2); border-top: 2px solid var(--brand-red); padding: 20px 0; gap: 0; width: 100%; max-height: calc(100vh - 70px); }
+      .nav-links.active { display: flex; }
+      .has-mega { position: relative; width: 100%; border-bottom: 1px solid #eee; display: flex; flex-direction: column; }
+      .nav-link { padding: 16px 25px; justify-content: space-between; width: 100%; white-space: normal; background: white; font-size: 16px; order: 1; }
+      .mega-menu { position: relative !important; top: 0; left: 0; width: 100%; display: none; background: #f8f8f8; border-top: 1px solid #ddd; flex-direction: column; order: 2; box-shadow: none; }
+      .has-mega.is-active .mega-menu { display: flex !important; }
+      .mega-sidebar { width: 100%; padding: 25px; text-align: center; }
+      .mega-grid { display: flex !important; flex-direction: column !important; padding: 25px !important; gap: 30px !important; }
+      .nav-right { margin-left: auto; gap: 12px; }
+      .hero { padding: 50px 30px; }
+      .policy-content { padding: 40px 20px; }
+      .super-footer .sf-container { flex-direction: column; text-align: center; padding: 0 20px; }
+    }
+  </style>
+<link rel="stylesheet" href="css/mobile-fixes.css">
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-info">
+      <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
+      <a href="tel:+231886349962"><i class="fa-solid fa-phone"></i> +231 770 457 572</a>
+      <a href="career-portal.html"><i class="fa-solid fa-briefcase"></i> Careers</a>
+    </div>
+    <div class="topbar-socials">
+      <a href="https://web.facebook.com/basadevelopmentinitiatives" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/basadevelopment/" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/company/basa-development-initiatives" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo"><a href="index.html"><img src="./img/logo14.png" alt="BDI Logo"></a></div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
+    <ul class="nav-links" id="navLinks">
+      <li class="has-mega"><a class="nav-link"><b>Our Work</b> <i class="fa-solid fa-caret-down"></i></a>
+        <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>What We Do</u></h4><ul><li><a href="agriculture.html">Agriculture &amp; Agribusiness</a></li><li><a href="health.html">Health &amp; Nutrition</a></li><li><a href="education.html">Education</a></li><li><a href="environment.html">Environment &amp; Climate</a></li></ul></div><div class="mega-col"><h4><u>Development &amp; Inclusion</u></h4><ul><li><a href="gender-youth.html">Gender &amp; Youth Empowerment</a></li><li><a href="fisheries.html">Fisheries &amp; Aquaculture</a></li><li><a href="disability.html">Disability Inclusion</a></li><li><a href="partnership.html">Research &amp; Partnership</a></li></ul></div><div class="mega-col"><h4><u>Latest News &amp; Updates</u></h4><ul><li><a href="all-news.html">View All Our News</a></li></ul></div></div></div>
+      </li>
+      <li class="has-mega"><a class="nav-link"><b>About Us</b> <i class="fa-solid fa-caret-down"></i></a>
+        <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Who we are</u></h4><ul><li><a href="our-values.html">Our Values</a></li><li><a href="founding-story.html">Our Founding Story</a></li></ul><h4 style="margin-top:20px;"><u>Governance</u></h4><ul><li><a href="governance-structure.html">Governance Structure</a></li><li><a href="board.html">Board of Directors</a></li><li><a href="our-ceo.html">Our CEO</a></li><li><a href="our-team.html">Our Team</a></li></ul></div><div class="mega-col"><h4><u>How We Raise Money</u></h4><ul><li><a href="institutional-donors.html">Institutional Donors</a></li><li><a href="partners.html">Partners</a></li><li><a href="individual-donations.html">Individual Donations</a></li></ul></div><div class="mega-col"><h4><u>Transparency &amp; Accountability</u></h4><ul><li><a href="annual-reports.html">Annual Reports</a></li><li><a href="how-donations-are-spent.html">How Donations Are Spent</a></li><li><a href="audited-financials.html">Audited Financials</a></li></ul></div></div></div>
+      </li>
+      <li class="has-mega"><a class="nav-link"><b>Support us</b> <i class="fa-solid fa-caret-down"></i></a>
+        <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Donate Now</u></h4><ul><li><a href="safe-drug-victims.html">Donate to Safe Drug Victims</a></li><li><a href="End-Period-Poverty.html">End Period Poverty</a></li><li><a href="Women-and-Youth-in-Agribusiness.html">Support Women in Agribusiness</a></li></ul><h4 style="margin-top:20px;"><u>Corporate Support</u></h4><ul><li><a href="Become-a-Corporate-Partner.html">Become a Corporate Supporter</a></li><li><a href="Partner-With-Us.html">Partner With Us</a></li><li><a href="Staff-Fundraising.html">Staff Fundraising</a></li><li><a href="Payroll-Giving.html">Payroll Giving</a></li><li><a href="Corporate-Donations.html">Make a Corporate Donation</a></li></ul></div><div class="mega-col"><h4><u>Fundraise for BDI</u></h4><ul><li><a href="Start-your-own-fundraiser.html">Start Your Own Fundraiser</a></li><li><a href="Find-a-Friend-to-Sponsor.html">Find a Friend to Sponsor</a></li></ul><h4 style="margin-top:20px;"><u>Volunteer Remotely</u></h4><ul><li><a href="Volunteer-Remotely.html">You Can Volunteer With Us</a></li></ul></div><div class="mega-col"><h4><u>Other Ways to Give</u></h4><ul><li><a href="Donate-in-Memory.html">Donate in Memory</a></li><li><a href="Leave-a-Gift-in-Your-Will.html">Leave a Gift in Your Will</a></li><li><a href="Donate-Your-Tax-Refund.html">Donate Your Tax Refund</a></li></ul></div></div></div>
+      </li>
+      <li class="has-mega"><a class="nav-link"><b>Resource Centre</b> <i class="fa-solid fa-caret-down"></i></a>
+        <div class="mega-menu"><div class="mega-sidebar"><img src="img/BDI-donate-now.jpg" class="sidebar-img"><h3 class="sidebar-title">Donate Today</h3><p class="sidebar-text">Give your support where it's needed most</p><a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="btn-green-sm">Donate now</a></div><div class="mega-grid"><div class="mega-col"><h4><u>Knowledge Hub Resources</u></h4><ul><li><a href="newsletter.html">Newsletters</a></li></ul></div></div></div>
+      </li>
+    </ul>
+    <div class="nav-right">
+      <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" class="donate-main">Donate</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <p class="hero-eyebrow">Legal &amp; Compliance</p>
+    <h1>Privacy Policy</h1>
+    <p class="hero-desc">How BASA Development Initiatives collects, uses, and protects your personal information.</p>
+  </div>
+
+  <!-- POLICY CONTENT -->
+  <div class="policy-content">
+    <p class="last-updated"><strong>Last updated:</strong> May 2026 &nbsp;|&nbsp; <strong>Effective date:</strong> January 2022</p>
+
+    <div class="policy-section">
+      <h2>1. Who We Are</h2>
+      <p>BASA Development Initiatives (BDI) is a registered NGO in Liberia (2022) and 501(c)(3) nonprofit in the United States. Our headquarters are located at 1st Floor, Gausi Apartments, Apt. 5, BASA Avenue LBS-ELWA Community, Paynesville, Liberia. We can be reached at <a href="mailto:info@basadev.org">info@basadev.org</a>.</p>
+      <p>This Privacy Policy applies to information collected through our website (basadev.org), donation forms, newsletter subscriptions, and contact forms.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>2. Information We Collect</h2>
+      <p>We collect the following types of personal information:</p>
+      <ul>
+        <li><strong>Contact information:</strong> Name, email address, and phone number when you complete a contact form or subscribe to our newsletter.</li>
+        <li><strong>Donation information:</strong> When you donate through our PayPal integration, PayPal processes your payment. We receive confirmation of your donation but do not store your full payment details on our servers.</li>
+        <li><strong>Communication history:</strong> Records of your correspondence with BDI, including emails and form submissions.</li>
+        <li><strong>Website usage data:</strong> General analytics data such as pages visited and time spent on the site, collected via standard web analytics tools.</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2>3. How We Use Your Information</h2>
+      <p>We use personal information only for the following purposes:</p>
+      <ul>
+        <li>To respond to your enquiries and requests for information.</li>
+        <li>To send our newsletter and programme updates to subscribers who have opted in.</li>
+        <li>To process and acknowledge donations and send donation receipts.</li>
+        <li>To comply with legal and regulatory obligations applicable to NGOs operating in Liberia and the United States.</li>
+        <li>To improve the content and functionality of our website.</li>
+      </ul>
+      <p>We do not sell, rent, or trade your personal information to third parties.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>4. Newsletter Subscriptions</h2>
+      <p>When you subscribe to our newsletter, we store your email address to send you periodic updates about BDI's programmes, impact, and events. You can unsubscribe at any time by clicking the unsubscribe link in any newsletter email, or by emailing <a href="mailto:info@basadev.org">info@basadev.org</a> with the subject "Unsubscribe."</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>5. Donations and Payment Processing</h2>
+      <p>Online donations are processed through PayPal. When you click our Donate button, you are directed to PayPal's secure platform. BDI does not collect or store your credit card or banking details. PayPal's own privacy policy governs information you provide to them during the payment process.</p>
+      <p>For queries about specific donation records, please contact us at <a href="mailto:info@basadev.org">info@basadev.org</a>.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>6. Data Retention</h2>
+      <p>We retain personal information only for as long as necessary to fulfil the purposes described in this policy, or as required by law. Newsletter subscriber data is retained until you unsubscribe. Donation records are retained for seven years in accordance with standard financial record-keeping requirements.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>7. Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Access the personal information we hold about you.</li>
+        <li>Request correction of inaccurate information.</li>
+        <li>Request deletion of your personal data, subject to legal retention requirements.</li>
+        <li>Withdraw consent to receive communications from us at any time.</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us at <a href="mailto:info@basadev.org">info@basadev.org</a>.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>8. Security</h2>
+      <p>Our website uses SSL encryption to protect data transmitted between your browser and our site. We take reasonable technical and organisational measures to protect personal information from unauthorised access, disclosure, or misuse. However, no internet transmission is completely secure, and we cannot guarantee absolute security.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>9. Third-Party Links</h2>
+      <p>Our website contains links to third-party websites, including PayPal, social media platforms, and partner organisations. We are not responsible for the privacy practices of those sites. We encourage you to review their privacy policies before providing any personal information.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>10. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. The most current version will always be available on this page, with the effective date updated accordingly. We encourage you to review this policy periodically.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>11. Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy or how we handle your personal information, please contact us:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:info@basadev.org">info@basadev.org</a></li>
+        <li><strong>Address:</strong> 1st Floor, Gausi Apartments, Apt. 5, BASA Avenue LBS-ELWA Community, Paynesville, Liberia</li>
+        <li><strong>Tel:</strong> +231 770 457 572</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="super-footer">
+    <div class="sf-container">
+      <div class="sf-col">
+        <div class="sf-logo"><img src="./img/logo14-1.png" alt="BASA Development Initiatives"></div>
+        <p class="sf-description">BASA Development Initiatives (BDI) is an NGO dedicated to building a more inclusive, resilient, and sustainable Liberia.</p>
+        <div class="sf-socials">
+          <a href="https://web.facebook.com/basadevelopmentinitiatives" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/basadevelopment/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/basa-development-initiatives" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="sf-col">
+        <h4 class="sf-title">Quick Links</h4>
+        <ul class="sf-links">
+          <li><a href="our-values.html">Our Values</a></li>
+          <li><a href="our-team.html">Our Team</a></li>
+          <li><a href="Partner-With-Us.html">Partner With Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="sf-col">
+        <h4 class="sf-title">Locations</h4>
+        <div class="sf-loc-item">
+          <h5>HEADQUARTER: Monrovia, Liberia</h5>
+          <p>1st Floor, Gausi Apartments, Apt. 5, BASA Avenue LBS-ELWA Community, Paynesville, Liberia<br>
+          Email: info@basadev.org<br>
+          Tel: +231 770 457 572 / +231 886 757 435</p>
+        </div>
+        <div class="sf-loc-item">
+          <h5>The United States Fundraising Office</h5>
+          <p>984 Kettle Creek Road, Eagan,<br>State of Minnesota, 55123<br>Tel: +1 (651) 235-9896<br>Email: info@basadev.org</p>
+        </div>
+      </div>
+      <div class="sf-col">
+        <h4 class="sf-title">Stay Updated</h4>
+        <p class="sf-newsletter-text">Join our newsletter for the latest impact updates.</p>
+        <form class="sf-subscribe" action="https://formspree.io/f/mpqnkwdv" method="POST">
+          <input type="email" name="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="sf-bottom-bar"><p>&copy; 2026 BASA Development Initiatives (BDI). Registered NGO in Liberia &nbsp;|&nbsp; <a href="privacy-policy.html" style="color:rgba(255,255,255,0.6);">Privacy Policy</a></p></div>
+  </footer>
+
+  <script>
+    (function() {
+      const megaItems = document.querySelectorAll('.has-mega');
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const navLinks = document.getElementById('navLinks');
+      const isMobile = () => window.innerWidth <= 850;
+      function closeAllMegas() { megaItems.forEach(i => i.classList.remove('is-active')); }
+      function closeMenu() {
+        if (navLinks) navLinks.classList.remove('active');
+        if (mobileBtn) { const icon = mobileBtn.querySelector('i'); if (icon) { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); } }
+        closeAllMegas();
+      }
+      megaItems.forEach(item => {
+        const link = item.querySelector('.nav-link');
+        if (link) link.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); const wasActive = item.classList.contains('is-active'); closeAllMegas(); if (!wasActive) item.classList.add('is-active'); });
+      });
+      if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', (e) => { e.stopPropagation(); const isOpen = navLinks.classList.contains('active'); if (isOpen) { closeMenu(); } else { navLinks.classList.add('active'); const icon = mobileBtn.querySelector('i'); if (icon) { icon.classList.remove('fa-bars'); icon.classList.add('fa-times'); } closeAllMegas(); } });
+      }
+      document.addEventListener('click', (e) => { if (!e.target.closest('.navbar')) closeMenu(); });
+      window.addEventListener('resize', () => { if (!isMobile() && navLinks && navLinks.classList.contains('active')) closeMenu(); if (!isMobile()) closeAllMegas(); });
+    })();
+  </script>
+
+<!-- ========== BDI SITE SEARCH ========== -->
+<style>
+  #bdi-search-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:999999;display:flex;align-items:flex-start;justify-content:center;padding-top:80px;opacity:0;pointer-events:none;transition:opacity 0.25s ease;}
+  #bdi-search-overlay.bdi-search-open{opacity:1;pointer-events:all;}
+  #bdi-search-modal{background:#fff;border-radius:16px;width:100%;max-width:620px;margin:0 20px;box-shadow:0 24px 60px rgba(0,0,0,0.22);overflow:hidden;transform:translateY(-18px);transition:transform 0.25s ease;}
+  #bdi-search-overlay.bdi-search-open #bdi-search-modal{transform:translateY(0);}
+  #bdi-search-header{display:flex;align-items:center;gap:12px;padding:18px 20px;border-bottom:1px solid #eee;}
+  #bdi-search-header i{color:#005e4d;font-size:18px;flex-shrink:0;}
+  #bdi-search-input{flex:1;border:none;outline:none;font-size:16px;font-family:'Poppins',sans-serif;color:#222;background:transparent;}
+  #bdi-search-input::placeholder{color:#bbb;}
+  #bdi-search-close-btn{background:none;border:none;font-size:22px;color:#aaa;cursor:pointer;line-height:1;padding:0;flex-shrink:0;}
+  #bdi-search-close-btn:hover{color:#333;}
+  #bdi-search-results{max-height:380px;overflow-y:auto;padding:8px 0;}
+  .bdi-sr-item{display:flex;align-items:center;gap:14px;padding:13px 20px;text-decoration:none;transition:background 0.15s;}
+  .bdi-sr-item:hover{background:#f5faf8;}
+  .bdi-sr-icon{width:36px;height:36px;border-radius:10px;background:#e8f5f0;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .bdi-sr-icon i{font-size:14px;color:#005e4d;}
+  .bdi-sr-title{font-size:14px;font-weight:600;color:#1a1a2e;font-family:'Poppins',sans-serif;margin-bottom:2px;}
+  .bdi-sr-desc{font-size:12px;color:#888;font-family:'Poppins',sans-serif;line-height:1.4;}
+  #bdi-search-empty{text-align:center;padding:36px 20px;color:#aaa;font-size:14px;font-family:'Poppins',sans-serif;display:none;}
+  #bdi-search-hint{padding:12px 20px 14px;border-top:1px solid #f0f0f0;font-size:12px;color:#bbb;font-family:'Poppins',sans-serif;}
+  #bdi-search-hint span{color:#005e4d;cursor:pointer;font-weight:600;}
+  #bdi-search-hint span:hover{text-decoration:underline;}
+</style>
+
+<div id="bdi-search-overlay">
+  <div id="bdi-search-modal">
+    <div id="bdi-search-header">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="bdi-search-input" placeholder="Search BDI — pages, programmes, news..." autocomplete="off" spellcheck="false">
+      <button id="bdi-search-close-btn" aria-label="Close search">&times;</button>
+    </div>
+    <div id="bdi-search-results"></div>
+    <div id="bdi-search-empty">No results found. Try a different keyword.</div>
+    <p id="bdi-search-hint">Try: <span onclick="bdiSearch('donate')">donate</span> &nbsp;·&nbsp; <span onclick="bdiSearch('agriculture')">agriculture</span> &nbsp;·&nbsp; <span onclick="bdiSearch('board')">board</span> &nbsp;·&nbsp; <span onclick="bdiSearch('volunteer')">volunteer</span></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var pages=[
+    {t:"Our Work & Programmes",u:"our-work.html",d:"Overview of all 8 BDI programme areas across Liberia and Ghana",k:"our work programmes overview all programs what we do"},{t:"Home",u:"index.html",d:"BASA Development Initiatives — empowering communities across Africa",k:"home bdi basa liberia africa"},
+    {t:"Agriculture & Agribusiness",u:"agriculture.html",d:"Farmer training, agribusiness development and market access",k:"agriculture farm agribusiness food crop training"},
+    {t:"Health & Nutrition",u:"health.html",d:"Promoting healthy lifestyles and balanced nutrition in communities",k:"health nutrition medicine clinic hospital"},
+    {t:"Education",u:"education.html",d:"Quality education and climate literacy for students across Liberia",k:"education school students learning classroom"},
+    {t:"Environment & Climate",u:"environment.html",d:"Environmental sustainability and climate change action",k:"environment climate trees sustainability green"},
+    {t:"Gender & Youth Empowerment",u:"gender-youth.html",d:"Empowering women and youth through skills and leadership",k:"gender youth women empowerment girls"},
+    {t:"Fisheries & Aquaculture",u:"fisheries.html",d:"Supporting smallholder fish farmers and coastal communities",k:"fisheries aquaculture fish coastal water"},
+    {t:"Disability Inclusion",u:"disability.html",d:"Empowering persons with disabilities to thrive in their communities",k:"disability inclusion accessibility persons"},
+    {t:"Research & Partnership",u:"partnership.html",d:"Research, partnerships and collaborative development work",k:"research partnership collaboration study"},
+    {t:"Our Values",u:"our-values.html",d:"The values and principles that guide BDI's work",k:"values mission vision principles integrity"},
+    {t:"Our Founding Story",u:"founding-story.html",d:"How BASA Development Initiatives was founded in Nairobi, 2019",k:"founding story history nairobi basa origin"},
+    {t:"Governance Structure",u:"governance-structure.html",d:"BDI's governance framework, accountability and compliance",k:"governance structure accountability compliance 501c3"},
+    {t:"Board of Directors",u:"board.html",d:"Meet BDI's Board of Directors and strategic leadership",k:"board directors leadership governance members"},
+    {t:"Our CEO",u:"our-ceo.html",d:"Katherina M. Hopkins — Founder and Chief Executive Officer",k:"ceo founder katherina executive leadership"},
+    {t:"Our Team",u:"our-team.html",d:"Meet the dedicated BDI team delivering programmes across Liberia",k:"team staff members people employees"},
+    {t:"Institutional Donors",u:"institutional-donors.html",d:"BDI's institutional donor portfolio and funding strategy",k:"donors funding institutional grants unicef"},
+    {t:"Partners",u:"partners.html",d:"BDI's partnerships with NGOs, government and private sector",k:"partners conservation international nafaa wacsi dara"},
+    {t:"Individual Donations",u:"individual-donations.html",d:"How individuals can donate to support BDI's mission",k:"donate donation individual give support"},
+    {t:"Annual Reports",u:"annual-reports.html",d:"BDI annual impact reports — 2022 to 2025",k:"annual report impact transparency pdf"},
+    {t:"How Donations Are Spent",u:"how-donations-are-spent.html",d:"Transparency on how BDI uses every dollar donated",k:"donations spent transparency accountability budget"},
+    {t:"Audited Financials",u:"audited-financials.html",d:"BDI's audited financial statements and accounts",k:"financial audit accounts statements"},
+    {t:"All News & Stories",u:"all-news.html",d:"Latest news and impact stories from BDI's field work",k:"news stories blog updates field"},
+    {t:"Greenville Rising",u:"BDI-Greenville-Rising-news.html",d:"How local partnerships are powering a cleaner, resilient Greenville city",k:"greenville news story clean waste"},
+    {t:"Climate Champions",u:"Climate-Champions-news.html",d:"Nurturing the next generation of climate leaders in Sinoe County",k:"climate champions sinoe students school leaders"},
+    {t:"Period Poverty in Africa",u:"Period-Poverty-in-Africa-news.html",d:"Addressing menstrual hygiene through BDI support",k:"period poverty menstrual hygiene africa girls"},
+    {t:"School Feeding Initiative",u:"School-Feeding-Initiative-news.html",d:"Providing nutritious meals to students in schools across Liberia",k:"school feeding nutrition meals students"},
+    {t:"BDI Partners with CRS",u:"BDI-partners-with-CRS-news.html",d:"Research into menstrual hygiene in Montserrado Bong Grand Bassa",k:"crs catholic relief services research hygiene"},
+    {t:"Newsletter",u:"newsletter.html",d:"BDI quarterly newsletter — subscribe for impact updates",k:"newsletter subscribe updates quarterly"},
+    {t:"Contact Us",u:"contact.html",d:"Get in touch with BASA Development Initiatives",k:"contact address phone email location"},
+    {t:"Career Portal",u:"career-portal.html",d:"Job opportunities and careers at BDI",k:"careers jobs employment vacancies"},
+    {t:"Donate Now",u:"all-donate.html",d:"All ways to donate and support BDI's mission",k:"donate give support fund paypal"},
+    {t:"Volunteer Remotely",u:"Volunteer-Remotely.html",d:"Volunteer your skills and time to support BDI from anywhere",k:"volunteer remote skills help online"},
+    {t:"Start Your Own Fundraiser",u:"Start-your-own-fundraiser.html",d:"Launch your own fundraising campaign for BDI",k:"fundraiser campaign start own raise"},
+    {t:"Find a Friend to Sponsor",u:"Find-a-Friend-to-Sponsor.html",d:"Find a friend to sponsor BDI's work",k:"sponsor friend find peer"},
+    {t:"End Period Poverty",u:"End-Period-Poverty.html",d:"Supporting menstrual health and hygiene in Liberian schools",k:"period poverty end menstrual hygiene girls"},
+    {t:"Women & Youth in Agribusiness",u:"Women-and-Youth-in-Agribusiness.html",d:"Supporting women and youth to lead in agribusiness",k:"women youth agribusiness empower farm"},
+    {t:"Safe Drug Victims",u:"safe-drug-victims.html",d:"Donate to support safe drug victim outreach",k:"drug victims safe donate support"},
+    {t:"Corporate Donations",u:"Corporate-Donations.html",d:"Corporate giving and partnership opportunities with BDI",k:"corporate donate business company"},
+    {t:"Become a Corporate Partner",u:"Become-a-Corporate-Partner.html",d:"Partner with BDI as a corporate supporter",k:"corporate partner business supporter"},
+    {t:"Partner With Us",u:"Partner-With-Us.html",d:"Explore partnership opportunities with BDI",k:"partner partnership collaborate work"},
+    {t:"Staff Fundraising",u:"Staff-Fundraising.html",d:"Engage your staff in fundraising for BDI",k:"staff fundraising workplace team"},
+    {t:"Payroll Giving",u:"Payroll-Giving.html",d:"Set up payroll giving to support BDI regularly",k:"payroll giving salary regular donate"},
+    {t:"Donate in Memory",u:"Donate-in-Memory.html",d:"Make a donation in memory of a loved one",k:"memory memorial donate tribute"},
+    {t:"Leave a Gift in Your Will",u:"Leave-a-Gift-in-Your-Will.html",d:"Leave a lasting legacy gift to BDI in your will",k:"will legacy gift bequest estate"},
+    {t:"Donate Your Tax Refund",u:"Donate-Your-Tax-Refund.html",d:"Donate your tax refund to BDI",k:"tax refund donate irs"},
+    {t:"Privacy Policy",u:"privacy-policy.html",d:"BDI's privacy policy and data protection statement",k:"privacy policy data protection"}
+  ];
+
+  var icons={
+    "agriculture":"fa-seedling","health":"fa-heart-pulse","education":"fa-graduation-cap",
+    "environment":"fa-leaf","gender":"fa-venus-mars","fisheries":"fa-fish",
+    "disability":"fa-universal-access","partnership":"fa-handshake","values":"fa-star",
+    "founding":"fa-book-open","governance":"fa-landmark","board":"fa-users",
+    "ceo":"fa-user-tie","team":"fa-people-group","donor":"fa-building",
+    "partner":"fa-handshake","donation":"fa-hand-holding-heart","annual":"fa-file-alt",
+    "how":"fa-chart-pie","audit":"fa-file-invoice","news":"fa-newspaper",
+    "newsletter":"fa-envelope","contact":"fa-phone","career":"fa-briefcase",
+    "donate":"fa-hand-holding-dollar","volunteer":"fa-hands-helping","fundrais":"fa-donate",
+    "period":"fa-ribbon","women":"fa-venus","safe":"fa-shield-heart",
+    "corporate":"fa-building","staff":"fa-users","payroll":"fa-money-check",
+    "memory":"fa-heart","will":"fa-scroll","tax":"fa-receipt","privacy":"fa-lock",
+    "home":"fa-house","school":"fa-school","climate":"fa-cloud-sun","green":"fa-recycle",
+    "sponsor":"fa-star","default":"fa-circle-info"
+  };
+
+  function getIcon(page){
+    var combined=(page.t+page.u+page.k).toLowerCase();
+    for(var k in icons){if(combined.indexOf(k)>-1)return icons[k];}
+    return icons.default;
+  }
+
+  function bdiSearch(q){
+    var input=document.getElementById('bdi-search-input');
+    if(input)input.value=q;
+    renderResults(q);
+  }
+  window.bdiSearch=bdiSearch;
+
+  function renderResults(q){
+    var resultsEl=document.getElementById('bdi-search-results');
+    var emptyEl=document.getElementById('bdi-search-empty');
+    if(!resultsEl)return;
+    q=q.trim().toLowerCase();
+    if(!q){resultsEl.innerHTML='';emptyEl.style.display='none';return;}
+    var matches=pages.filter(function(p){
+      return (p.t+' '+p.d+' '+p.k).toLowerCase().indexOf(q)>-1;
+    });
+    if(!matches.length){resultsEl.innerHTML='';emptyEl.style.display='block';return;}
+    emptyEl.style.display='none';
+    resultsEl.innerHTML=matches.slice(0,8).map(function(p){
+      var ico=getIcon(p);
+      return '<a href="'+p.u+'" class="bdi-sr-item">'+
+        '<div class="bdi-sr-icon"><i class="fa-solid '+ico+'"></i></div>'+
+        '<div><div class="bdi-sr-title">'+p.t+'</div><div class="bdi-sr-desc">'+p.d+'</div></div>'+
+        '</a>';
+    }).join('');
+  }
+
+  function openSearch(){
+    var o=document.getElementById('bdi-search-overlay');
+    if(!o)return;
+    o.classList.add('bdi-search-open');
+    setTimeout(function(){var i=document.getElementById('bdi-search-input');if(i)i.focus();},100);
+  }
+  function closeSearch(){
+    var o=document.getElementById('bdi-search-overlay');
+    if(o)o.classList.remove('bdi-search-open');
+  }
+
+  document.addEventListener('DOMContentLoaded',function(){
+    /* wire search button */
+    document.querySelectorAll('.search-btn').forEach(function(btn){
+      btn.addEventListener('click',function(e){e.stopPropagation();openSearch();});
+    });
+    /* close button */
+    var cb=document.getElementById('bdi-search-close-btn');
+    if(cb)cb.addEventListener('click',closeSearch);
+    /* overlay click outside */
+    var ov=document.getElementById('bdi-search-overlay');
+    if(ov)ov.addEventListener('click',function(e){if(e.target===ov)closeSearch();});
+    /* live typing */
+    var inp=document.getElementById('bdi-search-input');
+    if(inp)inp.addEventListener('input',function(){renderResults(this.value);});
+    /* Escape key */
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSearch();});
+  });
+})();
+</script>
+<!-- ========== END BDI SITE SEARCH ========== -->
+<script src="chatbot.js"></script>
+</body>
+</html>

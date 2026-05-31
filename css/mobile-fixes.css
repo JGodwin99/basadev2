@@ -1,0 +1,350 @@
+/* ==========================================================
+   BDI GLOBAL MOBILE RESPONSIVENESS FIXES
+   Injected into all pages. Uses !important to override
+   page-specific CSS without editing 48 individual files.
+   Breakpoints: 900px (tablet), 768px (large phone), 480px (small phone)
+   ========================================================== */
+
+
+/* ============================================================
+   TABLET — max-width: 900px
+   ============================================================ */
+@media screen and (max-width: 900px) {
+
+  /* Topbar */
+  .topbar { padding: 10px 24px !important; }
+  .topbar-info { gap: 14px !important; font-size: 13px !important; }
+
+  /* Navbar */
+  .navbar { padding: 0 24px !important; min-height: 70px !important; }
+  .logo img { height: 55px !important; }
+
+  /* Hero sections — collapse large horizontal padding */
+  .hero { padding-left: 36px !important; padding-right: 36px !important; }
+  .hero-inner { max-width: 100% !important; }
+
+  /* Generic section padding */
+  .section-padding { padding: 60px 36px !important; }
+
+  /* Founding story layout */
+  .letter-section { padding: 50px 36px !important; grid-template-columns: 1fr !important; }
+  .timeline-section { padding: 50px 36px !important; }
+  .basa-section { padding: 50px 36px !important; grid-template-columns: 1fr !important; }
+  .impact-section { padding: 50px 36px !important; }
+  .letter-close-section { padding: 50px 36px !important; }
+  .letter-close-inner { grid-template-columns: 1fr !important; }
+
+  /* Stats grids: 3-col → 2-col on tablet */
+  .stats-grid,
+  .agri-metrics-container,
+  .heal-metrics-bar,
+  .env-stats-grid,
+  .fish-targets__grid,
+  .toward-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Governance & board */
+  .board-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .resp-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Impact grid */
+  .impact-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Main content + sidebar: stack */
+  .main-content { grid-template-columns: 1fr !important; gap: 30px !important; }
+  .sidebar { position: static !important; }
+  .sidebar-card { min-width: unset !important; }
+
+  /* Footer */
+  .super-footer .sf-container { padding: 0 24px !important; gap: 20px !important; }
+  .super-footer .sf-bottom-bar { padding: 20px 24px 0 !important; }
+
+  /* Hero two-column layouts */
+  .hero-inner,
+  .hero-flex { flex-direction: column !important; }
+
+  /* Profile grid — volunteer page */
+  .profile-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* News article body */
+  .article-body,
+  .article-section { padding: 40px 36px !important; }
+
+  /* CTA sections */
+  .cta-section,
+  .cta-banner { padding: 60px 36px !important; }
+
+  /* Partnership & research */
+  .partnership-grid { grid-template-columns: 1fr !important; }
+
+  /* Annual reports grid */
+  .reports-grid { grid-template-columns: 1fr !important; }
+
+  /* Governance hero grid */
+  .hero-inner { grid-template-columns: 1fr !important; gap: 30px !important; }
+
+  /* Institutional donors grid */
+  .funding-grid,
+  .donors-grid,
+  .portfolio-grid { grid-template-columns: 1fr !important; }
+
+  /* Partners grid */
+  .partners-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Role strip on board page */
+  .role-strip { grid-template-columns: repeat(2, 1fr) !important; }
+
+}
+
+
+/* ============================================================
+   LARGE PHONE — max-width: 768px
+   ============================================================ */
+@media screen and (max-width: 768px) {
+
+  /* Topbar */
+  .topbar { padding: 10px 20px !important; }
+  .topbar-info { gap: 10px !important; font-size: 12px !important; flex-wrap: wrap !important; }
+  .topbar-socials { gap: 8px !important; }
+
+  /* Navbar */
+  .navbar { padding: 0 20px !important; }
+
+  /* Hero */
+  .hero { padding-left: 28px !important; padding-right: 28px !important; padding-bottom: 50px !important; min-height: 400px !important; }
+  .hero h1 { font-size: clamp(1.8rem, 6vw, 2.6rem) !important; }
+  .hero-sub { font-size: 0.95rem !important; }
+  .hero-ctas { flex-wrap: wrap !important; gap: 10px !important; }
+
+  /* Stats grids: 2-col → 1-col */
+  .stats-grid,
+  .agri-metrics-container,
+  .heal-metrics-bar,
+  .env-stats-grid,
+  .fish-targets__grid,
+  .toward-grid,
+  .stats-container,
+  .heal3-program-grid { grid-template-columns: 1fr !important; }
+
+  /* All 3-col grids → 1-col */
+  .focus-row,
+  .resp-grid,
+  .category-grid,
+  .mega-grid { grid-template-columns: 1fr !important; }
+
+  /* Board grid */
+  .board-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; }
+
+  /* Impact grid */
+  .impact-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Profile cards on volunteer page */
+  .profile-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Pillars & objectives */
+  .pillars-grid,
+  .objectives-grid { grid-template-columns: 1fr !important; }
+
+  /* Download section on newsletter page */
+  .download-section { grid-template-columns: 1fr !important; text-align: center !important; }
+  .edition-preview { height: 200px !important; width: 150px !important; margin: 0 auto !important; }
+
+  /* Main content always single column */
+  .main-content { grid-template-columns: 1fr !important; padding: 40px 28px !important; }
+  .sidebar { position: static !important; }
+
+  /* Newsletter layout */
+  .newsletter-layout { grid-template-columns: 1fr !important; padding: 40px 28px !important; gap: 30px !important; }
+
+  /* Mega menu grid */
+  .mega-grid { display: flex !important; flex-direction: column !important; padding: 20px !important; gap: 20px !important; }
+  .mega-sidebar { width: 100% !important; }
+
+  /* News categories */
+  .news-categories { padding: 30px 20px 60px !important; }
+  .grid-container { grid-template-columns: 1fr !important; }
+
+  /* Section padding */
+  .section-padding { padding: 50px 28px !important; }
+  .board-section { padding: 0 28px 60px !important; }
+  .responsibilities-section,
+  .principles-section,
+  .gov-nav-section,
+  .intro-section { padding: 40px 28px !important; }
+
+  /* Contact page */
+  .contact-grid,
+  .ci-container { grid-template-columns: 1fr !important; }
+
+  /* Timeline */
+  .timeline { padding-left: 24px !important; }
+  .timeline-photo { max-width: 100% !important; }
+
+  /* CTA sections */
+  .cta-section,
+  .cta-banner { padding: 50px 28px !important; }
+  .cta-buttons { flex-direction: column !important; align-items: center !important; gap: 12px !important; }
+
+  /* Forms */
+  .form-group { width: 100% !important; }
+
+  /* Step items */
+  .steps-row { flex-direction: column !important; align-items: center !important; gap: 28px !important; }
+  .step-item { max-width: 280px !important; width: 100% !important; text-align: center !important; }
+
+  /* Hero stat rows */
+  .hero-stat-row { justify-content: center !important; flex-wrap: wrap !important; }
+
+  /* Partners grid */
+  .partners-grid { grid-template-columns: 1fr !important; }
+
+  /* Role strip */
+  .role-strip { grid-template-columns: 1fr !important; }
+
+  /* Donation hero */
+  .hero-flex { flex-direction: column !important; }
+  .donation-card { width: 100% !important; max-width: 420px !important; margin: 0 auto !important; }
+
+  /* Governance */
+  .hero-inner { grid-template-columns: 1fr !important; }
+  .four-dim-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Super footer */
+  .super-footer .sf-container { flex-direction: column !important; padding: 0 20px !important; }
+  .super-footer .sf-col { min-width: 100% !important; }
+  .super-footer .sf-bottom-bar { padding: 20px 20px 0 !important; font-size: 11px !important; }
+
+  /* Annual reports */
+  .reports-grid { grid-template-columns: 1fr !important; }
+  .report-card { max-width: 100% !important; }
+
+  /* Audited financials */
+  .financials-grid { grid-template-columns: 1fr !important; }
+
+  /* Career portal */
+  .jobs-grid { grid-template-columns: 1fr !important; }
+
+  /* Article hero */
+  .article-hero { padding: 40px 24px !important; }
+  .article-body { padding: 30px 24px !important; }
+}
+
+
+/* ============================================================
+   SMALL PHONE — max-width: 480px
+   ============================================================ */
+@media screen and (max-width: 480px) {
+
+  /* Prevent horizontal scroll */
+  body { overflow-x: hidden !important; }
+  * { max-width: 100% !important; }
+  img, video, iframe { max-width: 100% !important; height: auto !important; }
+
+  /* Topbar — collapse info on very small screens */
+  .topbar { padding: 8px 15px !important; flex-direction: column !important; gap: 6px !important; align-items: flex-start !important; }
+  .topbar-info a span { display: none !important; } /* hide text labels, keep icons */
+  .topbar-socials { margin-top: 0 !important; }
+
+  /* Navbar */
+  .navbar { padding: 0 15px !important; min-height: 64px !important; }
+  .logo img { height: 48px !important; }
+
+  /* Hero */
+  .hero { padding: 0 18px 40px !important; min-height: 360px !important; }
+  .hero h1 { font-size: clamp(1.6rem, 7.5vw, 1.9rem) !important; line-height: 1.2 !important; }
+  .hero-sub { font-size: 0.88rem !important; line-height: 1.6 !important; }
+  .hero-btn-primary,
+  .hero-btn-ghost { padding: 11px 20px !important; font-size: 13px !important; width: 100% !important; justify-content: center !important; }
+  .hero-ctas { flex-direction: column !important; }
+
+  /* Stats strip */
+  .stats-strip { padding: 0 18px !important; }
+  .stats-grid { grid-template-columns: 1fr !important; gap: 1px !important; }
+  .stat-card { padding: 20px 18px !important; }
+  .stat-value { font-size: 28px !important; }
+
+  /* Section padding */
+  .section-padding,
+  .main-content,
+  .newsletter-layout,
+  .board-section,
+  .responsibilities-section,
+  .intro-section { padding: 36px 18px !important; }
+
+  /* Board grid — single column */
+  .board-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .board-photo { aspect-ratio: 1 / 1 !important; }
+
+  /* Profile cards */
+  .profile-grid { grid-template-columns: 1fr !important; }
+
+  /* Impact cards */
+  .impact-grid { grid-template-columns: 1fr !important; }
+  .impact-card { padding: 20px !important; }
+
+  /* Timeline */
+  .timeline-section { padding: 36px 18px !important; }
+  .timeline-photo img { height: 200px !important; }
+
+  /* Forms — prevent iOS input zoom (font-size must be ≥16px) */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  textarea,
+  select { font-size: 16px !important; }
+
+  /* CTA sections */
+  .cta-section,
+  .cta-banner { padding: 40px 18px !important; }
+  .cta-section h2,
+  .cta-banner h2 { font-size: clamp(1.4rem, 6vw, 1.8rem) !important; }
+  .btn-white,
+  .btn-outline,
+  .btn-outline-white { padding: 12px 24px !important; font-size: 13px !important; width: 100% !important; text-align: center !important; }
+
+  /* Chips on chatbot */
+  .basa-chip { font-size: 11px !important; padding: 5px 10px !important; }
+
+  /* Donation amounts */
+  .amount-grid { grid-template-columns: repeat(3, 1fr) !important; }
+
+  /* Newsletter page */
+  .highlight-strip { padding: 20px 18px !important; grid-template-columns: 1fr !important; }
+  .highlight-item { padding: 14px !important; }
+
+  /* News cards */
+  .grid-container { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .card-content { padding: 20px !important; }
+
+  /* Partners */
+  .partners-grid { grid-template-columns: 1fr !important; }
+
+  /* Founding story */
+  .impact-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .stat-bar { padding: 20px 18px !important; flex-wrap: wrap !important; gap: 12px !important; }
+
+  /* Footer */
+  .super-footer .sf-container { padding: 0 18px !important; }
+  .super-footer .sf-title { font-size: 15px !important; }
+  .super-footer .sf-bottom-bar { font-size: 10px !important; padding: 16px 18px 0 !important; }
+
+  /* Back to top */
+  .back-to-top { right: 14px !important; bottom: 86px !important; }
+
+  /* Chatbot launcher */
+  #ask-basa-launcher { bottom: 16px !important; right: 16px !important; }
+  #ask-basa-window { bottom: 0 !important; right: 0 !important; left: 0 !important; width: 100% !important; border-radius: 16px 16px 0 0 !important; max-height: 88vh !important; }
+}
+
+
+/* ============================================================
+   EXTRA SMALL — max-width: 360px
+   (older Android devices, Galaxy A series, etc.)
+   ============================================================ */
+@media screen and (max-width: 360px) {
+  .hero h1 { font-size: 1.5rem !important; }
+  .navbar { padding: 0 12px !important; }
+  .logo img { height: 44px !important; }
+  .donate-main { padding: 8px 16px !important; font-size: 12px !important; }
+  .topbar-info { display: none !important; } /* hide all topbar text on tiny screens */
+}
