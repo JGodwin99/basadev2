@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -14,8 +14,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     
-    <!-- Owl Carousel -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Owl Carousel (FIX 1: switched from local file to CDN) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet">
     
     <style>
         /* ========== BOOTSTRAP CORE (essential) ========== */
@@ -66,7 +67,6 @@
             --bg-light: #fcfbf8;
         }
         
-        /* Topbar - Now visible on mobile as well (removed display: none on mobile) */
         .topbar {
             background-color: var(--brand-red);
             padding: 12px 40px;
@@ -89,7 +89,6 @@
         }
         .social-btn:hover { background: white; color: var(--brand-red); border-color: white; transform: translateY(-2px); }
         
-        /* Navbar - Redesigned for mobile like reference image (MENU + logo + search + DONATE) */
         .navbar {
             background: var(--white);
             display: flex;
@@ -105,7 +104,6 @@
         }
         .logo img { height: 65px; display: block; max-width: 100%; }
         
-        /* Mobile menu button - styled like reference: "MENU" text + icon */
         .mobile-menu-btn {
             display: none;
             background: transparent;
@@ -124,7 +122,6 @@
         .mobile-menu-btn i { font-size: 20px; }
         .mobile-menu-btn:hover { opacity: 0.7; }
         
-        /* Desktop nav links */
         .nav-links {
             display: flex;
             list-style: none;
@@ -149,7 +146,6 @@
         .nav-link:hover { color: var(--brand-red); }
         .nav-link i { font-size: 12px; transition: transform 0.3s; }
         
-        /* Mega Menu - unchanged */
         .mega-menu {
             position: absolute;
             top: 100%;
@@ -198,14 +194,12 @@
         .mega-col ul li a { text-decoration: none; color: var(--brand-green); font-size: 14px; font-weight: 500; transition: 0.2s; }
         .mega-col ul li a:hover { color: var(--brand-red); padding-left: 5px; }
         
-        /* Right side (search + donate) */
         .nav-right { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
         .search-btn { background: #f5f5f5; border: 1px solid #e0e0e0; padding: 8px 12px; cursor: pointer; border-radius: 8px; transition: all 0.3s; }
         .search-btn:hover { background: #e8e8e8; }
         .donate-main { background: var(--brand-red); color: white; padding: 10px 26px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s; }
         .donate-main:hover { background: var(--brand-green); transform: translateY(-2px); }
         
-        /* Hero Banner, Donation Card, etc - all unchanged */
         .hero-banner {
             background: linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)), url('img/BDI-menstrual-hyegies-outreach.jpg') center/cover no-repeat;
             min-height: 85vh;
@@ -236,7 +230,6 @@
         .donate-btn-main:hover { background: #8e0038; }
         .security { font-size: 11px; color: #777; text-align: center; margin-top: 12px; }
         
-        /* Other Ways to Help Slider - unchanged */
         .give-hand { background-color: #e8f5e9; padding: 80px 0; overflow: hidden; }
         .give-hand .container { max-width: 1300px; margin: 0 auto; padding: 0 40px; }
         .give-hand .section-header { text-align: center; margin-bottom: 50px; }
@@ -275,7 +268,7 @@
         .bdi-impa-number { font-size: 2.2rem; font-weight: 800; color: #333; margin: 0; }
         .bdi-impa-label { font-size: 0.85rem; color: #666; font-weight: 600; margin-top: 10px; }
         
-        /* ===== NEW NEWS SECTION (placed between Our Impact and How to Help) ===== */
+        /* ===== LATEST NEWS SECTION ===== */
         .latest-news-section {
             background-color: var(--bg-light);
             padding: 80px 0;
@@ -401,6 +394,17 @@
         @media (max-width: 1024px) { .help-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } .how-help { padding: 50px 30px; } }
         @media (max-width: 768px) { .help-grid { grid-template-columns: 1fr; gap: 15px; } .how-help { padding: 40px 20px; } .help-item { padding: 18px; } .icon-box { width: 50px; height: 50px; } .icon-box img { width: 28px; height: 28px; } }
         
+        /* ===== PARTNERS CAROUSEL (FIX 2: mobile override added) ===== */
+        .event { padding: 50px 0; background: #f5f5f5; overflow: hidden; }
+        .event .container { max-width: 1300px; padding: 0 40px; }
+        .event .owl-carousel { display: block !important; }
+        .event .owl-stage-outer { overflow: hidden; }
+        .event-item img { width: 100%; border-radius: 12px; height: 100px; object-fit: contain; background: white; padding: 10px; }
+        @media (max-width: 768px) {
+            .event .container { padding: 0 15px; }
+            .event-item img { height: 70px; }
+        }
+
         .super-footer { background-color: #064d3b; color: #ffffff; padding: 60px 0 30px 0; }
         .super-footer .sf-container { max-width: 1300px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 40px; gap: 30px; }
         .super-footer .sf-col { flex: 1; min-width: 220px; }
@@ -426,15 +430,10 @@
         @media (max-width: 992px) { .super-footer .sf-container { padding: 0 30px; } }
         @media (max-width: 768px) { .super-footer .sf-container { flex-direction: column; text-align: center; padding: 0 20px; } .super-footer .sf-socials { justify-content: center; } .super-footer .sf-description { margin: 0 auto 20px auto; text-align: center; } }
         
-        .event { padding: 50px 0; background: #f5f5f5; }
-        .event .container { max-width: 1300px; padding: 0 40px; }
-        .event-item img { width: 100%; border-radius: 12px; height: 100px; object-fit: contain; background: white; padding: 10px; }
-        @media (max-width: 768px) { .event .container { padding: 0 20px; } }
-        
         #spinner { opacity: 0; visibility: hidden; transition: opacity .8s ease-out; z-index: 99999; }
         #spinner.show { visibility: visible; opacity: 1; }
         
-        /* ========== MOBILE NAVBAR - Topbar now visible on mobile (removed display: none) ========== */
+        /* ========== MOBILE NAVBAR ========== */
         @media screen and (max-width: 850px) {
             .topbar { padding: 10px 20px; }
             .topbar-info { gap: 15px; font-size: 12px; flex-wrap: wrap; justify-content: center; }
@@ -492,7 +491,7 @@
 <body>
     <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center"><div class="spinner-grow text-primary" role="status"></div></div>
     
-    <!-- Topbar (visible on all devices including mobile) -->
+    <!-- Topbar -->
     <div class="topbar">
         <div class="topbar-info">
             <a href="mailto:info@basadev.org"><i class="fa-solid fa-envelope"></i> info@basadev.org</a>
@@ -501,14 +500,12 @@
         </div>
         <div class="topbar-socials">
             <a href="https://web.facebook.com/basadevelopmentinitiatives" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
-            
             <a href="https://www.instagram.com/basadevelopment/" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
-            
             <a href="https://www.linkedin.com/company/basa-development-initiatives" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
     </div>
     
-    <!-- NAVBAR - Redesigned mobile menu button: "MENU" text + icon like reference -->
+    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="logo"><a href="index.html"><img src="./img/logo14.png" alt="BDI Logo"></a></div>
         <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -534,7 +531,6 @@
         </div>
     </nav>
     
-    <!-- Rest of your content remains exactly the same -->
     <div class="hero-banner">
         <div class="container-fluid">
             <div class="hero-flex">
@@ -563,7 +559,7 @@
     
     <div class="bdi-impa"><div class="bdi-impa-container"><h1 class="bdi-impa-title">Our Impact</h1><div class="bdi-impa-grid"><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-tree"></i></div><h3 class="bdi-impa-number">5,000+</h3><p class="bdi-impa-label">Trees Planted</p></div><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-seedling"></i></div><h3 class="bdi-impa-number">1,200</h3><p class="bdi-impa-label">Farmers Supported</p></div><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-school"></i></div><h3 class="bdi-impa-number">15</h3><p class="bdi-impa-label">Schools Partnered</p></div><div class="bdi-impa-card"><div class="bdi-impa-icon"><i class="fas fa-user-friends"></i></div><h3 class="bdi-impa-number">20</h3><p class="bdi-impa-label">Youth & Women-led Agribusinesses</p></div></div></div></div>
     
-    <!-- NEW SECTION: Latest News & Stories (first 3 news from all-news.html) placed right after Our Impact -->
+    <!-- Latest News & Stories -->
     <div class="latest-news-section">
         <div class="latest-news-container">
             <div class="section-header-news">
@@ -571,7 +567,6 @@
                 <p>Stories of impact, hope, and transformation from the communities we serve.</p>
             </div>
             <div class="news-grid-home">
-                <!-- News Card 1: Greenville Rising -->
                 <div class="news-card-home">
                     <img src="img/BDI-Greensville-blog-1.jpg" class="card-img-home" alt="Greenville">
                     <div class="card-content-home">
@@ -583,7 +578,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- News Card 2: From Classrooms to Climate Champions -->
                 <div class="news-card-home">
                     <img src="img/BD-Classrom-outreach.jpg" class="card-img-home" alt="Classroom">
                     <div class="card-content-home">
@@ -595,7 +589,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- News Card 3: Period Poverty -->
                 <div class="news-card-home">
                     <img src="img/BDI-menstrual-hyegies-outreach.jpg" class="card-img-home" alt="Menstrual Hygiene">
                     <div class="card-content-home">
@@ -622,50 +615,31 @@
         </div>
     </div>
     
-    <div class="container-fluid event"><div class="container"><div class="text-center mx-auto mb-4"><h5 class="text-uppercase" style="font-size: 2rem; color: #005e4d;">Our Partners</h5><h2 class="mb-3" style="font-size: 1.5rem;">“Together with our partners, we create lasting solutions that change lives.”</h2></div><div class="owl-carousel event-carousel"><div class="event-item"><img src="img/p1.jpg" alt="Conservation International - BDI Partner"></div><div class="event-item"><img src="img/p2.jpg" alt="CERATH Development Organization - BDI Partner"></div><div class="event-item"><img src="img/p3.jpg" alt="Co-operative Development Foundation of Africa - BDI Partner"></div><div class="event-item"><img src="img/p4.jpg" alt="COULDYOU? - BDI Partner"></div><div class="event-item"><img src="img/p5.jpg" alt="Elitrust Finecon - BDI Partner"></div><div class="event-item"><img src="img/p6.jpg" alt="BASA Africa - BDI Partner"></div><div class="event-item"><img src="img/p7.jpg" alt="Peace Corps - BDI Partner"></div></div></div></div>
+    <!-- Partners Carousel -->
+    <div class="container-fluid event"><div class="container"><div class="text-center mx-auto mb-4"><h5 class="text-uppercase" style="font-size: 2rem; color: #005e4d;">Our Partners</h5><h2 class="mb-3" style="font-size: 1.5rem;">"Together with our partners, we create lasting solutions that change lives."</h2></div><div class="owl-carousel event-carousel"><div class="event-item"><img src="img/p1.jpg" alt="Conservation International - BDI Partner"></div><div class="event-item"><img src="img/p2.jpg" alt="CERATH Development Organization - BDI Partner"></div><div class="event-item"><img src="img/p3.jpg" alt="Co-operative Development Foundation of Africa - BDI Partner"></div><div class="event-item"><img src="img/p4.jpg" alt="COULDYOU? - BDI Partner"></div><div class="event-item"><img src="img/p5.jpg" alt="Elitrust Finecon - BDI Partner"></div><div class="event-item"><img src="img/p6.jpg" alt="BASA Africa - BDI Partner"></div><div class="event-item"><img src="img/p7.jpg" alt="Peace Corps - BDI Partner"></div></div></div></div>
     
     <footer class="super-footer">
         <div class="sf-container">
             <div class="sf-col"><div class="sf-logo"><img src="./img/logo14-1.png" alt="BDI"></div><p class="sf-description">BASA Development Initiatives (BDI) is an NGO dedicated to building a more inclusive, resilient, and sustainable Liberia.</p>
             <div class="topbar-socials">
             <a href="https://web.facebook.com/basadevelopmentinitiatives" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
-            
             <a href="https://www.instagram.com/basadevelopment/" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
-            
             <a href="https://www.linkedin.com/company/basa-development-initiatives" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div></div>
             <div class="sf-col"><h4 class="sf-title">Quick Links</h4><ul class="sf-links"><li><a href="our-values.html">Our Values</a></li><li><a href="our-team">Our Team</a></li><li><a href="partners">Partner-With-Us</a></li><li><a href="testimonials">Testimonials</a></li><li><a href="contact.html">Contact</a></li></ul></div>
             <div class="sf-col">
     <h4 class="sf-title">Locations</h4>
-
     <div class="sf-loc-item">
         <h5>HEADQUARTER: Monrovia, Liberia</h5>
-        <p>
-            1st Floor, Gausi Apartments, Apt. 5, BASA Avenue LBS-ELWA Community, Paynesville, Liberia<br>
-            Email: info@basadev.org<br>
-            Tel: +231 770 457 572 / +231 886 757 435
-        </p>
+        <p>1st Floor, Gausi Apartments, Apt. 5, BASA Avenue LBS-ELWA Community, Paynesville, Liberia<br>Email: info@basadev.org<br>Tel: +231 770 457 572 / +231 886 757 435</p>
     </div>
-
     <div class="sf-loc-item">
-        <h5>The United States Fundraising Office </h5>
-        <p>
-            984 Kettle Creek Road, Eagan,<br>
-            State of Minnesota, 55123<br>
-            Tel: +1 (651) 235-9896<br>
-            Email: info@basadev.org
-        </p>
+        <h5>The United States Fundraising Office</h5>
+        <p>984 Kettle Creek Road, Eagan,<br>State of Minnesota, 55123<br>Tel: +1 (651) 235-9896<br>Email: info@basadev.org</p>
     </div>
-
-    <!-- NEW GHANA OFFICE -->
     <div class="sf-loc-item">
         <h5>Accra, Ghana Office</h5>
-        <p>
-            GE-350-4105, House Number 7, Westland Haasto,
-            2nd Boulevard Road, Accra, Ghana<br>
-            Mobile: +233 244 930 623<br>
-            Email: info@basadev.org
-        </p>
+        <p>GE-350-4105, House Number 7, Westland Haasto, 2nd Boulevard Road, Accra, Ghana<br>Mobile: +233 244 930 623<br>Email: info@basadev.org</p>
     </div>
 </div>
             <div class="sf-col"><h4 class="sf-title">Stay Updated</h4><p class="sf-newsletter-text">Join our newsletter for the latest impact updates.</p><form class="sf-subscribe" action="https://formspree.io/f/mpqnkwdv" method="POST">
@@ -683,7 +657,8 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Owl Carousel JS (FIX 3: switched from local file to CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
         // Donation buttons
         document.querySelectorAll('.freq-btn').forEach(btn => btn.addEventListener('click', function() { document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active')); this.classList.add('active'); }));
@@ -706,7 +681,7 @@
         // Spinner
         setTimeout(() => document.getElementById('spinner')?.classList.remove('show'), 500);
         
-        // Mobile menu - redesigned for new button with "MENU" text
+        // Mobile menu
         (function() {
             const megaItems = document.querySelectorAll('.has-mega');
             const mobileBtn = document.getElementById('mobileMenuBtn');
@@ -718,10 +693,7 @@
                 if(navLinks) navLinks.classList.remove('active');
                 if(mobileBtn) {
                     const icon = mobileBtn.querySelector('i');
-                    if(icon) {
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
+                    if(icon) { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); }
                 }
                 closeAllMegas();
             }
@@ -730,17 +702,10 @@
                 const link = item.querySelector('.nav-link');
                 if(link) {
                     link.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        if(isMobile()) {
-                            const wasActive = item.classList.contains('is-active');
-                            closeAllMegas();
-                            if(!wasActive) item.classList.add('is-active');
-                        } else {
-                            const wasActive = item.classList.contains('is-active');
-                            closeAllMegas();
-                            if(!wasActive) item.classList.add('is-active');
-                        }
+                        e.preventDefault(); e.stopPropagation();
+                        const wasActive = item.classList.contains('is-active');
+                        closeAllMegas();
+                        if(!wasActive) item.classList.add('is-active');
                     });
                 }
             });
@@ -754,25 +719,15 @@
                     } else {
                         navLinks.classList.add('active');
                         const icon = mobileBtn.querySelector('i');
-                        if(icon) {
-                            icon.classList.remove('fa-bars');
-                            icon.classList.add('fa-times');
-                        }
+                        if(icon) { icon.classList.remove('fa-bars'); icon.classList.add('fa-times'); }
                         closeAllMegas();
                     }
                 });
             }
             
-            document.addEventListener('click', (e) => {
-                if(!e.target.closest('.navbar')) {
-                    closeMenu();
-                }
-            });
-            
+            document.addEventListener('click', (e) => { if(!e.target.closest('.navbar')) closeMenu(); });
             window.addEventListener('resize', () => {
-                if(!isMobile() && navLinks && navLinks.classList.contains('active')) {
-                    closeMenu();
-                }
+                if(!isMobile() && navLinks && navLinks.classList.contains('active')) closeMenu();
                 if(!isMobile()) closeAllMegas();
             });
         })();
@@ -780,7 +735,6 @@
 
     <!-- ========== BASADEV DUAL-PURPOSE POPUP WIDGET ========== -->
     <style>
-        /* --- BDI POPUP VARIABLES (mapped from site brand) --- */
         #basadev-popup {
             --bdi-green:       #005e4d;
             --bdi-green-dark:  #004a3d;
@@ -788,198 +742,43 @@
             --bdi-red-dark:    #7a0028;
             --bdi-font:        'Poppins', sans-serif;
         }
-
-        /* --- CONTAINER --- */
         #basadev-popup {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            width: 340px;
-            max-width: calc(100vw - 48px);
-            background-color: #ffffff;
-            border-radius: 14px;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.16), 0 4px 12px rgba(0,0,0,0.08);
-            padding: 0;
-            z-index: 99999;
-            font-family: var(--bdi-font);
-            transition: transform 0.4s ease, opacity 0.4s ease;
-            box-sizing: border-box;
-            overflow: hidden;
+            position: fixed; bottom: 24px; right: 24px; width: 340px;
+            max-width: calc(100vw - 48px); background-color: #ffffff;
+            border-radius: 14px; box-shadow: 0 12px 35px rgba(0,0,0,0.16), 0 4px 12px rgba(0,0,0,0.08);
+            padding: 0; z-index: 99999; font-family: var(--bdi-font);
+            transition: transform 0.4s ease, opacity 0.4s ease; box-sizing: border-box; overflow: hidden;
         }
-        #basadev-popup::before {
-            content: '';
-            display: block;
-            height: 5px;
-            background: linear-gradient(90deg, var(--bdi-green) 0%, #22c4a9 100%);
-        }
-        #basadev-popup.basadev-popup-hidden {
-            transform: translateY(110px);
-            opacity: 0;
-            pointer-events: none;
-        }
-        #basadev-popup.basadev-popup-visible {
-            transform: translateY(0);
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        /* --- INNER PADDING WRAPPER --- */
+        #basadev-popup::before { content: ''; display: block; height: 5px; background: linear-gradient(90deg, var(--bdi-green) 0%, #22c4a9 100%); }
+        #basadev-popup.basadev-popup-hidden { transform: translateY(110px); opacity: 0; pointer-events: none; }
+        #basadev-popup.basadev-popup-visible { transform: translateY(0); opacity: 1; pointer-events: auto; }
         .basadev-popup-inner { padding: 22px 24px 20px; }
-
-        /* --- CLOSE BUTTON --- */
-        #basadev-popup-close {
-            position: absolute;
-            top: 14px;
-            right: 16px;
-            background: none;
-            border: none;
-            font-size: 22px;
-            color: #aaa;
-            cursor: pointer;
-            line-height: 1;
-            padding: 0;
-            transition: color 0.2s;
-        }
+        #basadev-popup-close { position: absolute; top: 14px; right: 16px; background: none; border: none; font-size: 22px; color: #aaa; cursor: pointer; line-height: 1; padding: 0; transition: color 0.2s; }
         #basadev-popup-close:hover { color: #333; }
-
-        /* --- STEP MANAGEMENT --- */
         .basadev-step { display: none; }
         .basadev-step.active { display: block; }
-
-        /* --- TYPOGRAPHY --- */
-        #basadev-popup h3 {
-            margin: 0 0 8px 0;
-            font-size: 18px;
-            color: var(--bdi-green);
-            font-weight: 700;
-            font-family: var(--bdi-font);
-            padding-right: 20px;
-        }
-        #basadev-popup p {
-            margin: 0 0 16px 0;
-            font-size: 13px;
-            color: #555;
-            line-height: 1.55;
-            font-family: var(--bdi-font);
-        }
-
-        /* --- FORM --- */
-        #basadev-newsletter-form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 14px;
-        }
-        #basadev-popup input[type="email"] {
-            width: 100%;
-            padding: 11px 13px;
-            border: 1.5px solid #ddd;
-            border-radius: 8px;
-            font-size: 13px;
-            font-family: var(--bdi-font);
-            box-sizing: border-box;
-            outline: none;
-            transition: border-color 0.2s;
-            color: #333;
-        }
-        #basadev-popup input[type="email"]:focus {
-            border-color: var(--bdi-green);
-        }
+        #basadev-popup h3 { margin: 0 0 8px 0; font-size: 18px; color: var(--bdi-green); font-weight: 700; font-family: var(--bdi-font); padding-right: 20px; }
+        #basadev-popup p { margin: 0 0 16px 0; font-size: 13px; color: #555; line-height: 1.55; font-family: var(--bdi-font); }
+        #basadev-newsletter-form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+        #basadev-popup input[type="email"] { width: 100%; padding: 11px 13px; border: 1.5px solid #ddd; border-radius: 8px; font-size: 13px; font-family: var(--bdi-font); box-sizing: border-box; outline: none; transition: border-color 0.2s; color: #333; }
+        #basadev-popup input[type="email"]:focus { border-color: var(--bdi-green); }
         #basadev-popup input[type="email"]::placeholder { color: #bbb; }
-
-        /* --- PRIMARY BUTTONS --- */
-        .basadev-btn-primary {
-            width: 100%;
-            padding: 12px;
-            background-color: var(--bdi-red);
-            color: #ffffff;
-            border: none;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 700;
-            font-family: var(--bdi-font);
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            box-sizing: border-box;
-            transition: background-color 0.2s ease, transform 0.15s ease;
-            letter-spacing: 0.02em;
-        }
-        .basadev-btn-primary:hover {
-            background-color: var(--bdi-red-dark);
-            transform: translateY(-1px);
-            color: #fff;
-        }
-        .basadev-btn-donate {
-            background-color: var(--bdi-green);
-            margin-bottom: 14px;
-        }
-        .basadev-btn-donate:hover {
-            background-color: var(--bdi-green-dark);
-        }
-
-        /* --- TOGGLE LINK BUTTONS --- */
-        .basadev-link-btn {
-            background: none;
-            border: none;
-            color: var(--bdi-red);
-            font-size: 12.5px;
-            font-family: var(--bdi-font);
-            cursor: pointer;
-            padding: 0;
-            text-align: left;
-            text-decoration: underline;
-            transition: color 0.2s;
-        }
+        .basadev-btn-primary { width: 100%; padding: 12px; background-color: var(--bdi-red); color: #ffffff; border: none; border-radius: 8px; font-size: 13px; font-weight: 700; font-family: var(--bdi-font); cursor: pointer; text-align: center; text-decoration: none; display: inline-block; box-sizing: border-box; transition: background-color 0.2s ease, transform 0.15s ease; letter-spacing: 0.02em; }
+        .basadev-btn-primary:hover { background-color: var(--bdi-red-dark); transform: translateY(-1px); color: #fff; }
+        .basadev-btn-donate { background-color: var(--bdi-green); margin-bottom: 14px; }
+        .basadev-btn-donate:hover { background-color: var(--bdi-green-dark); }
+        .basadev-link-btn { background: none; border: none; color: var(--bdi-red); font-size: 12.5px; font-family: var(--bdi-font); cursor: pointer; padding: 0; text-align: left; text-decoration: underline; transition: color 0.2s; }
         .basadev-link-btn:hover { color: var(--bdi-green); }
-
-        /* --- SUCCESS MESSAGE --- */
-        #basadev-success-msg {
-            display: none;
-            text-align: center;
-            padding: 8px 0 4px;
-        }
-        #basadev-success-msg i {
-            font-size: 30px;
-            color: var(--bdi-green);
-            display: block;
-            margin-bottom: 8px;
-        }
-        #basadev-success-msg p {
-            font-size: 13px;
-            color: #444;
-            margin: 0;
-        }
-
-        /* --- DIVIDER --- */
-        .basadev-divider {
-            height: 1px;
-            background: #f0f0f0;
-            margin: 6px 0 14px;
-        }
-
-        /* --- MOBILE --- */
-        @media (max-width: 480px) {
-            #basadev-popup {
-                bottom: 0;
-                right: 0;
-                width: 100%;
-                max-width: 100%;
-                border-radius: 14px 14px 0 0;
-                box-shadow: 0 -5px 20px rgba(0,0,0,0.12);
-            }
-        }
-        #bdi-popup-overlay {
-            display: none; /* legacy — replaced */
-        }
+        #basadev-success-msg { display: none; text-align: center; padding: 8px 0 4px; }
+        #basadev-success-msg i { font-size: 30px; color: var(--bdi-green); display: block; margin-bottom: 8px; }
+        #basadev-success-msg p { font-size: 13px; color: #444; margin: 0; }
+        .basadev-divider { height: 1px; background: #f0f0f0; margin: 6px 0 14px; }
+        @media (max-width: 480px) { #basadev-popup { bottom: 0; right: 0; width: 100%; max-width: 100%; border-radius: 14px 14px 0 0; box-shadow: 0 -5px 20px rgba(0,0,0,0.12); } }
+        #bdi-popup-overlay { display: none; }
     </style>
 
-    <!-- POPUP HTML -->
     <div id="basadev-popup" class="basadev-popup-hidden" role="dialog" aria-modal="true" aria-label="Stay Connected">
         <button id="basadev-popup-close" aria-label="Close popup">&times;</button>
-
-        <!-- Step 1: Newsletter Signup -->
         <div id="basadev-step-newsletter" class="basadev-step active">
             <div class="basadev-popup-inner">
                 <h3>Stay Connected</h3>
@@ -993,24 +792,16 @@
                     <p>Thank you! You're now subscribed to BDI's quarterly newsletter.</p>
                 </div>
                 <div class="basadev-divider"></div>
-                <button id="basadev-switch-to-donate" class="basadev-link-btn">
-                    Prefer to support our monthly fundraising? &rarr;
-                </button>
+                <button id="basadev-switch-to-donate" class="basadev-link-btn">Prefer to support our monthly fundraising? &rarr;</button>
             </div>
         </div>
-
-        <!-- Step 2: Fundraising -->
         <div id="basadev-step-donate" class="basadev-step">
             <div class="basadev-popup-inner">
                 <h3>Support Our Mission</h3>
                 <p>Empower lasting change. Your monthly contribution directly funds our ongoing community campaigns across Liberia.</p>
-                <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" target="_blank" rel="noopener" class="basadev-btn-primary basadev-btn-donate">
-                    Become a Monthly Donor &rarr;
-                </a>
+                <a href="https://www.paypal.com/donate/?hosted_button_id=JX22EPUQZZNH6" target="_blank" rel="noopener" class="basadev-btn-primary basadev-btn-donate">Become a Monthly Donor &rarr;</a>
                 <div class="basadev-divider"></div>
-                <button id="basadev-switch-to-newsletter" class="basadev-link-btn">
-                    &larr; Back to newsletter signup
-                </button>
+                <button id="basadev-switch-to-newsletter" class="basadev-link-btn">&larr; Back to newsletter signup</button>
             </div>
         </div>
     </div>
@@ -1019,21 +810,9 @@
         document.addEventListener('DOMContentLoaded', function () {
             var STORAGE_KEY   = 'basadev_popup_dismissed';
             var SUPPRESS_DAYS = 30;
-
-            /* --- 30-day suppression check --- */
-            function shouldShow() {
-                var stored = localStorage.getItem(STORAGE_KEY);
-                if (!stored) return true;
-                return (Date.now() - parseInt(stored, 10)) > SUPPRESS_DAYS * 864e5;
-            }
-            function dismiss() {
-                localStorage.setItem(STORAGE_KEY, Date.now().toString());
-                popup.classList.remove('basadev-popup-visible');
-                popup.classList.add('basadev-popup-hidden');
-            }
-
+            function shouldShow() { var stored = localStorage.getItem(STORAGE_KEY); if (!stored) return true; return (Date.now() - parseInt(stored, 10)) > SUPPRESS_DAYS * 864e5; }
+            function dismiss() { localStorage.setItem(STORAGE_KEY, Date.now().toString()); popup.classList.remove('basadev-popup-visible'); popup.classList.add('basadev-popup-hidden'); }
             if (!shouldShow()) return;
-
             var popup              = document.getElementById('basadev-popup');
             var closeBtn           = document.getElementById('basadev-popup-close');
             var stepNewsletter     = document.getElementById('basadev-step-newsletter');
@@ -1042,50 +821,16 @@
             var switchToNewsletter = document.getElementById('basadev-switch-to-newsletter');
             var form               = document.getElementById('basadev-newsletter-form');
             var successMsg         = document.getElementById('basadev-success-msg');
-
-            /* --- Show after 5 seconds --- */
-            setTimeout(function () {
-                popup.classList.remove('basadev-popup-hidden');
-                popup.classList.add('basadev-popup-visible');
-            }, 5000);
-
-            /* --- Close button --- */
+            setTimeout(function () { popup.classList.remove('basadev-popup-hidden'); popup.classList.add('basadev-popup-visible'); }, 5000);
             closeBtn.addEventListener('click', dismiss);
-
-            /* --- Close on outside click --- */
-            document.addEventListener('click', function (e) {
-                if (popup.classList.contains('basadev-popup-visible') && !popup.contains(e.target)) {
-                    dismiss();
-                }
-            });
-
-            /* --- Step switching --- */
-            switchToDonate.addEventListener('click', function () {
-                stepNewsletter.classList.remove('active');
-                stepDonate.classList.add('active');
-            });
-            switchToNewsletter.addEventListener('click', function () {
-                stepDonate.classList.remove('active');
-                stepNewsletter.classList.add('active');
-            });
-
-            /* --- Form submit via fetch (stays on page) --- */
+            document.addEventListener('click', function (e) { if (popup.classList.contains('basadev-popup-visible') && !popup.contains(e.target)) dismiss(); });
+            switchToDonate.addEventListener('click', function () { stepNewsletter.classList.remove('active'); stepDonate.classList.add('active'); });
+            switchToNewsletter.addEventListener('click', function () { stepDonate.classList.remove('active'); stepNewsletter.classList.add('active'); });
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 var email = form.querySelector('input[type="email"]').value;
-                fetch(form.action, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                    body: JSON.stringify({ email: email })
-                })
-                .then(function (res) {
-                    if (res.ok) {
-                        form.style.display = 'none';
-                        successMsg.style.display = 'block';
-                        localStorage.setItem(STORAGE_KEY, Date.now().toString());
-                        setTimeout(dismiss, 3500);
-                    }
-                })
+                fetch(form.action, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ email: email }) })
+                .then(function (res) { if (res.ok) { form.style.display = 'none'; successMsg.style.display = 'block'; localStorage.setItem(STORAGE_KEY, Date.now().toString()); setTimeout(dismiss, 3500); } })
                 .catch(function () { form.submit(); });
             });
         });
@@ -1180,7 +925,6 @@
     {t:"Donate Your Tax Refund",u:"Donate-Your-Tax-Refund.html",d:"Donate your tax refund to BDI",k:"tax refund donate irs"},
     {t:"Privacy Policy",u:"privacy-policy.html",d:"BDI's privacy policy and data protection statement",k:"privacy policy data protection"}
   ];
-
   var icons={
     "agriculture":"fa-seedling","health":"fa-heart-pulse","education":"fa-graduation-cap",
     "environment":"fa-leaf","gender":"fa-venus-mars","fisheries":"fa-fish",
@@ -1197,66 +941,28 @@
     "home":"fa-house","school":"fa-school","climate":"fa-cloud-sun","green":"fa-recycle",
     "sponsor":"fa-star","default":"fa-circle-info"
   };
-
-  function getIcon(page){
-    var combined=(page.t+page.u+page.k).toLowerCase();
-    for(var k in icons){if(combined.indexOf(k)>-1)return icons[k];}
-    return icons.default;
-  }
-
-  function bdiSearch(q){
-    var input=document.getElementById('bdi-search-input');
-    if(input)input.value=q;
-    renderResults(q);
-  }
+  function getIcon(page){ var combined=(page.t+page.u+page.k).toLowerCase(); for(var k in icons){if(combined.indexOf(k)>-1)return icons[k];} return icons.default; }
+  function bdiSearch(q){ var input=document.getElementById('bdi-search-input'); if(input)input.value=q; renderResults(q); }
   window.bdiSearch=bdiSearch;
-
   function renderResults(q){
-    var resultsEl=document.getElementById('bdi-search-results');
-    var emptyEl=document.getElementById('bdi-search-empty');
-    if(!resultsEl)return;
-    q=q.trim().toLowerCase();
+    var resultsEl=document.getElementById('bdi-search-results'); var emptyEl=document.getElementById('bdi-search-empty');
+    if(!resultsEl)return; q=q.trim().toLowerCase();
     if(!q){resultsEl.innerHTML='';emptyEl.style.display='none';return;}
-    var matches=pages.filter(function(p){
-      return (p.t+' '+p.d+' '+p.k).toLowerCase().indexOf(q)>-1;
-    });
+    var matches=pages.filter(function(p){ return (p.t+' '+p.d+' '+p.k).toLowerCase().indexOf(q)>-1; });
     if(!matches.length){resultsEl.innerHTML='';emptyEl.style.display='block';return;}
     emptyEl.style.display='none';
     resultsEl.innerHTML=matches.slice(0,8).map(function(p){
       var ico=getIcon(p);
-      return '<a href="'+p.u+'" class="bdi-sr-item">'+
-        '<div class="bdi-sr-icon"><i class="fa-solid '+ico+'"></i></div>'+
-        '<div><div class="bdi-sr-title">'+p.t+'</div><div class="bdi-sr-desc">'+p.d+'</div></div>'+
-        '</a>';
+      return '<a href="'+p.u+'" class="bdi-sr-item"><div class="bdi-sr-icon"><i class="fa-solid '+ico+'"></i></div><div><div class="bdi-sr-title">'+p.t+'</div><div class="bdi-sr-desc">'+p.d+'</div></div></a>';
     }).join('');
   }
-
-  function openSearch(){
-    var o=document.getElementById('bdi-search-overlay');
-    if(!o)return;
-    o.classList.add('bdi-search-open');
-    setTimeout(function(){var i=document.getElementById('bdi-search-input');if(i)i.focus();},100);
-  }
-  function closeSearch(){
-    var o=document.getElementById('bdi-search-overlay');
-    if(o)o.classList.remove('bdi-search-open');
-  }
-
+  function openSearch(){ var o=document.getElementById('bdi-search-overlay'); if(!o)return; o.classList.add('bdi-search-open'); setTimeout(function(){var i=document.getElementById('bdi-search-input');if(i)i.focus();},100); }
+  function closeSearch(){ var o=document.getElementById('bdi-search-overlay'); if(o)o.classList.remove('bdi-search-open'); }
   document.addEventListener('DOMContentLoaded',function(){
-    /* wire search button */
-    document.querySelectorAll('.search-btn').forEach(function(btn){
-      btn.addEventListener('click',function(e){e.stopPropagation();openSearch();});
-    });
-    /* close button */
-    var cb=document.getElementById('bdi-search-close-btn');
-    if(cb)cb.addEventListener('click',closeSearch);
-    /* overlay click outside */
-    var ov=document.getElementById('bdi-search-overlay');
-    if(ov)ov.addEventListener('click',function(e){if(e.target===ov)closeSearch();});
-    /* live typing */
-    var inp=document.getElementById('bdi-search-input');
-    if(inp)inp.addEventListener('input',function(){renderResults(this.value);});
-    /* Escape key */
+    document.querySelectorAll('.search-btn').forEach(function(btn){ btn.addEventListener('click',function(e){e.stopPropagation();openSearch();}); });
+    var cb=document.getElementById('bdi-search-close-btn'); if(cb)cb.addEventListener('click',closeSearch);
+    var ov=document.getElementById('bdi-search-overlay'); if(ov)ov.addEventListener('click',function(e){if(e.target===ov)closeSearch();});
+    var inp=document.getElementById('bdi-search-input'); if(inp)inp.addEventListener('input',function(){renderResults(this.value);});
     document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSearch();});
   });
 })();
